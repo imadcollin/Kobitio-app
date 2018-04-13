@@ -1,0 +1,130 @@
+/* Koibito App
+   profile.css
+   Created by Mauro J. Pappaterra on 13 of 04 2018.
+*/
+
+/* NAVIGATION BAR */
+
+.tabs {
+    height: 50px;
+    width: 100%;
+}
+
+.tabs ul {
+    list-style-type: none;
+    float: left;
+    margin-top: 10px;
+    clear: both;
+}
+
+.tabs ul li {
+    float: left;
+
+    margin-left: 25px;
+    padding: 10px;
+    display: block;
+
+    background-color: #1c7430;
+}
+
+.tabs ul li a{
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+}
+
+.tabs ul li a:hover{
+    color: white;
+}
+
+.tabs ul li a:active{
+    color: red;
+}
+
+.buttons{
+    background-color: #b3d7ff;
+}
+
+.description{
+    background-color: #aef8ff;
+}
+
+.portrait{
+    background-color: #7fff8e;
+    padding: 15px;
+}
+
+.portrait img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+}
+
+.history {
+    background-color: #ffaca7;
+}
+
+.deed {
+    background-color: #ffe6d5;
+    border: #721c24;
+    border-style: dashed;
+    margin: 25px;
+    padding: 15px;
+
+    height: 100px;
+    display: block;
+}
+
+.deed img {
+    margin-top: 0px;
+    padding-top: 0px;
+    width: 200px;
+    float: left;
+
+    max-height:130%;
+    max-width:130%;
+    object-fit: contain;
+}
+
+.deed .icon {
+    float: left;
+}
+
+.deed .title{
+    text-align: left;
+}
+
+.deed .date{
+    text-align: left;
+    float: left;
+}
+
+.deed .points {
+    text-align: right;
+    color: #0fac56;
+}
+
+.total {
+    text-align: center;
+}
+
+.golden {
+    color: #ffd90d;
+}
+
+.red {
+    color: #ff1c19;
+}
+
+.blue {
+    color: #405bff;
+}
+
+.grey {
+    color: #b4b4b4;
+}
+
+.green {
+    color: #0fac56;
+}
