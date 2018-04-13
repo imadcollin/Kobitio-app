@@ -4,7 +4,6 @@
 */
 
 .relation{
-    background-color: #ff78b3;
     padding: 15px;
 }
 
@@ -26,7 +25,7 @@
 
 .progress-small{
     margin: 15px;
-    height:30px;
+    height: 30px;
 }
 
 .waifu-bar{
