@@ -1,0 +1,43 @@
+/* Koibito App 
+   relation.css
+   Created by Mauro J. Pappaterra on 13 of April 2018.
+*/
+
+.relation{
+    background-color: #ff78b3;
+    padding: 15px;
+}
+
+.relation img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+}
+
+.progress-bar{
+    color: white;
+}
+
+.progress-big {
+    margin: 15px;
+    height: 75px;
+}
+
+.progress-small{
+    margin: 15px;
+    height:30px;
+}
+
+.waifu-bar{
+    background-color: deeppink;
+}
+
+.hasbandu-bar{
+    background-color: #405bff;
+}
+
+.equality {
+    background-color: #0fac56;
+    text-align: center;
+}

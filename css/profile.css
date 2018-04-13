@@ -24,7 +24,7 @@
     padding: 10px;
     display: block;
 
-    background-color: #1c7430;
+    background-color: #b4b4b4;
 }
 
 .tabs ul li a{
@@ -45,13 +45,9 @@
     background-color: #b3d7ff;
 }
 
-.description{
-    background-color: #aef8ff;
-}
-
 .portrait{
-    background-color: #7fff8e;
     padding: 15px;
+    background-color: #edff00;
 }
 
 .portrait img {
@@ -62,16 +58,13 @@
 }
 
 .history {
-    background-color: #ffaca7;
+    background-color: #7fff8e;
 }
 
 .deed {
-    background-color: #ffe6d5;
-    border: #721c24;
     border-style: dashed;
     margin: 25px;
     padding: 15px;
-
     height: 100px;
     display: block;
 }
@@ -100,13 +93,35 @@
     float: left;
 }
 
-.deed .points {
+.points {
     text-align: right;
-    color: #0fac56;
 }
 
-.total {
+.waifu{
+    background-color: #ffafc7;
+    border-color: deeppink;
+}
+
+.waifu .points{
+    color:deeppink;
+}
+
+.hasbandu{
+    background-color: #8eaeff;
+    border-color: #405bff ;
+}
+
+.hasbandu .points {
+    color: #405bff ;
+}
+
+
+.center {
     text-align: center;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .golden {
