@@ -1,0 +1,157 @@
+/* Koibito App 
+   style.css
+   Created by Mauro J. Pappaterra on 14 of April 2018.
+*/
+
+/* Tabs and buttons */
+.tabs {
+    height: 50px;
+    width: 100%;
+}
+
+.tabs ul {
+    list-style-type: none;
+    float: left;
+    margin-top: 10px;
+    clear: both;
+}
+
+.tabs ul li {
+    float: left;
+
+    margin-left: 25px;
+    padding: 10px;
+    display: block;
+
+    background-color: #b4b4b4;
+}
+
+.tabs ul li a{
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+}
+
+.tabs ul li a:hover{
+    color: white;
+}
+
+.tabs ul li a:active{
+    color: red;
+}
+
+.buttons{
+    background-color: #b3d7ff;
+}
+
+.waifu{
+    background-color: #ffafc7;
+    border-color: deeppink;
+}
+
+.waifu .points{
+    color:deeppink;
+}
+
+.hasbandu{
+    background-color: #8eaeff;
+    border-color: #405bff ;
+}
+
+.hasbandu .points {
+    color: #405bff ;
+}
+
+.stars {
+    color: #ffd90d;
+}
+
+/* Deeds Section*/
+
+.deed {
+    border-style: dashed;
+    margin: 25px;
+    padding: 15px;
+    height: 100px;
+    display: block;
+}
+
+.deed img {
+    margin-top: 0px;
+    padding-top: 0px;
+    width: 200px;
+    float: left;
+
+    max-height:130%;
+    max-width:130%;
+    object-fit: contain;
+}
+
+.deed .icon {
+    float: left;
+}
+
+.deed .title{
+    text-align: left;
+}
+
+.deed .date{
+    text-align: left;
+    float: left;
+}
+
+.points {
+    text-align: right;
+}
+
+/* Bar Chart CSS*/
+.progress-bar{
+    color: white;
+}
+
+.progress-big {
+    margin: 15px;
+    height: 60px;
+}
+
+.progress-small{
+    margin: 15px;
+    height: 30px;
+}
+
+.waifu-bar{
+    background-color: deeppink; /* same as waifu points */
+}
+
+.hasbandu-bar{
+    background-color: #405bff; /* same as hasbandu points */
+}
+
+/* Others */
+.center {
+    text-align: center;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.red {
+    color: #ff1c19;
+}
+
+.blue {
+    color: #405bff;
+}
+
+.grey {
+    color: #b4b4b4;
+}
+
+.green {
+    color: #0fac56;
+}
+
+.light-green {
+    background-color: #7fff8e;
+}

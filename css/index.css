@@ -1,0 +1,18 @@
+/* Koibito App 
+   index.css
+   Created by Mauro J. Pappaterra on 14 of April 2018.
+*/
+
+body {
+    background-color: lightpink;
+}
+
+a{
+    color: #000000;
+    text-decoration: none;
+}
+
+a:hover{
+    color: #ff1c19;
+    text-decoration: none;
+}
