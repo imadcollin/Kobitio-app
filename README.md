@@ -2,9 +2,7 @@
 
 A dating app that is based on merit, not looks!
 
-<p>This is our submission for User Interface II.</p> <br>
-
-<h2><a href="http://206.189.27.240/">Open Online Version</a></h2>
+<p>This is our submission for User Interface II. <b><a href="http://206.189.27.240/">Online Version</a></b</p>
 
 <h2>Group Members are:</h2>
 <ul>
