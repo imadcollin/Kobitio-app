@@ -2,7 +2,9 @@
 
 A dating app that is based on merit, not looks!
 
-<p>This is our submission for User Interface II. <a href="http://188.226.149.149/The_Flying_Dutchman/index.html">Online Version</a></p>
+<p>This is our submission for User Interface II.</p> <br>
+
+<h2><a href="http://206.189.27.240/">Open Online Version</a></h2>
 
 <h2>Group Members are:</h2>
 <ul>
