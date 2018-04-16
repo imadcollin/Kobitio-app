@@ -46,7 +46,7 @@
 
 .waifu{
     background-color: #ffafc7;
-    border-color: deeppink;
+    border-color: deeppink; /* same as waifu points */
 }
 
 .waifu .points{
@@ -55,11 +55,20 @@
 
 .hasbandu{
     background-color: #8eaeff;
-    border-color: #405bff ;
+    border-color: #405bff ; /* same as hasbandu points */
 }
 
 .hasbandu .points {
     color: #405bff ;
+}
+
+.wakashu{
+    background-color: #78f05f;
+    border-color: #29a21b; /* same as wakashu points */
+}
+
+.wakashu .points {
+    color: #29a21b;
 }
 
 .stars {
@@ -125,6 +134,10 @@
 
 .hasbandu-bar{
     background-color: #405bff; /* same as hasbandu points */
+}
+
+.wakashu-bar{
+    background-color: #29a21b; /* same as wakashu points */
 }
 
 /* Others */
