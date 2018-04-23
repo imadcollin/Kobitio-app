@@ -168,3 +168,23 @@
 .light-green {
     background-color: #7fff8e;
 }
+
+/* LANGUAGE MENU */
+
+.languages_menu{
+    bottom: 0px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    clear: both;
+}
+
+.languages {
+    margin-left: 20%;
+}
+
+.languages img {
+    width: 150px;
+    float: left;
+    padding: 2%;
+}
