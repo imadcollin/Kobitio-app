@@ -14,10 +14,22 @@ $("#signup_button").click(function() {
     $("#signupWindow").removeClass("hidden");
 });
 
+$("#ask_points").click(function() {
+    $("#overlay").removeClass("hidden");
+    $("#requestWindow").removeClass("hidden");
+});
+
+$("#give_points").click(function() {
+    $("#overlay").removeClass("hidden");
+    $("#giveWindow").removeClass("hidden");
+});
+
 $(".close").click(function() {
     $("#overlay").addClass("hidden");
     $("#loginWindow").addClass("hidden");
     $("#signupWindow").addClass("hidden");
+    $("#requestWindow").addClass("hidden");
+    $("#giveWindow").addClass("hidden")
 
 });
 
