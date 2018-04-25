@@ -18,6 +18,10 @@ a:hover{
     text-decoration: none;
 }
 
+ul {
+    list-style-type: none;
+}
+
 ul li {
     cursor: pointer;
 }
