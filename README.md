@@ -1,10 +1,11 @@
-<h1>Koibito App</h1>
+# Koibito App 
 
 A dating app that is based on merit, not looks!
 
 <p>This is our submission for User Interface II. <b><a href="http://206.189.27.240/">Online Version</a></b</p>
 
-<h2>Group Members are:</h2>
+### Group Members are: 
+
 <ul>
     <li>Hassan Odimi</li>
     <li>Mauro José Pappaterra</li>
@@ -12,35 +13,59 @@ A dating app that is based on merit, not looks!
     <li>Kunal Gulati</li>
 </ul>
 
-<hr>
+
+### Installation
+
+You need  [Npm.js]( https://www.npmjs.com/) 
+
+Download  [Node.js](https://nodejs.org/)  to run.
+
+Install the following Tools/Libraries in your local machine 
+
+
+```
+npm install -g gulp-cli
+```
+
+```
+Clone the project from Github or Donwlaod it 
+```
+#### Important OBS!!!
+>  Navigate to **Project** 
+> Use the following commands: 
+```
+npm install 
+```
+```
+gulp 
+```
+
 
 <h2>Files Distribution</h2>
 
-<h3>Folders:</h3>
-<ul>
-    <li><b>css:</b> All CSS files go here</li>
-    <li><b>img:</b> All image files go here</li>
-    <li><b>js:</b> All JavaScript files go here</li>
-    <li><b>js/view:</b> All multilanguage display texts go here</li>
-</ul>
+### Folders
 
-<h3>Files:</h3>
+  - All CSS files go here.
+  - All image files go here.
+  - All JavaScript files go here.
+  - All multilanguage display texts go here.
 
-<h4>General:</h4>
-<ul>
-    <li><b>index.html:</b> Index page</li>
-    <li><b>profile.html:</b> Profile view</li>
-    <li><b>adam.html:</b> Example profile view</li>
-    <li><b>eve.html:</b> Example profile view</li>
-</ul>
+### Files
 
-<h4>css:</h4>
+#### General
+
+    - index.html: Index page
+    - profile.html: Profile view
+    - adam.html: Example profile view
+    - eve.html: Example profile view
+
+### CSS
 <ul>
     <li><b>profile.css:</b> style sheet for the profile page</li>
 </ul>
 
 
-<h4>bootstrap:</h4>
+### Bootstrap
 <ul>
     <li><b>All files for bootstrap framework</b></li>
 </ul>
@@ -50,7 +75,7 @@ A dating app that is based on merit, not looks!
     <li><b>All files for font-awesome icons</b></li>
 </ul>
 
-<h4>img:</h4>
+### Images 
 <ul>
     <li><b>favicon.png:</b> Icon for browser</li>
     <li><b>esp.png:</b> Flag Spain</li>
@@ -59,7 +84,7 @@ A dating app that is based on merit, not looks!
     <li><b>ita.svg:</b> Flag Italy</li>
 </ul>
 
-<h4>Other:</h4>
+### Others 
 <ul>
     <li><b>.gitignore:</b> Use this file to avoid pushing redundant files, add any IDE configuration files you might use </li>
     <li><b>README.md:</b> The contents of this very file.</li>
