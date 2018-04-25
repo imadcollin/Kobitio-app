@@ -1,0 +1,40 @@
+
+# Created by https://www.gitignore.io/api/visualstudiocode
+
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+.history
+# End of https://www.gitignore.io/api/visualstudiocode
+
+### Express JS ###
+
+# OS X
+.DS_Store*
+Icon?
+._*
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+.directory
+*~
+
+# npm
+node_modules
+package-lock.json
+*.log
+*.gz
+
+# Coveralls
+coverage
+
+# Benchmarking
+benchmarks/graphs
+# End of Express JS 
