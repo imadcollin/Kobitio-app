@@ -94,10 +94,6 @@
     object-fit: contain;
 }
 
-.deed .icon {
-    float: left;
-}
-
 .deed .title{
     text-align: left;
     padding-left: 25px;
