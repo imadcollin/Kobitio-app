@@ -142,11 +142,26 @@ var Orientation = mongoose.model('Orientaion', orientation_Schema);
 
 
 // make this available to our users in our Node applications
-module.exports = User;
-module.exports = UserInfo;
-module.exports = Couples;
-module.exports = Deeds;
-module.exports = DeedsHistory;
-module.exports = Orientation;
+// module.exports = User;
+// module.exports = UserInfo;
+// module.exports = Couples;
+// module.exports = Deeds;
+// module.exports = DeedsHistory;
+// module.exports = Orientation;
 
 // The models above are empty, but you should be able to insert,update and delete data to it.
+
+//*************************   Dummy map!  ********************/
+// Schema
+function teacher_model(){
+    var teacher_schema=new Schema({
+        name:String
+    });
+//Model
+    return mongoose.model('teacher',teacher_schema,'teacher');
+}
+
+//export
+    module.exports.teacher_model=teacher_model;
+
+ //**********************  End of  Dummy map!  ********************/
