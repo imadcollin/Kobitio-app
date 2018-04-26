@@ -22,11 +22,9 @@ Download  [Node.js](https://nodejs.org/)  to run.
 
 Install the following Tools/Libraries in your local machine 
 
-
 ```
-npm install -g gulp-cli
+$ npm install -g gulp-cli
 ```
-
 ```
 Clone the project from Github or Donwlaod it 
 ```
@@ -34,10 +32,10 @@ Clone the project from Github or Donwlaod it
 >  Navigate to **Project** 
 > Use the following commands: 
 ```
-npm install 
+$ npm install 
 ```
 ```
-gulp 
+$ gulp 
 ```
 
 
@@ -51,6 +49,26 @@ gulp
   - All multilanguage display texts go here.
 
 ### Files
+
+
+### Database
+MongoDB, Mongoose and default setting for connection.  
+#### Local Setting
+Please for these steps:
+Install mongodb form [Mongodb]( https://www.mongodb.com/) 
+
+1. From terminal run the server using:
+```
+$ mongod 
+```
+2. Open another terminal and run:
+```
+ $ mongo 
+```
+#### Remote service for Mongodb. [Mlab](https://mlab.com/)
+
+1. API_key is: 9Kc-lKEdig09j-lzqfuaXwDLjKX5a6qO
+2. Db_Url is: mongodb://mlap:mlap123456@ds255309.mlab.com:55309/uip
 
 #### General
 
@@ -85,7 +103,3 @@ gulp
 </ul>
 
 ### Others 
-<ul>
-    <li><b>.gitignore:</b> Use this file to avoid pushing redundant files, add any IDE configuration files you might use </li>
-    <li><b>README.md:</b> The contents of this very file.</li>
-</ul>
