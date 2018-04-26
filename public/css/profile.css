@@ -352,7 +352,6 @@ a:hover{
     width: 100%;
 }
 
-/*Keep*/
 .connectButton {
     margin: -45px -10px 0;
     margin-bottom: 20px;
@@ -362,7 +361,6 @@ a:hover{
 
 }
 
-/*Keep*/
 .connectButton button{
     display: inline-block;
     border-radius: 4px;
@@ -468,3 +466,12 @@ ul.twPc-Arrange {
     margin-bottom: 20px;
 }
 
+#overviewList li>div{
+    margin-right: 20px;
+    float: left; 
+    position:relative; 
+}
+
+#overviewList li>div:last-child{
+    float: right; 
+}
