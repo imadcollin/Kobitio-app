@@ -172,15 +172,17 @@
 /* LANGUAGE MENU */
 
 .languages_menu{
-    bottom: 0px;
+    /* bottom: 0px;
     display: block;
     margin-left: auto;
-    margin-right: auto;
+    margin-right: auto; */
     clear: both;
+    width: 50%;
+    float: left;
 }
 
 .languages {
-    margin-left: 20%;
+    margin-left: 50%;
 }
 
 .languages img {
@@ -188,3 +190,16 @@
     float: left;
     padding: 2%;
 }
+
+@media screen and (max-width: 600px) {
+    .languages {
+        margin-left: 1%;
+    }
+    .languages img {
+        width: 93px;
+        float: left;
+        padding: 2%;
+        margin-left: 18px;
+    }
+
+};

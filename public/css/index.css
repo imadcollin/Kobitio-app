@@ -6,11 +6,26 @@
 body {
     background-color: lightpink;
     overflow: auto;
+    position: fixed;
+    bottom: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    /* width: 100%;
+    padding: 20px; */
 }
-
+.app-header{
+    position: fixed;
+    top: 0;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+}
 a{
-    color: #000000;
+    color: white;
     text-decoration: none;
+    font-size: 150%;
+    /* padding: 1%; */
 }
 
 a:hover{
@@ -20,10 +35,19 @@ a:hover{
 
 ul {
     list-style-type: none;
+    position: fixed;
+    bottom: 18%;
+    background: rgba(0, 0, 0, 0.5);
+    color: #f1f1f1;
+    width: 100%;
+    padding: 20px;
+    font-size: 100%;
+    color:  white
 }
 
 ul li {
     cursor: pointer;
+    
 }
 
 /*Pop up windows*/
@@ -31,7 +55,10 @@ ul li {
 .hidden {
     visibility: hidden;
 }
+#myVideo{
+  width: 100%;  
 
+}
 #overlay {
     background-color: rgba(0, 0, 0, 0.6);
     position: fixed;
@@ -78,6 +105,7 @@ ul li {
 
 #login, #signup{
     float: right;
+    margin-left: 20px;
 }
 
 .close, .close:hover {
