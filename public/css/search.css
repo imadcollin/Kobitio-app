@@ -1,86 +1,59 @@
 
-#container {
-  width: 500px;
-  margin: auto !important;
-  display: block;
-  height: 500px;
-  position: relative;
-  list-style-type: none;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -khtml-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-  background-color: blue;
+/*Main COntainer*/
+.container{
+  width: 100%; 
 }
 
-.buddy {
-  display: none;
-  background: red;
-  border-radius: 10px;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-  color: #fff;
-  padding: 20px;
-  width: 360px;
-  height: 360px;
-  top: 50px;
-  left: 50px;
-  position: absolute;
-  cursor: hand;
+#searchFrame{
+  margin-top: 50px;
 }
 
-.rotate-left {
-  transform: rotate(30deg) scale(0.8);
-  transition: 1s;
-  margin-left: 400px;
-  cursor: e-resize;
-  opacity: 0;
-  z-index: 10;
+/*Search Partner Frame*/
+#searchFrame .card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  text-align: center;
+  font-family: arial;
 }
 
-.rotate-right {
-  transform: rotate(-30deg) scale(0.8);
-  transition: 1s;
-  opacity: 0;
-  margin-left: -400px;
-  cursor: w-resize;
-  z-index: 10;
-}
-.avatar {
-  background: #222;
-  width: 340px;
-  height: 340px;
-  display: block;
-  margin-top: 10px;
-  margin-left: 10px;
-  background-size: auto 160% !important;
-  background-position: center;
- background-repeat: no-repeat;
+#searchFrame .title {
+  color: grey;
+  font-size: 18px;
 }
 
-.like {
-  border-radius: 5px;
-  padding: 5px 10px;
-  border: 2px solid green;
-  color: green;
-  text-transform: uppercase;
-  font-size: 15px;
-  position: absolute;
-  top: 50px;
-  right: 40px;
-  text-shadow: none;
+
+#searchFrame  a {
+  text-decoration: none;
+  font-size: 22px;
+  color: black;
 }
 
-.dislike {
-  border-radius: 5px;
-  padding: 5px 10px;
-  border: 2px solid red;
-  color: red;
-  text-transform: uppercase;
-  font-size: 15px;
-  position: absolute;
-  top: 50px;
-  left: 40px;
-  text-shadow: none;
+
+#searchFrame .optionButtons {
+    text-align: center;
+    width: 100%;
+    padding-bottom: 30px;
+}
+
+#searchFrame .optionButtons button{
+    margin: 5px;
+    display: inline-block;
+    border-radius: 4px;
+    border: none;
+    color: #FFFFFF;
+    text-align: center;
+    padding: 10px;
+    width: 80px;
+    transition: all 0.5s;
+    cursor: pointer;
+    font-size: 0.8em;
+    border: 0;
+    background: rgba(85,172,238 ,1);
+    color: #fff;
+    border-radius: 100px;
+}
+
+#searchFrame  button:hover, a:hover {
+  opacity: 0.7;
 }
