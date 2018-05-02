@@ -43,7 +43,10 @@ var userInfo_Schema = new Schema({
         type: Date,
         required: true
     },
-
+    gender: {
+        type: string,
+        required: true
+    },
     description: String
 });
 
@@ -84,10 +87,7 @@ var deeds_Schema = new Schema({
         min: 10,
         max: 1000,
         required: true
-    },
-
-    date_started: Date,
-    date_finished: Date,
+    }
 });
 
 //***************************** Deeds History Schema *****************************/
@@ -108,10 +108,7 @@ var deedsHistory_Schema = new Schema({
     time_stamp: {
         type: Date,
         required: true
-    },
-
-    date_started: Date,
-    date_finished: Date,
+    }
 });
 
 //***************************** Orientation Schema *****************************/
