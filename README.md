@@ -9,7 +9,7 @@ A dating app that is based on merit, not looks!
 <ul>
     <li>Hassan Odimi</li>
     <li>Mauro José Pappaterra</li>
-    <li>Imad</li>
+    <li>Imad Colin</li>
     <li>Kunal Gulati</li>
 </ul>
 
@@ -66,6 +66,10 @@ $ mongod
  $ mongo 
 ```
 #### Remote service for Mongodb. [Mlab](https://mlab.com/)
+Account Info:
+https://mlab.com/login/
+Username:mlap
+Password:mlap123456
 
 1. API_key is: 9Kc-lKEdig09j-lzqfuaXwDLjKX5a6qO
 2. Db_Url is: mongodb://mlap:mlap123456@ds255309.mlab.com:55309/uip
