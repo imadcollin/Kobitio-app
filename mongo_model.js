@@ -43,12 +43,12 @@ var userInfo_Schema = new Schema({
         type: Number,
         required: true
     },
-    //Interested in:
-    hasbandu:Boolean,
-    waifu:Boolean,
-    wakashu:Boolean,
-
-    description: String
+    description: String,
+    
+        //Interested in:
+        hasbandu:Boolean,
+        waifu:Boolean,
+        wakashu:Boolean
 });
 
 /***************************** Relationships Schema *****************************/
