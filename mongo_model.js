@@ -3,16 +3,6 @@ var Schema = mongoose.Schema;
 
 //***************************** User Schema *****************************/
 var user_Schema = new Schema({
-    user_id: {
-        type: String,
-        required: true,
-        unique: true
-    },
-    email: {
-        type: String,
-        required: true,
-        unique: true
-    },
     username: {
         type: String,
         required: true,
@@ -21,12 +11,17 @@ var user_Schema = new Schema({
     password: {
         type: String,
         required: true
+    },
+    email: {
+        type: String,
+        required: true,
+        unique: true
     }
 });
 
 /***************************** User Info Schema *****************************/
 var userInfo_Schema = new Schema({
-    user_id: {
+    username: {
         type: String,
         required: true,
         unique: true
@@ -39,19 +34,25 @@ var userInfo_Schema = new Schema({
         type: String,
         required: true
     },
-    DOB: {
+    date_of_birth: {
         type: Date,
         required: true
     },
+    // Genders are 0 = Hasbandu(male), 1 = Waifu(female), 2 = Wakashu(non-binary) 
     gender: {
-        type: string,
+        type: Number,
         required: true
     },
+    //Interested in:
+    hasbandu:Boolean,
+    waifu:Boolean,
+    wakashu:Boolean,
+
     description: String
 });
 
-/***************************** Couples Schema *****************************/
-var couples_Schema = new Schema({
+/***************************** Relationships Schema *****************************/
+var relationships_Schema = new Schema({
     user_A: {
         type: String,
         required: true
@@ -60,7 +61,6 @@ var couples_Schema = new Schema({
         type: String,
         required: true
     },
-
     date_started: Date,
     date_finished: Date,
 });
@@ -68,7 +68,7 @@ var couples_Schema = new Schema({
 /***************************** Deeds Schema ********************************/
 var deeds_Schema = new Schema({
     deed_id: {
-        type: String,
+        type: Number,
         required: true,
         unique: true
     },
@@ -92,39 +92,23 @@ var deeds_Schema = new Schema({
 
 //***************************** Deeds History Schema *****************************/
 var deedsHistory_Schema = new Schema({
-    user_id: {
+    //both username and endorsed_by will be FK referring to users.
+    username: {
         type: String,
         required: true,
     },
-    SO: {
-        //significant other:a person with whom someone has an established romantic or sexual relationship.
+    endorsed_by: {
         type: String,
         required: true
     },
     deed_id: {
-        type: String,
+        type: Number,
         required: true
     },
-    time_stamp: {
+    date: {
         type: Date,
         required: true
     }
-});
-
-//***************************** Orientation Schema *****************************/
-/*hasbandu will be true if the user interested in men, 
-while waifu true for those who are interested in women*/
-var orientation_Schema = new Schema({
-    user_id: {
-        type: String,
-        required: true,
-    },
-
-    hasbandu: Boolean,
-    waifu: Boolean,
-
-    // extra option could be added later
-    //Wakashu:Boolean
 });
 
 
@@ -132,19 +116,17 @@ var orientation_Schema = new Schema({
 // we need to create a model using it
 var User = mongoose.model('User', user_Schema);
 var UserInfo = mongoose.model('User_Info', userInfo_Schema);
-var Couples = mongoose.model('Couples', couples_Schema);
+var Relationships = mongoose.model('Relationships', relationships_Schema);
 var Deeds = mongoose.model('Deeds', deeds_Schema);
 var DeedsHistory = mongoose.model('Deeds_History', deedsHistory_Schema);
-var Orientation = mongoose.model('Orientaion', orientation_Schema);
 
 
 // make this available to our users in our Node applications
 // module.exports = User;
 // module.exports = UserInfo;
-// module.exports = Couples;
+// module.exports = Relationships;
 // module.exports = Deeds;
 // module.exports = DeedsHistory;
-// module.exports = Orientation;
 
 // The models above are empty, but you should be able to insert,update and delete data to it.
 
