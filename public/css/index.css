@@ -3,17 +3,18 @@
    Created by Mauro J. Pappaterra on 14 of April 2018.
 */
 
+@import "compass/css3";
 body {
-    background-color: lightpink;
-    overflow: auto;
-    position: fixed;
-    bottom: 10px;
-    background: rgba(0, 0, 0, 0.5);
+    /* overflow: auto; */
+    background: black;
     color: #f1f1f1;
-    /* width: 100%;
-    padding: 20px; */
+    /* min-width: 1024px;
+    min-height: 768px; */
+    height: 100%;
+    overflow: hidden;
 }
-.app-header{
+
+.app-header {
     position: fixed;
     top: 0;
     background: rgba(0, 0, 0, 0.5);
@@ -21,33 +22,32 @@ body {
     width: 100%;
     padding: 20px;
 }
-a{
+
+a {
     color: white;
     text-decoration: none;
     font-size: 150%;
-    /* padding: 1%; */
 }
 
-a:hover{
+a:hover {
     color: #ff1c19;
     text-decoration: none;
 }
 
-ul {
+ul:not(#bottom_menu) {
     list-style-type: none;
     position: fixed;
     bottom: 18%;
-    background: rgba(0, 0, 0, 0.5);
     color: #f1f1f1;
-    width: 100%;
+    width: 80%;
     padding: 20px;
     font-size: 100%;
-    color:  white
+    color: white;
 }
 
 ul li {
     cursor: pointer;
-    
+    margin-left: 20%;
 }
 
 /*Pop up windows*/
@@ -55,17 +55,14 @@ ul li {
 .hidden {
     visibility: hidden;
 }
-#myVideo{
-  width: 100%;  
 
-}
 #overlay {
     background-color: rgba(0, 0, 0, 0.6);
     position: fixed;
     height: 100%;
     width: 100%;
     left: 0px;
-    top:0px ;
+    top: 0px;
     z-index: 5;
     overflow: hidden;
 }
@@ -73,15 +70,12 @@ ul li {
 .popup {
     background-image: url("../img/waves.jpg");
     background-color: #6cb1ff;
-    background-size:cover;
+    background-size: cover;
     z-index: 10;
-
     color: white;
     text-align: left;
-
     border-radius: 5px;
     box-shadow: 2px 2px 15px black;
-
     position: absolute;
     padding: 25px;
     width: 40%;
@@ -90,7 +84,6 @@ ul li {
     margin-bottom: 30%;
     top: 10%;
     position: fixed;
-
     clear: both;
 }
 
@@ -98,20 +91,21 @@ ul li {
     text-align: center;
 }
 
-.whitebox{
+.whitebox {
     background-color: rgba(20, 20, 20, 0.5);
     padding: 3px;
 }
 
-#login, #signup{
+#login,
+#signup {
     float: right;
     margin-left: 20px;
 }
 
-.close, .close:hover {
+.close,
+.close:hover {
     color: white;
 }
-
 
 /*form stuff below*/
 
@@ -130,9 +124,10 @@ input[type=text] {
     padding: 12px 20px;
     margin: 8px 0;
     box-sizing: border-box;
-
 }
-input[type=text], select {
+
+input[type=text],
+select {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -147,7 +142,9 @@ input[type=password] {
     margin: 8px 0;
     box-sizing: border-box;
 }
-input[type=password], select {
+
+input[type=password],
+select {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -173,15 +170,123 @@ input[type=submit]:hover {
     background-color: #ff1c19;
 }
 
-input[type=checkbox]
-{
+input[type=checkbox] {
     /* Double-sized Checkboxes */
-    -ms-transform: scale(1.7); /* IE */
-    -moz-transform: scale(1.7); /* FF */
-    -webkit-transform: scale(1.7); /* Safari and Chrome */
-    -o-transform: scale(1.7); /* Opera */
+    -ms-transform: scale(1.7);
+    /* IE */
+    -moz-transform: scale(1.7);
+    /* FF */
+    -webkit-transform: scale(1.7);
+    /* Safari and Chrome */
+    -o-transform: scale(1.7);
+    /* Opera */
     padding: 10px;
 }
 
+#video-background {
+    /* width: 100%; */
+    /* position: relative; */
+    width: 100% !important;
+    /* height: auto   !important; */
+    overflow: hidden;
+}
 
+video {
+    /* left: 10%; */
+    min-height: 100%;
+    min-width: 100%;
+    position: absolute;
+    top: 10%;
+    /* transform: translate(-50%, -50%); */
+}
 
+#login_button,
+#signup_button {
+    display: block;
+    /* background: rgb(97, 98, 99); */
+    padding: 60px;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    font-size: 5rem;
+}
+
+#bottom_menu {
+    position: fixed;
+    bottom: 1%;
+    width: 100%;
+}
+
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    text-align: center;
+    height: 3%;
+}
+
+/* Animation */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+}
+
+#login_button,
+#signup_button {
+    position: relative;
+    top: 100px;
+    font: italic bold 5em/1 Bodoni, serif;
+    text-align: center;
+    animation: fadeIn 1s infinite alternate;
+}
+
+@media screen and (max-width: 600px) {
+    #video-background {
+        /* position: fixed; */
+        width: 66px;
+        height: 18px;
+        /* max-height:0%; */
+    }
+    ul:not(#bottom_menu) {
+        list-style-type: none;
+        position: fixed;
+        bottom: 25%;
+        color: #f1f1f1;
+        width: 80%;
+        padding: 20px;
+        font-size: 50%;
+        color: white;
+    }
+    .app-header {
+        text-align: center;
+        font-size: -webkit-xxx-large;
+        line-height: 0px;
+    }
+    #login_button,
+    #signup_button {
+        padding: 15%;
+        width: 115%;
+        height: 56%;
+        background: #4E9CAF;
+        font-size: xx-large;
+        animation: none;
+        overflow: hidden;
+    }
+    ul:not(#bottom_menu) {
+        bottom: 0px;
+        position: relative;
+    }
+    .popup {
+        top: 0;
+        height: 100%;
+        width: 100%;
+        margin-left: 0;
+        padding: 0;
+    }
+}
