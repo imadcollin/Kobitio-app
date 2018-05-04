@@ -4,6 +4,7 @@
 */
 
 /* Tabs and buttons */
+
 .tabs {
     height: 50px;
     width: 100%;
@@ -18,53 +19,54 @@
 
 .tabs ul li {
     float: left;
-
     margin-left: 25px;
     padding: 10px;
     display: block;
-
     background-color: #b4b4b4;
 }
 
-.tabs ul li a{
+.tabs ul li a {
     text-decoration: none;
     font-size: 18px;
     color: black;
 }
 
-.tabs ul li a:hover{
+.tabs ul li a:hover {
     color: white;
 }
 
-.tabs ul li a:active{
+.tabs ul li a:active {
     color: red;
 }
 
-.buttons{
+.buttons {
     background-color: #b3d7ff;
 }
 
-.waifu{
+.waifu {
     background-color: #ffafc7;
-    border-color: deeppink; /* same as waifu points */
+    border-color: deeppink;
+    /* same as waifu points */
 }
 
-.waifu .points{
-    color:deeppink;
+.waifu .points {
+    color: deeppink;
 }
 
-.hasbandu{
+.hasbandu {
     background-color: #8eaeff;
-    border-color: #405bff ; /* same as hasbandu points */
+    border-color: #405bff;
+    /* same as hasbandu points */
 }
 
 .hasbandu .points {
-    color: #405bff ;
+    color: #405bff;
 }
 
-.wakashu{
+.wakashu {
     background-color: #78f05f;
-    border-color: #29a21b; /* same as wakashu points */
+    border-color: #29a21b;
+    /* same as wakashu points */
 }
 
 .wakashu .points {
@@ -76,6 +78,7 @@
 }
 
 /* Deeds Section*/
+
 .deed {
     border-style: dashed;
     margin: 25px;
@@ -89,17 +92,16 @@
     padding-top: 0px;
     width: 200px;
     float: left;
-
-    max-height:170%;
+    max-height: 170%;
     object-fit: contain;
 }
 
-.deed .title{
+.deed .title {
     text-align: left;
     padding-left: 25px;
 }
 
-.deed .date{
+.deed .date {
     text-align: center;
     float: left;
     padding-left: 40px;
@@ -110,7 +112,8 @@
 }
 
 /* Bar Chart CSS*/
-.progress-bar{
+
+.progress-bar {
     color: white;
 }
 
@@ -119,27 +122,30 @@
     height: 60px;
 }
 
-.progress-small{
+.progress-small {
     margin: 15px;
     height: 30px;
 }
 
-.waifu-bar{
-    background-color: deeppink; /* same as waifu points */
+.waifu-bar {
+    background-color: deeppink;
+    /* same as waifu points */
 }
 
-.hasbandu-bar{
-    background-color: #405bff; /* same as hasbandu points */
+.hasbandu-bar {
+    background-color: #405bff;
+    /* same as hasbandu points */
 }
 
-.wakashu-bar{
-    background-color: #29a21b; /* same as wakashu points */
+.wakashu-bar {
+    background-color: #29a21b;
+    /* same as wakashu points */
 }
 
 /* Others */
+
 .center {
     text-align: center;
-
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -171,27 +177,29 @@
 
 /* LANGUAGE MENU */
 
-.languages_menu{
-    /* bottom: 0px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto; */
-    clear: both;
-    width: 50%;
-    float: left;
+.languages_menu {
+    position: fixed;
+    top: -0%;
+    width: 100%;
+    /* padding: 20px; */
+    margin-left: 75%;
 }
 
 .languages {
-    margin-left: 50%;
+    /* margin-left: 50%; */
 }
 
 .languages img {
-    width: 150px;
+    width: 5%;
     float: left;
-    padding: 2%;
+    padding: 1%;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 670px) {
+    .languages_menu {
+        top: 85%;
+        margin-left: 0px;
+    }
     .languages {
         margin-left: 1%;
     }
@@ -200,6 +208,8 @@
         float: left;
         padding: 2%;
         margin-left: 18px;
+        border-radius: 20%;
     }
+}
 
-};
+;
