@@ -13,18 +13,18 @@ class App extends Component {
     <Router>
         <div>
           <h2>Welcome to React Express Tutorial</h2>
-          <ul>
+          {/* <ul>
           <li><Link to={'/'}>Home</Link></li>
             <li><Link to={'/create'}>Create</Link></li>
             <li><Link to={'/index'}>List</Link></li>
             <li><Link to={'/edit/:id'}>Edit</Link></li>
-          </ul>
+          </ul> */}
           <hr />
-          <Switch>
+          {/* <Switch>
               <Route exact path='/create' component={CreateComponent} />
               <Route path='/edit/:id' component={EditComponent} />
               <Route path='/index' component={IndexComponent} />
-          </Switch>
+          </Switch> */}
         </div>
       </Router>
     );
