@@ -1,31 +1,36 @@
-$(document).ready(function(){
+// // Code for Edit profile pop-up window and form
+// // Get the modal
+// var modal = document.getElementById('editProfileModal');
+
+// // Get the button that opens the modal
+// var btn = document.getElementById("connect");
 
 
 
-  //   $(".buddy").on("swiperight",function(){
-  //     $(this).addClass('rotate-left').delay(700).fadeOut(1);
-  //     $('.buddy').find('.status').remove();
+// // When the user clicks the button, open the modal 
+// btn.onclick = function() {
+//     modal.style.display = "block";
+// }
 
-  //     $(this).append('<div class="status like">Like!</div>');      
-  //     if ( $(this).is(':last-child') ) {
-  //       $('.buddy:nth-child(1)').removeClass ('rotate-left rotate-right').fadeIn(300);
-  //      } else {
-  //         $(this).next().removeClass('rotate-left rotate-right').fadeIn(400);
-  //      }
-  //   });  
 
-  //  $(".buddy").on("swipeleft",function(){
-  //   $(this).addClass('rotate-right').delay(700).fadeOut(1);
-  //   $('.buddy').find('.status').remove();
-  //   $(this).append('<div class="status dislike">Dislike!</div>');
 
-  //   if ( $(this).is(':last-child') ) {
-  //    $('.buddy:nth-child(1)').removeClass ('rotate-left rotate-right').fadeIn(300);
-  //     alert('OUPS');
-  //    } else {
-  //       $(this).next().removeClass('rotate-left rotate-right').fadeIn(400);
-  //   } 
-  // });
+// // Edit Settings Pop-up Window 
+// var RequestModal = document.getElementById('SendRequestModal');
 
-});
+// // Get the button that opens the modal
+// var connectButton = document.getElementById("connect");
 
+// // Get the <span> element that closes the modal
+
+// // When the user clicks the button, open the modal 
+// connectButton.onclick = function() {
+//     RequestModal.style.display = "block";
+// }
+
+
+// // When the user clicks anywhere outside of the modal, close it
+// window.onclick = function(event) {
+//     if (event.target == SettingModal) {
+//         SettingModal.style.display = "none";
+//     }
+// }
