@@ -1,11 +1,21 @@
 
 /*Main COntainer*/
 .container{
-  width: 100%; 
+  width: 80%; 
 }
 
 #searchFrame{
   margin-top: 50px;
+  -webkit-transition: all 0.7s ease-in-out;
+    -moz-transition: all 0.7s ease-in-out;
+    -o-transition: all 0.7s ease-in-out;
+    transition: all 0.7s ease-in-out;
+}
+.rotated { 
+    transform:rotate(360deg); 
+    -webkit-transform:rotate(360deg); 
+    -moz-transform:rotate(360deg); 
+    -o-transform:rotate(360deg); 
 }
 
 /*Search Partner Frame*/
