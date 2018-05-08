@@ -20,6 +20,9 @@
     <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
     <link rel="stylesheet" href="../bootstrap/css/bootstrap-grid.css">
     <link rel="stylesheet" href="../bootstrap/css/bootstrap-reboot.css">
+    
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <!-- Font Awesome Icon Sheets CSS -->
     <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
@@ -27,6 +30,7 @@
     <!-- External CSS sheets -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/relationship.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 
     <!-- Google Fonts -->
@@ -36,33 +40,28 @@
 <body>
     <!-- Your code starts here -->
 
-<!--     <div class="row">
-        <div class="col-lg-3">
-            <h1>Koibito <i class="fa fa-heart fa-1x red"></i> App </h1>
-        </div>
+    <div id="nav-background">
+        <div id="nav-container">
+          <header id="nav-header">
+            <h3><a href="#" id="nav-logo">  Koibito <i class="fa fa-heart fa-1x red"></i> App </a></h3>
+          
 
-        <div class="tabs col-lg-9">
-            <ul>
-                <li><a href="profile.html">Profile</a></li>
-                <li><a href="relationship.html">Current Relationship</a></li>
-                <li><a href="history.html">Relationship History</a></li>
-                <li><a href="">More Stats</a></li>
+            <div id="nav-menu-button">MENU</div>
+          </header>
+          <nav>
+            <ul class="nav-ul hide-ul">
+              <li><a class="nav-link active-link"  href="profile.html">Profile</a></li>
+              <li><a class="nav-link" href="relationship.html">Current Relationship</a></li>
+              <li><a class="nav-link" href="history.html">Relationship History</a></li>
+              <li><a class="nav-link"  href="">More Stats</a></li>
+        
             </ul>
+          </nav>
         </div>
+      </div>
+  
+     
     </div> -->
-
-        <!-- Css file for navigation bar is in Style.css-->
-     <div id="topNavigationBar" class="row">
-        <ul class="twitter" role="navigation">
-            <li><i class="fa fa-home"></i><a href="profile.html">Koibito</a></li>
-            <li><i class="fa fa-home"></i><a href="profile.html">Profile</a></li></button>
-            <li><i class="fa fa-home"></i><a href="relationship.html">Current Relationship</a></li>
-            <li><i class="fa fa-bell-o"></i><a href="history.html">Relationship History</a></li>
-            <li><i class="fa fa-envelope-o"></i><a href="connectionRequest.html">Connection Requests</a></li>
-            <li><i class="fa fa-bell-o"></i><a href="history.html"><a href="search.html">Search Partner</a></li>
-            <li><i class="fa fa-envelope-o"></i><a href="connectionRequest.html"><a href="">More Stats</a></li>
-        </ul>
-    </div>
 
     <div class="row">
         <div class="relation hasbandu col-lg-5 col-md-5  col-sm-12">
@@ -226,7 +225,6 @@
     <!-- External Scripts -->
 
     <!-- JQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <!-- Bootstrap Scripts -->
     <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -238,6 +236,21 @@
     <script src="js/translations/relationship.js" type="text/javascript"></script>
     <script src="js/translations/common.js" type="text/javascript"></script>
     <script src="js/multilanguage.js" type="text/javascript"></script>
-
 </body>
+    <script>
+
+
+(function () {
+
+var navButton = document.querySelector("#nav-menu-button");
+var navUl = document.querySelector(".nav-ul");
+
+function toggleMobileMenu() {
+  navUl.classList.toggle("hide-ul");
+}
+
+navButton.onclick = toggleMobileMenu;
+}());
+
+</script>
 </html>
