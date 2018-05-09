@@ -183,6 +183,7 @@
     width: 100%;
     /* padding: 20px; */
     margin-left: 75%;
+    padding-left: 15px;
 }
 
 .languages {
@@ -197,9 +198,9 @@
 
 @media screen and (max-width: 670px) {
     .languages_menu {
-        top: 85%;
-        margin-left: 0px;
-    }
+        /* top: 85%;*/
+        margin-left: 64%;    }
+
     .languages {
         margin-left: 1%;
     }
@@ -207,7 +208,7 @@
         width: 93px;
         float: left;
         padding: 2%;
-        margin-left: 18px;
+        margin-left: 15px;
         border-radius: 20%;
     }
 }
