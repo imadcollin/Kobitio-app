@@ -69,7 +69,7 @@ h1{
 #cssmenu > ul > li > a {
   padding: 16px 20px;
   font-size: 14px;
-  /* color: #ffffff; */
+  color: #ffffff;
   letter-spacing: 1px;
   text-transform: uppercase;
   text-decoration: none;
