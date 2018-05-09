@@ -8,6 +8,10 @@
 * The methods translate() is unique for each individual page.
 */
 
+var users;              //global Variable for users data from the database
+var check = false;      //Check wether the data has been fetched once or not 
+var numberOfUsers;      // Number of Users
+
 /*Language Translation index*/
 if (localStorage.getItem("index") == null){
     localStorage.setItem("index",0)
@@ -68,8 +72,6 @@ window.onclick = function(event) {
     }
 }
 
-
-
 // Get the <span> element that closes the modal
 var close = document.getElementById("close-form");
 // When the user clicks on <span> (x), close the modal
@@ -87,4 +89,57 @@ window.onclick = function(event) {
         modal.style.display = "none";
     }
 }
+
+function getAllUsers(){
+    check = true;
+
+    var xhr = new XMLHttpRequest();
+    //Fetching data from the USer Table
+    xhr.open("GET", "https://api.mlab.com/api/1/databases/uip/collections/user?apiKey=9Kc-lKEdig09j-lzqfuaXwDLjKX5a6qO", false);
+    xhr.send();
+
+    /* Parsing the response from Api to Json Format*/
+    users = JSON.parse(xhr.response);
+    /*total number of users*/
+    numberOfUsers = users.length;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
