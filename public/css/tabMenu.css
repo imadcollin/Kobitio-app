@@ -122,7 +122,7 @@ h1{
   -webkit-transform-origin: 50% 0;
   -moz-transform-origin: 50% 0;
   transform-origin: 50% 0;
-  -ms-transform: translateY(- -18px);
+  -ms-transform: translateY(-18px);
 }
 #cssmenu > ul > li:hover > a::before,
 #cssmenu > ul > li > a:hover::before {
@@ -216,4 +216,25 @@ h1{
   width: 5%;
   float: left;
   padding: 1%;
+}
+
+@media screen and (max-width: 670px) {
+  .languages_menu {
+      /* top: 85%;*/
+      margin-left: 64%;    }
+
+  .languages {
+      margin-left: 1%;
+  }
+  .languages img {
+      width: 20px;
+      float: left;
+      padding: 0px;
+      margin-left: 15px;
+      border-radius: 20%;
+  }
+  h1{
+    font-size: 25px;
+  }
+
 }
