@@ -4,6 +4,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
 
@@ -31,266 +32,326 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Aclonica|Acme|Droid+Serif|Pattaya" rel="stylesheet">
 
-        <!-- CSS Responsive Menu Tab -->
-        <link rel="stylesheet" href="css/tabMenu.css">
-        <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-        <script src="js/tabMenuScript.js"></script>
+    <!-- CSS Responsive Menu Tab -->
+    <link rel="stylesheet" href="css/tabMenu.css">
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <script src="js/tabMenuScript.js"></script>
 
 </head>
 
 
 <body>
     <!-- Your code starts here -->
-    <!-- Navigation Bar-->
-      
+    <!-- 3D-Menu Responsive Navigation header with langauges -->
     <div id='cssmenu'>
         <ul>
-            <li><h1>Kobitio <i class="fa fa-heart fa-1x red"></i> App</h1> </li>
-           <li class='active'><a href="profile.html">My Profile</a></li>
-           <li><a href="relationship.html">Current Relation</a></li>
-           <li><a href="history.html">Relation History</a></li>
-           <li><a href="connectionRequest.html">Requests</a></li>
-           <li><a href="search.html">Search Partner</a></li>
+            <li>
+                <h1>Kobitio
+                    <i class="fa fa-heart fa-1x red"></i> App</h1>
+            </li>
+            <li class='active'>
+                <a href="profile.html">My Profile</a>
+            </li>
+            <li>
+                <a href="relationship.html">Current Relation</a>
+            </li>
+            <li>
+                <a href="history.html">Relation History</a>
+            </li>
+            <li>
+                <a href="connectionRequest.html">Requests</a>
+            </li>
+            <li>
+                <a href="search.html">Search Partner</a>
+            </li>
+            <!-- Langauge buttons -->
+            <div class="languages_menu">
+                <a href="#" id="eng">
+                    <div class="languages">
+                        <img src="img/eng.png">
+                    </div>
+                </a>
+                <a href="#" id="sve">
+                    <div class="languages">
+                        <img src="img/sve.png">
+                    </div>
+                </a>
+                <a href="#" id="jap">
+                    <div class="languages">
+                        <img src="img/jap.svg">
+                    </div>
+                </a>
 
-          
-
-    <div class="languages_menu">
-            <a href="#" id="eng">
-                <div class="languages">
-                    <img src="img/eng.png">
-                </div>
-            </a>
-            <a href="#" id="sve">
-                <div class="languages">
-                    <img src="img/sve.png">
-                </div>
-            </a>
-            <a href="#" id="jap">
-                <div class="languages">
-                    <img src="img/jap.svg">
-                </div>
-            </a>
-    
-        </div>
+            </div>
         </ul>
-      
+
     </div>
+    <!-- END OF 3D-Menu -->
+
 
 
     <div class="container">
-<!--- Twitter Like Profile -->   
-            <!-- code start -->
-            <div class="twPc-div">
-                <a class="twPc-bg twPc-block"></a>
+        <!--- Twitter Like Profile -->
+        <!-- code start -->
+        <div class="twPc-div">
+            <a class="twPc-bg twPc-block"></a>
             <div>
-            
-            <!-- Connect Button -->
-            <div class="connectButton">
-            
-                <!-- Twitter Button | you can get from: https://about.twitter.com/tr/resources/buttons#follow -->
-                <button style="width: auto;" id="ask_points">Request Hasbandu Points</button>
-                <button style="width: auto;">Review Requested Points</button>
-                <button>Connect</button>
+
+                <!-- Connect Button -->
+                <div class="connectButton">
+
+                    <!-- Twitter Button | you can get from: https://about.twitter.com/tr/resources/buttons#follow -->
+                    <button style="width: auto;" id="ask_points">Request Hasbandu Points</button>
+                    <button style="width: auto;">Review Requested Points</button>
+                    <button>Connect</button>
 
 
 
-                <!-- Twitter Button -->   
-            </div>
+                    <!-- Twitter Button -->
+                </div>
 
-            <!-- Profile Picture -->
-            <img alt="Mert S. Kaplan" src="img/adam.jpg" class="profilePicture"></a>
+                <!-- Profile Picture -->
+                <img alt="Mert S. Kaplan" src="img/adam.jpg" class="profilePicture">
+                </a>
 
-           
 
-            <div class="twPc-divStats">
-            <h1><b>Adam (hasbandu)</b></h1><div>
-                <h1>-----------</h1>
-                <h1>Check this example:   Test 1   <button onclick="test_1()">click me</button></h1>
-                <h1>Check this example:   Test 2  <button onclick="test_2()">click me</button></h1>
-              
-                <h1>-----------</h1>
-            </div>
-            <a href="partner.html"><b>Current Waifu:</b> Eve <i class="fa fa-heart red"></i></a>
-            <br><br>
-                <ul class="twPc-Arrange">
-                    <li class="twPc-ArrangeSizeFit">
-                        <span class="twPc-StatLabel twPc-block">Husbandu Points</span>
-                        <span class="twPc-StatValue">700</span></a></li>
-                      </a>
-                    </li>
 
-                    <li class="twPc-ArrangeSizeFit">
-                        <span class="twPc-StatLabel twPc-block">Following</span>
-                        <span class="twPc-StatValue">885</span>
-                      </a>
-                    </li>
-                    
-                    <li class="twPc-ArrangeSizeFit">
-                        <span class="twPc-StatLabel twPc-block">Followers</span>
-                        <span class="twPc-StatValue">1.810</span>
-                      </a>
-                    </li>
-
-                    <li class="twPc-ArrangeSizeFit">
-                        <span class="twPc-StatLabel twPc-block">Adam is a <u>lice-infested</u> hasbandu!</span>
-                        <span class="twPc-StatValue">
-                            <i class="fa fa-star fa-2x stars"></i>
-                            <i class="fa fa-star-half-empty fa-2x stars"></i>
-                        </span>
-                      </a>
-                    </li>
-                </ul>
-            </div>
-
-        <hr>
-
-        <div class="bioProfile">
-            
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div>
-        <hr>
-
-        <div style="padding-left: 20px;">
-            <h2 >Overview</h2>
-            <div class="noee">
-                
-            
-            <ul class="list-group" id="overviewList">
-                <li class="list-group-item" >
-                    <div >
-                        <img src="https://png.icons8.com/color/96/000000/vegan-food.png" >    
-                    </div>
+                <div class="twPc-divStats">
+                    <h1>
+                        <b>Adam (hasbandu)</b>
+                    </h1>
                     <div>
-                        <h3 class="title" >Cooked a nice meal</h3>
-                        <h6 class="date">Endorsed by Eve <i class="fa fa-heart red"></i> on 12/12/1999</h6>
+                        <h1>-----------</h1>
+                        <h1>Check this example: Test 1
+                            <button onclick="test_1()">click me</button>
+                        </h1>
+                        <h1>Check this example: Test 2
+                            <button onclick="test_2()">click me</button>
+                        </h1>
+
+                        <h1>-----------</h1>
                     </div>
-                     <div>
-                         <h4 class="points"><b>+150 points</b></h4>
-                     </div>
-                </li>
-                <li class="list-group-item" >
-                    <div >
-                        <img src="https://png.icons8.com/color/96/000000/vegan-food.png" >    
+                    <a href="partner.html">
+                        <b>Current Waifu:</b> Eve
+                        <i class="fa fa-heart red"></i>
+                    </a>
+                    <br>
+                    <br>
+                    <ul class="twPc-Arrange">
+                        <li class="twPc-ArrangeSizeFit">
+                            <span class="twPc-StatLabel twPc-block">Husbandu Points</span>
+                            <span class="twPc-StatValue">700</span>
+                            </a>
+                        </li>
+                        </a>
+                        </li>
+
+                        <li class="twPc-ArrangeSizeFit">
+                            <span class="twPc-StatLabel twPc-block">Following</span>
+                            <span class="twPc-StatValue">885</span>
+                            </a>
+                        </li>
+
+                        <li class="twPc-ArrangeSizeFit">
+                            <span class="twPc-StatLabel twPc-block">Followers</span>
+                            <span class="twPc-StatValue">1.810</span>
+                            </a>
+                        </li>
+
+                        <li class="twPc-ArrangeSizeFit">
+                            <span class="twPc-StatLabel twPc-block">Adam is a
+                                <u>lice-infested</u> hasbandu!</span>
+                            <span class="twPc-StatValue">
+                                <i class="fa fa-star fa-2x stars"></i>
+                                <i class="fa fa-star-half-empty fa-2x stars"></i>
+                            </span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <hr>
+
+                <div class="bioProfile">
+
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
+                        dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip
+                        ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore
+                        eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia
+                        deserunt mollit anim id est laborum.</p>
+                </div>
+                <hr>
+
+                <div style="padding-left: 20px;">
+                    <h2>Overview</h2>
+                    <div class="noee">
+
+
+                        <ul class="list-group" id="overviewList">
+                            <li class="list-group-item">
+                                <div>
+                                    <img src="https://png.icons8.com/color/96/000000/vegan-food.png">
+                                </div>
+                                <div>
+                                    <h3 class="title">Cooked a nice meal</h3>
+                                    <h6 class="date">Endorsed by Eve
+                                        <i class="fa fa-heart red"></i> on 12/12/1999</h6>
+                                </div>
+                                <div>
+                                    <h4 class="points">
+                                        <b>+150 points</b>
+                                    </h4>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div>
+                                    <img src="https://png.icons8.com/color/96/000000/vegan-food.png">
+                                </div>
+                                <div>
+                                    <h3 class="title">Took the garbage out</h3>
+                                    <h6 class="date">Endorsed by Eve
+                                        <i class="fa fa-heart red"></i> on 11/12/1999</h6>
+                                </div>
+                                <div>
+                                    <h4 class="points">
+                                        <b>+100 points</b>
+                                    </h4>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div>
+                                    <img src="https://png.icons8.com/color/96/000000/vegan-food.png">
+                                </div>
+                                <div>
+                                    <h3 class="title">Cleaned the dishes</h3>
+                                    <h6 class="date">Endorsed by Eve
+                                        <i class="fa fa-heart red"></i> on 11/12/1999</h6>
+                                </div>
+                                <div>
+                                    <h4 class="points">
+                                        <b>+50 points</b>
+                                    </h4>
+                                </div>
+                            </li>
+                            <li class="list-group-item">
+                                <div>
+                                    <img src="https://png.icons8.com/color/96/000000/vegan-food.png">
+                                </div>
+                                <div>
+                                    <h3 class="title">Walked the dog</h3>
+                                    <h6 class="date">Endorsed by Eve
+                                        <i class="fa fa-heart red"></i> on 10/12/1999</h6>
+                                </div>
+                                <div>
+                                    <h4 class="points">
+                                        <b>+100 points</b>
+                                    </h4>
+                                </div>
+                            </li>
+                        </ul>
                     </div>
-                    <div>
+                    <br>
+                </div>
+
+            </div>
+
+
+
+
+
+            <!-- End -->
+
+
+
+
+
+            <div id="overlay" class="hidden"></div>
+
+
+            <!-- request points window-->
+            <div id="requestWindow" class="popup hasbandu hidden">
+
+                <a class="close" onclick="">
+                    <i class="fa fa-times fa"></i>
+                </a>
+                <h1>Request Hasbandu points
+                    <i class="fa fa-heart fa-1x red"></i> from Eve</h1>
+                <br>
+
+                <h2>Select from the list:</h2>
+
+                <div class="points_list">
+
+                    <div class="deed wakashu">
+                        <img src="img/deeds/D00001.png">
+                        <h3 class="title">Cooked a nice meal</h3>
+                        <h4 class="points">
+                            <b>+150 points</b>
+                        </h4>
+                    </div>
+
+                    <div class="deed wakashu">
+                        <img src="img/deeds/D00003.png">
                         <h3 class="title">Took the garbage out</h3>
-                        <h6 class="date">Endorsed by Eve <i class="fa fa-heart red"></i> on 11/12/1999</h6>
+                        <h4 class="points">
+                            <b>+100 points</b>
+                        </h4>
                     </div>
-                    <div>
-                        <h4 class="points"><b>+100 points</b></h4>
-                    </div>
-                </li>
-                <li class="list-group-item" >
-                    <div >
-                        <img src="https://png.icons8.com/color/96/000000/vegan-food.png" >    
-                    </div>
-                    <div>
+
+                    <div class="deed wakashu">
+                        <img src="img/deeds/D00002.png">
                         <h3 class="title">Cleaned the dishes</h3>
-                        <h6 class="date">Endorsed by Eve <i class="fa fa-heart red"></i> on 11/12/1999</h6>
+                        <h4 class="points">
+                            <b>+50 points</b>
+                        </h4>
                     </div>
-                    <div>
-                        <h4 class="points"><b>+50 points</b></h4>
-                    </div>
-                </li><li class="list-group-item" >
-                    <div >
-                        <img src="https://png.icons8.com/color/96/000000/vegan-food.png" >    
-                    </div>
-                    <div>
+
+                    <div class="deed wakashu">
+                        <img src="img/deeds/D00004.png">
                         <h3 class="title">Walked the dog</h3>
-                        <h6 class="date">Endorsed by Eve <i class="fa fa-heart red"></i> on 10/12/1999</h6>
+                        <h4 class="points">
+                            <b>+100 points</b>
+                        </h4>
                     </div>
-                    <div>
-                        <h4 class="points"><b>+100 points</b></h4>
-                    </div>
-                </li>
-            </ul>
-            </div>
-            <br>
-        </div>
 
-    </div>
+                </div>
 
+                <br>
+                <h3>Requesting
+                    <span class="red">+100 Hasbandu points</span>
+                </h3>
+                <br>
 
+                <h5 class="button hasbandu"> Request Points </h5>
 
 
 
-<!-- End -->
-
-
-
-
-
-    <div id="overlay" class="hidden"></div>
-
-
-    <!-- request points window-->
-     <div id="requestWindow" class="popup hasbandu hidden">
-
-        <a class="close" onclick=""><i class="fa fa-times fa"></i></a>
-        <h1>Request Hasbandu points <i class="fa fa-heart fa-1x red"></i> from Eve</h1> <br>
-
-        <h2>Select from the list:</h2>
-
-        <div class="points_list">
-
-            <div class="deed wakashu">
-                <img src="img/deeds/D00001.png">
-                <h3 class="title">Cooked a nice meal</h3>
-                <h4 class="points"><b>+150 points</b></h4>
             </div>
 
-            <div class="deed wakashu">
-                <img src="img/deeds/D00003.png">
-                <h3 class="title">Took the garbage out</h3>
-                <h4 class="points"><b>+100 points</b></h4>
-            </div>
+            <div style="height: 100px;"></div>
 
-            <div class="deed wakashu">
-                <img src="img/deeds/D00002.png">
-                <h3 class="title">Cleaned the dishes</h3>
-                <h4 class="points"><b>+50 points</b></h4>
-            </div>
+            <!-- Your code ends here -->
 
-            <div class="deed wakashu">
-                <img src="img/deeds/D00004.png">
-                <h3 class="title">Walked the dog</h3>
-                <h4 class="points"><b>+100 points</b></h4>
-            </div>
+            <!-- External Scripts -->
 
-        </div>
+            <!-- JQuery -->
+            <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-        <br> <h3>Requesting <span class="red">+100 Hasbandu points</span> </h3> <br>
+            <!-- Bootstrap Scripts -->
+            <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
+            <script src="../bootstrap/js/bootstrap.min.js"></script>
 
-        <h5 class="button hasbandu"> Request Points </h5>
+            <!-- Scripts-->
+            <script src="js/profile.js" type="text/javascript"></script>
+
+            <script src="js/translations/profile.js" type="text/javascript"></script>
+            <script src="js/translations/common.js" type="text/javascript"></script>
+            <script src="js/multilanguage.js" type="text/javascript"></script>
 
 
-  
-    </div> 
 
-         <div style="height: 100px;"></div>
-
-    <!-- Your code ends here -->
-
-    <!-- External Scripts -->
-
-    <!-- JQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-    <!-- Bootstrap Scripts -->
-    <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="../bootstrap/js/bootstrap.min.js"></script>
-
-    <!-- Scripts-->
-    <script src="js/profile.js" type="text/javascript"></script>
-
-    <script src="js/translations/profile.js" type="text/javascript"></script>
-    <script src="js/translations/common.js" type="text/javascript"></script>
-    <script src="js/multilanguage.js" type="text/javascript"></script>
-    
-    
-    
-    <!-- <script src="../index.js" type="text/javascript"></script> -->
-    <script src="js/db.js" type="text/javascript"></script>
+            <!-- <script src="../index.js" type="text/javascript"></script> -->
+            <script src="js/db.js" type="text/javascript"></script>
 </body>
 
 

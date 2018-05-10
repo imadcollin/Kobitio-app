@@ -2,6 +2,10 @@
    relationship.css
    Created by Mauro J. Pappaterra on 13 of April 2018.
 */
+.row
+{
+  margin-top: 5%;
+}
 
 .relation{
     padding: 15px;
