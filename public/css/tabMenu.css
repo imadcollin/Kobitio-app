@@ -221,7 +221,7 @@ h1{
 @media screen and (max-width: 670px) {
   .languages_menu {
       /* top: 85%;*/
-      margin-left: 64%;    }
+      margin-left: 50%;    }
 
   .languages {
       margin-left: 1%;
