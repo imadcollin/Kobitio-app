@@ -4,6 +4,7 @@
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
 
@@ -31,39 +32,58 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Aclonica|Acme|Droid+Serif|Pattaya" rel="stylesheet">
 
+    <!-- CSS Responsive Menu Tab -->
+    <link rel="stylesheet" href="css/tabMenu.css">
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <script src="js/tabMenuScript.js"></script>
+
 </head>
+
 <body>
     <!-- Your code starts here -->
-
-<!--     <div class="row">
-        <div class="col-lg-3">
-            <h1>Koibito <i class="fa fa-heart fa-1x red"></i> App </h1>
-        </div>
-
-        <div class="tabs col-lg-10">
-            <ul>
-                <li><a href="profile.html">Profile</a></li>
-                <li><a href="relationship.html">Current Relationship</a></li>
-                <li><a href="history.html">Relationship History</a></li>
-                <li><a href="connectionRequest.html">Connection Requests</a></li>
-                <li><a href="search.html">Search Partner</a></li>
-                <li><a href="">More Stats</a></li>
-            </ul>
-        </div>
-    </div>
- -->
-
-     <div id="topNavigationBar" class="row">
-        <ul class="twitter" role="navigation">
-            <li><i class="fa fa-home"></i><a href="profile.html">Koibito</a></li>
-            <li><i class="fa fa-home"></i><a href="profile.html">Profile</a></li></button>
-            <li><i class="fa fa-home"></i><a href="relationship.html">Current Relationship</a></li>
-            <li><i class="fa fa-bell-o"></i><a href="history.html">Relationship History</a></li>
-            <li><i class="fa fa-envelope-o"></i><a href="connectionRequest.html">Connection Requests</a></li>
-            <li><i class="fa fa-bell-o"></i><a href="history.html"><a href="search.html">Search Partner</a></li>
-            <li><i class="fa fa-envelope-o"></i><a href="connectionRequest.html"><a href="">More Stats</a></li>
+    <!-- 3D-Menu Responsive Navigation header with langauges -->
+    <div id='cssmenu'>
+        <ul>
+            <li>
+                <h1>Kobitio
+                    <i class="fa fa-heart fa-1x red"></i> App</h1>
+            </li>
+            <li class='active'>
+                <a href="profile.html">My Profile</a>
+            </li>
+            <li>
+                <a href="relationship.html">Current Relation</a>
+            </li>
+            <li>
+                <a href="history.html">Relation History</a>
+            </li>
+            <li>
+                <a href="connectionRequest.html">Requests</a>
+            </li>
+            <li>
+                <a href="search.html">Search Partner</a>
+            </li>
+            <!-- Langauge buttons -->
+            <div class="languages_menu">
+                <a href="#" id="eng">
+                    <div class="languages">
+                        <img src="img/eng.png">
+                    </div>
+                </a>
+                <a href="#" id="sve">
+                    <div class="languages">
+                        <img src="img/sve.png">
+                    </div>
+                </a>
+                <a href="#" id="jap">
+                    <div class="languages">
+                        <img src="img/jap.svg">
+                    </div>
+                </a>
+            </div>
         </ul>
     </div>
+    <!-- END OF 3D-Menu -->
 
 
     <div class="row">
@@ -73,15 +93,28 @@
         </div>
 
         <div class="waifu col-lg-8 col-md-5 col-sm-11">
-            <h1><b>Eve (waifu)</b></h1>
-            <a href="profile.html"><b>Current Hasbandu:</b> Adam <i class="fa fa-heart red"></i></a>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <h1>
+                <b>Eve (waifu)</b>
+            </h1>
+            <a href="profile.html">
+                <b>Current Hasbandu:</b> Adam
+                <i class="fa fa-heart red"></i>
+            </a>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
-            <h3><b>Total Waifu Points: 150000</b></h3>
+            <h3>
+                <b>Total Waifu Points: 150000</b>
+            </h3>
 
             <br>
 
-            <p><b>Eve is a <u>fantastic</u> waifu!</b></p>
+            <p>
+                <b>Eve is a
+                    <u>fantastic</u> waifu!</b>
+            </p>
 
             <i class="fa fa-star fa-2x stars"></i>
             <i class="fa fa-star fa-2x stars"></i>
@@ -93,7 +126,8 @@
         </div>
 
         <div class="buttons col-lg-1 col-md-1 col-sm-1">
-            <i class="fa fa-heart-o fa-3x red"></i>Break Up<br>
+            <i class="fa fa-heart-o fa-3x red"></i>Break Up
+            <br>
         </div>
 
     </div>
@@ -107,52 +141,72 @@
             <div class="deed waifu">
                 <img src="img/deeds/D00001.png">
                 <h3 class="title">Eve cooked a nice meal</h3>
-                <h6 class="date">Endorsed by Adam <i class="fa fa-heart red"></i> on 12/12/1999</h6>
-                <h4 class="points"><b>+150 points</b></h4>
+                <h6 class="date">Endorsed by Adam
+                    <i class="fa fa-heart red"></i> on 12/12/1999</h6>
+                <h4 class="points">
+                    <b>+150 points</b>
+                </h4>
             </div>
 
             <div class="deed waifu">
                 <img src="img/deeds/D00003.png">
                 <h3 class="title">Eve took the garbage out</h3>
-                <h6 class="date">Endorsed by Adam <i class="fa fa-heart red"></i> on 11/12/1999</h6>
-                <h4 class="points"><b>+100 points</b></h4>
+                <h6 class="date">Endorsed by Adam
+                    <i class="fa fa-heart red"></i> on 11/12/1999</h6>
+                <h4 class="points">
+                    <b>+100 points</b>
+                </h4>
             </div>
 
             <div class="deed waifu">
                 <img src="img/deeds/D00002.png">
                 <h3 class="title">Eve cleaned the dishes</h3>
-                <h6 class="date">Endorsed by Adam <i class="fa fa-heart red"></i> on 11/12/1999</h6>
-                <h4 class="points"><b>+50 points</b></h4>
+                <h6 class="date">Endorsed by Adam
+                    <i class="fa fa-heart red"></i> on 11/12/1999</h6>
+                <h4 class="points">
+                    <b>+50 points</b>
+                </h4>
             </div>
 
             <div class="deed waifu">
                 <img src="img/deeds/D00004.png">
                 <h3 class="title">Eve walked the dog</h3>
-                <h6 class="date">Endorsed by Adam <i class="fa fa-heart red"></i> on 10/12/1999</h6>
-                <h4 class="points"><b>+100 points</b></h4>
+                <h6 class="date">Endorsed by Adam
+                    <i class="fa fa-heart red"></i> on 10/12/1999</h6>
+                <h4 class="points">
+                    <b>+100 points</b>
+                </h4>
             </div>
 
             <div class="deed waifu">
                 <img src="img/deeds/D00001.png">
                 <h3 class="title">Eve cooked a nice meal</h3>
-                <h6 class="date">Endorsed by Adam <i class="fa fa-heart red"></i> on 12/12/1999</h6>
-                <h4 class="points"><b>+150 points</b></h4>
+                <h6 class="date">Endorsed by Adam
+                    <i class="fa fa-heart red"></i> on 12/12/1999</h6>
+                <h4 class="points">
+                    <b>+150 points</b>
+                </h4>
             </div>
 
             <div class="deed waifu">
                 <img src="img/deeds/D00003.png">
                 <h3 class="title">Eve took the garbage out</h3>
-                <h6 class="date">Endorsed by Adam <i class="fa fa-heart red"></i> on 11/12/1999</h6>
-                <h4 class="points"><b>+100 points</b></h4>
+                <h6 class="date">Endorsed by Adam
+                    <i class="fa fa-heart red"></i> on 11/12/1999</h6>
+                <h4 class="points">
+                    <b>+100 points</b>
+                </h4>
             </div>
 
-            <h2 class="center"><b>Total waifu points: 150000</b></h2>
+            <h2 class="center">
+                <b>Total waifu points: 150000</b>
+            </h2>
 
         </div>
 
         <div class="buttons button col-lg-1 col-md-1 col-sm-1" id="give_points">
-            <i class="fa fa-plus-circle fa-3x green"></i><br>
-            Give Waifu Points
+            <i class="fa fa-plus-circle fa-3x green"></i>
+            <br> Give Waifu Points
         </div>
 
     </div>
@@ -162,8 +216,12 @@
     <!-- give points window -->
     <div id="giveWindow" class="popup waifu hidden">
 
-        <a class="close" onclick=""><i class="fa fa-times fa"></i></a>
-        <h1>Give Waifu points <i class="fa fa-heart fa-1x red"></i> to Eve</h1> <br>
+        <a class="close" onclick="">
+            <i class="fa fa-times fa"></i>
+        </a>
+        <h1>Give Waifu points
+            <i class="fa fa-heart fa-1x red"></i> to Eve</h1>
+        <br>
 
         <h2>Select from the list:</h2>
 
@@ -172,30 +230,42 @@
             <div class="deed wakashu">
                 <img src="img/deeds/D00001.png">
                 <h3 class="title">Cooked a nice meal</h3>
-                <h4 class="points"><b>+150 points</b></h4>
+                <h4 class="points">
+                    <b>+150 points</b>
+                </h4>
             </div>
 
             <div class="deed wakashu">
                 <img src="img/deeds/D00003.png">
                 <h3 class="title">Took the garbage out</h3>
-                <h4 class="points"><b>+100 points</b></h4>
+                <h4 class="points">
+                    <b>+100 points</b>
+                </h4>
             </div>
 
             <div class="deed wakashu">
                 <img src="img/deeds/D00002.png">
                 <h3 class="title">Cleaned the dishes</h3>
-                <h4 class="points"><b>+50 points</b></h4>
+                <h4 class="points">
+                    <b>+50 points</b>
+                </h4>
             </div>
 
             <div class="deed wakashu">
                 <img src="img/deeds/D00004.png">
                 <h3 class="title">Walked the dog</h3>
-                <h4 class="points"><b>+100 points</b></h4>
+                <h4 class="points">
+                    <b>+100 points</b>
+                </h4>
             </div>
 
         </div>
 
-        <br> <h3>Giving <span class="red">+100 Waifu points</span> </h3> <br>
+        <br>
+        <h3>Giving
+            <span class="red">+100 Waifu points</span>
+        </h3>
+        <br>
 
         <h5 class="button waifu"> Give Points </h5>
     </div>
@@ -218,4 +288,5 @@
     <script src="js/translations/common.js" type="text/javascript"></script>
     <script src="js/multilanguage.js" type="text/javascript"></script>
 </body>
+
 </html>
