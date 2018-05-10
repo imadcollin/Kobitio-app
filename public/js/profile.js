@@ -114,11 +114,16 @@ function getAllUsers(){
 
 function insertInformation(){
     
-    /**************************************** Get User Information ******************************************/
-    let deeds = getDeedsList();
+    // Getting Partners Name
+    var tempUserName = document.cookie.split(",");
 
     /**************************************** Get User Information ******************************************/
-    let userInformartion = getUserInformation();
+    let deeds = queryDeedsList();
+
+    /**************************************** Get User Information ******************************************/
+    let userInformartion = queryUserInformation(tempUserName[0]);  // Login User
+    let userPartnerInformation = queryUserInformation('eve4ever');             // partner of the Logined User
+    
     //Check Gender 
     var gender = userInformartion[0].gender;
     if (gender == 0){
@@ -130,14 +135,21 @@ function insertInformation(){
     else{
         gender = 'Wakashu';
     }
+
     //Add User's Name
     document.getElementById('name').innerHTML = userInformartion[0].first_name + " " + userInformartion[0].last_name +" ("+ gender +")"; 
     //User Description
     document.getElementById("userDescription").innerHTML  = userInformartion[0].description;
+    //Partner Name
+    document.getElementById("partnerName").innerHTML  = '<b>Current Hasbandu:</b> '+ userPartnerInformation[0].first_name + " " + userPartnerInformation[0].last_name;
 
+    /********************************** Get User RelationShip History ************************************/
+    let userRelationship = queryUserRelationship(tempUserName[0]);   
+    console.log("rel : " + userRelationship);
 
     /********************************** Get User Deeds History ************************************/
-    let userDeedsHistory =  getUserDeedsHistory();
+    let userDeedsHistory =  queryUserDeedsHistory(tempUserName[0]);
+    console.log("deed : " + userDeedsHistory);
     var deedsHistortyLength = userDeedsHistory.length;
 
     var id;
@@ -158,8 +170,6 @@ function insertInformation(){
                     '<div><h3 class="title">'+deeds[id].description+'</h3>'+
                     '<h6 class="date">Endorsed by Eve <i class="fa fa-heart red"></i> on 12/12/1999</h6></div>'+
                      '<div><h4 class="points"><b>'+deeds[id].points+ 'points</b></h4></div></li>'
-
-
     }
 
 }

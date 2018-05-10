@@ -38,11 +38,16 @@ function translate (index) {
 
 function insertInformation(){
     
-    /**************************************** Get User Information ******************************************/
-    let deeds = getDeedsList();
+    // Getting Partners Name
+    var tempUserName = document.cookie.split(",");
 
     /**************************************** Get User Information ******************************************/
-    let userInformartion = getUserInformation();
+    let deeds = queryDeedsList();
+
+    /**************************************** Get User Information ******************************************/
+    let userInformartion = queryUserInformation('eve4ever');             // partner of the Logined User
+    let userPartnerInformation = queryUserInformation(tempUserName[0]);  // Login User
+
     //Check Gender 
     var gender = userInformartion[0].gender;
     if (gender == 0){
@@ -54,14 +59,19 @@ function insertInformation(){
     else{
         gender = 'Wakashu';
     }
+
+
+
     //Add User's Name
     document.getElementById('name').innerHTML = userInformartion[0].first_name + " " + userInformartion[0].last_name +" ("+ gender +")"; 
     //User Description
     document.getElementById("userDescription").innerHTML  = userInformartion[0].description;
+    //Partner Name
+    document.getElementById("partnerName").innerHTML  = '<b>Current Hasbandu:</b> '+ userPartnerInformation[0].first_name + " " + userPartnerInformation[0].last_name;
 
 
     /********************************** Get User Deeds History ************************************/
-    let userDeedsHistory =  getUserDeedsHistory();
+    let userDeedsHistory =  queryUserDeedsHistory();
     var deedsHistortyLength = userDeedsHistory.length;
 
     var id;
