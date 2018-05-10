@@ -7,7 +7,6 @@
 * All scripts related to the index page. Each page has their own scripts in a single js document.
 * The methods translate() is unique for each individual page.
 */
-
 /*Language Translation index*/
 if (localStorage.getItem("index") == null){
     localStorage.setItem("index",0)
@@ -42,3 +41,29 @@ function translate (index) {
     $("#signup_button").text(signup_button[index]);
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

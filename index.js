@@ -43,11 +43,19 @@ function fetch_local_data() {
 
 //fetch_local_data();
 
+app.post('/login', function(req, res) {
+
+	console.log("req " + req);
+	console.log("res " + res);
+
+	alert("waitt");
+});
 
 //***************************** Express serve files  *****************************/
 app.use(express.static('public'));
 app.get('/', function (req, res) {
 	res.sendfile('./public/index.html');
 });
+
 
 app.listen(3000); /*PORT 3000 is opened*/
