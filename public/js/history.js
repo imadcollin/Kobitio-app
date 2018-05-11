@@ -113,8 +113,8 @@ function insertInformation(){
 	}
 
 	// Husbandu Points and Waifu points
-   	document.getElementById('husbanduPoints').innerHTML = '<b>'+userPointsWithPartner+'</b> hasbandu points <b>in this relationship</b>';
-	document.getElementById('waifuPoints').innerHTML = '<b>'+partnerPointsWithUser+'</b> hasbandu points <b>in this relationship</b>';
+   	document.getElementById('husbanduPoints').innerHTML = userPointsWithPartner + " ";
+	document.getElementById('waifuPoints').innerHTML = partnerPointsWithUser + " ";
 	
 
 	//Total Points In this Relationship

@@ -4,7 +4,6 @@
 */
 
 /* Profile Section*/
-
 .portrait{
     padding: 15px;
     background-color: #edff00;
@@ -78,4 +77,16 @@ a:hover{
     padding: 5px;
     float: right;
     cursor: pointer;
+}
+
+#first_row
+    {
+        margin-top: 6%;
+    }
+@media screen and (max-width: 600px)
+ {
+    #first_row    
+    {
+        margin-top: 21%;
+    }
 }

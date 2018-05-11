@@ -1,5 +1,6 @@
 #connectionRequestTable{
-	margin: 25px;
+    margin: 25px;
+    margin-top: 7%;
 }
 
 #connectionRequestTable table {
@@ -55,4 +56,10 @@
     background: #f44336;
     color: #fff;
     border-radius: 100px;
+}
+@media screen and (max-width: 600px) {
+    #connectionRequestTable
+    {
+        margin-top: 22%;
+    }
 }

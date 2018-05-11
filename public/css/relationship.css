@@ -2,6 +2,10 @@
    relationship.css
    Created by Mauro J. Pappaterra on 13 of April 2018.
 */
+.row
+{
+  margin-top: 6%;
+}
 
 .relation{
     padding: 15px;
@@ -21,8 +25,8 @@
 
 
 body, p, h1, h2, h3, h4, ul, li {
-    margin: 0;
-    padding: 0;
+ /*    margin: 0;
+    padding: 0; */
   }
   
   body {
@@ -192,5 +196,11 @@ body, p, h1, h2, h3, h4, ul, li {
 }
   }
   /* END DESKTOP MENU */
-  
- 
+
+  @media screen and (max-width: 600px)
+  {
+    .row
+    {
+       margin-top: 19%;
+    }
+  }
