@@ -145,11 +145,9 @@ function insertInformation(){
 
     /********************************** Get User RelationShip History ************************************/
     let userRelationship = queryUserRelationship(tempUserName[0]);   
-    console.log("rel : " + userRelationship);
 
     /********************************** Get User Deeds History ************************************/
     let userDeedsHistory =  queryUserDeedsHistory(tempUserName[0]);
-    console.log("deed : " + userDeedsHistory);
     var deedsHistortyLength = userDeedsHistory.length;
 
     var id;
