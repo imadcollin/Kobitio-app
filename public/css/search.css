@@ -2,10 +2,13 @@
 /*Main COntainer*/
 .container{
   width: 80%; 
+  padding-top: 40px;
+
+  top
+
 }
 
 #searchFrame{
-  margin-top: 50px;
   -webkit-transition: all 0.7s ease-in-out;
     -moz-transition: all 0.7s ease-in-out;
     -o-transition: all 0.7s ease-in-out;

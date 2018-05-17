@@ -102,8 +102,9 @@
             <i class="fa fa-times fa"></i>
         </button>
 
-        <!-- action="javascript: void(0);" -->
-        <form name="loginForm" >
+        <!-- action="javascript: void(0);"  action="http://127.0.0.1:3000/-->
+        <form name="loginForm" id="login" action="http://127.0.0.1:3000/login" method="get" >
+
 
             <h1>Log in to Koibito
                 <i class="fa fa-heart fa-1x red"></i>
@@ -119,7 +120,7 @@
             </a>
             <input type="password" name="password" id="Password" placeholder="Enter your password">
 
-            <button type="submit" id="login" name="login" value="Log In" onClick="checkLogin()">Login</button>
+            <button type="submit" id="login" name="login" value="Log In" >Login</button>
         
         </form>
     </div>
@@ -130,16 +131,17 @@
         <button class="close" onclick="">
             <i class="fa fa-times fa"></i>
         </button>
-        <form name="loginForm" action="javascript: void(0);">
+        <!-- action="http://127.0.0.1:3000/signup" -->
+        <form name="loginForm" action="http://127.0.0.1:3000/signup"  method="get">
 
             <h1>Create a Koibito
                 <i class="fa fa-heart fa-1x red"></i> Account</h1>
 
             <h4 id="new_user_name">Select username</h4>
-            <input type="text" name="user_name" placeholder="Enter your user name">
+            <input type="text" name="user_name" id="userName" placeholder="Enter your user name">
 
             <h4 id="new_password">Choose your password</h4>
-            <input type="password" name="password" placeholder="Enter your password">
+            <input type="password" name="password" id="Password" placeholder="Enter your password">
 
             <h4 id="repeat_password">Repeat your password</h4>
             <input type="password" name="repeat_password" placeholder="Repeat your password">
@@ -168,9 +170,9 @@
                 <i>Wakashu</i>
             </b>
             <br>
+          <input type="submit" value="Submit">
 
-            <input type="submit" id="signup" name="signup" value="Sign up" onClick="">
-
+            <button type="submit" id="signup" name="signup" value="Sign Up" onclick="registerUser()" >Sign Up</button>
         </form>
     </div>
 

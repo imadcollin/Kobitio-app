@@ -13,6 +13,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 }, false);
 
+
+
 /*Language Translation index*/
 if (localStorage.getItem("index") == null){
     localStorage.setItem("index",0)
@@ -70,14 +72,12 @@ function totalUserPointWithCurrentPartner(userName, partnerName){
 
 function insertInformation(){
     	
-   	
-
     // Getting Partners Name
-    var tempUserName = document.cookie.split(",");
+    // var tempUserName = document.cookie.split(",");
 
     /**************************************** Get User Information ******************************************/
-    let userInformartion = queryUserInformation(tempUserName[0]);  // Login User
-    let userPartnerInformation = queryUserInformation('eve4ever');             // partner of the Logined User
+    let userInformartion = queryUserInformation(readCookie("username"));  // Login User
+    let userPartnerInformation = queryUserInformation(readCookie("partner"));             // partner of the Logined User
     
 
     //Add User's Relation History title

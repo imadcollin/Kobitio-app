@@ -12,6 +12,19 @@ let config = {
 	deeds: `${collections}/deeds`
 }
 
+/* Read Cookie */
+function readCookie(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0;i < ca.length;i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1,c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length,c.length);
+    }
+    return null;
+}
+
+
 /* Array for storing  details
 0 - User's Username 
 1 - User's partnet Name
@@ -148,6 +161,7 @@ let user_id = '5aecf643bd966f1715367d8a';
 
 //***************************** Post data  *****************************/
 //link to full documentation: http://docs.mlab.com/data-api/
+// Add a User to the UserInfo Database
 function httpPost(user) {
 
 	var theUrl = `${config.user}`;

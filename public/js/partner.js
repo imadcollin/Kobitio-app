@@ -39,14 +39,14 @@ function translate (index) {
 function insertInformation(){
     
     // Getting Partners Name
-    var tempUserName = document.cookie.split(",");
+    // var tempUserName = document.cookie.split(",");
 
     /**************************************** Get User Information ******************************************/
     let deeds = queryDeedsList();
 
     /**************************************** Get User Information ******************************************/
-    let userInformartion = queryUserInformation('eve4ever');             // partner of the Logined User
-    let userPartnerInformation = queryUserInformation(tempUserName[0]);  // Login User
+    let userInformartion = queryUserInformation(readCookie("partner"));             // partner of the Logined User
+    let userPartnerInformation = queryUserInformation(readCookie("username"));  // Login User
 
     //Check Gender 
     var gender = userInformartion[0].gender;

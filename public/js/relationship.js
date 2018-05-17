@@ -23,14 +23,12 @@ function translate (index) {
 
 function insertInformation(){
     	
-   	
-
     // Getting Partners Name
-    var tempUserName = document.cookie.split(",");
+    // var tempUserName = document.cookie.split(",");
 
     /**************************************** Get User Information ******************************************/
-    let userInformartion = queryUserInformation(tempUserName[0]);  // Login User
-    let userPartnerInformation = queryUserInformation('eve4ever');             // partner of the Logined User
+    let userInformartion = queryUserInformation(readCookie("username"));  // Login User
+    let userPartnerInformation = queryUserInformation(readCookie("partner"));             // partner of the Logined User
     
 
     //Add User's Relation History title
