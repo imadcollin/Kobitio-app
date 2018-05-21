@@ -58,6 +58,8 @@ a:hover{
     margin-right: 20%;
     clear: both;
 
+    height: 80%;
+
     top: 15%;
     position: fixed;
 }
@@ -67,10 +69,16 @@ a:hover{
 }
 
 .points_list{
-    height: 300px;
-    background-color: #8dff71;
+    height: 400px;
+    background-color: white;
 
     overflow: auto;
+}
+
+/*Change Hover Color*/
+.points_list .deed:hover{
+    background-color: grey;
+    border-color: black; 
 }
 
 .button {

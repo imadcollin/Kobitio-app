@@ -8,8 +8,18 @@
 * The methods translate() is unique for each individual page.
 */
 
+// Get the deeds list 
+let deeds;
+//Save total points
+var totalPoints = 0;
+var pointsIdArray = [];
+
 //On window load, fetching information and inserting it to the html document
 document.addEventListener('DOMContentLoaded', function() {
+    
+    /**************************************** Get Deels List ******************************************/
+    deeds = queryDeedsList();
+
     insertInformation();
 
 }, false);
@@ -118,9 +128,6 @@ function insertInformation(){
     // var tempUserName = document.cookie.split(",");
 
     /**************************************** Get User Information ******************************************/
-    let deeds = queryDeedsList();
-
-    /**************************************** Get User Information ******************************************/
     let userInformartion = queryUserInformation(readCookie("username"));  // Login User
     let userPartnerInformation = queryUserInformation(readCookie("partner"));             // partner of the Logined User
     
@@ -173,9 +180,49 @@ function insertInformation(){
 }
 
 
+/******************************Request Pont Window Functions *****************************/
 
+// Gets the id of the <Div> and adds the points to the DataBase
+function addRequestPoints(element){
+    
+    var pointsId;
 
+    var pointsId = element.id;
+    var sizeDeeds = deeds.length;
 
+    //Find the deeds points from the table
+    //The query reply order is not in synchrony with the deedsList Id, so using loop
+    for(var i = 0;i<sizeDeeds; i++){
+        if(deeds[i].deed_id == pointsId){
+            totalPoints = totalPoints + parseInt(deeds[i].points);
+            pointsIdArray.push(pointsId);
+        } 
+    }
+
+    //Update the Total Selected Points
+    document.getElementById('requestedPoints').innerHTML = totalPoints;
+
+}
+
+//Get the total points and add it to the database 
+function addPointsToDatabase(){
+
+    //number of points requested
+    var size = pointsIdArray.length;
+    var data;
+
+    for (var i = 0; i < size; i++) {
+        data = {
+            "username": readCookie("username"),
+            "endorsed_by": readCookie("partner"),
+            "deed": pointsIdArray[i],
+            "date": null
+        }   
+
+        // //Make a post Request;
+        httpPointsPost(data);
+    }
+}
 
 
 

@@ -76,6 +76,7 @@ function httpPostUser(user) {
 	let xhr = new XMLHttpRequest();
 	xhr.open("POST", `${theUrl}?apiKey=${APIKey}`, true);
 	xhr.setRequestHeader('Content-Type', 'application/json;charset=utf-8');
+	
 	xhr.onload = function () {
 		let users = JSON.parse(xhr.responseText);
 		if (xhr.readyState == 4 && xhr.status == "201") {

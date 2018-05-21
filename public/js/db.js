@@ -179,6 +179,29 @@ function httpPost(user) {
 	xhr.send(JSON.stringify(user));
 }
 
+//***************************** Post Points Requets  *****************************/
+// Add a History Table to the UserInfo Database
+function httpPointsPost(data) {
+
+	var theUrl = `${config.deedsHistory}`;
+	let xhr = new XMLHttpRequest();
+	xhr.open("POST", `${theUrl}?apiKey=${APIKey}`, true);
+	xhr.setRequestHeader('Content-Type', 'application/json;charset=utf-8');
+	
+	xhr.onload = function () {
+		let datas = JSON.parse(xhr.responseText);
+		if (xhr.readyState == 4 && xhr.status == "201") {
+			console.log(datas);
+		} else {
+			console.error(datas);
+		}
+	}
+	
+	xhr.send(JSON.stringify(data));
+}
+
+
+
 //***************************** Delete data  *****************************/
 //link to full documentation: http://docs.mlab.com/data-api/
 

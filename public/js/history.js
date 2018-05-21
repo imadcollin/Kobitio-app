@@ -94,22 +94,22 @@ function insertInformation(){
 	document.getElementById('partnerName').innerHTML = userPartnerInformation[0].first_name;
 
 	// get total of User's Points 
-	var userPoints = totalUserPoint(tempUserName[0]);
+	var userPoints = totalUserPoint(userInformartion[0]);
 
 	//check If the user has a partner 
 	var partnerPoints = 0;
-	if (!(tempUserName[1]=="")){
-		partnerPoints = totalUserPoint(tempUserName[1]);
+	if (!(userInformartion[0]=="")){
+		partnerPoints = totalUserPoint(userPartnerInformation[0]);
 	}
 
 	//get User Points with specific Partner
 	var userPointsWithPartner = 0;
-	userPointsWithPartner = totalUserPointWithCurrentPartner(tempUserName[0], tempUserName[1]);
+	userPointsWithPartner = totalUserPointWithCurrentPartner(userInformartion[0], userPartnerInformation[0]);
 	//get Partner points with Specific User
 	var partnerPointsWithUser = 0;
-	if (!(tempUserName[1]=="")){
+	if (!(userPartnerInformation[0]=="")){
 		//get User Points with specific Partner
-		partnerPointsWithUser = totalUserPointWithCurrentPartner(tempUserName[1], tempUserName[0]);
+		partnerPointsWithUser = totalUserPointWithCurrentPartner(userPartnerInformation[0], userInformartion[0]);
 	}
 
 	// Husbandu Points and Waifu points
@@ -119,10 +119,6 @@ function insertInformation(){
 
 	//Total Points In this Relationship
 	document.getElementById('totalPoints').innerHTML =partnerPointsWithUser + userPointsWithPartner  ;
-
-
-
-
 
 
 }
