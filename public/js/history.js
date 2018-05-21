@@ -57,12 +57,23 @@ function totalUserPointWithCurrentPartner(userName, partnerName){
     var points = 0;
 
     for (var i = 0; i < deedsHistortyLength; i++) {   
+
+        console.log("Usename = "+ userDeedsHistory[i].endorsed_by+ " PartnerName = " + partnerName);
+
     	//check if the deeds points are assignment by the partner 
     	if (userDeedsHistory[i].endorsed_by == partnerName) {
-    		//Deed Id 
-	        id = userDeedsHistory[i].deed_id - 1;
-	        points = points + parseInt(deeds[id].points);
+
+            if (userDeedsHistory[i].deed_id != 6) {
+                //Deed Id 
+                id = userDeedsHistory[i].deed_id - 1;
+                points = points + parseInt(deeds[id].points);
+            }
+            
+
+            console.log(points);
+
     	}         
+
     }
 
     return points;
@@ -104,12 +115,12 @@ function insertInformation(){
 
 	//get User Points with specific Partner
 	var userPointsWithPartner = 0;
-	userPointsWithPartner = totalUserPointWithCurrentPartner(userInformartion[0], userPartnerInformation[0]);
+	userPointsWithPartner = totalUserPointWithCurrentPartner(readCookie("username"), readCookie("partner"));
 	//get Partner points with Specific User
 	var partnerPointsWithUser = 0;
 	if (!(userPartnerInformation[0]=="")){
 		//get User Points with specific Partner
-		partnerPointsWithUser = totalUserPointWithCurrentPartner(userPartnerInformation[0], userInformartion[0]);
+		partnerPointsWithUser = totalUserPointWithCurrentPartner(readCookie("partner"), readCookie("username"));
 	}
 
 	// Husbandu Points and Waifu points

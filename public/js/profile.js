@@ -151,30 +151,47 @@ function insertInformation(){
     document.getElementById("partnerName").innerHTML  = '<b>Current Hasbandu:</b> '+ userPartnerInformation[0].first_name + " " + userPartnerInformation[0].last_name;
 
     /********************************** Get User RelationShip History ************************************/
-    let userRelationship = queryUserRelationship(tempUserName[0]);   
+    let userRelationship = queryUserRelationship(readCookie("username"));   
 
     /********************************** Get User Deeds History ************************************/
-    let userDeedsHistory =  queryUserDeedsHistory(tempUserName[0]);
+    let userDeedsHistory =  queryUserDeedsHistory(readCookie("username"));
     var deedsHistortyLength = userDeedsHistory.length;
 
-    var id;
+    var id; 
+
+    // Find a <table> element with id="myTable":
+    var table = document.getElementById("contentTable");
+    // Create an empty <tr> element and add it to the 1st position of the table:
+    var row;
+    var date;
 
     for (var i = 0; i < deedsHistortyLength; i++) {
         
-        //Deed Id 
+        //id of the deed
         id = userDeedsHistory[i].deed_id;
-        console.log(deeds[id].description);
 
-        // document.getElementById('overviewList').innerHTML = '<div class="deed wakashu">'+
-        //         '<img src="img/deeds/D00001.png">'+
-        //         '<h3 class="title">'+deeds[id].description+'</h3>'+
-        //         '<h4 class="points"><b>'+deeds[id].points+' points</b></h4></div>'
+        // Create an empty <tr> element and add it to the 1st position of the table:
+        row = table.insertRow(i);
 
-        document.getElementById('overviewList').innerHTML = '<li class="list-group-item" >'+
-                    '<div ><img src="https://png.icons8.com/color/96/000000/vegan-food.png" ></div>'+
-                    '<div><h3 class="title">'+deeds[id].description+'</h3>'+
-                    '<h6 class="date">Endorsed by Eve <i class="fa fa-heart red"></i> on 12/12/1999</h6></div>'+
-                     '<div><h4 class="points"><b>'+deeds[id].points+ 'points</b></h4></div></li>'
+        //Desertlizing json date to normal date 
+        date = new Date(userDeedsHistory[i].date['$date']);
+        date = date.toDateString();
+
+        // Add some text to the new cells:
+        row.innerHTML = '<td> <div class="media">'+
+                                                '<a href="#" class="pull-left">'+
+                                                    '<img src="img/deeds/D00002.png" class="media-photo">'+
+                                                '</a>'+
+                                                '<div class="media-body">'+
+                                                    '<span class="media-meta pull-right"> '+date+'</span>'+
+                                                    '<h4 class="title">'+deeds[id].description+
+                                                        '<span class="pull-right pendiente">(Pendiente)</span>'+
+                                                    '</h4>'+
+                                                    '<p class="summary">Endorsed by '+ userDeedsHistory[i].username +'</p>'+
+                                                    '<p class="pull-right">'+deeds[id].points+' points</p>'+
+                                                '</div>'+
+                                            '</div>'+
+                                        '</td>'
     }
 
 }
