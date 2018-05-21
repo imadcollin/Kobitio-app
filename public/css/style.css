@@ -1,4 +1,4 @@
-/* Koibito App 
+/* Koibito App
    style.css
    Created by Mauro J. Pappaterra on 14 of April 2018.
 */
@@ -249,7 +249,7 @@
   color: rgba(117,117,117 ,1);
   box-shadow: 5px 10px 20px -20px rgba(85,172,238 ,1);
 }
-.twitter li {    
+.twitter li {
   cursor: pointer;
   margin-left: 3%;
 }
@@ -280,6 +280,14 @@
 @media screen and (max-width: 600px) {
     .deed {
         height: auto;
+    /* border-style: dashed; */
+    margin: 2%;
+    padding: 0;
+    /* height: 100px; */
+    display: block;
+    background:lightslategray;
+}
+
 
     }
     .title{
