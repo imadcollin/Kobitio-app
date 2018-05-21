@@ -1,4 +1,4 @@
-/* Koibito App 
+/* Koibito App
    style.css
    Created by Mauro J. Pappaterra on 14 of April 2018.
 */
@@ -80,17 +80,18 @@
 /* Deeds Section*/
 
 .deed {
-    border-style: dashed;
+    /* border-style: dashed; */
     margin: 25px;
     padding: 15px;
-    height: 100px;
+    /* height: 100px; */
     display: block;
+    background:lightslategray;
 }
 
 .deed img {
     margin-top: 0px;
     padding-top: 0px;
-    width: 200px;
+    width: 100px;
     float: left;
     max-height: 170%;
     object-fit: contain;
@@ -248,7 +249,7 @@
   color: rgba(117,117,117 ,1);
   box-shadow: 5px 10px 20px -20px rgba(85,172,238 ,1);
 }
-.twitter li {    
+.twitter li {
   cursor: pointer;
   margin-left: 3%;
 }
@@ -276,4 +277,31 @@
   border-radius: 100px;
 }
 
+@media screen and (max-width: 600px) {
+    .deed {
+        height: auto;
+    /* border-style: dashed; */
+    margin: 2%;
+    padding: 0;
+    /* height: 100px; */
+    display: block;
+    background:lightslategray;
+}
 
+
+    }
+    .title{
+        color: red;
+        font-size: 20px;
+      }
+      .deed img {
+        margin-top: 0px;
+        padding-top: 0px;
+        width: 100px;
+        float: left;
+        max-height: 170%;
+        object-fit: contain;
+    }
+    .deed .date{
+        padding-left: 0;
+    }

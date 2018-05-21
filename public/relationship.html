@@ -30,7 +30,8 @@
 
     <!-- External CSS sheets -->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/relationship.css">
+    <link rel="stylsesheet" href="css/relationship.css">
+    <link rel="stylesheet" href="css/history.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 
@@ -89,216 +90,359 @@
     </div>
     <!-- END OF 3D-Menu -->
 
-    <div class="row">
-        <div class="relation hasbandu col-lg-5 col-md-5  col-sm-12">
-            <h1>
-                <b>Adam (hasbandu)</b>
-            </h1>
-            <img src="img/adam.jpg">
-            <div class="center">
-                <i class="fa fa-star fa-2x stars"></i>
-                <i class="fa fa-star-half-empty fa-2x stars"></i>
-                <p><b id="namePicture">Adam is a <u>lice-infested</u> hasbandu!</b></p>
-            </div>
-            <h4><b id="userPoints"></b> hasbandu points <b>in this relationship</b></h4>
-            <h4><b id="totalUserPoints"></b> hasbandu points <b>in total</b></h4>
+
+<div class="flex_1">
+
+    <div class="centered">
+        <section class="cards">
+            <div class="wrapper">
+                <h1 id="relationshipHistoryTitle"></h1>
+                <h2 class="center" id="centerTitle"></h2>
+
+                <article class="card">
+                    <a href="#">
+                        <h2><b> Adam(hasbandu)</b></h2>
+                        <figure class="thumbnail">
+                            <img src="img/adam.jpg" alt="meow">
+                        </figure>
+                        <div class="card-content">
+                            <h2 id='userName'></h2>
+                            <div class="center">
+                                <i class="fa fa-star stars"></i>
+
+                                <p>
+                                    <b id="namePicture">Adam is a
+                                        <u>lice-infested</u> hasbandu!</b>
+                                </p>
+
+                                <!-- <h4>
+                                    <b id="userPoints"></b> hasbandu points
+                                
+                                </h4> -->
+                                <h4>
+                                    <!-- <b id="totalUserPoints"></b> Total  points<b>100000</b>  -->
+                                     Total  points<b>100000</b> 
+                                </h4>
+                            </div>
+                        </div>
+                    </a>
+
+                    <!-- ##############################################q -->
+
+
+                    <!-- ############################################## -->
+                    <div class="card-content">
+                        <p></p>
+                        <h3 class="center"> Relationship
+                            <i class="fa fa-heartbeat fa-1x red"></i> Stats</h3>
+
+                        <div class="center">
+                            <i class="fa fa-star fa-2x stars"></i>
+                            <i class="fa fa-star fa-2x stars"></i>
+                            <i class="fa fa-star-half-empty fa-2x stars"></i>
+                            <p>
+                                <b>Adam and Eve have a
+                                    <u>pretty lousy</u> relationship!</b>
+                            </p>
+                        </div>
+
+                        <div class="progress progress-small">
+                            <div class="progress-bar progress-bar-striped hasbandu-bar active" role="progressbar" aria-valuenow="65" aria-valuemin="0"
+                                aria-valuemax="100" style="width: 25%">
+                                Adam 25%
+                            </div>
+                            <div class="progress-bar progress-bar-striped waifu-bar active" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"
+                                style="width:75%">
+                                Eve 75%
+                            </div>
+                        </div>
+                        <br>
+
+
+                        <table class="table table-striped">
+                            <thead>
+                                <tr>
+                                    <th scope="col">First</th>
+                                    <th scope="col">Category</th>
+                                    <th scope="col">Score</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Gender Equality Rate:</td>
+                                    <td>2.0</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Total points together:</td>
+                                    <td id="totalPoints"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td>Lenght of relationship:</td>
+                                    <td>1 Year 6 Months 3 Weeks 4 Days</td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <br>
+                        <br>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati recusandae expedita doloribus
+                            dicta cumque nostrum, autem eaque soluta atque voluptatem est et, laborum dignissimos error sequi
+                            non? Recusandae, aut alias.</p>
+                    </div>
+
+
+
+
+                    <!-- ############################################## -->
+                    <a href="#">
+                        <h2>
+                            <b>Eve (waifu)</b>
+                        </h2>
+                        <figure class="thumbnail">
+                            <img src="img/eve.jpg" alt="meow">
+
+                        </figure>
+                        <div class="card-content">
+                            <h2 id="partnerName"></h2>
+                            <div class="center">
+                                <i class="fa fa-star stars"></i>
+                                <i class="fa fa-star stars"></i>
+                                <i class="fa fa-star stars"></i>
+                                <i class="fa fa-star stars"></i>
+                                <i class="fa fa-star stars"></i>
+                                
+                                    <p>                   
+                                        <b>Eve is a
+                                            <u>fantastic</u> waifu!</b>
+                                    </p>
+                            </div>               
+                            <h4>
+                                Total waifu points  <b>100000</b> 
+                            </h4>
+                        </div>
+                    </a>
+                </article>
+        </section>
         </div>
 
-        <div class="light-green col-lg-2 col-md-2 col-sm-12">
-            <h4>
-                <b>Adam and Eve Relationship Stats</b>
-            </h4>
 
-            <i class="fa fa-heartbeat fa-5x red"></i>
-            <h5>Gender Equality Rate:
-                <b>0.6</b>
-            </h5>
-            <h5>Total points together:
-                <b>10700</b>
-            </h5>
-            <h5>Lenght of relationship:
-                <b>1 Year 6 Months 3 Weeks 4 Days</b>
-            </h5>
-        </div>
+</div>
 
-        <div class="relation waifu col-lg-5 col-md-5  col-sm-12">
-            <h1>
-                <b>Eve (waifu)</b>
-            </h1>
-            <img src="img/eve.jpg">
+</div>
 
-            <div class="center">
-                <i class="fa fa-star fa-2x stars"></i>
-                <i class="fa fa-star fa-2x stars"></i>
-                <i class="fa fa-star fa-2x stars"></i>
-                <i class="fa fa-star fa-2x stars"></i>
-                <i class="fa fa-star fa-2x stars"></i>
-                <p>
-                    <b>Eve is a
-                        <u>fantastic</u> waifu!</b>
-                </p>
-            </div>
+        <div class="row">
+            <!-- <div class="relation hasbandu col-lg-5 col-md-5  col-sm-12">
+                 <h1>
+                     <b>Adam (hasbandu)</b>
+                 </h1>
+                 <img src="img/adam.jpg">
+                 <div class="center">
+                     <i class="fa fa-star fa-2x stars"></i>
+                     <i class="fa fa-star-half-empty fa-2x stars"></i>
+                     <p><b id="namePicture">Adam is a <u>lice-infested</u> hasbandu!</b></p>
+                 </div>
+                 <h4><b id="userPoints"></b> hasbandu points <b>in this relationship</b></h4>
+                 <h4><b id="totalUserPoints"></b> hasbandu points <b>in total</b></h4>
+             </div> -->
 
-            <h4>
-                <b>10000</b> waifu points
-                <b>in this relationship</b>
-            </h4>
-            <h4>
-                <b>100000</b> waifu points
-                <b>in total</b>
-            </h4>
-        </div>
-
-    </div>
-
-    <div class="row">
-
-        <div class="col-lg-12 col-md-12  col-sm-12">
-            <div class="progress progress-big">
-                <div class="progress-bar progress-bar-striped hasbandu-bar active" role="progressbar" aria-valuenow="65" aria-valuemin="0"
-                    aria-valuemax="100" style="width: 35%">
-                    <h2>Adam 35%</h2>
-                </div>
-                <div class="progress-bar progress-bar-striped waifu-bar active" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"
-                    style="width:65%">
-                    <h2>Eve 65%</h2>
-                </div>
-            </div>
-        </div>
-
-    </div>
-
-    <div class="row">
-        <div class="center col-lg-12 col-md-12  col-sm-12">
-            <i class="fa fa-star fa-5x stars"></i>
-            <i class="fa fa-star fa-5x stars"></i>
-            <i class="fa fa-star-half-empty fa-5x stars"></i>
-            <h2>
-                <b>Adam and Eve have a
-                    <u>pretty lousy</u> relationship!</b>
-            </h2>
-        </div>
-    </div>
-
-    <div class="row">
-
-        <div class="light-green col-lg-11 col-md-11  col-sm-11">
-
-            <h2>Today's Overview</h2>
-
-            <h3 class="center">Total waifu points today:
-                <b>350</b>
-            </h3>
-            <h3 class="center">Total hasbandu points today:
-                <b>300</b>
-            </h3>
-
-            <div class="progress progress-small">
-                <div class="progress-bar progress-bar-striped hasbandu-bar active" role="progressbar" aria-valuenow="65" aria-valuemin="0"
-                    aria-valuemax="100" style="width: 45%">
-                    Adam 45%
-                </div>
-                <div class="progress-bar progress-bar-striped waifu-bar active" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"
-                    style="width:55%">
-                    Eve 55%
-                </div>
-            </div>
-
-            <h3 class="center">Equality rate today:
-                <b>0.5</b>
-            </h3>
-            <h3 class="center">Great Results!
-                <i class="fa fa-flag-checkered"></i>
-            </h3>
-
-
-            <h2>Today's Deeds History</h2>
-
-            <div class="deed waifu">
-                <img src="img/deeds/D00001.png">
-                <h3 class="title">Eve cooked a nice meal</h3>
-                <h6 class="date">Endorsed by Adam
-                    <i class="fa fa-heart red"></i> on 15/04/2018</h6>
-                <h4 class="points">
-                    <b>+150 points</b>
+            <!-- <div class="light-green col-lg-2 col-md-2 col-sm-12">
+                <h4>
+                    <b>Adam and Eve Relationship Stats</b>
                 </h4>
-            </div>
 
-            <div class="deed waifu">
-                <img src="img/deeds/garbage.jpg">
-                <h3 class="title">Eve took the garbage out</h3>
-                <h6 class="date">Endorsed by Adam
-                    <i class="fa fa-heart red"></i> on 15/04/2018</h6>
-                <h4 class="points">
-                    <b>+100 points</b>
-                </h4>
-            </div>
+                <i class="fa fa-heartbeat fa-5x red"></i>
+                <h5>Gender Equality Rate:
+                    <b>0.6</b>
+                </h5>
+                <h5>Total points together:
+                    <b>10700</b>
+                </h5>
+                <h5>Lenght of relationship:
+                    <b>1 Year 6 Months 3 Weeks 4 Days</b>
+                </h5>
+            </div> -->
 
-            <div class="deed hasbandu">
-                <img src="img/deeds/dishes.jpg">
-                <h3 class="title">Adam cleaned the dishes</h3>
-                <h6 class="date">Endorsed by Eve
-                    <i class="fa fa-heart red"></i> on 15/04/2018</h6>
-                <h4 class="points">
-                    <b>+50 points</b>
-                </h4>
-            </div>
+            <!-- <div class="relation waifu col-lg-5 col-md-5  col-sm-12">
+                 <h1>
+                     <b>Eve (waifu)</b>
+                 </h1>
+                 <img src="img/eve.jpg">
+     
+                 <div class="center">
+                     <i class="fa fa-star fa-2x stars"></i>
+                     <i class="fa fa-star fa-2x stars"></i>
+                     <i class="fa fa-star fa-2x stars"></i>
+                     <i class="fa fa-star fa-2x stars"></i>
+                     <i class="fa fa-star fa-2x stars"></i>
+                     <p>
+                         <b>Eve is a
+                             <u>fantastic</u> waifu!</b>
+                     </p>
+                 </div>
+     
+                 <h4>
+                     <b>10000</b> waifu points
+                     <b>in this relationship</b>
+                 </h4>
+                 <h4>
+                     <b>100000</b> waifu points
+                     <b>in total</b>
+                 </h4>
+             </div> -->
 
-            <div class="deed hasbandu">
-                <img src="img/deeds/D00004.png">
-                <h3 class="title">Adam walked the dog</h3>
-                <h6 class="date">Endorsed by Eve
-                    <i class="fa fa-heart red"></i> on 15/04/2018</h6>
-                <h4 class="points">
-                    <b>+100 points</b>
-                </h4>
-            </div>
+        <!-- </div> -->
+<!-- 
+         <div class="row">
 
-            <div class="deed hasbandu">
-                <img src="img/deeds/D00001.png">
-                <h3 class="title">Adam cooked a nice meal</h3>
-                <h6 class="date">Endorsed by Eve
-                    <i class="fa fa-heart red"></i> on 15/04/2018</h6>
-                <h4 class="points">
-                    <b>+150 points</b>
-                </h4>
-            </div>
+            <div class="col-lg-12 col-md-12  col-sm-12">
+                 <div class="progress progress-big">
+                     <div class="progress-bar progress-bar-striped hasbandu-bar active" role="progressbar" aria-valuenow="65" aria-valuemin="0"
+                         aria-valuemax="100" style="width: 35%">
+                         <h2>Adam 35%</h2>
+                     </div>
+                     <div class="progress-bar progress-bar-striped waifu-bar active" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"
+                         style="width:65%">
+                         <h2>Eve 65%</h2>
+                     </div>
+                 </div>
+             </div>  -->
 
-            <div class="deed waifu">
-                <img src="img/deeds/garbage.jpg">
-                <h3 class="title">Eve took the garbage out</h3>
-                <h6 class="date">Endorsed by Adam
-                    <i class="fa fa-heart red"></i> on 15/04/2018</h6>
-                <h4 class="points">
-                    <b>+100 points</b>
-                </h4>
-            </div>
+        <!-- </div> -->
 
-        </div>
+        <!-- <div class="row">
+             <div class="center col-lg-12 col-md-12  col-sm-12">
+                 <i class="fa fa-star fa-5x stars"></i>
+                 <i class="fa fa-star fa-5x stars"></i>
+                 <i class="fa fa-star-half-empty fa-5x stars"></i>
+                 <h2>
+                     <b>Adam and Eve have a
+                         <u>pretty lousy</u> relationship!</b>
+                 </h2>
+             </div>
+         </div> -->
+           
+         <div class="col">
+     
+             <div class="">
+     
+                 <h2>Today's Overview</h2>
+     
+                 <h3 class="center">Total waifu points today:
+                     <b>350</b>
+                 </h3>
+                 <h3 class="center">Total hasbandu points today:
+                     <b>300</b>
+                 </h3>
+     
+                 <div class="progress progress-small">
+                     <div class="progress-bar progress-bar-striped hasbandu-bar active" role="progressbar" aria-valuenow="65" aria-valuemin="0"
+                         aria-valuemax="100" style="width: 45%">
+                         Adam 45%
+                     </div>
+                     <div class="progress-bar progress-bar-striped waifu-bar active" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"
+                         style="width:55%">
+                         Eve 55%
+                     </div>
+                 </div>
+     
+                 <h3 class="center">Equality rate today:
+                     <b>0.5</b>
+                 </h3>
+                 <h3 class="center">Great Results!
+                     <i class="fa fa-flag-checkered"></i>
+                 </h3>
+     
+     
+                 <h2>Today's Deeds History</h2>
+     
+                 <div class="deed waifu">
+                     <img src="img/deeds/D00001.png">
+                     <h3 class="title">Eve cooked a nice meal</h3>
+                     <h6 class="date">Endorsed by Adam
+                         <i class="fa fa-heart red"></i> on 15/04/2018</h6>
+                     <h4 class="points">
+                         <b>+150 points</b>
+                     </h4>
+                 </div>
+     
+                 <div class="deed waifu">
+                    <img src="img/deeds/D00001.png">
+                    <h3 class="title">Eve took the garbage out</h3>
+                     <h6 class="date">Endorsed by Adam
+                         <i class="fa fa-heart red"></i> on 15/04/2018</h6>
+                     <h4 class="points">
+                         <b>+100 points</b>
+                     </h4>
+                 </div>
+     
+                 <div class="deed hasbandu">
+                    <img src="img/deeds/D00001.png">
+                    <h3 class="title">Adam cleaned the dishes</h3>
+                     <h6 class="date">Endorsed by Eve
+                         <i class="fa fa-heart red"></i> on 15/04/2018</h6>
+                     <h4 class="points">
+                         <b>+50 points</b>
+                     </h4>
+                 </div>
+     
+                 <div class="deed hasbandu">
+                    <img src="img/deeds/D00001.png">
+                    <h3 class="title">Adam walked the dog</h3>
+                     <h6 class="date">Endorsed by Eve
+                         <i class="fa fa-heart red"></i> on 15/04/2018</h6>
+                     <h4 class="points">
+                         <b>+100 points</b>
+                     </h4>
+                 </div>
+     
+                 <div class="deed hasbandu">
+                    <img src="img/deeds/D00001.png">
+                    <h3 class="title">Adam cooked a nice meal</h3>
+                     <h6 class="date">Endorsed by Eve
+                         <i class="fa fa-heart red"></i> on 15/04/2018</h6>
+                     <h4 class="points">
+                         <b>+150 points</b>
+                     </h4>
+                 </div>
+     
+                 <div class="deed waifu">
+                    <img src="img/deeds/D00001.png">
+                    <h3 class="title">Eve took the garbage out</h3>
+                     <h6 class="date">Endorsed by Adam
+                         <i class="fa fa-heart red"></i> on 15/04/2018</h6>
+                     <h4 class="points">
+                         <b>+100 points</b>
+                     </h4>
+                 </div>
+     
+             </div>
+     
+           <!--  <div class="buttons col-lg-1 col-md-1 col-sm-1">
+                 <i class="fa fa-calendar fa-3x"></i>
+                 <br>
+                 <b>Today</b>
+     
+                 <i class="fa fa-calendar fa-3x"></i>
+                 <br>
+                 <b>This Week</b>
+     
+                 <i class="fa fa-calendar fa-3x"></i>
+                 <br>
+                 <b>This Month</b>
+     
+                 <i class="fa fa-calendar fa-3x"></i>
+                 <br>
+                 <b>This Year</b>
+     
+                 <i class="fa fa-calendar fa-3x"></i>
+                 <br>
+                 <b>All Times</b>
+             </div> -->
 
-        <div class="buttons col-lg-1 col-md-1 col-sm-1">
-            <i class="fa fa-calendar fa-3x"></i>
-            <br>
-            <b>Today</b>
-
-            <i class="fa fa-calendar fa-3x"></i>
-            <br>
-            <b>This Week</b>
-
-            <i class="fa fa-calendar fa-3x"></i>
-            <br>
-            <b>This Month</b>
-
-            <i class="fa fa-calendar fa-3x"></i>
-            <br>
-            <b>This Year</b>
-
-            <i class="fa fa-calendar fa-3x"></i>
-            <br>
-            <b>All Times</b>
-        </div>
-
-    </div>
+    <!-- </div> --> 
 
     <!-- Your code ends here -->
 
@@ -318,8 +462,6 @@
     <script src="js/multilanguage.js" type="text/javascript"></script>
 </body>
 <script>
-
-
     (function () {
 
         var navButton = document.querySelector("#nav-menu-button");
@@ -331,7 +473,6 @@
 
         navButton.onclick = toggleMobileMenu;
     }());
-
 </script>
 
 </html>
