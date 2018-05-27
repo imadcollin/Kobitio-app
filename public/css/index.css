@@ -5,11 +5,8 @@
 
 @import "compass/css3";
 body {
-    /* overflow: auto; */
     background: black;
     color: #f1f1f1;
-    /* min-width: 1024px;
-    min-height: 768px; */
     height: 100%;
     overflow: hidden;
 }
@@ -184,8 +181,6 @@ input[type=checkbox] {
 }
 
 #video-background {
-    /* width: 100%; */
-    /* position: relative; */
     width: 100% !important;
     /* height: auto   !important; */
     overflow: hidden;
@@ -221,7 +216,7 @@ video {
 footer {
     position: fixed;
     left: 0;
-    bottom: 0;
+    bottom: 1%;
     width: 100%;
     background: rgba(0, 0, 0, 0.5);
     color: white;
@@ -251,7 +246,6 @@ footer {
         /* position: fixed; */
         width: 66px;
         height: 18px;
-        /* max-height:0%; */
     }
     ul:not(#bottom_menu) {
         list-style-type: none;
