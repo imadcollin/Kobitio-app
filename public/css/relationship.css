@@ -43,9 +43,14 @@ h1 span{
 }
 /* Header Style */
 
-.view {
+/* view */
 
+.view {
+width: auto;
+height: auto;
    margin: 10px;
+   float: none;
+
    border: 10px solid #fff;
    overflow: hidden;
    position: relative;
@@ -53,6 +58,8 @@ h1 span{
    cursor: default;
 }
 .view .mask,.view .content {
+    width: auto;
+height: auto;
    position: absolute;
    overflow: hidden;
    top: 0;
