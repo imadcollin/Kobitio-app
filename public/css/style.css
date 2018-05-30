@@ -199,8 +199,8 @@
 
 @media screen and (max-width: 670px) {
     .languages_menu {
-        /* top: 85%;*/
-        margin-left: 64%;    }
+        top: 85%;
+        margin-left: 1%;    }
 
     .languages {
         margin-left: 1%;
