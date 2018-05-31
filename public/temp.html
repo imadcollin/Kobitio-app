@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Document</title>
+  <link rel="stylesheet" href="css/temp.css">
 
 
 </head>
@@ -20,23 +21,43 @@
     class Greeting extends React.Component { 
       constructor(props) { 
         super(props); 
-        this.state = { value: 'some data will be placed', }; 
-        } 
-    render() { return (
-      <div className="shopping-list">
-        <h1>Shopping List for {this.props.name}</h1>
-        <ul>
-          <li>Instagram</li>
-          <li>WhatsApp</li>
-          <li>Oculus</li>
-        </ul>
-        <li>Oculus: {this.state.value}</li>
-        <button className="square" onClick={()=> alert('click')}> Click here </button>
+        this.state = { 
+        value: 'Some data will be placed',
+        }; 
+    } 
+    render() {
+
+       return (
+
+    <div className="shopping-list">
+      <h1>This is an example of how you will replace the cards in our application 
+      
+       {this.props.name}</h1>
+      <ul>
+        <li>Instagram</li>
+        <li>WhatsApp</li>
+        <li>Oculus</li>
+      </ul>
+      
+      <h1>Here an example of how the dynamic data will be placed </h1>
+      <li>Oculus: {this.state.value}</li>
+      <h1>Here an example of an action connect to a button  </h1>
+      <button className="square" onClick={()=> alert('click')}> Click here </button>
+
+      <h2 id="demo08">Here an example of how to connect the style </h2>
+      <div className="hover08 column">
+        <div>
+          <figure>
+            <img src="https://nxworld.net/example/css-image-hover-effects/pic01.jpg" />
+          </figure>
+          <span>Hover</span>
+        </div>
+      </div>
 
     </div>
     ); 
     } 
-    }
+    } 
     
     ReactDOM.render(
     <Greeting />, document.getElementById('root') );
