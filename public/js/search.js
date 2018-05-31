@@ -66,8 +66,6 @@ function declineUser(){
 }
 
 
-
-
 /*Load next user*/
 function loadNextUser(){
 	console.log("before enterin "+currentUser);
