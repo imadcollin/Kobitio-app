@@ -4,7 +4,11 @@ body{
 	font-family: 'Oswald', Arial, sans-serif;
 	font-size: 13px;
 }
-
+figure{
+    width: auto;
+    height: auto;
+    overflow: unset;
+}
 .center{
   color: #000;
 }
