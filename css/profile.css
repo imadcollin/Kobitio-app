@@ -1,0 +1,81 @@
+/* Koibito App
+   profile.css
+   Created by Mauro J. Pappaterra on 13 of April 2018.
+*/
+
+/* Profile Section*/
+
+.portrait{
+    padding: 15px;
+    background-color: #edff00;
+}
+
+.portrait img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 300px;
+}
+
+a{
+     color: #FFFFFF;
+     text-decoration: none;
+ }
+
+a:hover{
+    color: #ff1c19;
+    text-decoration: none;
+}
+
+/*Pop up windows*/
+
+.hidden {
+    visibility: hidden;
+}
+
+#overlay {
+    background-color: rgba(0, 0, 0, 0.3);
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    left: 0px;
+    top:0px ;
+    z-index: 5;
+}
+
+.popup {
+    z-index: 10;
+
+    color: white;
+    text-align: left;
+
+    border-radius: 5px;
+    box-shadow: 2px 2px 15px black;
+
+    position: absolute;
+    padding: 25px;
+    width: 70%;
+    margin-left: 15%;
+    margin-right: 20%;
+    clear: both;
+
+    top: 15%;
+    position: fixed;
+}
+
+.popup h1,.popup h3 {
+    text-align: center;
+}
+
+.points_list{
+    height: 300px;
+    background-color: #8dff71;
+
+    overflow: auto;
+}
+
+.button {
+    padding: 5px;
+    float: right;
+    cursor: pointer;
+}

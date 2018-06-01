@@ -1,0 +1,204 @@
+/* Koibito App 
+   style.css
+   Created by Mauro J. Pappaterra on 14 of April 2018.
+*/
+
+/* Tabs and buttons */
+.tabs {
+    height: 50px;
+    width: 100%;
+}
+
+.tabs ul {
+    list-style-type: none;
+    float: left;
+    margin-top: 10px;
+    clear: both;
+}
+
+.tabs ul li {
+    float: left;
+
+    margin-left: 25px;
+    padding: 10px;
+    display: block;
+
+    background-color: #b4b4b4;
+}
+
+.tabs ul li a{
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+}
+
+.tabs ul li a:hover{
+    color: white;
+}
+
+.tabs ul li a:active{
+    color: red;
+}
+
+.buttons{
+    background-color: #b3d7ff;
+    float: left;
+}
+
+.waifu{
+    background-color: #ffafc7;
+    border-color: deeppink; /* same as waifu points */
+}
+
+.waifu .points{
+    color:deeppink;
+}
+
+/* Bar Chart CSS*/
+.waifu .bar{
+    background-color: deeppink; /* same as waifu points */
+}
+
+.hasbandu{
+    background-color: #8eaeff;
+    border-color: #405bff ; /* same as hasbandu points */
+}
+
+.hasbandu .points {
+    color: #405bff ;
+}
+
+/* Bar Chart CSS*/
+.hasbandu .bar{
+    background-color: #405bff; /* same as hasbandu points */
+}
+
+.wakashu{
+    background-color: #78f05f;
+    border-color: #29a21b; /* same as wakashu points */
+}
+
+.wakashu .points {
+    color: #29a21b;
+}
+
+/* Bar Chart CSS*/
+.wakashu .bar{
+    background-color: #29a21b; /* same as wakashu points */
+    border-color: #29a21b;
+}
+
+.selected{
+     background-color: #fb8d81;
+     border-color: #a20d0b; /* same as wakashu points */
+ }
+
+.stars {
+    color: #ffd90d;
+}
+
+/* Deeds Section*/
+.deed, .pending{
+    border-style: dashed;
+    margin: 25px;
+    padding: 15px;
+    height: 100px;
+    display: block;
+}
+
+.deed img, .pending img {
+    margin-top: 0px;
+    padding-top: 0px;
+    width: 200px;
+    float: left;
+
+    max-height:170%;
+    object-fit: contain;
+}
+
+.deed .title, .pending .title{
+    text-align: left;
+    padding-left: 25px;
+}
+
+.deed .date,.pending .date{
+    text-align: center;
+    float: left;
+    padding-left: 40px;
+}
+
+.points {
+    text-align: right;
+}
+
+/* Bar Chart CSS*/
+.progress-bar{
+    color: white;
+}
+
+.progress-big {
+    margin: 15px;
+    height: 60px;
+}
+
+.progress-small{
+    margin: 15px;
+    height: 30px;
+}
+
+/* Others */
+.center {
+    text-align: center;
+
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.red {
+    color: #ff1c19;
+}
+
+.blue {
+    color: #405bff;
+}
+
+.grey {
+    color: #b4b4b4;
+}
+
+.dark-grey {
+    color: #707070;
+}
+
+.green {
+    color: #0fac56;
+}
+
+.light-green {
+    background-color: #7fff8e;
+}
+
+/* LANGUAGE MENU */
+
+.languages_menu{
+    bottom: 0px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    clear: both;
+}
+
+.languages {
+    margin-left: 20%;
+}
+
+.languages img {
+    width: 150px;
+    float: left;
+    padding: 2%;
+}
+
+.clickable, .link_profile, .link_so, .link_user {
+    cursor: pointer;
+}

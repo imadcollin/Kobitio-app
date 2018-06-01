@@ -1,0 +1,198 @@
+<!-- Koibito App
+     partner.html
+     Created by Mauro J. Pappaterra on 13 of April 2018. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Metadata-->
+    <title id="page_title">Koibito App | <span class="firstname"></span>'s Relationship</title>
+    <meta name="Description goes here" content="">
+    <meta name="Mauro José Pappaterra" content="tags go here">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/favicon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-grid.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-reboot.css">
+
+    <!-- Font Awesome Icon Sheets CSS -->
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+
+    <!-- External CSS sheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/relationship.css">
+
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Aclonica|Acme|Droid+Serif|Pattaya" rel="stylesheet">
+
+</head>
+<body>
+    <!-- Your code starts here -->
+
+    <div class="row">
+        <div class="col-lg-3">
+            <h1>Koibito <i class="fa fa-heart fa-1x red"></i> App </h1>
+        </div>
+
+        <div class="tabs col-lg-9">
+            <ul>
+                <li><a href="profile.html">My Profile</a></li>
+                <li id="relationship_tab"><a href="relationship.html">Relationship Stats</a></li>
+                <li><a href="history.html">Relationship History</a></li>
+                <li><a href="">Explore Profiles</a></li>
+                <li><a href="index.html" id="logoff"><i class="fa fa-user-times fa"></i>Log Out</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="relation user_css col-lg-5 col-md-5  col-sm-12 link_profile">
+            <h1><b><span class="firstname"></span> (<span class="gender"></span>)</b></h1>
+            <img class="profile_picture" src="">
+
+            <div class="center">
+                <div id="stars"></div>
+                <p><b><span class="firstname"></span> is a <u id="score"></u> <span class="gender"></span>!</b></p>
+            </div>
+
+            <h4><b><span class="user_points_relationship"></span></b> <span class="gender"></span> points <b>in this relationship</b></h4>
+            <h4><b><span class="total_points"></span></b> <span class="gender"></span> points <b>in total</b></h4>
+        </div>
+
+        <div class="light-green col-lg-2 col-md-2 col-sm-12">
+            <h4><b><span class="firstname"></span> and <span class="so_firstname"></span> Relationship Stats</b></h4>
+
+            <i class="fa fa-heartbeat fa-5x red"></i>
+            <h5>Gender Equality Rate: <b><span class="gender_equality"></span></b></h5>
+            <h5>Total points together: <b><span class="points_together"></span></b></h5>
+            <h5>Length of relationship: <b><span class="time_together"></span></b></h5>
+        </div>
+
+        <div class="relation so_css col-lg-5 col-md-5  col-sm-12 link_so">
+            <h1><b><span class="so_firstname"></span> (<span class="so_gender"></span>)</b></h1>
+            <img src="" class="so_profile_picture">
+
+            <div class="center">
+                <div id="so_stars"></div>
+                <p><b><span class="so_firstname"></span> is a <u id="so_score"></u> <span class="so_gender"></span>!</b></p>
+            </div>
+
+            <h4><b><span class="so_points_relationship"></span></b> <span class="so_gender"></span> points <b>in this relationship</b></h4>
+            <h4><b><span class="so_total_points"></span></b> <span class="so_gender"></span> points <b>in total</b></h4>
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-lg-12 col-md-12  col-sm-12">
+            <div class="progress progress-big">
+                <div id="user_bar" class="progress-bar progress-bar-striped user_css bar active" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+                    <h2><span class="firstname"></span> <span class="user_percentage"></span>%</h2>
+                </div>
+                <div id="so_bar" class="progress-bar progress-bar-striped so_css bar active" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+                    <h2><span class="so_firstname"></span> <span class="so_percentage"></span>%</h2>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="row">
+        <div class="center col-lg-12 col-md-12  col-sm-12" id = "big_stars">
+            <!-- Big star score goes here -->
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="light-green col-lg-11 col-md-11  col-sm-11">
+
+            <h2><span class="filter_label"></span> relationship overview</h2>
+
+            <h3 class="center"><span id="filtered_total_points"></span> points <span class="filter_label_2"></span></h3>
+            <h3 class="center">Total <span class="gender"></span> points <span class="filter_label_2"></span>: <b id="filtered_user_points"></b></h3>
+            <h3 class="center">Total <span class="so_gender"></span> points <span class="filter_label_2"></span>: <b id="filtered_so_points"></b></h3>
+
+            <div class="progress progress-small">
+                <div id="filtered_user_bar" class="progress-bar progress-bar-striped user_css bar active" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+                    <span class="firstname"></span> <span class="filtered_user_percentage"></span>%
+                </div>
+                <div id="filtered_so_bar" class="progress-bar progress-bar-striped so_css bar active" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100">
+                    <span class="so_firstname"></span> <span class="filtered_so_percentage"></span>%
+                </div>
+            </div>
+
+            <h3 class="center"><i class="fa fa-balance-scale"></i> Equality rate <span class="filter_label_2"></span>: <b id="filtered_equality_rate"></b> </h3>
+            <h3 class="center"><span id="filter_results"></span></h3>
+
+
+            <h2><span class="filter_label"></span> Deeds History</h2>
+
+            <div id="filtered_deeds" class="filtered_deeds_box">
+                <!-- filtered deeds will be printed here -->
+            </div>
+
+        </div>
+
+        <div class="buttons col-lg-1 col-md-1 col-sm-1">
+
+            <div id="today" class="filter_button">
+                <i class="fa fa-calendar fa-3x"></i><br>
+                <b>Today</b>
+            </div>
+
+            <div id="week" class="filter_button">
+                <i class="fa fa-calendar fa-3x"></i><br>
+                <b>This Week</b>
+            </div>
+
+            <div id="month" class="filter_button">
+                <i class="fa fa-calendar fa-3x"></i><br>
+                <b>This Month</b>
+            </div>
+
+            <div id="year" class="filter_button">
+                <i class="fa fa-calendar fa-3x"></i><br>
+                <b>This Year</b>
+            </div>
+
+            <div id="alltimes" class="filter_button">
+                <i class="fa fa-calendar fa-3x"></i><br>
+                <b>All Times</b>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- Your code ends here -->
+
+    <!-- External Scripts -->
+
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Bootstrap Scripts -->
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Database -->
+    <script src="db/DB.js" type="text/javascript"></script>
+
+    <!-- Scripts-->
+    <script src="js/scripts.js" type="text/javascript"></script>
+    <script src="js/relationship.js" type="text/javascript"></script>
+
+    <script src="js/translations/relationship.js" type="text/javascript"></script>
+    <script src="js/translations/common.js" type="text/javascript"></script>
+    <script src="js/multilanguage.js" type="text/javascript"></script>
+
+</body>
+</html>

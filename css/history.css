@@ -1,0 +1,51 @@
+/* Koibito App 
+   history.css
+   Created by Mauro J. Pappaterra on 14 of 04 2018.
+*/
+
+/* History Section*/
+
+.history {
+    padding: 3%;
+    margin: 2%;
+    background-color: rgba(174, 248, 255, 0.9);
+
+    border-style: dashed;
+    border-color: #C0CFCC;
+    border-width: thin;
+
+    width: 90%;
+    height: 425px;
+
+    float: left;
+    color: black;
+    overflow:hidden;
+
+    clear: both;
+}
+
+.history img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 125px;
+}
+
+.history .c1, .history .c2 {
+    width: 25%;
+    height: 325px;
+    float: left;
+    padding: 20px;
+}
+
+.history .c1 img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.history .c3 {
+    width: 50%;
+    float: left;
+    padding: 20px;
+}

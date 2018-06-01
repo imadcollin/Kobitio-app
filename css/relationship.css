@@ -1,0 +1,41 @@
+/* Koibito App 
+   relationship.css
+   Created by Mauro J. Pappaterra on 13 of April 2018.
+*/
+
+.relation{
+    padding: 15px;
+}
+
+.relation img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 200px;
+}
+
+.equality {
+    background-color: #0fac56;
+    text-align: center;
+}
+
+.filter_button {
+    cursor: pointer;
+}
+
+.filter_button:hover {
+    color: #a21537;
+}
+
+.filter_button:active{
+    color: #ffffff;
+}
+
+.filter_selected {
+    color: #a21537;
+}
+
+.filtered_deeds_box{
+    height: 400px;
+    overflow: auto;
+}

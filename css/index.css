@@ -1,0 +1,156 @@
+/* Koibito App 
+   index.css
+   Created by Mauro J. Pappaterra on 14 of April 2018.
+*/
+
+body {
+    background-color: lightpink;
+    overflow: auto;
+}
+
+a{
+    color: #000000;
+    text-decoration: none;
+}
+
+a:hover{
+    color: #ff1c19;
+    text-decoration: none;
+}
+
+ul {
+    list-style-type: none;
+}
+
+ul li {
+    cursor: pointer;
+}
+
+/*Pop up windows*/
+
+.hidden {
+    visibility: hidden;
+}
+
+#overlay {
+    background-color: rgba(0, 0, 0, 0.6);
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    left: 0px;
+    top:0px ;
+    z-index: 5;
+    overflow: hidden;
+}
+
+.popup {
+    background-image: url("../img/waves.jpg");
+    background-color: #6cb1ff;
+    background-size:cover;
+    z-index: 10;
+
+    color: white;
+    text-align: left;
+
+    border-radius: 5px;
+    box-shadow: 2px 2px 15px black;
+
+    position: absolute;
+    padding: 25px;
+    width: 40%;
+    margin-left: 30%;
+    margin-right: 30%;
+    margin-bottom: 30%;
+    top: 10%;
+    position: fixed;
+
+    clear: both;
+}
+
+.popup h1 {
+    text-align: center;
+}
+
+.whitebox{
+    background-color: rgba(20, 20, 20, 0.5);
+    padding: 3px;
+}
+
+#login, #signup{
+    float: right;
+}
+
+.close, .close:hover {
+    color: white;
+}
+
+
+/*form stuff below*/
+
+input[type=submit] {
+    width: 30%;
+    background-color: #ffaca7;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=text] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+
+}
+input[type=text], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+}
+input[type=password], select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit] {
+    width: 30%;
+    background: linear-gradient(#ffaca7, #ff78b3);
+    color: black;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border-radius: 6px;
+    cursor: pointer;
+    border-color: black;
+    border: 1px;
+    box-shadow: 1px 1px 5px #ff1c19, -1px -1px 5px #ff1c19;
+}
+
+input[type=submit]:hover {
+    background-color: #ff1c19;
+}
+
+input[type=checkbox]
+{
+    /* Double-sized Checkboxes */
+    -ms-transform: scale(1.7); /* IE */
+    -moz-transform: scale(1.7); /* FF */
+    -webkit-transform: scale(1.7); /* Safari and Chrome */
+    -o-transform: scale(1.7); /* Opera */
+    padding: 10px;
+}

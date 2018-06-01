@@ -1,0 +1,134 @@
+<!-- Koibito App
+     profile.html
+     Created by Mauro J. Pappaterra on 13 of April 2018. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <!-- Metadata-->
+    <title id="page_title">Koibito App</title>
+    <meta name="Description goes here" content="">
+    <meta name="Mauro José Pappaterra" content="tags go here">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="img/favicon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-grid.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap-reboot.css">
+
+    <!-- Font Awesome Icon Sheets CSS -->
+    <link rel="stylesheet" href="font-awesome-4.7.0/css/font-awesome.min.css">
+
+    <!-- External CSS sheets -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/index.css">
+
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Aclonica|Acme|Droid+Serif|Pattaya" rel="stylesheet">
+
+</head>
+<body>
+    <!-- Your code starts here -->
+
+    <h1>Koibito <i class="fa fa-heart fa-1x red"></i> App</h1>
+    <h2 id="mission">Relationships that work!</h2>
+
+
+    <ul>
+        <li><i class="fa fa-user"></i><a id="login_button">Login</a></li>
+        <li><i class="fa fa-user"></i><a id="signup_button">Sign Up</a></li> <br>
+    </ul>
+
+    <!-- LANGUAGE MENU -->
+    <div class="languages_menu">
+        <a href="#" id="eng"><div class="languages"> <img src="img/eng.png"></div></a>
+        <a href="#" id="sve"><div class="languages"> <img src="img/sve.png"></div></a>
+        <a href="#" id="jap"><div class="languages"> <img src="img/jap.svg"></div></a>
+    </div>
+
+
+    <div id="overlay" class="hidden"></div>
+
+    <!-- login window -->
+    <div id="loginWindow" class="popup hidden">
+
+        <button class="close" onclick=""><i class="fa fa-times fa"></i></button>
+        <form name = "loginForm" action="javascript: void(0);">
+
+            <h1>Log in to Koibito <i class="fa fa-heart fa-1x red"></i></h1>
+
+            <a id="user_name"><h2>User name</h2></a>
+            <input type="text" name="user_name" placeholder="Enter your user name">
+
+            <a id="password"><h2>Password</h2></a>
+            <input type="password" name="password" placeholder="Enter your password">
+
+            <input type="submit" id="login" name="login" value="Log In" onClick="loginScript(loginForm)">
+
+        </form>
+    </div>
+
+    <!-- signup window -->
+    <div id="signupWindow" class="popup hidden">
+
+        <button class="close" onclick=""><i class="fa fa-times fa"></i></button>
+        <form name = "signupForm" action="javascript: void(0);">
+
+            <h1>Create a Koibito <i class="fa fa-heart fa-1x red"></i> Account</h1>
+
+            <h4 id="new_user_name">Select username</h4>
+            <input type="text" name="user_name" placeholder="Enter your user name">
+
+            <h4 id="new_password">Choose your password</h4>
+            <input type="password" name="password" placeholder="Enter your password">
+
+            <h4 id="repeat_password">Repeat your password</h4>
+            <input type="password" name="repeat_password" placeholder="Repeat your password">
+
+            <h4 id="gender">Choose your profile type</h4>
+            <select name="gender">
+                <option value="hasbandu">I am a Hasbandu (male)</option>
+                <option value="waifu">I am a Waifu (female)</option>
+                <option value="wakashu">I am a Wakashu (non-binary)</option>
+            </select>
+
+            <h4 id="orientation">I am looking for a ...</h4>
+
+            <input type="checkbox" name="looking" value="male"> <b><i>Hasbandu</i> </b><br>
+            <input type="checkbox" name="looking" value="female"> <b><i>Waifu</i> </b><br>
+            <input type="checkbox" name="looking" value="other"> <b><i>Wakashu</i> </b><br>
+
+            <input type="submit" id="signup" name="signup" value="Sign up" onClick="">
+
+        </form>
+    </div>
+
+    <!-- Your code ends here -->
+
+    <!-- External Scripts -->
+
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Bootstrap Scripts -->
+    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Database -->
+    <script src="db/DB.js" type="text/javascript"></script>
+
+    <!-- Scripts -->
+    <script src="js/index.js" type="text/javascript"></script>
+
+    <script src="js/translations/index.js" type="text/javascript"></script>
+    <script src="js/translations/common.js" type="text/javascript"></script>
+    <script src="js/multilanguage.js" type="text/javascript"></script>
+
+</body>
+</html>
