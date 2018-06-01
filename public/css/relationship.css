@@ -242,3 +242,10 @@ height: auto;
     width: 278px;
     height: 230px;
 }
+
+@media screen and (max-width: 600px) {
+h1{
+    text-align: left;
+    padding: 0;
+}
+}
