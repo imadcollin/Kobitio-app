@@ -79,21 +79,34 @@ if (anon_username == null){
 
 $("#confirmBind").click(function(){
 
-    var new_relationship = {
-            "A": user_information.username,
-            "B": anon_username,
-            "date_started": new Date(),
-            "date_ended": null,
-        };
+    if (hasSO(user_information.username)){
 
-    alert (JSON.stringify(new_relationship));
+        alert("You can't send a bind request if you are currently in a relationship! You must unbind from your current koibito first!")
 
-    SESSION_RELATIONSHIPS_TABLE.push(new_relationship);
-    sessionStorage.setItem("SESSION_RELATIONSHIPS_TABLE", JSON.stringify(SESSION_RELATIONSHIPS_TABLE));
+        $("#overlay").addClass("hidden");
+        $("#bindWindow").addClass("hidden")
+    } else {
 
-    //localStorage.setItem("anon_username", so_information.username);
-    window.location.href = "partner.html";
+        if (hasSO(anon_information.username)){
+            alert("You can't send a bind request to someone in a relationship! They must unbind from their current koibito first!")
+            $("#overlay").addClass("hidden");
+            $("#bindWindow").addClass("hidden")
+        } else {
+            var new_relationship = {
+                "A": user_information.username,
+                "B": anon_username,
+                "date_started": new Date(),
+                "date_ended": null,
+            };
 
+            //alert (JSON.stringify(new_relationship));
+            SESSION_RELATIONSHIPS_TABLE.push(new_relationship);
+            sessionStorage.setItem("SESSION_RELATIONSHIPS_TABLE", JSON.stringify(SESSION_RELATIONSHIPS_TABLE));
+
+            //localStorage.setItem("anon_username", so_information.username);
+            window.location.href = "partner.html";
+        }
+    }
 });
 
 $("#cancelBind").click(function(){
