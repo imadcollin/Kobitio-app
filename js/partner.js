@@ -73,7 +73,7 @@ if (so_information == null){
             "<div class='deed " + so_gender +"'>" +
             "<img src='img/deeds/"+ this.deed +".png'>" +
             "<h3 class='title'>" + so_information.first_name + " " + deed_description(this.deed) + "</h3>" +
-            "<h6 class='date'>Endorsed by " + user_firstname(this.endorsed_by) + " <i class='fa fa-heart red'></i> on "+ formatDate(this.date) +"</h6>" +
+            "<h6 class='date'>Endorsed by " + getFirstname(this.endorsed_by) + " <i class='fa fa-heart red'></i> on "+ formatDate(this.date) +"</h6>" +
             "<h4 class='points'><b>+"+ deed_points(this.deed)+" points</b></h4>" +
             "</div>"
         )

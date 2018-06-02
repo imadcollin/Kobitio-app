@@ -34,13 +34,16 @@ if (login_data == null){
     login_data = JSON.parse(login_data); // parse string back to JSON
     //alert("Log in as " + login_data.username);
 
-    $.each(INFORMATION_TABLE, function(element){ // return user data from information table
+    user_information = getUserInfo(login_data.username);
+    localStorage.setItem("user_information", JSON.stringify(user_information));
+
+    /*$.each(INFORMATION_TABLE, function(element){ // return user data from information table
         if (this.username == login_data.username){
             user_information = this;
             localStorage.setItem("user_information", JSON.stringify(user_information));
             return false;
         }
-    });
+    });*/
 
     /*Retrieve all users deeds from HISTORY_TABLE*/
     $.each(SESSION_HISTORY_TABLE, function(element){ // fill in deeds table
@@ -58,12 +61,14 @@ if (login_data == null){
                 significant_other = this.A;
             }
 
-            $.each(INFORMATION_TABLE, function(element){ // return SO data from information table
+            so_information = getUserInfo(significant_other);
+
+            /*$.each(INFORMATION_TABLE, function(element){ // return SO data from information table
                 if (this.username == significant_other){
                     so_information = this;
                     return false;
                 }
-            });
+            });*/
 
             //alert("SO FOUND! It's " + significant_other);
             localStorage.setItem("so_information", JSON.stringify(so_information));
@@ -101,6 +106,7 @@ if (login_data == null){
 
         //alert("User is currently single!");
         $("#relationship_info").html("<b><i>Looking for a new koibito! </i></b><i class='fa fa-heart-o red'></i>");
+        $("#relationship_info").attr("href", "");
         $("#ask_points").addClass("hidden");
         $("#review_points").addClass("hidden");
         //$("#relationship_tab").addClass("hidden");
@@ -122,7 +128,7 @@ if (login_data == null){
             "<div class='deed " + user_gender +"'>" +
             "<img src='img/deeds/"+ this.deed +".png'>" +
             "<h3 class='title'>" + user_information.first_name + " " + deed_description(this.deed) + "</h3>" +
-            "<h6 class='date'>Endorsed by " + user_firstname(this.endorsed_by) + " <i class='fa fa-heart red'></i> on "+ formatDate(this.date) +"</h6>" +
+            "<h6 class='date'>Endorsed by " + getFirstname(this.endorsed_by) + " <i class='fa fa-heart red'></i> on "+ formatDate(this.date) +"</h6>" +
             "<h4 class='points'><b>+"+ deed_points(this.deed)+" points</b></h4>" +
             "</div>"
         )
@@ -208,7 +214,7 @@ function resetReviewPointsWindow() { // resets review points window
                 "<div class='wakashu pending clickable' id='"+ this.deed +"'>" +
                 "<div hidden='true'> <span class='label'>" + this.deed + "</span></div>" +
                 "<img src='img/deeds/"+this.deed+".png'>" +
-                "<h3 class='title'>" + user_firstname(this.username) + " " + deed_description(this.deed) + "</h3>" +
+                "<h3 class='title'>" + getFirstname(this.username) + " " + deed_description(this.deed) + "</h3>" +
                 "<h4 class='points'><b>"+ deed_points(this.deed) +" points</b></h4>" +
                 "</div>"
             )

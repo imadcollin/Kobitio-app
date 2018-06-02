@@ -1,0 +1,21 @@
+/* Koibito App
+   explore.css
+   Created by Mauro J. Pappaterra on 14 of May 2018.
+*/
+
+.user_profile{
+    float: left;
+    width: 300px;
+    padding: 20px;
+    margin: 20px;
+}
+
+.user_profile img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    margin-top: 15px;
+    width: 200px;
+    height: 280px;
+}

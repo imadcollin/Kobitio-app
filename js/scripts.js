@@ -93,7 +93,7 @@ function deed_points (deed){
     return points;
 };
 
-function user_firstname (username){
+function getFirstname (username){
     var first_name = "";
     $.each(INFORMATION_TABLE, function(element){
         if (this.username == username){
@@ -201,4 +201,67 @@ function checkRepeated (deed, pointsArray){
     });
 
     return multiplier;
+}
+
+function activeRelationship (username_A, username_B){
+    if (getSO(username_A) == username_B){
+        return true;
+    }
+}
+
+/*function ended_relationship (username_A, username_B){
+    $.each(RELATIONSHIPS_TABLE, function(element){
+        if (this.date_ended != null){
+            if ((this.A == username_A && this.B == username_B) || (this.B == username_B && this.A == username_A)){
+                return true;
+            }
+        }
+    });
+    return false;
+}*/
+
+function hasSO (username){
+    var result = false;
+    $.each(RELATIONSHIPS_TABLE, function(element){
+        if (this.A == username || this.B == username){
+            if (this.date_ended == null){
+                result = true;
+            }
+        }
+    });
+    return result;
+}
+
+function getSO (username){
+    var so_info = "";
+    $.each(RELATIONSHIPS_TABLE, function(element){
+        if ((this.A == username || this.B == username) && this.date_ended == null){
+            if (this.A == username){
+                so_info = this.B;
+            } else {
+                so_info = this.A;
+            }
+        }
+    });
+    return so_info;
+}
+
+function getGenderByUsername (username){
+    var gender = 0;
+    $.each(USER_TABLE, function(element){
+        if (this.username == username){
+            gender = this.gender;
+        }
+    });
+    return gender;
+}
+
+function getUserInfo (username){
+    var information = ""
+    $.each(INFORMATION_TABLE, function(element){
+        if (this.username == username){
+            information = this;
+        }
+    });
+    return information;
 }

@@ -1,6 +1,6 @@
 <!-- Koibito App
-     explore.html
-     Created by Mauro J. Pappaterra on 30 of May 2018. -->
+     history.html
+     Created by Mauro J. Pappaterra on 13 of April 2018. -->
 
 <!DOCTYPE html>
 <html lang="en">
@@ -26,7 +26,7 @@
 
     <!-- External CSS sheets -->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/history.css">
+    <link rel="stylesheet" href="css/explore.css">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Aclonica|Acme|Droid+Serif|Pattaya" rel="stylesheet">
@@ -45,7 +45,7 @@
             <li><a href="profile.html">My Profile</a></li>
             <li id="relationship_tab"><a href="relationship.html">Relationship Stats</a></li>
             <li><a href="history.html">Relationship History</a></li>
-            <li><a href="">Explore Profiles</a></li>
+            <li><a href="explore.html">Explore Profiles</a></li>
             <li><a href="index.html" id="logoff"><i class="fa fa-user-times fa"></i>Log Out</a></li>
         </ul>
     </div>
@@ -54,210 +54,36 @@
 <div class="row light-green">
     <div class="col-lg-12">
 
-        <h4><b>Adam's Relationships History</b></h4>
+        <h4><b>Explore profiles in your area!</b></h4>
 
-        <h5><b>Current Relationship</b></h5>
-
-
-
-        <div class="history">
-
-            <h3 class="center">Adam <i class="fa fa-heart fa-1x red"></i> Eve</h3>
-
-            <div class="c1 hasbandu">
-                <img src="img/adam.jpg">
-
-                <div class="center">
-                    <i class="fa fa-star stars"></i>
-                    <p><b>Adam is <u>lame</u></b></p>
-                </div>
-
-                <p><b>300</b> hasbandu points <b>in this relationship</b></p>
-            </div>
-
-            <div class="c2 waifu">
-
-                <img src="img/eve.jpg">
-                <div class="center">
-                    <i class="fa fa-star stars"></i>
-                    <i class="fa fa-star stars"></i>
-                    <i class="fa fa-star stars"></i>
-                    <i class="fa fa-star stars"></i>
-                    <i class="fa fa-star stars"></i>
-                    <p><b>Eve is <u>amazing</u>!</b></p>
-                </div>
-                <p><b>10000</b> waifu points <b>in this relationship</b></p>
-            </div>
-
-            <div class="c3 info">
-                <h3 class="center">Relationship <i class="fa fa-heartbeat fa-1x red"></i> Stats</h3>
-
-                <div class="center">
-                    <i class="fa fa-star fa-2x stars"></i>
-                    <i class="fa fa-star fa-2x stars"></i>
-                    <i class="fa fa-star-half-empty fa-2x stars"></i>
-                    <p><b>Adam and Eve have a <u>pretty lousy</u> relationship!</b></p>
-                </div>
-
-                <div class="progress progress-small">
-                    <div class="progress-bar progress-bar-striped hasbandu-bar active" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"
-                         style="width: 25%">
-                        Adam 25%
-                    </div>
-                    <div class="progress-bar progress-bar-striped waifu-bar active" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"
-                         style="width:75%">
-                        Eve 75%
-                    </div>
-                </div>
-
-                <h5>Gender Equality Rate: <b>0.3</b></h5>
-                <h5>Total points together: <b>10300</b></h5>
-                <h5>Lenght of relationship: <b>1 Year 6 Months 3 Weeks 4 Days</b></h5>
-            </div>
-
+        <div id="load_profiles">
+            <!-- All user profiles load here!! -->
         </div>
-
-        <br>
-        <h5><b>Past Relationships</b></h5>
-
-
-        <div class="history">
-
-            <h3 class="center">Adam <i class="fa fa-heart-o fa-1x red"></i> Rebbeca</h3>
-
-            <div class="c1 hasbandu">
-                <img src="img/adam.jpg">
-
-                <div class="center">
-                    <i class="fa fa-star stars"></i>
-                    <i class="fa fa-star stars"></i>
-                    <i class="fa fa-star-half-empty stars"></i>
-
-
-                    <p><b>Adam is <u>average</u></b></p>
-                </div>
-
-                <p><b>700</b> hasbandu points <b>in this relationship</b></p>
-            </div>
-
-            <div class="c2 waifu">
-
-                <img src="img/more/rebbeca.jpg">
-                <div class="center">
-                    <i class="fa fa-star stars"></i>
-                    <i class="fa fa-star stars"></i>
-                    <i class="fa fa-star stars"></i>
-                    <i class="fa fa-star stars"></i>
-                    <p><b>Rebbeca is <u>great</u>!</b></p>
-                </div>
-                <p><b>1000</b> waifu points <b>in this relationship</b></p>
-            </div>
-
-            <div class="c3 info">
-                <h3 class="center">Relationship <i class="fa fa-heartbeat fa-1x red"></i> Stats</h3>
-
-                <div class="center">
-                    <i class="fa fa-star fa-2x stars"></i>
-                    <i class="fa fa-star fa-2x stars"></i>
-                    <i class="fa fa-star fa-2x stars"></i>
-                    <p><b>Adam and Rebbeca had a <u>stable</u> relationship!</b></p>
-                </div>
-
-                <div class="progress progress-small">
-                    <div class="progress-bar progress-bar-striped hasbandu-bar active" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"
-                         style="width: 40%">
-                        Adam 40%
-                    </div>
-                    <div class="progress-bar progress-bar-striped waifu-bar active" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"
-                         style="width:60%">
-                        Rebbeca 60%
-                    </div>
-                </div>
-
-                <h5>Gender Equality Rate: <b>0.6</b></h5>
-                <h5>Total points together: <b>1700</b></h5>
-                <h5>Lenght of relationship: <b>9 Months 2 Weeks 6 Days</b></h5>
-            </div>
-
-        </div>
-
-        <div class="history">
-
-            <h3 class="center">Adam <i class="fa fa-heart-o fa-1x red"></i> Wendy</h3>
-
-            <div class="c1 hasbandu">
-                <img src="img/adam.jpg">
-
-                <div class="center">
-                    <i class="fa fa-star stars"></i>
-                    <i class="fa fa-star stars"></i>
-                    <i class="fa fa-star stars"></i>
-
-                    <p><b>Adam is <u>ok</u></b></p>
-                </div>
-
-                <p><b>1000</b> hasbandu points <b>in this relationship</b></p>
-            </div>
-
-            <div class="c2 waifu">
-
-                <img src="img/more/wendy.jpg">
-                <div class="center">
-                    <i class="fa fa-star stars"></i>
-                    <i class="fa fa-star stars"></i>
-                    <p><b>Wendy is <u>lame</u>!</b></p>
-                </div>
-                <p><b>500</b> waifu points <b>in this relationship</b></p>
-            </div>
-
-            <div class="c3 info">
-                <h3 class="center">Relationship <i class="fa fa-heartbeat fa-1x red"></i> Stats</h3>
-
-                <div class="center">
-                    <i class="fa fa-star fa-2x stars"></i>
-                    <i class="fa fa-star-half-empty fa-2x stars"></i>
-                    <p><b>Adam and Wendy had a <u>helpless</u> relationship!</b></p>
-                </div>
-
-                <div class="progress progress-small">
-                    <div class="progress-bar progress-bar-striped hasbandu-bar active" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"
-                         style="width: 75%">
-                        Adam 75%
-                    </div>
-                    <div class="progress-bar progress-bar-striped waifu-bar active" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100"
-                         style="width:25%">
-                        Wendy 25%
-                    </div>
-                </div>
-
-                <h5>Gender Equality Rate: <b>0.3</b></h5>
-                <h5>Total points together: <b>10300</b></h5>
-                <h5>Lenght of relationship: <b>6 Years 1 Months 2 Weeks 4 Days</b></h5>
-            </div>
-
-        </div>
-
     </div>
 </div>
 
 
-    <!-- Your code ends here -->
+<!-- Your code ends here -->
 
-    <!-- External Scripts -->
+<!-- External Scripts -->
 
-    <!-- JQuery -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!-- JQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-    <!-- Bootstrap Scripts -->
-    <script src="bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="bootstrap/js/bootstrap.min.js"></script>
+<!-- Bootstrap Scripts -->
+<script src="bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
 
-    <!-- Scripts -->
-    <script src="js/history.js" type="text/javascript"></script>
+<!-- Database -->
+<script src="db/DB.js" type="text/javascript"></script>
 
-    <script src="js/translations/history.js" type="text/javascript"></script>
-    <script src="js/translations/common.js" type="text/javascript"></script>
-    <script src="js/multilanguage.js" type="text/javascript"></script>
+<!-- Scripts-->
+<script src="js/scripts.js" type="text/javascript"></script>
+<script src="js/explore.js" type="text/javascript"></script>
+
+<script src="js/translations/history.js" type="text/javascript"></script>
+<script src="js/translations/common.js" type="text/javascript"></script>
+<script src="js/multilanguage.js" type="text/javascript"></script>
 
 </body>
 </html>

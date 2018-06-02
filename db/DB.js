@@ -9,35 +9,65 @@ var USER_TABLE = [
         "password": "godsavesevasdog",
         "email": "first@email.com",
     },
-
     {
         "username": "eve4ever",
         "password": "iloveapples",
         "email": "leaves@email.com",
     },
-
     {
         "username": "tobias_hasbandu",
-        "password": "rubyrubyrubyruby",
-        "email": "tobbie_sohnsson@email.com",
+        "password": "rubyrubyruby",
+        "email": "tobbie_johnsson@email.com",
     },
-
     {
         "username": "rebeca_thebest",
         "password": "thispasswordishighinentropy",
         "email": "rebeca_tamashiro@gmail.com",
     },
-
     {
         "username": "wendyClear",
         "password": "123456",
         "email": "wendy_wifu@email.com",
     },
-
     {
         "username": "andrea_wakashu",
         "password": "thereIsALightThatNeverGoesOut#!",
         "email": "wakuwakuwaku@email.com",
+    },
+    {
+        "username": "albert1978",
+        "password": "secret",
+        "email": "albertito@email.com",
+    },
+    {
+        "username": "bobby_gomma",
+        "password": "password",
+        "email": "bobby@gmail.com",
+    },
+    {
+        "username": "charlybrown1974",
+        "password": "snoopyforpresident",
+        "email": "olafvijos@email.com",
+    },
+    {
+        "username": "johnny_gomez",
+        "password": "sverigeuberalles",
+        "email": "johnny@email.com",
+    },
+    {
+        "username": "carlottaMestre",
+        "password": "idontknow",
+        "email": "carlotta@gmail.com",
+    },
+    {
+        "username": "marilu_1987",
+        "password": "iLikewaffles",
+        "email": "pancakes@email.com",
+    },
+    {
+        "username": "angeles4you",
+        "password": "cityofangels",
+        "email": "angeles@email.com",
     }
 ];
 
@@ -53,7 +83,6 @@ var INFORMATION_TABLE = [
         "waifu": true,
         "wakashu": false,
     },
-
     {
         "username": "eve4ever",
         "first_name": "Eve",
@@ -65,7 +94,6 @@ var INFORMATION_TABLE = [
         "waifu": true,
         "wakashu": true,
     },
-
     {
         "username": "andrea_wakashu",
         "first_name": "Andrea",
@@ -77,14 +105,13 @@ var INFORMATION_TABLE = [
         "waifu": false,
         "wakashu": false,
     },
-
     { // change all these below!
         "username": "tobias_hasbandu",
         "first_name": "Tobias",
         "last_name": "Norin",
         "date_of_birth": new Date(1990, 12, 1),
         "gender": 0,
-        "description": "I like to take long walks on the beach...",
+        "description": "My name is Tobias Norin and... Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
         "hasbandu": false,
         "waifu": true,
         "wakashu": false,
@@ -107,6 +134,83 @@ var INFORMATION_TABLE = [
         "first_name": "Wendy",
         "last_name": "Palmquivst",
         "date_of_birth": new Date(1990, 12, 1),
+        "gender": 1,
+        "description": "I like to take long walks on the beach...",
+        "hasbandu": false,
+        "waifu": true,
+        "wakashu": false,
+    },
+    {
+        "username": "albert1978",
+        "first_name": "Albert",
+        "last_name": "Kamazaki",
+        "date_of_birth": new Date(1978, 12, 1),
+        "gender": 2,
+        "description": "I like to take long walks on the beach...",
+        "hasbandu": true,
+        "waifu": false,
+        "wakashu": false,
+    },
+    {
+        "username": "bobby_gomma",
+        "first_name": "Bobby",
+        "last_name": "Katcistnky",
+        "date_of_birth": new Date(1999, 10, 10),
+        "gender": 0,
+        "description": "I like to take long walks on the beach...",
+        "hasbandu": false,
+        "waifu": true,
+        "wakashu": false,
+    },
+    {
+        "username": "charlybrown1974",
+        "first_name": "Charlie",
+        "last_name": "Brown",
+        "date_of_birth": new Date(1974, 12, 1),
+        "gender": 0,
+        "description": "I like to take long walks on the beach...",
+        "hasbandu": false,
+        "waifu": true,
+        "wakashu": false,
+    },
+    {
+        "username": "johnny_gomez",
+        "first_name": "John",
+        "last_name": "Gomez",
+        "date_of_birth": new Date(2000, 12, 1),
+        "gender": 0,
+        "description": "I like to take long walks on the beach...",
+        "hasbandu": false,
+        "waifu": true,
+        "wakashu": false,
+    },
+    {
+        "username": "marilu_1987",
+        "first_name": "Marilu",
+        "last_name": "Kawasaki",
+        "date_of_birth": new Date(1995, 10, 10),
+        "gender": 2,
+        "description": "I like to take long walks on the beach...",
+        "hasbandu": true,
+        "waifu": false,
+        "wakashu": false,
+    },
+    {
+        "username": "carlottaMestre",
+        "first_name": "Carlotta",
+        "last_name": "Mestre",
+        "date_of_birth": new Date(1992, 12, 1),
+        "gender": 1,
+        "description": "I like to take long walks on the beach...",
+        "hasbandu": true,
+        "waifu": true,
+        "wakashu": false,
+    },
+    {
+        "username": "angeles4you",
+        "first_name": "Anamaria",
+        "last_name": "Angeles",
+        "date_of_birth": new Date(2000, 12, 1),
         "gender": 1,
         "description": "I like to take long walks on the beach...",
         "hasbandu": false,
@@ -144,6 +248,18 @@ var RELATIONSHIPS_TABLE = [
     {
         "A": "eve4efffver",
         "B": "Ada55m",
+        "date_started": new Date(2000, 6, 1),
+        "date_ended": null,
+    },
+    {
+        "A": "tobias_hasbandu",
+        "B": "rebeca_thebest",
+        "date_started": new Date(2000, 6, 1),
+        "date_ended": null,
+    },
+    {
+        "A": "tobias_hasbandu",
+        "B": "rebeca_thebest",
         "date_started": new Date(2000, 6, 1),
         "date_ended": null,
     }
@@ -276,49 +392,49 @@ var DEEDS_TABLE = [
 
 var HISTORY_TABLE = [
     {
-        "username": "adam_1990",
+        "username": "tobias_hasbandu",//"adam_1990",
         "endorsed_by": "eve4ever",
         "deed": 1,
         "date": null, // requested point, not yet accepted
     },
     {
-        "username": "adam_1990",
+        "username": "tobias_hasbandu",//"adam_1990",
         "endorsed_by": "eve4ever",
         "deed": 1,
         "date": new Date(2016, 10, 10),
     },
     {
-        "username": "adam_1990",
+        "username": "tobias_hasbandu",//"adam_1990",
         "endorsed_by": "eve4ever",
         "deed": 3,
         "date": new Date(2015, 5, 1),
     },
     {
-        "username": "adam_1990",
+        "username": "tobias_hasbandu",//"adam_1990",
         "endorsed_by": "eve4ever",
         "deed": 2,
         "date": new Date(2015, 5, 15),
     },
     {
-        "username": "adam_1990",
+        "username": "tobias_hasbandu",//"adam_1990",
         "endorsed_by": "eve4ever",
         "deed": 4,
         "date": new Date(2014, 3, 9),
     },
     {
-        "username": "eve4ever",
+        "username": "tobias_hasbandu",//"eve4ever",
         "endorsed_by": "adam_1990",
         "deed": 4,
         "date": new Date("December 25 2015"),
     },
     {
-        "username": "eve4ever",
+        "username": "tobias_hasbandu",//"eve4ever",
         "endorsed_by": "adam_1990",
         "deed": 1,
         "date": new Date(2015, 12, 20),
     },
     {
-        "username": "eve4ever",
+        "username": "tobias_hasbandu",//"eve4ever",
         "endorsed_by": "adam_1990",
         "deed": 4,
         "date": null,
