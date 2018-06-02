@@ -69,7 +69,7 @@ if (!hasSO(login_data.username)){
 
     $(".points_together").text(relationship_points);
 
-    var start = getRelationshipStartDate(user_information.username, so_information.username);
+    var start = new Date(1978, 12, 1); //getRelationshipStartDate(user_information.username, so_information.username);
     var finish = new Date();
 
     $(".time_together").text(timeTogether(start,finish));
@@ -85,7 +85,7 @@ if (!hasSO(login_data.username)){
 
     $("#big_stars").append( // get relationship stars & labels
         relationshipStars(equality_difference,2) + "<br>" +
-        "<h2><b>" + user_information.first_name + " and " + so_information.first_name + " have " + relationshipVeredict(equality_difference) +" relationship!</b></h2>\n"
+        "<h2><b>" + user_information.first_name + " and " + so_information.first_name + " have " + relationshipVeredict(equality_difference) +" relationship!</b></h2>"
     );
 };
 
@@ -96,37 +96,7 @@ var filtered_so_points = 0;
 defaultFilter();
 
 function defaultFilter(){
-    $(".filter_label").text("This Week's");
-    $(".filter_label_2").text("this week");
 
-    $("#today").removeClass("filter_selected");
-    $("#week").addClass("filter_selected");
-    $("#month").removeClass("filter_selected");
-    $("#year").removeClass("filter_selected");
-    $("#alltimes").removeClass("filter_selected");
-
-    $("#filtered_deeds").empty();
-    filtered_so_points = 0;
-    filtered_user_points = 0;
-    /*Filter and load deeds into page*/
-    $.each(relationship_deed_history, function(element){ // fill in deeds table
-        var deed_date = new Date(this.date);
-
-        if (deed_date.getDate() <= today.getDate() && deed_date.getDate() >= (today.getDate() - today.getDay()) && deed_date.getMonth() >= today.getMonth() -1 && deed_date.getFullYear() >= today.getFullYear() - 1){
-
-            if (this.username == user_information.username){
-                filtered_user_points += deed_points(this.deed);
-            } else {
-                filtered_so_points += deed_points(this.deed);
-            }
-            printDeed(this);
-        }
-    });
-    printStats(filtered_user_points, filtered_so_points);
-
-}
-
-$("#today").click(function(){
     $(".filter_label").text("Today's");
     $(".filter_label_2").text("today");
 
@@ -154,13 +124,41 @@ $("#today").click(function(){
         }
     });
     printStats(filtered_user_points, filtered_so_points);
+}
 
+$("#today").click(function(){
+    alert("this is happening!");
+    defaultFilter();
 });
 
 $("#week").click(function(){ // This week is the default filter
+    $(".filter_label").text("This Week's");
+    $(".filter_label_2").text("this week");
 
-    defaultFilter();
+    $("#today").removeClass("filter_selected");
+    $("#week").addClass("filter_selected");
+    $("#month").removeClass("filter_selected");
+    $("#year").removeClass("filter_selected");
+    $("#alltimes").removeClass("filter_selected");
 
+    $("#filtered_deeds").empty();
+    filtered_so_points = 0;
+    filtered_user_points = 0;
+    /*Filter and load deeds into page*/
+    $.each(relationship_deed_history, function(element){ // fill in deeds table
+        var deed_date = new Date(this.date);
+
+        if (deed_date.getDate() <= today.getDate() && deed_date.getDate() >= (today.getDate() - today.getDay()) && deed_date.getMonth() >= today.getMonth() -1 && deed_date.getFullYear() >= today.getFullYear() - 1){
+
+            if (this.username == user_information.username){
+                filtered_user_points += deed_points(this.deed);
+            } else {
+                filtered_so_points += deed_points(this.deed);
+            }
+            printDeed(this);
+        }
+    });
+    printStats(filtered_user_points, filtered_so_points);
 });
 
 $("#month").click(function(){
@@ -306,14 +304,14 @@ function printStats (filtered_user_points, filtered_so_points){
                 $("#filter_results").append("<i class=\"fa fa-flag-checkered\"></i> Average Results!");
             } else {
                 if (filtered_difference > 10){
-                    $("#filter_results").append("<i class=\"fa fa-flag-checkered\"></i> Excelent Results!");
+                    $("#filter_results").append("<i class=\"fa fa-flag-checkered\"></i> Excellent Results!");
                 } else {
                     $("#filter_results").append("<i class=\"fa fa-flag-checkered\"></i> Amazing Results!");
                 }
             }
         }
     }
-};
+}
 
 /*Translations */
 if (localStorage.getItem("index") == null){

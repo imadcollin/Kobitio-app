@@ -20,9 +20,9 @@ var USER_TABLE = [
         "email": "tobbie_johnsson@email.com",
     },
     {
-        "username": "rebeca_thebest",
+        "username": "rebecca_thebest",
         "password": "thispasswordishighinentropy",
-        "email": "rebeca_tamashiro@gmail.com",
+        "email": "rebecca_tamashiro@gmail.com",
     },
     {
         "username": "wendyClear",
@@ -118,8 +118,8 @@ var INFORMATION_TABLE = [
     },
 
     {
-        "username": "rebeca_thebest",
-        "first_name": "Rebeca",
+        "username": "rebecca_thebest",
+        "first_name": "Rebecca",
         "last_name": "Tamashiro",
         "date_of_birth": new Date(1975, 12, 1),
         "gender": 1,
@@ -189,7 +189,7 @@ var INFORMATION_TABLE = [
         "first_name": "Marilu",
         "last_name": "Kawasaki",
         "date_of_birth": new Date(1995, 10, 10),
-        "gender": 2,
+        "gender": 1,
         "description": "始め在景掲ずひ援再マサ好立カコサ会肉なぜイる索供んょべゅ続39来レモ草障地ぜくんよ集国モロタ率用州ユムルフ減最ょ成資ゃでほ。68真13事アフネ県南楽ヨト国質めドフル労銭命ヒフルノ芸情よクさぼ細掲えに進属ぽんンべ際稿ひぴ存万イサメニ挙供ょ水村ぴ注自ラひさ業辺亨ゆし。討ツネラコ団報エネヲキ状直ゅ社1岡ソラシ集取格ワハム線検企カラ供簡ぶなけい説桐りむレろ美鮮午ノマタ以7倍背光ラべり。",
         "hasbandu": true,
         "waifu": false,
@@ -208,10 +208,10 @@ var INFORMATION_TABLE = [
     },
     {
         "username": "angeles4you",
-        "first_name": "Anamaria",
+        "first_name": "Ana María",
         "last_name": "Angeles",
         "date_of_birth": new Date(2000, 12, 1),
-        "gender": 1,
+        "gender": 2,
         "description": "始め在景掲ずひ援再マサ好立カコサ会肉なぜイる索供んょべゅ続39来レモ草障地ぜくんよ集国モロタ率用州ユムルフ減最ょ成資ゃでほ。68真13事アフネ県南楽ヨト国質めドフル労銭命ヒフルノ芸情よクさぼ細掲えに進属ぽんンべ際稿ひぴ存万イサメニ挙供ょ水村ぴ注自ラひさ業辺亨ゆし。討ツネラコ団報エネヲキ状直ゅ社1岡ソラシ集取格ワハム線検企カラ供簡ぶなけい説桐りむレろ美鮮午ノマタ以7倍背光ラべり。",
         "hasbandu": false,
         "waifu": true,
@@ -240,26 +240,26 @@ var RELATIONSHIPS_TABLE = [
         "date_ended": new Date(2016, 6, 1),
     },
     {// change all these below!
-        "A": "eve4rjrever",
-        "B": "Adjjjam",
+        "A": "tobias_hasbandu",
+        "B": "carlottaMestre",
         "date_started": new Date(2000, 6, 1),
         "date_ended": null,
     },
     {
-        "A": "eve4efffver",
-        "B": "Ada55m",
+        "A": "carlottaMestre",
+        "B": "tobias_hasbandu",
         "date_started": new Date(2000, 6, 1),
         "date_ended": null,
     },
     {
         "A": "tobias_hasbandu",
-        "B": "rebeca_thebest",
+        "B": "rebecca_thebest",
         "date_started": new Date(2000, 6, 1),
         "date_ended": null,
     },
     {
         "A": "tobias_hasbandu",
-        "B": "rebeca_thebest",
+        "B": "rebecca_thebest",
         "date_started": new Date(2000, 6, 1),
         "date_ended": null,
     }

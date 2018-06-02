@@ -321,7 +321,14 @@ function getUserDeeds(username) {
             userDeeds.push(this)
         }
     });
+    //alert(JSON.stringify(user_deeds));
     return userDeeds;
+}
+
+function getUserPoints (username) {
+    var userDeeds = getUserDeeds(username);
+    points = calculatePoints(userDeeds);
+    return points;
 }
 
 function getRelationshipDeeds(username_A, username_B,) {
