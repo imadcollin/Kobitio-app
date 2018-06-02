@@ -392,49 +392,49 @@ var DEEDS_TABLE = [
 
 var HISTORY_TABLE = [
     {
-        "username": "tobias_hasbandu",//"adam_1990",
+        "username": "adam_1990",
         "endorsed_by": "eve4ever",
         "deed": 1,
         "date": null, // requested point, not yet accepted
     },
     {
-        "username": "tobias_hasbandu",//"adam_1990",
+        "username": "adam_1990",
         "endorsed_by": "eve4ever",
         "deed": 1,
         "date": new Date(2016, 10, 10),
     },
     {
-        "username": "tobias_hasbandu",//"adam_1990",
+        "username": "adam_1990",
         "endorsed_by": "eve4ever",
         "deed": 3,
         "date": new Date(2015, 5, 1),
     },
     {
-        "username": "tobias_hasbandu",//"adam_1990",
+        "username": "adam_1990",
         "endorsed_by": "eve4ever",
         "deed": 2,
         "date": new Date(2015, 5, 15),
     },
     {
-        "username": "tobias_hasbandu",//"adam_1990",
+        "username": "adam_1990",
         "endorsed_by": "eve4ever",
         "deed": 4,
         "date": new Date(2014, 3, 9),
     },
     {
-        "username": "tobias_hasbandu",//"eve4ever",
+        "username": "eve4ever",
         "endorsed_by": "adam_1990",
         "deed": 4,
         "date": new Date("December 25 2015"),
     },
     {
-        "username": "tobias_hasbandu",//"eve4ever",
+        "username": "eve4ever",
         "endorsed_by": "adam_1990",
         "deed": 1,
         "date": new Date(2015, 12, 20),
     },
     {
-        "username": "tobias_hasbandu",//"eve4ever",
+        "username": "eve4ever",
         "endorsed_by": "adam_1990",
         "deed": 4,
         "date": null,
