@@ -3,42 +3,31 @@
  *  Created by Mauro J. Pappaterra on 24 of April 2018.
  */
 
-/* ANON_USER PAGE SCRIPTS
+/* ANON_USER PAGE SCRIPTSgt
 * All scripts related to the single page. Each page has their own scripts in a single js document.
 * The methods translate() is unique for each individual page.
 */
 
-/*LOAD CURRENT SECTION DATA FROM SESSION STORAGE*/
-if (sessionStorage.getItem("SESSION_HISTORY_TABLE") == null){
-    sessionStorage.setItem("SESSION_HISTORY_TABLE",JSON.stringify(HISTORY_TABLE));
-    //alert("History databases loaded from script!")
-} /*else {
-    alert("History database will be loaded from session storage!")
-}*/
-
+loadSessionDB();
 var SESSION_HISTORY_TABLE = JSON.parse(sessionStorage.getItem("SESSION_HISTORY_TABLE"));
-//alert(JSON.stringify(SESSION_HISTORY_TABLE));
 
 /*Retrieve login information from localStorage*/
-var anon_information = localStorage.getItem("anon_information");
-var user_information = localStorage.getItem("user_information");
+var login_data = JSON.parse(localStorage.getItem("login_data"));
+var anon_username = localStorage.getItem("anon_username");
 
-var anon_deed_history = []; // retrieve all partner's deeds from HISTORY_TABLE
-var anon_points = 0; // calculate anon_points
-
-if (anon_information == null){
+if (anon_username == null){
     window.location.href = "profile.html";
 } else {
-    anon_information = JSON.parse(anon_information); // parse string back to JSON
-    user_information = JSON.parse(user_information);
+
+    var anon_information = getUserInfo(anon_username);
+    var user_information = getUserInfo(login_data.username);
 
     if (activeRelationship(anon_information.username, user_information.username)){
-        window.location.href = "partner.html";
+        window.location.href = "partner.html"; // if anon == partner redirect to corresponding view
     }
     if( user_information.username == anon_information.username){
-        window.location.href = "profile.html";
+        window.location.href = "profile.html"; // if anon == user redirect to corresponding view
     }
-
     //alert("You are looking at anonymous " + anon_information.username);
 
     /*Load anon information into page*/
@@ -54,14 +43,7 @@ if (anon_information == null){
 
    if (hasSO(anon_information.username)){
 
-       var so_username = getSO(anon_information.username);
-
-       $.each(INFORMATION_TABLE, function(element){ // return SO data from information table
-           if (this.username == so_username){
-               so_information = this;
-               return false;
-           }
-       });
+       var so_information = getUserInfo(getSO(anon_username));
 
         $("#relationship_info").html("<b>Current "+ getGender(so_information.gender) +": </b>" + so_information.first_name + " <i class='fa fa-heart red'></i>");
         localStorage.setItem("anon_information", JSON.stringify(so_information));
@@ -72,16 +54,10 @@ if (anon_information == null){
     }
 
     /*Retrieve anon deeds from HISTORY_TABLE*/
-    $.each(SESSION_HISTORY_TABLE, function(element){ // fill in deeds table
-        if (this.username == anon_information.username && (this.date != null && this.date != -1)){ // find more elegant solution
-            anon_deed_history.push(this)
-        }
-    });
+    var anon_deed_history = getUserDeeds(anon_username);
 
     /*Calculate anon points*/
-    $.each(anon_deed_history, function(element){ // calculate anon_points
-        anon_points += deed_points(this.deed);
-    });
+    var anon_points = calculatePoints(anon_deed_history);
 
     $(".total_points").text(anon_points);
     $("#stars").html(individual_stars(anon_points));
@@ -99,8 +75,6 @@ if (anon_information == null){
     )
     });
 }
-
-$
 
 /*Language Translation index*/
 if (localStorage.getItem("index") == null){

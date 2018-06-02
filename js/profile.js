@@ -8,24 +8,15 @@
 * The methods translate() is unique for each individual page.
 */
 
-/*LOAD CURRENT SECTION DATA FROM SESSION STORAGE*/
-if (sessionStorage.getItem("SESSION_HISTORY_TABLE") == null){
-    sessionStorage.setItem("SESSION_HISTORY_TABLE",JSON.stringify(HISTORY_TABLE));
-    //alert("History databases loaded from script!")
-} /*else {
-    alert("History database will be loaded from session storage!")
-}*/
-
+loadSessionDB();
 var SESSION_HISTORY_TABLE = JSON.parse(sessionStorage.getItem("SESSION_HISTORY_TABLE"));
-
-//alert(JSON.stringify(SESSION_HISTORY_TABLE));
 
 /*Retrieve login information from localStorage*/
 var login_data = localStorage.getItem("login_data");
 
 var requested_deeds = []; // keep track of the endorsed deeds
 var selected_deeds = []; // keep track of the pending deeds selected
-var users_deed_history = []; // retrieve all user's deeds from HISTORY_TABLE
+var user_deed_history = []; // retrieve all user's deeds from HISTORY_TABLE
 var user_points = 0; // calculate points
 
 if (login_data == null){
@@ -35,33 +26,6 @@ if (login_data == null){
     //alert("Log in as " + login_data.username);
 
     user_information = getUserInfo(login_data.username);
-    localStorage.setItem("user_information", JSON.stringify(user_information));
-
-    /*Retrieve all users deeds from HISTORY_TABLE*/
-    $.each(SESSION_HISTORY_TABLE, function(element){ // fill in deeds table
-        if (this.username == user_information.username && (this.date != null && this.date != -1)){ // find more elegant solution!!
-            users_deed_history.push(this)
-        }
-    });
-
-    $.each(RELATIONSHIPS_TABLE, function(element){ // return user data from information table
-        if ((this.A == login_data.username || this.B == login_data.username) && this.date_ended == null){
-
-            if (this.A == login_data.username){
-                significant_other = this.B;
-            } else {
-                significant_other = this.A;
-            }
-
-            so_information = getUserInfo(significant_other);
-            localStorage.setItem("so_information", JSON.stringify(so_information));
-
-            return false;
-        } else {
-            significant_other = null;
-        }
-    });
-
 
     /*Load User and SO information into page*/
     $("#profile_picture").attr("src","img/users/"+ login_data.username +".jpg");
@@ -75,11 +39,11 @@ if (login_data == null){
     $(".user_css").addClass(user_gender);
 
 
-    if (significant_other != null){
-
+    if (hasSO(login_data.username)){
         $("#ask_points").removeClass("hidden");
         $("#review_points").removeClass("hidden");
-        //$("#relationship_tab").removeClass("hidden");
+
+        var so_information = getUserInfo(getSO(login_data.username));
 
         $("#relationship_info").html("<b>Current "+ getGender(so_information.gender) +": </b>" + so_information.first_name + " <i class='fa fa-heart red'></i>");
         $(".so_name").text(so_information.first_name);
@@ -87,8 +51,6 @@ if (login_data == null){
 
 
     } else {
-
-        //alert("User is currently single!");
         $("#relationship_info").html("<b><i>Looking for a new koibito! </i></b><i class='fa fa-heart-o red'></i>");
         $("#relationship_info").attr("href", "");
         $("#ask_points").addClass("hidden");
@@ -98,18 +60,17 @@ if (login_data == null){
         //$("#relationship_tab").addClass("hidden"); // this tab should be disable
     }
 
-    /*Calculate points*/
-    $.each(users_deed_history, function(element){ // calculate points
-        user_points += deed_points(this.deed);
-    });
+    /*Retrieve all users deeds from HISTORY_TABLE*/
+    user_deed_history = getUserDeeds(login_data.username);
 
-    //alert("Total points " + user_points);
+    user_points = calculatePoints(user_deed_history);//Calculate points
+
     $(".total_points").text(user_points);
     $("#stars").html(individual_stars(user_points));
     $("#score").text(score(user_points));
 
     /*Load User History into page*/
-    $.each(users_deed_history.slice(-6) , function(element){ // fill in deeds table
+    $.each(user_deed_history.slice(-6) , function(element){ // fill in deeds table
         $("#deeds_overview").prepend(
             "<div class='deed " + user_gender +"'>" +
             "<img src='img/deeds/"+ this.deed +".png'>" +
@@ -188,7 +149,6 @@ function resetRequestPointsWindow() { // resets give points window
 
 
 function resetReviewPointsWindow() { // resets review points window
-
     selected_deeds = [];
     $("#review_list").empty();
 
@@ -274,11 +234,6 @@ $("#declinePoints").click(function(){
 
 });
 
-/*Language Translation index*/
-if (localStorage.getItem("index") == null){
-    localStorage.setItem("index",0)
-}
-
 $(".view_partner").click(function() {
     //alert("Redirecting to partners profile now!");
     window.location.href = "partner.html";
@@ -308,6 +263,12 @@ $(".close").click(function() {
     $("#requestWindow").addClass("hidden");
     $("#reviewWindow").addClass("hidden");
 });
+
+
+/*Language Translation index*/
+if (localStorage.getItem("index") == null){
+    localStorage.setItem("index",0)
+}
 
 function translate (index) {
     $("#page_title").text(page_title[index]);

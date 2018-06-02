@@ -233,21 +233,35 @@ function hasSO (username){
 }
 
 function getSO (username){
-    var so_info = "";
+    var so_username = null;
     $.each(RELATIONSHIPS_TABLE, function(element){
         if ((this.A == username || this.B == username) && this.date_ended == null){
             if (this.A == username){
-                so_info = this.B;
+                so_username = this.B;
             } else {
-                so_info = this.A;
+                so_username = this.A;
             }
         }
     });
-    return so_info;
+    return so_username;
+}
+
+function getSOHistory (username){
+    var so_history = [];
+    $.each(RELATIONSHIPS_TABLE, function(element){
+        if ((this.A == username || this.B == username) && this.date_ended != null){
+            if (this.A == username){
+                so_history.push(this.B);
+            } else {
+                so_history.push(this.A);
+            }
+        }
+    });
+    return so_history;
 }
 
 function getGenderByUsername (username){
-    var gender = 0;
+    var gender = null;
     $.each(USER_TABLE, function(element){
         if (this.username == username){
             gender = this.gender;
@@ -257,7 +271,7 @@ function getGenderByUsername (username){
 }
 
 function getUserInfo (username){
-    var information = ""
+    var information = null;
     $.each(INFORMATION_TABLE, function(element){
         if (this.username == username){
             information = this;
@@ -265,3 +279,33 @@ function getUserInfo (username){
     });
     return information;
 }
+
+function getUserDeeds(username) {
+    var userDeeds = [];
+    $.each(SESSION_HISTORY_TABLE, function(element){ // fill in deeds table
+        if (this.username == username && this.date != null && this.date != -1){ // find more elegant solution
+            userDeeds.push(this)
+        }
+    });
+    return userDeeds;
+}
+
+function getRelationshipDeeds(username_A, username_B,) {
+    var relationshipDeeds = [];
+    $.each(SESSION_HISTORY_TABLE, function(element){ // fill in deeds table
+
+        if ((this.username == username_A && this.endorsed_by == username_B) || (this.username == username_B && this.endorsed_by == username_A)  && this.date != -1){// find more elegant solution
+            relationshipDeeds.push(this)
+        }
+    });
+    return relationshipDeeds;
+}
+
+function calculatePoints(deeds_array) {
+    var points = 0;
+    $.each(deeds_array, function(element){ // calculate points
+        points += deed_points(this.deed);
+    });
+    return points;
+}
+

@@ -8,34 +8,21 @@
 * The methods translate() is unique for each individual page.
 */
 
-/*LOAD CURRENT SECTION DATA FROM SESSION STORAGE*/
-if (sessionStorage.getItem("SESSION_HISTORY_TABLE") == null){
-    sessionStorage.setItem("SESSION_HISTORY_TABLE",JSON.stringify(HISTORY_TABLE));
-    //alert("History databases loaded from script!")
-} /*else {
-    alert("History database will be loaded from session storage!")
-}*/
-
+loadSessionDB();
 var SESSION_HISTORY_TABLE = JSON.parse(sessionStorage.getItem("SESSION_HISTORY_TABLE"));
-//alert(JSON.stringify(SESSION_HISTORY_TABLE));
 
 /*Retrieve login information from localStorage*/
-var so_information = localStorage.getItem("so_information");
-var user_information = localStorage.getItem("user_information");
-
+var login_data = JSON.parse(localStorage.getItem("login_data"));
 var endorsed_deeds = []; // keep track of the endorsed deeds
-var partners_deed_history = []; // retrieve all partner's deeds from HISTORY_TABLE
-var points = 0; // calculate points
 
-if (so_information == null){
+if (!hasSO(login_data.username)){
     window.location.href = "profile.html";
 } else {
-    so_information = JSON.parse(so_information); // parse string back to JSON
-    user_information = JSON.parse(user_information);
-
+    var user_information = getUserInfo(login_data.username);
+    var so_information = getUserInfo(getSO(login_data.username));
     //alert("You are looking at your partners profile " + so_information.first_name);
 
-    /*Load User and SO information into page*/
+    /*Load User information into page*/
     $(".user_firstname").text(user_information.first_name);
     $(".user_gender").text(getGender(user_information.gender));
 
@@ -44,25 +31,16 @@ if (so_information == null){
     $(".firstname").text(so_information.first_name);
     $(".lastname").text(so_information.last_name);
     $("#description").text(so_information.description);
-
-    /*Gender will be used for different CSS styling*/
-    var so_gender = getGender(so_information.gender);
+    var so_gender = getGender(so_information.gender); //Gender will be used for different CSS styling
     $(".so_gender").text(so_gender);
     $(".so_css").addClass(so_gender);
 
     /*Retrieve SO deeds from HISTORY_TABLE*/
-    $.each(SESSION_HISTORY_TABLE, function(element){ // fill in deeds table
-        if (this.username == so_information.username && (this.date != null && this.date != -1)){ // find more elegant solution
-            partners_deed_history.push(this)
-        }
-    });
+    var partners_deed_history = getUserDeeds(so_information.username);
 
     /*Calculate points*/
-    $.each(partners_deed_history, function(element){ // calculate points
-        points += deed_points(this.deed);
-    });
+    var points = calculatePoints(partners_deed_history);
 
-    //alert("Total points " + points);
     $(".total_points").text(points);
     $("#stars").html(individual_stars(points));
     $("#score").text(score(points));
@@ -94,7 +72,6 @@ $(document).on('click','.deed',function(){
     endorsed_deeds.push(this.id);
     //alert(endorsed_deeds.toString());
     $("#total_points").text(updatePoints(endorsed_deeds));
-
 });
 
 function resetGivePointsWindow () { // resets give points window
@@ -115,7 +92,6 @@ function resetGivePointsWindow () { // resets give points window
     });
 
     $("#total_points").text(0);
-
 }
 
 $("#submitPoints").click(function(){
@@ -140,17 +116,11 @@ $("#submitPoints").click(function(){
         alert("SUCCESS! You have endorsed " + so_information.first_name + " with " + updatePoints(endorsed_deeds) + " " + so_gender + " points!");
         window.location.href = "partner.html";
     }
-
 });
 
 $("#resetPoints").click(function(){
     resetGivePointsWindow();
 });
-
-/*Language Translation index*/
-if (localStorage.getItem("index") == null){
-    localStorage.setItem("index",0)
-}
 
 /*Pop up windows*/
 $("#give_points").click(function() {
@@ -163,6 +133,11 @@ $(".close").click(function() {
     $("#overlay").addClass("hidden");
     $("#giveWindow").addClass("hidden")
 });
+
+/*Language Translation index*/
+if (localStorage.getItem("index") == null){
+    localStorage.setItem("index",0)
+}
 
 function translate (index) {
     $("#page_title").text(page_title[index]);

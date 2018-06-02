@@ -43,7 +43,6 @@ if (login_data == null){
 $(document).on('click','.user_profile',function(){
     var profile_id = $(this).attr('id');
     //alert("You have clicked on the profile of " + profile_id);
-
-    localStorage.setItem("anon_information", JSON.stringify(getUserInfo(profile_id)));
+    localStorage.setItem("anon_username", profile_id);
     window.location.href = "anon_user.html";
 });

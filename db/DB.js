@@ -481,3 +481,20 @@ var HISTORY_TABLE = [
         "date":"2018-05-31T04:44:09.781Z"
     }
 ];
+
+/*LOAD CURRENT SECTION DATA FROM SESSION STORAGE*/
+function loadSessionDB (){
+    if (sessionStorage.getItem("SESSION_HISTORY_TABLE") == null){
+        sessionStorage.setItem("SESSION_HISTORY_TABLE",JSON.stringify(HISTORY_TABLE));
+        /*alert("History databases loaded from script!")
+    } else {
+        alert("History database will be loaded from session storage!")*/
+    }
+}
+
+
+
+
+
+
+

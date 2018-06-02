@@ -8,15 +8,8 @@
 * The methods translate() is unique for each individual page.
 */
 
-/*LOAD CURRENT SECTION DATA FROM SESSION STORAGE*/
-if (sessionStorage.getItem("SESSION_HISTORY_TABLE") == null){
-    sessionStorage.setItem("SESSION_HISTORY_TABLE",JSON.stringify(HISTORY_TABLE));
-    /*alert("History databases loaded from script!")
-} else {
-    alert("History database will be loaded from session storage!")*/
-}
+loadSessionDB();
 
-var SESSION_HISTORY_TABLE = JSON.parse(sessionStorage.getItem("SESSION_HISTORY_TABLE"));
 var user_deed_history = []; // retrieve all user's deeds from HISTORY_TABLE
 var so_deed_history = []; // retrieve all partner's deeds from HISTORY_TABLE
 var relationship_deed_history = []; // retrieve couple's deeds from HISTORY_TABLE
@@ -316,9 +309,11 @@ $("#year").click(function(){
     $("#year").addClass("filter_selected");
     $("#alltimes").removeClass("filter_selected");
 
+    /*Reset Filtered box*/
     $("#filtered_deeds").empty();
     filtered_so_points = 0;
     filtered_user_points = 0;
+
     /*Filter and load deeds into page*/
     $.each(relationship_deed_history, function(element){ // fill in deeds table
         var deed_date = new Date(this.date);
