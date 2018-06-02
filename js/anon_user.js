@@ -100,6 +100,8 @@ if (anon_information == null){
     });
 }
 
+$
+
 /*Language Translation index*/
 if (localStorage.getItem("index") == null){
     localStorage.setItem("index",0)

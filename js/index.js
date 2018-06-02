@@ -20,7 +20,7 @@ function loginScript (login_data){
         if (this.username == username){
             exist = true;
             if (this.password == password){
-                alert("SUCCESS! Username and password match!\n" + JSON.stringify(this));
+                //alert("SUCCESS! Username and password match!\n" + JSON.stringify(this));
                 localStorage.setItem("login_data", JSON.stringify(this));
                 window.location.replace("profile.html");
             } else {

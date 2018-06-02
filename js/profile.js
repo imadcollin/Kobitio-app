@@ -37,14 +37,6 @@ if (login_data == null){
     user_information = getUserInfo(login_data.username);
     localStorage.setItem("user_information", JSON.stringify(user_information));
 
-    /*$.each(INFORMATION_TABLE, function(element){ // return user data from information table
-        if (this.username == login_data.username){
-            user_information = this;
-            localStorage.setItem("user_information", JSON.stringify(user_information));
-            return false;
-        }
-    });*/
-
     /*Retrieve all users deeds from HISTORY_TABLE*/
     $.each(SESSION_HISTORY_TABLE, function(element){ // fill in deeds table
         if (this.username == user_information.username && (this.date != null && this.date != -1)){ // find more elegant solution!!
@@ -62,16 +54,8 @@ if (login_data == null){
             }
 
             so_information = getUserInfo(significant_other);
-
-            /*$.each(INFORMATION_TABLE, function(element){ // return SO data from information table
-                if (this.username == significant_other){
-                    so_information = this;
-                    return false;
-                }
-            });*/
-
-            //alert("SO FOUND! It's " + significant_other);
             localStorage.setItem("so_information", JSON.stringify(so_information));
+
             return false;
         } else {
             significant_other = null;
@@ -109,7 +93,9 @@ if (login_data == null){
         $("#relationship_info").attr("href", "");
         $("#ask_points").addClass("hidden");
         $("#review_points").addClass("hidden");
-        //$("#relationship_tab").addClass("hidden");
+        $(".link_so").addClass("hidden");
+
+        //$("#relationship_tab").addClass("hidden"); // this tab should be disable
     }
 
     /*Calculate points*/

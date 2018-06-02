@@ -43,11 +43,12 @@ var user_information = localStorage.getItem("user_information");
 //alert(user_information);
 //alert(so_information);
 
-if (so_information == null){
+so_information = JSON.parse(so_information); // parse string back to JSON
+user_information = JSON.parse(user_information);
+
+if (so_information == null || !hasSO(user_information.username)){
     window.location.href = "profile.html";
 } else {
-    so_information = JSON.parse(so_information); // parse string back to JSON
-    user_information = JSON.parse(user_information);
 
     /*Load relationship information*/
     /*USER INFORMATION*/
