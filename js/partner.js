@@ -10,6 +10,9 @@
 
 loadSessionDB();
 var SESSION_HISTORY_TABLE = JSON.parse(sessionStorage.getItem("SESSION_HISTORY_TABLE"));
+var SESSION_RELATIONSHIPS_TABLE = JSON.parse(sessionStorage.getItem("SESSION_RELATIONSHIPS_TABLE"));
+
+alert(JSON.stringify(SESSION_RELATIONSHIPS_TABLE));
 
 /*Retrieve login information from localStorage*/
 var login_data = JSON.parse(localStorage.getItem("login_data"));
@@ -122,6 +125,29 @@ $("#resetPoints").click(function(){
     resetGivePointsWindow();
 });
 
+$("#confirmUnbind").click(function(){
+    $.each(SESSION_RELATIONSHIPS_TABLE, function(element){
+        if ((user_information.username == this.A && so_information.username == this.B) || (so_information.username == this.A && user_information.username == this.B)){
+            if (this.date_ended != null){
+                this.date_ended = new Date();
+                alert("You have successfully unbind your profile from " + so_information.first_name);
+                alert (JSON.stringify(this));
+            }
+        }
+    });
+
+    sessionStorage.setItem("SESSION_RELATIONSHIPS_TABLE", JSON.stringify(SESSION_RELATIONSHIPS_TABLE));
+
+    localStorage.setItem("anon_username", so_information.username);
+    window.location.href = "anon_user.html";
+
+});
+
+$("#cancelUnbind").click(function(){
+    $("#overlay").addClass("hidden");
+    $("#unbindWindow").addClass("hidden")
+});
+
 /*Pop up windows*/
 $("#give_points").click(function() {
     $("#overlay").removeClass("hidden");
@@ -129,9 +155,15 @@ $("#give_points").click(function() {
     resetGivePointsWindow();
 });
 
+$("#unbind").click(function() {
+    $("#overlay").removeClass("hidden");
+    $("#unbindWindow").removeClass("hidden")
+});
+
 $(".close").click(function() {
     $("#overlay").addClass("hidden");
     $("#giveWindow").addClass("hidden")
+    $("#unbindWindow").addClass("hidden")
 });
 
 /*Language Translation index*/

@@ -3,6 +3,11 @@
  *  Created by Mauro J. Pappaterra on 27 of May 2018.
  */
 
+loadSessionDB();
+var SESSION_HISTORY_TABLE = JSON.parse(sessionStorage.getItem("SESSION_HISTORY_TABLE"));
+var SESSION_RELATIONSHIPS_TABLE = JSON.parse(sessionStorage.getItem("SESSION_RELATIONSHIPS_TABLE"));
+
+
 $(".link_profile").click(function(){
     window.location.href = "profile.html";
 });
@@ -242,7 +247,7 @@ function activeRelationship (username_A, username_B){
 
 function hasSO (username){
     var result = false;
-    $.each(RELATIONSHIPS_TABLE, function(element){
+    $.each(SESSION_RELATIONSHIPS_TABLE, function(element){
         if (this.A == username || this.B == username){
             if (this.date_ended == null){
                 result = true;
@@ -254,7 +259,7 @@ function hasSO (username){
 
 function getSO (username){
     var so_username = null;
-    $.each(RELATIONSHIPS_TABLE, function(element){
+    $.each(SESSION_RELATIONSHIPS_TABLE, function(element){
         if ((this.A == username || this.B == username) && this.date_ended == null){
             if (this.A == username){
                 so_username = this.B;
@@ -269,7 +274,7 @@ function getSO (username){
 function getRelationshipStartDate (username_A, username_B){
     var startDate = null;
 
-    $.each(RELATIONSHIPS_TABLE, function(element){
+    $.each(SESSION_RELATIONSHIPS_TABLE, function(element){
         if ((this.A == username_A && this.B == username_B) || (this.B == username_A && this.A == username_B)){
             startDate = this.date_started;
         }
@@ -280,7 +285,7 @@ function getRelationshipStartDate (username_A, username_B){
 function getRelationshipEndDate (username_A, username_B){
     var endDate = null;
 
-    $.each(RELATIONSHIPS_TABLE, function(element){
+    $.each(SESSION_RELATIONSHIPS_TABLE, function(element){
         if ((this.A == username_A && this.B == username_B) || (this.B == username_A && this.A == username_B)){
             if (this.date_ended == null){
                 endDate = this.date_ended;
@@ -292,7 +297,7 @@ function getRelationshipEndDate (username_A, username_B){
 
 function getSOHistory (username){
     var so_history = [];
-    $.each(RELATIONSHIPS_TABLE, function(element){
+    $.each(SESSION_RELATIONSHIPS_TABLE, function(element){
         if ((this.A == username || this.B == username) && this.date_ended != null){
             if (this.A == username){
                 so_history.push(this.B);

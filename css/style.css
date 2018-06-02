@@ -199,6 +199,6 @@
     padding: 2%;
 }
 
-.clickable, .link_profile, .link_so, .link_user {
+.clickable, .link_profile, .link_so, .link_user, .close {
     cursor: pointer;
 }

@@ -73,7 +73,7 @@
 
         </div>
 
-        <div class="buttons col-lg-1 col-md-1 col-sm-1">
+        <div class="buttons col-lg-1 col-md-1 col-sm-1 clickable" id="unbind">
             <i class="fa fa-heart-o fa-3x red"></i>Unbind<br>
         </div>
 
@@ -120,6 +120,23 @@
         <h5 class="button so_css" id="resetPoints"> <i class="fa fa-fire fa"></i> Start Over </h5>
         <h5 class="button so_css" id="redo"> <i class="fa fa-arrow-circle-right fa"></i>  Redo </h5>
         <h5 class="button so_css" id="undo"> <i class="fa fa-arrow-circle-left fa"></i>  Undo </h5>
+
+    </div>
+
+    <!-- unbind window -->
+    <div id="unbindWindow" class="popup so_css hidden">
+
+        <a class="close" onclick=""><i class="fa fa-times fa"></i></a>
+
+
+        <div class="center">
+            <h2>Unbind <i class="fa fa-heart-o fa-2x red"></i> Profiles</h2><br>
+            <h2>Confirm Action</h2>
+            <h5>Are you sure you want to unbind your koibito profile from <span class="firstname"></span>? That means that <b>you are no longer together as a couple</b>,
+                and <b>you won't be able to send/request points</b> in the app anymore!</h5> <br>
+        </div>
+       <h5 class="button so_css" id="confirmUnbind"> <i class="fa fa-check-circle fa"></i> YES! Unbind from <span class="firstname"></span> </h5>
+        <h5 class="button so_css" id="cancelUnbind"> <i class="fa fa-fire fa"></i> NO! Keep Profiles Bind </h5>
 
     </div>
 

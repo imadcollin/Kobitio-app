@@ -10,6 +10,7 @@
 
 loadSessionDB();
 var SESSION_HISTORY_TABLE = JSON.parse(sessionStorage.getItem("SESSION_HISTORY_TABLE"));
+var SESSION_RELATIONSHIPS_TABLE = JSON.parse(sessionStorage.getItem("SESSION_RELATIONSHIPS_TABLE"));
 
 /*Retrieve login information from localStorage*/
 var login_data = JSON.parse(localStorage.getItem("login_data"));
@@ -75,6 +76,40 @@ if (anon_username == null){
     )
     });
 }
+
+$("#confirmBind").click(function(){
+
+    var new_relationship = {
+            "A": user_information.username,
+            "B": anon_username,
+            "date_started": new Date(),
+            "date_ended": null,
+        };
+
+    alert (JSON.stringify(new_relationship));
+
+    SESSION_RELATIONSHIPS_TABLE.push(new_relationship);
+    sessionStorage.setItem("SESSION_RELATIONSHIPS_TABLE", JSON.stringify(SESSION_RELATIONSHIPS_TABLE));
+
+    //localStorage.setItem("anon_username", so_information.username);
+    window.location.href = "partner.html";
+
+});
+
+$("#cancelBind").click(function(){
+    $("#overlay").addClass("hidden");
+    $("#bindWindow").addClass("hidden")
+});
+
+$("#bind").click(function() {
+    $("#overlay").removeClass("hidden");
+    $("#bindWindow").removeClass("hidden")
+});
+
+$(".close").click(function() {
+    $("#overlay").addClass("hidden");
+    $("#bindWindow").addClass("hidden")
+});
 
 /*Language Translation index*/
 if (localStorage.getItem("index") == null){

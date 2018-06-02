@@ -490,6 +490,13 @@ function loadSessionDB (){
     } else {
         alert("History database will be loaded from session storage!")*/
     }
+
+    if (sessionStorage.getItem("SESSION_RELATIONSHIPS_TABLE") == null){
+        sessionStorage.setItem("SESSION_RELATIONSHIPS_TABLE",JSON.stringify(RELATIONSHIPS_TABLE));
+        /*alert("Relationship databases loaded from script!")
+    } else {
+        alert("Relationship database will be loaded from session storage!")*/
+    }
 }
 
 
