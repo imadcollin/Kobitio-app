@@ -96,7 +96,35 @@ var filtered_so_points = 0;
 defaultFilter();
 
 function defaultFilter(){
+    $(".filter_label").text("This Week's");
+    $(".filter_label_2").text("this week");
 
+    $("#today").removeClass("filter_selected");
+    $("#week").addClass("filter_selected");
+    $("#month").removeClass("filter_selected");
+    $("#year").removeClass("filter_selected");
+    $("#alltimes").removeClass("filter_selected");
+
+    $("#filtered_deeds").empty();
+    filtered_so_points = 0;
+    filtered_user_points = 0;
+    /*Filter and load deeds into page*/
+    $.each(relationship_deed_history, function(element){ // fill in deeds table
+        var deed_date = new Date(this.date);
+
+        if (deed_date.getDate() <= today.getDate() && deed_date.getDate() >= (today.getDate() - today.getDay()) && deed_date.getMonth() >= today.getMonth() -1 && deed_date.getFullYear() >= today.getFullYear() - 1){
+            if (this.username == user_information.username){
+                filtered_user_points += deed_points(this.deed);
+            } else {
+                filtered_so_points += deed_points(this.deed);
+            }
+            printDeed(this);
+        }
+    });
+    printStats(filtered_user_points, filtered_so_points);
+}
+
+$("#today").click(function(){
     $(".filter_label").text("Today's");
     $(".filter_label_2").text("today");
 
@@ -124,41 +152,10 @@ function defaultFilter(){
         }
     });
     printStats(filtered_user_points, filtered_so_points);
-}
-
-$("#today").click(function(){
-    alert("this is happening!");
-    defaultFilter();
 });
 
 $("#week").click(function(){ // This week is the default filter
-    $(".filter_label").text("This Week's");
-    $(".filter_label_2").text("this week");
-
-    $("#today").removeClass("filter_selected");
-    $("#week").addClass("filter_selected");
-    $("#month").removeClass("filter_selected");
-    $("#year").removeClass("filter_selected");
-    $("#alltimes").removeClass("filter_selected");
-
-    $("#filtered_deeds").empty();
-    filtered_so_points = 0;
-    filtered_user_points = 0;
-    /*Filter and load deeds into page*/
-    $.each(relationship_deed_history, function(element){ // fill in deeds table
-        var deed_date = new Date(this.date);
-
-        if (deed_date.getDate() <= today.getDate() && deed_date.getDate() >= (today.getDate() - today.getDay()) && deed_date.getMonth() >= today.getMonth() -1 && deed_date.getFullYear() >= today.getFullYear() - 1){
-
-            if (this.username == user_information.username){
-                filtered_user_points += deed_points(this.deed);
-            } else {
-                filtered_so_points += deed_points(this.deed);
-            }
-            printDeed(this);
-        }
-    });
-    printStats(filtered_user_points, filtered_so_points);
+    defaultFilter();
 });
 
 $("#month").click(function(){
@@ -219,7 +216,6 @@ $("#year").click(function(){
             } else {
                 filtered_so_points += deed_points(this.deed);
             }
-
             printDeed(this);
         }
     });
@@ -255,7 +251,7 @@ $("#alltimes").click(function(){
 });
 
 function printDeed (input_deed){
-    var a_gender = ""
+    var a_gender = "";
 
     if (input_deed.username == user_information.username){
         a_gender = user_gender;
@@ -283,6 +279,7 @@ function printStats (filtered_user_points, filtered_so_points){
     $("#filtered_user_points").text(filtered_user_points);
     $("#filtered_total_points").text(filtered_total_points);
 
+
     $(".filtered_user_percentage").text(filtered_user_percentage);
     $(".filtered_so_percentage").text(filtered_so_percentage);
 
@@ -291,26 +288,34 @@ function printStats (filtered_user_points, filtered_so_points){
     $("#filtered_user_bar").css("width",filtered_user_percentage+"%");
     $("#filtered_so_bar").css("width",filtered_so_percentage+"%");
 
-    var filtered_difference = equality_difference(filtered_user_percentage, filtered_so_percentage);
-    $("#filter_results").empty();
+    //var filtered_difference = equality_difference(filtered_user_percentage, filtered_so_percentage);
 
-    if (filtered_difference > 70){
-        $("#filter_results").append("<i class=\"fa fa-flag-checkered\"></i> Lame Results!");
-    } else {
-        if (filtered_difference > 50){
-            $("#filter_results").append("<i class=\"fa fa-flag-checkered\"></i> Bad Results!");
-        } else {
-            if (filtered_difference > 30){
-                $("#filter_results").append("<i class=\"fa fa-flag-checkered\"></i> Average Results!");
-            } else {
-                if (filtered_difference > 10){
-                    $("#filter_results").append("<i class=\"fa fa-flag-checkered\"></i> Excellent Results!");
-                } else {
-                    $("#filter_results").append("<i class=\"fa fa-flag-checkered\"></i> Amazing Results!");
-                }
-            }
-        }
+    //alert(filtered_difference); // there is a bug between 291 and 319
+    $("#filter_results").empty();
+    $("#filter_results").append("<i class='fa fa-flag-checkered'></i>" + getFilteredResults(60));
+}
+
+function getFilteredResults(filtered_difference){
+    var veredict = "";
+
+    switch (filtered_difference){
+
+        case(filtered_difference > 70):
+            veredict = "Lame Results";
+            break;
+        case(filtered_difference > 50):
+            veredict = "Bad Results";
+            break;
+        case(filtered_difference > 30):
+            veredict = "Average Results!";
+            break;
+        case(filtered_difference > 10):
+            veredict = "Excellent Results!";
+            break;
+        default:
+            veredict = "Amazing Results!";
     }
+    return veredict;
 }
 
 /*Translations */
