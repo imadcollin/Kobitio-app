@@ -19,14 +19,34 @@ if (login_data == null){
 } else {
 
     login_data = JSON.parse(login_data);
+
     var user_information = getUserInfo(login_data.username);
     var so_information = getUserInfo(getSO(login_data.username));
     var so_history = getSOHistory(login_data.username);
+    alert("relationship history: " + JSON.stringify(so_history));
 
+    var relationship_deed_history =[];
+    var user_points = 0;
+    var so_points = 0;
+
+    var relationship_points = user_points + so_points;
+    var user_percentage = percentage(user_points, relationship_points);
+    var so_percentage = percentage(so_points,relationship_points);
+    var gender_equality = equality_rate(user_percentage, so_percentage);
 
     if (so_information != null){
 
+        relationship_deed_history = getRelationshipDeeds(user_information.username,so_information.username);// retrieve couple's deeds
+        user_points = calculatePointsInRelationship(user_information.username, relationship_deed_history)
+        so_points = calculatePointsInRelationship(so_information.username, relationship_deed_history);
 
+        relationship_points = user_points + so_points;
+        user_percentage = percentage(user_points, relationship_points);
+        so_percentage = percentage(so_points,relationship_points);
+        gender_equality = equality_rate(user_percentage, so_percentage);
+
+        var start = new Date(2001, 12, 20);
+        var finish = new Date();
 
         $("#load_so").append(
 
@@ -36,59 +56,111 @@ if (login_data == null){
                 "<div class='c1 "+ getGender(user_information.gender) +"'>" +
                     "<img src='img/users/"+ user_information.username +".jpg'>" +
 
-                    "<div class='center'>" +
-                        "<i class='fa fa-star stars'></i>" +
-                        "<p><b>" + user_information.first_name + " is <u>lame</u></b></p>" +
+                    "<div class='center'>" + individual_stars(user_points, 0)  +
+                        "<p><b>" + user_information.first_name + " is " + score(user_points) +" " + getGender(user_information.gender) + "!</b></p>" +
                         "</div>" +
-                        "<p><b>300</b> "+ getGender(user_information.gender) +" points <b>in this relationship</b></p>" +
+                        "<p><b>"+ user_points +"</b> "+ getGender(user_information.gender) + " points <b>in this relationship</b></p>" +
                     "</div>" +
 
                 "<div class='c2 "+ getGender(so_information.gender) +"'>" +
 
                     "<img src='img/users/"+ so_information.username +".jpg'>" +
-                    "<div class='center'>" +
-                        "<i class='fa fa-star stars'></i>" +
-                        "<i class='fa fa-star stars'></i>" +
-                        "<i class='fa fa-star stars'></i>" +
-                        "<i class='fa fa-star stars'></i>" +
-                        "<i class='fa fa-star stars'></i>" +
-                        "<p><b>" + so_information.first_name +" is <u>amazing</u>!</b></p>" +
+                    "<div class='center'>" + individual_stars(so_points, 0)  +
+                    "<p><b>" + so_information.first_name +" is "+ score(so_points) +" " + getGender(so_information.gender) + "!</b></p>" +
                     "</div>" +
-                    "<p><b>10000</b> "+ getGender(so_information.gender)+" points <b>in this relationship</b></p>" +
+                    "<p><b>"+ so_points +"</b> "+ getGender(so_information.gender)+" points <b>in this relationship</b></p>" +
                     "</div>" +
 
                 "<div class='c3 info'>" +
                     "<h3 class='center'>Relationship <i class='fa fa-heartbeat fa-1x red'></i> Stats</h3>" +
 
                     "<div class='center'>" +
-                        "<i class='fa fa-star fa-2x stars'></i>" +
-                        "<i class='fa fa-star fa-2x stars'></i>" +
-                        "<i class='fa fa-star-half-empty fa-2x stars'></i>" +
-                        "<p><b>" + user_information.first_name + " and " + so_information.first_name +" have a <u>pretty lousy</u> relationship!</b></p>" +
+                        relationshipStars (equality_difference,1) +
+                        "<p><b>" + user_information.first_name + " and " + so_information.first_name +" have "+ relationshipVeredict(equality_difference) +" relationship!</b></p>" +
                     "</div>" +
 
                     "<div class='progress progress-small'>" +
-                    "<div class='progress-bar progress-bar-striped "+ getGender(user_information.gender) +" bar active' role='progressbar' aria-valuenow='65' aria-valuemin='0' aria-valuemax='100' style='width: 25%'>" +
-                    user_information.first_name + "25%" +
+                    "<div class='progress-bar progress-bar-striped "+ getGender(user_information.gender) +" bar active' role='progressbar' aria-valuenow='65' aria-valuemin='0' aria-valuemax='100' style='width:"+ user_percentage +"%'>" +
+                    user_information.first_name + " " + user_percentage + "%" +
                     "</div>" +
-                    "<div class='progress-bar progress-bar-striped " + getGender(so_information.gender) + " bar active' role='progressbar' aria-valuenow='65' aria-valuemin='0' aria-valuemax='100' style='width:75%'>" +
-                    so_information.first_name + "75%" +
+                    "<div class='progress-bar progress-bar-striped " + getGender(so_information.gender) + " bar active' role='progressbar' aria-valuenow='65' aria-valuemin='0' aria-valuemax='100' style='width:" + so_percentage + "%'>" +
+                    so_information.first_name + " " + so_percentage + "%" +
                     "</div>" +
                     "</div>" +
 
-                    "<h5>Gender Equality Rate: <b>0.3</b></h5>" +
-                    "<h5>Total points together: <b>10300</b></h5>" +
-                    "<h5>Lenght of relationship: <b>1 Year 6 Months 3 Weeks 4 Days</b></h5>" +
+                    "<h5>Gender Equality Rate: <b>"+ gender_equality +"</b></h5>" +
+                    "<h5>Total points together: <b>" + relationship_points + "</b></h5>" +
+                    "<h5>Lenght of relationship: <b>" + timeTogether(start,finish) +"</b></h5>" +
                 "</div>" +
 
         "</div>"
         );
     }
 
+    $.each(so_history, function(element){
 
+        so_information = getUserInfo(this);
 
+        relationship_deed_history = getRelationshipDeeds(user_information.username,so_information.username);// retrieve couple's deeds
+        user_points = calculatePointsInRelationship(user_information.username, relationship_deed_history)
+        so_points = calculatePointsInRelationship(this, relationship_deed_history);
 
+        relationship_points = user_points + so_points;
+        user_percentage = percentage(user_points, relationship_points);
+        so_percentage = percentage(so_points,relationship_points);
+        gender_equality = equality_rate(user_percentage, so_percentage);
 
+        var start = new Date(2001, 12, 20);
+        var finish = new Date();
+
+        $("#load_history").append(
+
+            "<div class='history'>" +
+            "<h3 class='center'>" + user_information.first_name + "<i class='fa fa-heart-o fa-1x red'></i> "+ so_information.first_name +"</h3>" +
+
+            "<div class='c1 "+ getGender(user_information.gender) +"'>" +
+            "<img src='img/users/"+ user_information.username +".jpg'>" +
+
+            "<div class='center'>" + individual_stars(user_points, 0)  +
+            "<p><b>" + user_information.first_name + " is " + score(user_points) +" " + getGender(user_information.gender) + "!</b></p>" +
+            "</div>" +
+            "<p><b>"+ user_points +"</b> "+ getGender(user_information.gender) + " points <b>in this relationship</b></p>" +
+            "</div>" +
+
+            "<div class='c2 "+ getGender(so_information.gender) +"'>" +
+
+            "<img src='img/users/"+ so_information.username +".jpg'>" +
+            "<div class='center'>" + individual_stars(so_points, 0)  +
+            "<p><b>" + so_information.first_name +" is "+ score(so_points) +" " + getGender(so_information.gender) + "!</b></p>" +
+            "</div>" +
+            "<p><b>"+ so_points +"</b> "+ getGender(so_information.gender)+" points <b>in this relationship</b></p>" +
+            "</div>" +
+
+            "<div class='c3 info'>" +
+            "<h3 class='center'>Relationship <i class='fa fa-heartbeat fa-1x red'></i> Stats</h3>" +
+
+            "<div class='center'>" +
+            relationshipStars (equality_difference,1) +
+            "<p><b>" + user_information.first_name + " and " + so_information.first_name +" had "+ relationshipVeredict(equality_difference) +" relationship!</b></p>" +
+            "</div>" +
+
+            "<div class='progress progress-small'>" +
+            "<div class='progress-bar progress-bar-striped "+ getGender(user_information.gender) +" bar active' role='progressbar' aria-valuenow='65' aria-valuemin='0' aria-valuemax='100' style='width:"+ user_percentage +"%'>" +
+            user_information.first_name + " " + user_percentage + "%" +
+            "</div>" +
+            "<div class='progress-bar progress-bar-striped " + getGender(so_information.gender) + " bar active' role='progressbar' aria-valuenow='65' aria-valuemin='0' aria-valuemax='100' style='width:" + so_percentage + "%'>" +
+            so_information.first_name + " " + so_percentage + "%" +
+            "</div>" +
+            "</div>" +
+
+            "<h5>Gender Equality Rate: <b>"+ gender_equality +"</b></h5>" +
+            "<h5>Total points together: <b>" + relationship_points + "</b></h5>" +
+            "<h5>Lenght of relationship: <b>" + timeTogether(start,finish) +"</b></h5>" +
+            "</div>" +
+
+            "</div>"
+        );
+    });
 
 }
 

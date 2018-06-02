@@ -44,21 +44,21 @@ if (!hasSO(login_data.username)){
 
     /*LOAD DATA USER*/
     var user_points = calculatePoints(user_deed_history);
-    var user_points_relationship = calculateRelationshipPoints(user_information.username,relationship_deed_history);
+    var user_points_relationship = calculatePointsInRelationship(user_information.username,relationship_deed_history);
 
     $(".total_points").text(user_points);
     $(".user_points_relationship").text(user_points_relationship);
-    $("#stars").html(individual_stars(user_points));
+    $("#stars").html(individual_stars(user_points, 0));
     $("#score").text(score(user_points));
 
     /*LOAD DATA SO*/
     var so_points = calculatePoints(so_deed_history);
-    var so_points_relationship = calculateRelationshipPoints(so_information.username,relationship_deed_history);
+    var so_points_relationship = calculatePointsInRelationship(so_information.username,relationship_deed_history);
 
     //alert("Total points " + user_points);
     $(".so_total_points").text(so_points);
     $(".so_points_relationship").text(so_points_relationship);
-    $("#so_stars").html(individual_stars(so_points));
+    $("#so_stars").html(individual_stars(so_points, 0));
     $("#so_score").text(score(so_points));
 
     /*LOAD DATA COUPLE*/
@@ -73,7 +73,7 @@ if (!hasSO(login_data.username)){
     var start = new Date(2001, 12, 20);
     var finish = new Date();
 
-    $(".time_together").text(dateSubstraction(start,finish));
+    $(".time_together").text(timeTogether(start,finish));
 
     $(".user_percentage").text(user_percentage);
     $(".so_percentage").text(so_percentage);
@@ -82,50 +82,12 @@ if (!hasSO(login_data.username)){
     $("#user_bar").css("width",user_percentage+"%");
     $("#so_bar").css("width",so_percentage+"%");
 
-    var difference = equality_difference(user_percentage, so_percentage);
+    var equality_difference = equality_difference(user_percentage, so_percentage);
 
-    if (difference > 70){
-        $("#big_stars").append(
-            "<i class=\"fa fa-star fa-5x stars\"></i>\n" +
-            "<h2><b>" + user_information.first_name + " and " + so_information.first_name + " have a <u>pretty lousy</u> relationship!</b></h2>\n"
-        );
-    } else {
-        if (difference > 50){
-            $("#big_stars").append(
-                "<i class=\"fa fa-star fa-5x stars\"></i>\n" +
-                "<i class=\"fa fa-star fa-5x stars\"></i>\n" +
-                "<h2><b>" + user_information.first_name + " and " + so_information.first_name + " have a <u>lame</u> relationship!</b></h2>\n"
-            );
-        } else {
-            if (difference > 30){
-                $("#big_stars").append(
-                    "<i class=\"fa fa-star fa-5x stars\"></i>\n" +
-                    "<i class=\"fa fa-star fa-5x stars\"></i>\n" +
-                    "<i class=\"fa fa-star fa-5x stars\"></i>\n" +
-                    "<h2><b>" + user_information.first_name + " and " + so_information.first_name + " have an <u>average</u> relationship!</b></h2>\n"
-                );
-            } else {
-                if (difference > 10){
-                    $("#big_stars").append(
-                        "<i class=\"fa fa-star fa-5x stars\"></i>\n" +
-                        "<i class=\"fa fa-star fa-5x stars\"></i>\n" +
-                        "<i class=\"fa fa-star fa-5x stars\"></i>\n" +
-                        "<i class=\"fa fa-star fa-5x stars\"></i>\n" +
-                        "<h2><b>" + user_information.first_name + " and " + so_information.first_name + " have an <u>excelent</u> relationship!</b></h2>\n" +
-                        "");
-                } else {
-                    $("#big_stars").append(
-                    "<i class=\"fa fa-star fa-5x stars\"></i>\n" +
-                    "<i class=\"fa fa-star fa-5x stars\"></i>\n" +
-                    "<i class=\"fa fa-star fa-5x stars\"></i>\n" +
-                    "<i class=\"fa fa-star fa-5x stars\"></i>\n" +
-                    "<i class=\"fa fa-star fa-5x stars\"></i>\n" +
-                    "<h2><b>" + user_information.first_name + " and " + so_information.first_name + " have a <u>amazing</u> relationship!</b></h2>\n" +
-                        "");
-                }
-            }
-        }
-    }
+    $("#big_stars").append( // get relationship stars & labels
+        relationshipStars(equality_difference,2) + "<br>" +
+        "<h2><b>" + user_information.first_name + " and " + so_information.first_name + " have " + relationshipVeredict(equality_difference) +" relationship!</b></h2>\n"
+    );
 };
 
 // Deed Filtering functions, buttons and variables
@@ -135,40 +97,6 @@ var filtered_so_points = 0;
 defaultFilter();
 
 function defaultFilter(){
-    $(".filter_label").text("Today's");
-    $(".filter_label_2").text("today");
-
-    $("#today").addClass("filter_selected");
-    $("#week").removeClass("filter_selected");
-    $("#month").removeClass("filter_selected");
-    $("#year").removeClass("filter_selected");
-    $("#alltimes").removeClass("filter_selected");
-
-    $("#filtered_deeds").empty();
-    filtered_so_points = 0;
-    filtered_user_points = 0;
-    /*Filter and load deeds into page*/
-    $.each(relationship_deed_history, function(element){ // fill in deeds table
-        var deed_date = new Date(this.date);
-
-        if (today.getDate() == deed_date.getDate() && today.getMonth() == deed_date.getMonth() && today.getFullYear() == deed_date.getFullYear()){
-            // calculate points with filter settings
-            if (this.username == user_information.username){
-                filtered_user_points += deed_points(this.deed);
-            } else {
-                filtered_so_points += deed_points(this.deed);
-            }
-            printDeed(this);
-        }
-    });
-    printStats(filtered_user_points, filtered_so_points);
-}
-
-$("#today").click(function(){ // Today is the default filter
-    defaultFilter();
-});
-
-$("#week").click(function(){
     $(".filter_label").text("This Week's");
     $(".filter_label_2").text("this week");
 
@@ -196,6 +124,43 @@ $("#week").click(function(){
         }
     });
     printStats(filtered_user_points, filtered_so_points);
+
+}
+
+$("#today").click(function(){
+    $(".filter_label").text("Today's");
+    $(".filter_label_2").text("today");
+
+    $("#today").addClass("filter_selected");
+    $("#week").removeClass("filter_selected");
+    $("#month").removeClass("filter_selected");
+    $("#year").removeClass("filter_selected");
+    $("#alltimes").removeClass("filter_selected");
+
+    $("#filtered_deeds").empty();
+    filtered_so_points = 0;
+    filtered_user_points = 0;
+    /*Filter and load deeds into page*/
+    $.each(relationship_deed_history, function(element){ // fill in deeds table
+        var deed_date = new Date(this.date);
+
+        if (today.getDate() == deed_date.getDate() && today.getMonth() == deed_date.getMonth() && today.getFullYear() == deed_date.getFullYear()){
+            // calculate points with filter settings
+            if (this.username == user_information.username){
+                filtered_user_points += deed_points(this.deed);
+            } else {
+                filtered_so_points += deed_points(this.deed);
+            }
+            printDeed(this);
+        }
+    });
+    printStats(filtered_user_points, filtered_so_points);
+
+});
+
+$("#week").click(function(){ // This week is the default filter
+
+    defaultFilter();
 
 });
 
@@ -350,24 +315,6 @@ function printStats (filtered_user_points, filtered_so_points){
         }
     }
 };
-
-function percentage (points, total_points){
-    if (total_points == 0){
-        return 0;
-    }
-    return Math.round(points * 100 / total_points);
-}
-
-function equality_rate (percentage_a, percentage_b){
-    if (Math.min(percentage_a, percentage_b) == 0){
-        return 100.0;
-    }
-    return Math.round(100 / (Math.max(percentage_a, percentage_b) / Math.min(percentage_a, percentage_b)));
-}
-
-function equality_difference (percentage_a, percentage_b) {
-    return Math.abs(percentage_a - percentage_b);
-}
 
 /*Translations */
 if (localStorage.getItem("index") == null){

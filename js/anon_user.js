@@ -41,7 +41,7 @@ if (anon_username == null){
     $(".gender").text(gender);
     $(".anon_css").addClass(gender);
 
-   if (hasSO(anon_information.username)){
+    if (hasSO(anon_information.username)){
 
        var so_information = getUserInfo(getSO(anon_username));
 
@@ -60,7 +60,7 @@ if (anon_username == null){
     var anon_points = calculatePoints(anon_deed_history);
 
     $(".total_points").text(anon_points);
-    $("#stars").html(individual_stars(anon_points));
+    $("#stars").html(individual_stars(anon_points, 1));
     $("#score").text(score(anon_points));
 
     /*Load anonymous overview into page*/

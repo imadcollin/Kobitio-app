@@ -38,7 +38,6 @@ if (login_data == null){
     $(".gender").text(user_gender);
     $(".user_css").addClass(user_gender);
 
-
     if (hasSO(login_data.username)){
         $("#ask_points").removeClass("hidden");
         $("#review_points").removeClass("hidden");
@@ -66,7 +65,7 @@ if (login_data == null){
     user_points = calculatePoints(user_deed_history);//Calculate points
 
     $(".total_points").text(user_points);
-    $("#stars").html(individual_stars(user_points));
+    $("#stars").html(individual_stars(user_points, 1));
     $("#score").text(score(user_points));
 
     /*Load User History into page*/

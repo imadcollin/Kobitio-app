@@ -228,16 +228,16 @@ var RELATIONSHIPS_TABLE = [
         "date_ended": null,
     },
     {// change all these below!
-        "A": "andrea_wakashu",
+        "A": "adam_1990",
         "B": "wendyClear",
         "date_started": new Date(2000, 6, 1),
-        "date_ended": null,
+        "date_ended": new Date(2005, 6, 1),
     },
     {
-        "A": "evgee4ever",
-        "B": "Adajjjm",
-        "date_started": new Date(2000, 6, 1),
-        "date_ended": null,
+        "A": "adam_1990",
+        "B": "marilu_1987",
+        "date_started": new Date(2006, 6, 1),
+        "date_ended": new Date(2016, 6, 1),
     },
     {
         "A": "eve4rjrever",

@@ -42,7 +42,7 @@ if (!hasSO(login_data.username)){
     var points = calculatePoints(partners_deed_history);
 
     $(".total_points").text(points);
-    $("#stars").html(individual_stars(points));
+    $("#stars").html(individual_stars(points, 1));
     $("#score").text(score(points));
 
     /*Load Partner overview into page*/

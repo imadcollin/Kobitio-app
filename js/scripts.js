@@ -11,37 +11,63 @@ $(".link_so").click(function(){
     window.location.href = "partner.html";
 });
 
-function individual_stars (points){
+function individual_stars (points, size){
     var stars = "";
 
     if (points < 1000) {
-        stars = "<i class='fa fa-star fa-2x stars'></i>";
+        stars = returnStars(1,size);
     } else {
         if (points < 4000){
-            stars = "<i class='fa fa-star fa-2x stars'></i>" +
-                " <i class='fa fa-star fa-2x stars'></i>";
+            stars = returnStars(2,size);
         }else {
             if (points < 7000){
-                stars = "<i class='fa fa-star fa-2x stars'></i>" +
-                    " <i class='fa fa-star fa-2x stars'></i>" +
-                    " <i class='fa fa-star fa-2x stars'></i>";
+                stars = returnStars(3,size);
             }else {
                 if (points < 10000){
-                    stars = "<i class='fa fa-star fa-2x stars'></i>" +
-                        " <i class='fa fa-star fa-2x stars'></i>" +
-                        " <i class='fa fa-star fa-2x stars'></i>" +
-                        " <i class='fa fa-star fa-2x stars'></i>";
+                    stars = returnStars(4,size);
                 } else {
                     if (points >= 10000){
-                        stars = "<i class='fa fa-star fa-2x stars'></i>" +
-                            " <i class='fa fa-star fa-2x stars'></i>" +
-                            " <i class='fa fa-star fa-2x stars'></i>" +
-                            " <i class='fa fa-star fa-2x stars'></i>" +
-                            " <i class='fa fa-star fa-2x stars'></i>";
+                        stars = returnStars(5,size);
                     }
                 }
             }
         }
+    }
+    return stars;
+}
+
+function returnStars (number, size){
+    var stars = "";
+    var icon = "";
+
+    switch (size){
+        case(0):
+            icon = "<i class='fa fa-star fa stars'></i> "; // small stars
+            break;
+        case(1):
+            icon = "<i class='fa fa-star fa-2x stars'></i> "; // medium stars
+            break;
+        case(2):
+            icon = "<i class='fa fa-star fa-5x stars'></i> "; // big stars
+            break;
+    }
+
+    switch (number){
+        case(1):
+            stars = icon;
+            break;
+        case(2):
+            stars = icon + icon;
+            break;
+        case(3):
+            stars = icon + icon + icon;
+            break;
+        case(4):
+            stars = icon + icon + icon + icon;
+            break;
+        case(5):
+            stars = icon + icon + icon + icon + icon;
+            break;
     }
     return stars;
 }
@@ -161,7 +187,7 @@ function formatMonth (index){
     }
 }
 
-function dateSubstraction (start_date, finish_date){
+function timeTogether (start_date, finish_date){
 
     var start = new Date(start_date);
     var finish = new Date(finish_date);
@@ -309,7 +335,7 @@ function calculatePoints(deeds_array) {
     return points;
 }
 
-function calculateRelationshipPoints(username, deeds_array) {
+function calculatePointsInRelationship(username, deeds_array) {
     var points = 0;
     $.each(deeds_array, function(element){ // calculate points
         if (this.username == username){
@@ -318,4 +344,72 @@ function calculateRelationshipPoints(username, deeds_array) {
     });
     return points;
 }
+
+function percentage (points, total_points){
+    if (total_points == 0){
+        return 0;
+    }
+    return Math.round(points * 100 / total_points);
+}
+
+function equality_rate (percentage_a, percentage_b){
+    if (Math.min(percentage_a, percentage_b) == 0){
+        return 100.0;
+    }
+    return Math.round(100 / (Math.max(percentage_a, percentage_b) / Math.min(percentage_a, percentage_b)));
+}
+
+function equality_difference (percentage_a, percentage_b) {
+    return Math.abs(percentage_a - percentage_b);
+}
+
+function relationshipStars (equality_difference, stars_size) {
+    var relationshipStars = "";
+
+    if (equality_difference > 70){
+        relationshipStars = returnStars(1,stars_size);
+    } else {
+        if (equality_difference > 50){
+            relationshipStars = returnStars(2,stars_size);
+        } else {
+            if (equality_difference > 30){
+                relationshipStars = returnStars(3,stars_size);
+            } else {
+                if (equality_difference > 10){
+                    relationshipStars = returnStars(4,stars_size);
+                } else {
+                    relationshipStars = returnStars(5,stars_size);
+                }
+            }
+        }
+    }
+    return relationshipStars;
+}
+
+function relationshipVeredict (equality_difference) {
+    var relationshipVeredict = "";
+    if (equality_difference > 70){
+        relationshipVeredict = "a pretty lousy";
+    } else {
+        if (equality_difference > 50){
+            relationshipVeredict = "a lame";
+        } else {
+            if (equality_difference > 30){
+                relationshipVeredict = "an average";
+            } else {
+                if (equality_difference > 10){
+                    relationshipVeredict = "an amazing";
+                } else {
+                    relationshipVeredict = "an excellent";
+                }
+            }
+        }
+    }
+    return relationshipVeredict;
+}
+
+
+
+
+
 
