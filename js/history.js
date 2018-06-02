@@ -8,6 +8,9 @@
 * The methods translate() is unique for each individual page.
 */
 
+loadSessionDB();
+var SESSION_HISTORY_TABLE = JSON.parse(sessionStorage.getItem("SESSION_HISTORY_TABLE"));
+
 /*Retrieve login information from localStorage*/
 var login_data = localStorage.getItem("login_data");
 
@@ -23,8 +26,9 @@ if (login_data == null){
 
     if (so_information != null){
 
+
+
         $("#load_so").append(
-            "<h5><b>Current Relationship</b></h5>" +
 
             "<div class='history'>" +
                 "<h3 class='center'>" + user_information.first_name + "<i class='fa fa-heart fa-1x red'></i> "+ so_information.first_name +"</h3>" +
@@ -79,8 +83,6 @@ if (login_data == null){
 
         "</div>"
         );
-
-
     }
 
 
