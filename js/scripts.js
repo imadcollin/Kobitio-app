@@ -11,6 +11,10 @@ $(".link_so").click(function(){
     window.location.href = "partner.html";
 });
 
+$(".link_anon").click(function(){
+    window.location.href = "anon_user.html";
+});
+
 function individual_stars (points, size){
     var stars = "";
 
@@ -235,16 +239,6 @@ function activeRelationship (username_A, username_B){
     }
 }
 
-/*function ended_relationship (username_A, username_B){
-    $.each(RELATIONSHIPS_TABLE, function(element){
-        if (this.date_ended != null){
-            if ((this.A == username_A && this.B == username_B) || (this.B == username_B && this.A == username_A)){
-                return true;
-            }
-        }
-    });
-    return false;
-}*/
 
 function hasSO (username){
     var result = false;
@@ -272,6 +266,30 @@ function getSO (username){
     return so_username;
 }
 
+function getRelationshipStartDate (username_A, username_B){
+    var startDate = null;
+
+    $.each(RELATIONSHIPS_TABLE, function(element){
+        if ((this.A == username_A && this.B == username_B) || (this.B == username_A && this.A == username_B)){
+            startDate = this.date_started;
+        }
+    });
+    return (new Date (startDate));
+}
+
+function getRelationshipEndDate (username_A, username_B){
+    var endDate = null;
+
+    $.each(RELATIONSHIPS_TABLE, function(element){
+        if ((this.A == username_A && this.B == username_B) || (this.B == username_A && this.A == username_B)){
+            if (this.date_ended == null){
+                endDate = this.date_ended;
+            }
+        }
+    });
+    return (new Date (endDate));
+}
+
 function getSOHistory (username){
     var so_history = [];
     $.each(RELATIONSHIPS_TABLE, function(element){
@@ -285,16 +303,6 @@ function getSOHistory (username){
     });
     return so_history;
 }
-
-/*function getGenderByUsername (username){
-    var gender = null;
-    $.each(USER_TABLE, function(element){
-        if (this.username == username){
-            gender = this.gender;
-        }
-    });
-    return gender;
-}*/
 
 function getUserInfo (username){
     var information = null;
@@ -407,6 +415,8 @@ function relationshipVeredict (equality_difference) {
     }
     return relationshipVeredict;
 }
+
+
 
 
 

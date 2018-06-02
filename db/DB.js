@@ -227,7 +227,7 @@ var RELATIONSHIPS_TABLE = [
         "date_started": new Date(2000, 6, 1),
         "date_ended": null,
     },
-    {// change all these below!
+    {
         "A": "adam_1990",
         "B": "wendyClear",
         "date_started": new Date(2000, 6, 1),
@@ -239,7 +239,7 @@ var RELATIONSHIPS_TABLE = [
         "date_started": new Date(2006, 6, 1),
         "date_ended": new Date(2016, 6, 1),
     },
-    {
+    {// change all these below!
         "A": "eve4rjrever",
         "B": "Adjjjam",
         "date_started": new Date(2000, 6, 1),

@@ -23,7 +23,7 @@ if (login_data == null){
     var user_information = getUserInfo(login_data.username);
     var so_information = getUserInfo(getSO(login_data.username));
     var so_history = getSOHistory(login_data.username);
-    alert("relationship history: " + JSON.stringify(so_history));
+    //alert("relationship history: " + JSON.stringify(so_history));
 
     var relationship_deed_history =[];
     var user_points = 0;
@@ -45,7 +45,7 @@ if (login_data == null){
         so_percentage = percentage(so_points,relationship_points);
         gender_equality = equality_rate(user_percentage, so_percentage);
 
-        var start = new Date(2001, 12, 20);
+        var start = getRelationshipStartDate(user_information.username, so_information.username);
         var finish = new Date();
 
         $("#load_so").append(
@@ -53,7 +53,7 @@ if (login_data == null){
             "<div class='history'>" +
                 "<h3 class='center'>" + user_information.first_name + "<i class='fa fa-heart fa-1x red'></i> "+ so_information.first_name +"</h3>" +
 
-                "<div class='c1 "+ getGender(user_information.gender) +"'>" +
+                "<div class='c1 "+ getGender(user_information.gender) +" link_profile'>" +
                     "<img src='img/users/"+ user_information.username +".jpg'>" +
 
                     "<div class='center'>" + individual_stars(user_points, 0)  +
@@ -62,7 +62,7 @@ if (login_data == null){
                         "<p><b>"+ user_points +"</b> "+ getGender(user_information.gender) + " points <b>in this relationship</b></p>" +
                     "</div>" +
 
-                "<div class='c2 "+ getGender(so_information.gender) +"'>" +
+                "<div class='c2 "+ getGender(so_information.gender) +" link_so'>" +
 
                     "<img src='img/users/"+ so_information.username +".jpg'>" +
                     "<div class='center'>" + individual_stars(so_points, 0)  +
@@ -110,7 +110,7 @@ if (login_data == null){
         so_percentage = percentage(so_points,relationship_points);
         gender_equality = equality_rate(user_percentage, so_percentage);
 
-        var start = new Date(2001, 12, 20);
+        var start = getRelationshipStartDate(user_information.username, so_information.username);
         var finish = new Date();
 
         $("#load_history").append(
@@ -118,7 +118,7 @@ if (login_data == null){
             "<div class='history'>" +
             "<h3 class='center'>" + user_information.first_name + "<i class='fa fa-heart-o fa-1x red'></i> "+ so_information.first_name +"</h3>" +
 
-            "<div class='c1 "+ getGender(user_information.gender) +"'>" +
+            "<div class='c1 "+ getGender(user_information.gender) +" link_profile'>" +
             "<img src='img/users/"+ user_information.username +".jpg'>" +
 
             "<div class='center'>" + individual_stars(user_points, 0)  +
@@ -127,7 +127,7 @@ if (login_data == null){
             "<p><b>"+ user_points +"</b> "+ getGender(user_information.gender) + " points <b>in this relationship</b></p>" +
             "</div>" +
 
-            "<div class='c2 "+ getGender(so_information.gender) +"'>" +
+            "<div class='c2 "+ getGender(so_information.gender) +" link_anon'>" +
 
             "<img src='img/users/"+ so_information.username +".jpg'>" +
             "<div class='center'>" + individual_stars(so_points, 0)  +
