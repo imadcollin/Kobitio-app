@@ -3,7 +3,7 @@
  *  Created by Mauro J. Pappaterra on 24 of April 2018.
  */
 
-/* ANON_USER PAGE SCRIPTSgt
+/* ANON_USER PAGE SCRIPTS
 * All scripts related to the single page. Each page has their own scripts in a single js document.
 * The methods translate() is unique for each individual page.
 */

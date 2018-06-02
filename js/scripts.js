@@ -260,7 +260,7 @@ function getSOHistory (username){
     return so_history;
 }
 
-function getGenderByUsername (username){
+/*function getGenderByUsername (username){
     var gender = null;
     $.each(USER_TABLE, function(element){
         if (this.username == username){
@@ -268,7 +268,7 @@ function getGenderByUsername (username){
         }
     });
     return gender;
-}
+}*/
 
 function getUserInfo (username){
     var information = null;
@@ -305,6 +305,16 @@ function calculatePoints(deeds_array) {
     var points = 0;
     $.each(deeds_array, function(element){ // calculate points
         points += deed_points(this.deed);
+    });
+    return points;
+}
+
+function calculateRelationshipPoints(username, deeds_array) {
+    var points = 0;
+    $.each(deeds_array, function(element){ // calculate points
+        if (this.username == username){
+            points += deed_points(this.deed);
+        }
     });
     return points;
 }

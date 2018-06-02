@@ -9,108 +9,51 @@
 */
 
 loadSessionDB();
-
-var user_deed_history = []; // retrieve all user's deeds from HISTORY_TABLE
-var so_deed_history = []; // retrieve all partner's deeds from HISTORY_TABLE
-var relationship_deed_history = []; // retrieve couple's deeds from HISTORY_TABLE
-
-var user_points = 0;
-var user_points_relationship = 0;
-var so_points = 0;
-var so_points_relationship = 0;
-var relationship_points = 0;
-
-var user_percentage = 0.0;
-var so_percentage = 0.0;
-var gender_equality = 0.0;
-
-var today = new Date(); // date variable for deed filtering
-var filtered_user_points = 0;
-var filtered_so_points = 0;
-
-//alert(JSON.stringify(SESSION_HISTORY_TABLE));
+var SESSION_HISTORY_TABLE = JSON.parse(sessionStorage.getItem("SESSION_HISTORY_TABLE"));
 
 /*Retrieve login information from localStorage*/
-var so_information = localStorage.getItem("so_information");
-var user_information = localStorage.getItem("user_information");
-//alert(user_information);
-//alert(so_information);
+var login_data = JSON.parse(localStorage.getItem("login_data"));
 
-so_information = JSON.parse(so_information); // parse string back to JSON
-user_information = JSON.parse(user_information);
-
-if (so_information == null || !hasSO(user_information.username)){
-    window.location.href = "profile.html";
+if (!hasSO(login_data.username)){
+    window.location.href = "profile.html"; // this view is only available to users in a relationship
 } else {
 
-    /*Load relationship information*/
-    /*USER INFORMATION*/
+    var user_information = getUserInfo(login_data.username);
+    var so_information = getUserInfo(getSO(login_data.username));
+
+    /*Load user information*/
     $(".profile_picture").attr("src","img/users/"+ user_information.username +".jpg");
     $(".firstname").text(user_information.first_name);
     $(".lastname").text(user_information.last_name);
-    /*Gender will be used for different CSS styling*/
-    var user_gender = getGender(user_information.gender);
+    var user_gender = getGender(user_information.gender); // Gender will be used for different CSS styling
     $(".gender").text(user_gender);
     $(".user_css").addClass(user_gender);
 
-    /*SO INFORMATION*/
+    /*Load so information*/
     $(".so_profile_picture").attr("src","img/users/"+ so_information.username +".jpg");
     $(".so_firstname").text(so_information.first_name);
     $(".so_lastname").text(so_information.last_name);
-    /*Gender will be used for different CSS styling*/
-    var so_gender = getGender(so_information.gender);
+    var so_gender = getGender(so_information.gender); // Gender will be used for different CSS styling
     $(".so_gender").text(so_gender);
     $(".so_css").addClass(so_gender);
 
-    /*Retrieve SO deeds from HISTORY_TABLE*/
-    $.each(SESSION_HISTORY_TABLE, function(element){ // fill in deeds table
-
-        if (this.date != null && this.date != -1){ // find more elegant solution
-
-            if (this.username == user_information.username){
-                user_deed_history.push(this)
-            }
-
-            if (this.username == so_information.username){
-                so_deed_history.push(this)
-            }
-
-            if ((this.username == user_information.username && this.endorsed_by == so_information.username) || (this.username == so_information.username && this.endorsed_by == user_information.username)){
-                relationship_deed_history.push(this)
-            }
-        }
-    });
-
-    /*alert(JSON.stringify(user_deed_history));
-    alert(JSON.stringify(so_deed_history));
-    alert(JSON.stringify(relationship_deed_history));*/
+    /*Retrieve all deeds from HISTORY_TABLE*/
+    var user_deed_history = getUserDeeds(user_information.username); // retrieve all user's deeds
+    var so_deed_history = getUserDeeds(so_information.username); // retrieve all partner's deeds
+    var relationship_deed_history = getRelationshipDeeds(user_information.username,so_information.username);// retrieve couple's deeds
 
     /*LOAD DATA USER*/
-    $.each(user_deed_history, function(element){ // calculate points
-        user_points += deed_points(this.deed);
-    });
+    var user_points = calculatePoints(user_deed_history);
+    var user_points_relationship = calculateRelationshipPoints(user_information.username,relationship_deed_history);
 
-    $.each(relationship_deed_history, function(element){ // calculate points
-        if (user_information.username == this.username){
-            user_points_relationship += deed_points(this.deed);
-        }
-    });
-
-    //alert("Total points " + user_points);
     $(".total_points").text(user_points);
     $(".user_points_relationship").text(user_points_relationship);
     $("#stars").html(individual_stars(user_points));
     $("#score").text(score(user_points));
 
     /*LOAD DATA SO*/
-    $.each(so_deed_history, function(element){ // calculate points
-        so_points += deed_points(this.deed);
-    });
-    $.each(relationship_deed_history, function(element){ // calculate points
-        if (so_information.username == this.username){
-            so_points_relationship += deed_points(this.deed);
-        }
-    });
+    var so_points = calculatePoints(so_deed_history);
+    var so_points_relationship = calculateRelationshipPoints(so_information.username,relationship_deed_history);
 
     //alert("Total points " + user_points);
     $(".so_total_points").text(so_points);
@@ -118,18 +61,17 @@ if (so_information == null || !hasSO(user_information.username)){
     $("#so_stars").html(individual_stars(so_points));
     $("#so_score").text(score(so_points));
 
-
     /*LOAD DATA COUPLE*/
-
-    relationship_points = user_points_relationship + so_points_relationship;
-    user_percentage = percentage(user_points_relationship,relationship_points);
-    so_percentage = percentage(so_points_relationship,relationship_points);
-    gender_equality = equality_rate(user_percentage, so_percentage);
+    var relationship_points = user_points_relationship + so_points_relationship;
+    var user_percentage = percentage(user_points_relationship,relationship_points);
+    var so_percentage = percentage(so_points_relationship,relationship_points);
+    var gender_equality = equality_rate(user_percentage, so_percentage);
 
     $(".points_together").text(relationship_points);
 
+    // FOR TESTING PURPOSES
     var start = new Date(2001, 12, 20);
-    var finish = new Date();//new Date(2002, 1, 1);
+    var finish = new Date();
 
     $(".time_together").text(dateSubstraction(start,finish));
 
@@ -156,17 +98,14 @@ if (so_information == null || !hasSO(user_information.username)){
             );
         } else {
             if (difference > 30){
-
                 $("#big_stars").append(
                     "<i class=\"fa fa-star fa-5x stars\"></i>\n" +
                     "<i class=\"fa fa-star fa-5x stars\"></i>\n" +
                     "<i class=\"fa fa-star fa-5x stars\"></i>\n" +
                     "<h2><b>" + user_information.first_name + " and " + so_information.first_name + " have an <u>average</u> relationship!</b></h2>\n"
                 );
-
             } else {
                 if (difference > 10){
-
                     $("#big_stars").append(
                         "<i class=\"fa fa-star fa-5x stars\"></i>\n" +
                         "<i class=\"fa fa-star fa-5x stars\"></i>\n" +
@@ -174,9 +113,7 @@ if (so_information == null || !hasSO(user_information.username)){
                         "<i class=\"fa fa-star fa-5x stars\"></i>\n" +
                         "<h2><b>" + user_information.first_name + " and " + so_information.first_name + " have an <u>excelent</u> relationship!</b></h2>\n" +
                         "");
-
                 } else {
-
                     $("#big_stars").append(
                     "<i class=\"fa fa-star fa-5x stars\"></i>\n" +
                     "<i class=\"fa fa-star fa-5x stars\"></i>\n" +
@@ -191,13 +128,11 @@ if (so_information == null || !hasSO(user_information.username)){
     }
 };
 
-// Default filter
+// Deed Filtering functions, buttons and variables
+var today = new Date(); // date variable for deed filtering
+var filtered_user_points = 0;
+var filtered_so_points = 0;
 defaultFilter();
-
-//filter buttons
-$("#today").click(function(){
-    defaultFilter();
-});
 
 function defaultFilter(){
     $(".filter_label").text("Today's");
@@ -215,22 +150,23 @@ function defaultFilter(){
     /*Filter and load deeds into page*/
     $.each(relationship_deed_history, function(element){ // fill in deeds table
         var deed_date = new Date(this.date);
-        //alert (today);
-        //alert (date_stamp);
-        if (today.getDate() == deed_date.getDate() && today.getMonth() == deed_date.getMonth() && today.getFullYear() == deed_date.getFullYear()){
 
+        if (today.getDate() == deed_date.getDate() && today.getMonth() == deed_date.getMonth() && today.getFullYear() == deed_date.getFullYear()){
             // calculate points with filter settings
             if (this.username == user_information.username){
                 filtered_user_points += deed_points(this.deed);
             } else {
                 filtered_so_points += deed_points(this.deed);
             }
-
             printDeed(this);
         }
     });
     printStats(filtered_user_points, filtered_so_points);
 }
+
+$("#today").click(function(){ // Today is the default filter
+    defaultFilter();
+});
 
 $("#week").click(function(){
     $(".filter_label").text("This Week's");
@@ -248,17 +184,14 @@ $("#week").click(function(){
     /*Filter and load deeds into page*/
     $.each(relationship_deed_history, function(element){ // fill in deeds table
         var deed_date = new Date(this.date);
-        //alert (today);
-        //alert (date_stamp);
+
         if (deed_date.getDate() <= today.getDate() && deed_date.getDate() >= (today.getDate() - today.getDay()) && deed_date.getMonth() >= today.getMonth() -1 && deed_date.getFullYear() >= today.getFullYear() - 1){
 
-            // calculate points with filter settings
             if (this.username == user_information.username){
                 filtered_user_points += deed_points(this.deed);
             } else {
                 filtered_so_points += deed_points(this.deed);
             }
-
             printDeed(this);
         }
     });
@@ -282,8 +215,6 @@ $("#month").click(function(){
     /*Filter and load deeds into page*/
     $.each(relationship_deed_history, function(element){ // fill in deeds table
         var deed_date = new Date(this.date);
-        //alert (today);
-        //alert (date_stamp);
         if (today.getMonth() == deed_date.getMonth() && today.getFullYear() == deed_date.getFullYear()){
 
             // calculate points with filter settings
@@ -292,7 +223,6 @@ $("#month").click(function(){
             } else {
                 filtered_so_points += deed_points(this.deed);
             }
-
             printDeed(this);
         }
     });
@@ -356,10 +286,8 @@ $("#alltimes").click(function(){
         } else {
             filtered_so_points += deed_points(this.deed);
         }
-
         printDeed(this);
     });
-
     printStats(filtered_user_points, filtered_so_points);
 
 });
