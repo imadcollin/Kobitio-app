@@ -109,6 +109,11 @@ $("#confirmBind").click(function(){
     }
 });
 
+$("#relationship_info").click(function(){
+    localStorage.setItem("anon_username", getSO(anon_information.username));
+    window.location.href = "anon_username.html";
+});
+
 $("#cancelBind").click(function(){
     $("#overlay").addClass("hidden");
     $("#bindWindow").addClass("hidden")
