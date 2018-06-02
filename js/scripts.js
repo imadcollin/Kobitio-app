@@ -368,14 +368,19 @@ function percentage (points, total_points){
 }
 
 function equality_rate (percentage_a, percentage_b){
-    if (Math.min(percentage_a, percentage_b) == 0){
-        return 100.0;
+    var rate = 0;
+
+    if ((percentage_a - percentage_b) == 0 || (percentage_b - percentage_a) == 0) {
+        rate = 100.0;
+    } else {
+        rate = Math.round(100 / (Math.max(percentage_a, percentage_b) / Math.min(percentage_a, percentage_b)));
     }
-    return Math.round(100 / (Math.max(percentage_a, percentage_b) / Math.min(percentage_a, percentage_b)));
+    return rate;
 }
 
 function equality_difference (percentage_a, percentage_b) {
-    return Math.abs(percentage_a - percentage_b);
+    var difference = Math.abs(percentage_a - percentage_b);
+    return difference;
 }
 
 function relationshipStars (equality_difference, stars_size) {

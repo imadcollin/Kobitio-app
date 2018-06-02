@@ -288,32 +288,35 @@ function printStats (filtered_user_points, filtered_so_points){
     $("#filtered_user_bar").css("width",filtered_user_percentage+"%");
     $("#filtered_so_bar").css("width",filtered_so_percentage+"%");
 
-    //var filtered_difference = equality_difference(filtered_user_percentage, filtered_so_percentage);
+    //alert(filtered_user_percentage + "%");
+    //alert(filtered_so_percentage+ "%");
+    /*var filtered_difference = equality_difference(filtered_user_percentage, filtered_so_percentage);
+    alert(filtered_difference); // there is a bug between 294 and 295*/
 
-    //alert(filtered_difference); // there is a bug between 291 and 319
     $("#filter_results").empty();
-    $("#filter_results").append("<i class='fa fa-flag-checkered'></i>" + getFilteredResults(60));
+    $("#filter_results").append("<i class='fa fa-flag-checkered'></i>" + getFilteredResults(35));
 }
 
 function getFilteredResults(filtered_difference){
     var veredict = "";
 
-    switch (filtered_difference){
+    if (filtered_difference <= 10){
+        veredict = "Amazing Results!";
+    }
 
-        case(filtered_difference > 70):
-            veredict = "Lame Results";
-            break;
-        case(filtered_difference > 50):
-            veredict = "Bad Results";
-            break;
-        case(filtered_difference > 30):
-            veredict = "Average Results!";
-            break;
-        case(filtered_difference > 10):
-            veredict = "Excellent Results!";
-            break;
-        default:
-            veredict = "Amazing Results!";
+    if (filtered_difference > 10){
+        veredict = "Excellent Results!";
+    }
+
+    if (filtered_difference > 30){
+        veredict = "Average Results!";
+    }
+
+    if (filtered_difference > 50){
+        veredict = "Bad Results";
+    }
+    if (filtered_difference > 70){
+        veredict = "Lame Results";
     }
     return veredict;
 }
