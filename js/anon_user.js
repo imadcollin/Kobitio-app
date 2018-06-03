@@ -8,16 +8,12 @@
 * The methods translate() is unique for each individual page.
 */
 
-loadSessionDB();
-var SESSION_HISTORY_TABLE = JSON.parse(sessionStorage.getItem("SESSION_HISTORY_TABLE"));
-var SESSION_RELATIONSHIPS_TABLE = JSON.parse(sessionStorage.getItem("SESSION_RELATIONSHIPS_TABLE"));
-
 /*Retrieve login information from localStorage*/
 var login_data = JSON.parse(localStorage.getItem("login_data"));
 var anon_username = localStorage.getItem("anon_username");
 
 if (anon_username == null){
-    window.location.href = "profile.html";
+    window.location.href = "profile.html"; // if there is no user to display, return to profile page
 } else {
 
     var anon_information = getUserInfo(anon_username);
@@ -31,7 +27,7 @@ if (anon_username == null){
     }
     //alert("You are looking at anonymous " + anon_information.username);
 
-    /*Load anon information into page*/
+    /*Print anon information into DOM*/
     $("#profile_picture").attr("src","img/users/"+ anon_information.username +".jpg");
     $(".firstname").text(anon_information.first_name);
     $(".lastname").text(anon_information.last_name);
@@ -42,6 +38,7 @@ if (anon_username == null){
     $(".gender").text(gender);
     $(".anon_css").addClass(gender);
 
+    /*Print anon relationship information into DOM*/
     if (hasSO(anon_information.username)){
 
        var so_information = getUserInfo(getSO(anon_username));
@@ -54,17 +51,15 @@ if (anon_username == null){
         $("#relationship_info").attr("href", "");
     }
 
-    /*Retrieve anon deeds from HISTORY_TABLE*/
+    /*Retrieve anon deeds from HISTORY_TABLE and calculate points, print to DOM*/
     var anon_deed_history = getUserDeeds(anon_username);
-
-    /*Calculate anon points*/
     var anon_points = calculatePoints(anon_deed_history);
 
     $(".total_points").text(anon_points);
     $("#stars").html(individual_stars(anon_points, 1));
     $("#score").text(score(anon_points));
 
-    /*Load anonymous overview into page*/
+    /*Load Anon Overview into page, this loop prints to DOM in chronological order the last 6 deeds completed*/
     $.each(anon_deed_history.slice(-6), function(element){ // fill in deeds table
         $("#deeds_overview").prepend(
         "<div class='deed " + gender +"'>" +
@@ -80,9 +75,7 @@ if (anon_username == null){
 $("#confirmBind").click(function(){
 
     if (hasSO(user_information.username)){
-
         alert("You can't send a bind request if you are currently in a relationship! You must unbind from your current koibito first!")
-
         $("#overlay").addClass("hidden");
         $("#bindWindow").addClass("hidden")
     } else {
@@ -98,7 +91,6 @@ $("#confirmBind").click(function(){
                 "date_started": new Date(),
                 "date_ended": null,
             };
-
             //alert (JSON.stringify(new_relationship));
             SESSION_RELATIONSHIPS_TABLE.push(new_relationship);
             sessionStorage.setItem("SESSION_RELATIONSHIPS_TABLE", JSON.stringify(SESSION_RELATIONSHIPS_TABLE));

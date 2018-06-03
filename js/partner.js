@@ -3,16 +3,10 @@
  *  Created by Mauro J. Pappaterra on 24 of April 2018.
  */
 
-/*PARTNER PAGE SCRIPTS
+/* PARTNER PAGE SCRIPTS
 * All scripts related to the partner page. Each page has their own scripts in a single js document.
 * The methods translate() is unique for each individual page.
 */
-
-loadSessionDB();
-var SESSION_HISTORY_TABLE = JSON.parse(sessionStorage.getItem("SESSION_HISTORY_TABLE"));
-var SESSION_RELATIONSHIPS_TABLE = JSON.parse(sessionStorage.getItem("SESSION_RELATIONSHIPS_TABLE"));
-
-alert(JSON.stringify(SESSION_RELATIONSHIPS_TABLE));
 
 /*Retrieve login information from localStorage*/
 var login_data = JSON.parse(localStorage.getItem("login_data"));
@@ -25,11 +19,11 @@ if (!hasSO(login_data.username)){
     var so_information = getUserInfo(getSO(login_data.username));
     //alert("You are looking at your partners profile " + so_information.first_name);
 
-    /*Load User information into page*/
+    /*Print User information into DOM*/
     $(".user_firstname").text(user_information.first_name);
     $(".user_gender").text(getGender(user_information.gender));
 
-    /*Load SO information into page*/
+    /*Print SO information to DOM*/
     $("#profile_picture").attr("src","img/users/"+ so_information.username +".jpg");
     $(".firstname").text(so_information.first_name);
     $(".lastname").text(so_information.last_name);
@@ -38,17 +32,15 @@ if (!hasSO(login_data.username)){
     $(".so_gender").text(so_gender);
     $(".so_css").addClass(so_gender);
 
-    /*Retrieve SO deeds from HISTORY_TABLE*/
+    /*Retrieve SO deeds from HISTORY_TABLE and calculate points, print to DOM*/
     var partners_deed_history = getUserDeeds(so_information.username);
-
-    /*Calculate points*/
     var points = calculatePoints(partners_deed_history);
 
     $(".total_points").text(points);
     $("#stars").html(individual_stars(points, 1));
     $("#score").text(score(points));
 
-    /*Load Partner overview into page*/
+    /*Load Partners Overview into page, this loop prints to DOM in chronological order the last 6 deeds completed*/
     $.each(partners_deed_history.slice(-6), function(element){ // fill in deeds table
         $("#deeds_overview").prepend(
             "<div class='deed " + so_gender +"'>" +
@@ -62,7 +54,6 @@ if (!hasSO(login_data.username)){
 }
 
 /*Deed Selection functions*/
-
 $(document).on('click','.deed',function(){
     //alert("You have clicked on a deed no. " + this.id);
     if (!($("#" + this.id).hasClass("selected"))){
@@ -71,7 +62,6 @@ $(document).on('click','.deed',function(){
         //alert ("Item " + this.id + " has been selected " + checkRepeated(this.id, give_points) + " times!");
         $("#" + this.id).find(".multiplier").text("(x"+ checkRepeated(this.id, endorsed_deeds) +")");
     }
-
     endorsed_deeds.push(this.id);
     //alert(endorsed_deeds.toString());
     $("#total_points").text(updatePoints(endorsed_deeds));
@@ -79,7 +69,6 @@ $(document).on('click','.deed',function(){
 
 function resetGivePointsWindow () { // resets give points window
     endorsed_deeds = [];
-
     $("#deeds_list").empty();
 
     /*Load Deeds list into page*/
@@ -94,7 +83,7 @@ function resetGivePointsWindow () { // resets give points window
         )
     });
 
-    $("#total_points").text(0);
+    $("#total_points").text(0); // print to DOM
 }
 
 $("#submitPoints").click(function(){
@@ -114,6 +103,7 @@ $("#submitPoints").click(function(){
             SESSION_HISTORY_TABLE.push(new_record)
         });
 
+        //**SAVE TO DATABASE HERE**
         sessionStorage.setItem("SESSION_HISTORY_TABLE", JSON.stringify(SESSION_HISTORY_TABLE));
 
         alert("SUCCESS! You have endorsed " + so_information.first_name + " with " + updatePoints(endorsed_deeds) + " " + so_gender + " points!");
@@ -136,6 +126,7 @@ $("#confirmUnbind").click(function(){
         }
     });
 
+    //**SAVE TO DATABASE HERE**
     sessionStorage.setItem("SESSION_RELATIONSHIPS_TABLE", JSON.stringify(SESSION_RELATIONSHIPS_TABLE));
 
     localStorage.setItem("anon_username", so_information.username);

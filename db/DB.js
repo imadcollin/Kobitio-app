@@ -3,6 +3,10 @@
  *  Created by Mauro J. Pappaterra on 29 of May 2018.
  */
 
+/* DUMMY DATABASE
+* A dummy database used before implementation of the app to a real framework
+*/
+
 var USER_TABLE = [
     {
         "username": "adam_1990",
@@ -483,25 +487,18 @@ var HISTORY_TABLE = [
 ];
 
 /*LOAD CURRENT SECTION DATA FROM SESSION STORAGE*/
-function loadSessionDB (){
-    if (sessionStorage.getItem("SESSION_HISTORY_TABLE") == null){
-        sessionStorage.setItem("SESSION_HISTORY_TABLE",JSON.stringify(HISTORY_TABLE));
-        /*alert("History databases loaded from script!")
-    } else {
-        alert("History database will be loaded from session storage!")*/
-    }
-
-    if (sessionStorage.getItem("SESSION_RELATIONSHIPS_TABLE") == null){
-        sessionStorage.setItem("SESSION_RELATIONSHIPS_TABLE",JSON.stringify(RELATIONSHIPS_TABLE));
-        /*alert("Relationship databases loaded from script!")
-    } else {
-        alert("Relationship database will be loaded from session storage!")*/
-    }
+if (sessionStorage.getItem("SESSION_HISTORY_TABLE") == null){
+    sessionStorage.setItem("SESSION_HISTORY_TABLE",JSON.stringify(HISTORY_TABLE));
+    /*alert("History databases loaded from script!")
+} else {
+    alert("History database will be loaded from session storage!")*/
 }
 
-
-
-
-
-
-
+if (sessionStorage.getItem("SESSION_RELATIONSHIPS_TABLE") == null){
+    sessionStorage.setItem("SESSION_RELATIONSHIPS_TABLE",JSON.stringify(RELATIONSHIPS_TABLE));
+    /*alert("Relationship databases loaded from script!")
+} else {
+    alert("Relationship database will be loaded from session storage!")*/
+}
+var SESSION_HISTORY_TABLE = JSON.parse(sessionStorage.getItem("SESSION_HISTORY_TABLE"));
+var SESSION_RELATIONSHIPS_TABLE = JSON.parse(sessionStorage.getItem("SESSION_RELATIONSHIPS_TABLE"));

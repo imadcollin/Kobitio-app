@@ -3,14 +3,10 @@
  *  Created by Mauro J. Pappaterra on 24 of April 2018.
  */
 
-/*PROFILE PAGE SCRIPTS
+/* PROFILE PAGE SCRIPTS
 * All scripts related to the profile page. Each page has their own scripts in a single js document.
 * The methods translate() is unique for each individual page.
 */
-
-loadSessionDB();
-var SESSION_HISTORY_TABLE = JSON.parse(sessionStorage.getItem("SESSION_HISTORY_TABLE"));
-var SESSION_RELATIONSHIPS_TABLE = JSON.parse(sessionStorage.getItem("SESSION_RELATIONSHIPS_TABLE"));
 
 /*Retrieve login information from localStorage*/
 var login_data = localStorage.getItem("login_data");
@@ -23,10 +19,9 @@ var user_points = 0; // calculate points
 if (login_data == null){
     window.location.href = "index.html";
 } else {
-    login_data = JSON.parse(login_data); // parse string back to JSON
+    login_data = JSON.parse(login_data); // parse string back to JSON...
+    user_information = getUserInfo(login_data.username);//... and retrieve user information
     //alert("Log in as " + login_data.username);
-
-    user_information = getUserInfo(login_data.username);
 
     /*Load User and SO information into page*/
     $("#profile_picture").attr("src","img/users/"+ login_data.username +".jpg");
@@ -49,27 +44,24 @@ if (login_data == null){
         $(".so_name").text(so_information.first_name);
         $(".so_gender").text(getGender(so_information.gender));
 
-
     } else {
         $("#relationship_info").html("<b><i>Looking for a new koibito! </i></b><i class='fa fa-heart-o red'></i>");
         $("#relationship_info").attr("href", "");
         $("#ask_points").addClass("hidden");
         $("#review_points").addClass("hidden");
         $(".link_so").addClass("hidden");
-
         //$("#relationship_tab").addClass("hidden"); // this tab should be disable
     }
 
-    /*Retrieve all users deeds from HISTORY_TABLE*/
+    /*Retrieve all users deeds from HISTORY_TABLE and calculate points, print to DOM*/
     user_deed_history = getUserDeeds(login_data.username);
-
-    user_points = calculatePoints(user_deed_history);//Calculate points
+    user_points = calculatePoints(user_deed_history);
 
     $(".total_points").text(user_points);
     $("#stars").html(individual_stars(user_points, 1));
     $("#score").text(score(user_points));
 
-    /*Load User History into page*/
+    /*Load User Overview into page, this loop prints to DOM in chronological order the last 6 deeds completed*/
     $.each(user_deed_history.slice(-6) , function(element){ // fill in deeds table
         $("#deeds_overview").prepend(
             "<div class='deed " + user_gender +"'>" +
@@ -91,7 +83,6 @@ $(document).on('click','.deed',function(){
         //alert ("Item " + this.id + " has been selected " + checkRepeated(this.id, give_points) + " times!");
         $("#" + this.id).find(".multiplier").text("(x"+ checkRepeated(this.id, requested_deeds) +")");
     }
-
     requested_deeds.push(this.id);
     //alert(requested_deeds.toString());
     $("#total_points").text(updatePoints(requested_deeds));
@@ -114,13 +105,12 @@ $("#submitRequest").click(function(){
             //alert(JSON.stringify(new_record));
             SESSION_HISTORY_TABLE.push(new_record)
         });
-
+        //**SAVE TO DATABASE HERE**
         sessionStorage.setItem("SESSION_HISTORY_TABLE", JSON.stringify(SESSION_HISTORY_TABLE));
 
         alert("SUCCESS! You have requested " + updatePoints(requested_deeds) + " " + getGender(user_information.gender) + " points!.\n(Points need to be approved by " + so_information.first_name + " " + so_information.last_name + " before they appear in your profile)");
         window.location.href = "profile.html";
     }
-
 });
 
 $("#resetPoints").click(function(){
@@ -179,7 +169,6 @@ $(document).on('click','.pending',function(){
         $("#" + this.id).removeClass("selected");
         selected_deeds.pop(this.id);
     }
-
     //alert(selected_deeds.toString());
     $("#selected_points").text(updatePoints(selected_deeds));
 
@@ -190,7 +179,6 @@ $("#acceptPoints").click(function(){
     if (selected_deeds.length == 0){
         alert("You must select at least one deed!")
     } else {
-
         //alert(requested_deeds.toString());
         selected_deeds.forEach(function(item) {
             $.each(SESSION_HISTORY_TABLE , function(element){ // fill in deeds table
@@ -202,12 +190,11 @@ $("#acceptPoints").click(function(){
                 }
             });
         });
-
+        //**SAVE TO DATABASE HERE**
         sessionStorage.setItem("SESSION_HISTORY_TABLE", JSON.stringify(SESSION_HISTORY_TABLE));
         alert("SUCCESS! You have accepted the selected requested points!");
         window.location.href = "profile.html";
     }
-
 });
 
 $("#declinePoints").click(function(){
@@ -227,6 +214,7 @@ $("#declinePoints").click(function(){
             });
         });
         //alert(JSON.stringify(SESSION_HISTORY_TABLE));
+        //**SAVE TO DATABASE HERE**
         sessionStorage.setItem("SESSION_HISTORY_TABLE", JSON.stringify(SESSION_HISTORY_TABLE));
         alert("SUCCESS! You have rejected the selected requested points!");
         window.location.href = "profile.html";
@@ -257,13 +245,11 @@ $("#review_points").click(function() {
     resetReviewPointsWindow();
 });
 
-
 $(".close").click(function() {
     $("#overlay").addClass("hidden");
     $("#requestWindow").addClass("hidden");
     $("#reviewWindow").addClass("hidden");
 });
-
 
 /*Language Translation index*/
 if (localStorage.getItem("index") == null){

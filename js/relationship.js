@@ -8,10 +8,6 @@
 * The methods translate() is unique for each individual page.
 */
 
-loadSessionDB();
-var SESSION_HISTORY_TABLE = JSON.parse(sessionStorage.getItem("SESSION_HISTORY_TABLE"));
-var SESSION_RELATIONSHIPS_TABLE = JSON.parse(sessionStorage.getItem("SESSION_RELATIONSHIPS_TABLE"));
-
 /*Retrieve login information from localStorage*/
 var login_data = JSON.parse(localStorage.getItem("login_data"));
 
@@ -176,7 +172,6 @@ $("#month").click(function(){
     $.each(relationship_deed_history, function(element){ // fill in deeds table
         var deed_date = new Date(this.date);
         if (today.getMonth() == deed_date.getMonth() && today.getFullYear() == deed_date.getFullYear()){
-
             // calculate points with filter settings
             if (this.username == user_information.username){
                 filtered_user_points += deed_points(this.deed);
@@ -210,7 +205,6 @@ $("#year").click(function(){
         //alert (today);
         //alert (date_stamp);
         if (today.getFullYear() == deed_date.getFullYear()){
-
             // calculate points with filter settings
             if (this.username == user_information.username){
                 filtered_user_points += deed_points(this.deed);
@@ -292,33 +286,31 @@ function printStats (filtered_user_points, filtered_so_points){
     //alert(filtered_user_percentage + "%");
     //alert(filtered_so_percentage+ "%");
     /*var filtered_difference = equality_difference(filtered_user_percentage, filtered_so_percentage);
-    alert(filtered_difference); // there is a bug between 294 and 295*/
+    alert(filtered_difference); // there is a bug among these few lines*/
 
     $("#filter_results").empty();
-    $("#filter_results").append("<i class='fa fa-flag-checkered'></i>" + getFilteredResults(35));
+    $("#filter_results").append("<i class='fa fa-flag-checkered'></i>" + getFilteredResults(35)); // filtered difference should be the argument
 }
 
 function getFilteredResults(filtered_difference){
     var veredict = "";
 
+    if (filtered_difference > 70){
+        veredict = "Lame Results";
+    }
+    if (filtered_difference > 50){
+        veredict = "Bad Results";
+    }
+    if (filtered_difference > 30){
+        veredict = "Average Results!";
+    }
+    if (filtered_difference > 10){
+        veredict = "Excellent Results!";
+    }
     if (filtered_difference <= 10){
         veredict = "Amazing Results!";
     }
 
-    if (filtered_difference > 10){
-        veredict = "Excellent Results!";
-    }
-
-    if (filtered_difference > 30){
-        veredict = "Average Results!";
-    }
-
-    if (filtered_difference > 50){
-        veredict = "Bad Results";
-    }
-    if (filtered_difference > 70){
-        veredict = "Lame Results";
-    }
     return veredict;
 }
 

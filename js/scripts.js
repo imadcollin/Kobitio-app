@@ -3,10 +3,9 @@
  *  Created by Mauro J. Pappaterra on 27 of May 2018.
  */
 
-loadSessionDB();
-var SESSION_HISTORY_TABLE = JSON.parse(sessionStorage.getItem("SESSION_HISTORY_TABLE"));
-var SESSION_RELATIONSHIPS_TABLE = JSON.parse(sessionStorage.getItem("SESSION_RELATIONSHIPS_TABLE"));
-
+/* ALL COMMON SCRIPTS
+* All scripts shared among all pages that make the main functionalities of the webapp.
+*/
 
 $(".link_profile").click(function(){
     window.location.href = "profile.html";
@@ -46,39 +45,14 @@ function individual_stars (points, size){
 }
 
 function returnStars (number, size){
-    var stars = "";
-    var icon = "";
-
     switch (size){
         case(0):
-            icon = "<i class='fa fa-star fa stars'></i> "; // small stars
-            break;
+            return ("<i class='fa fa-star fa stars'></i> ").repeat(number); // small stars
         case(1):
-            icon = "<i class='fa fa-star fa-2x stars'></i> "; // medium stars
-            break;
+            return ("<i class='fa fa-star fa-2x stars'></i> ").repeat(number); // medium stars
         case(2):
-            icon = "<i class='fa fa-star fa-5x stars'></i> "; // big stars
-            break;
+            return ("<i class='fa fa-star fa-5x stars'></i> ").repeat(number); // big stars
     }
-
-    switch (number){
-        case(1):
-            stars = icon;
-            break;
-        case(2):
-            stars = icon + icon;
-            break;
-        case(3):
-            stars = icon + icon + icon;
-            break;
-        case(4):
-            stars = icon + icon + icon + icon;
-            break;
-        case(5):
-            stars = icon + icon + icon + icon + icon;
-            break;
-    }
-    return stars;
 }
 
 function score (points){
@@ -200,7 +174,6 @@ function timeTogether (start_date, finish_date){
 
     var start = new Date(start_date);
     var finish = new Date(finish_date);
-
 
     var totalyears = finish.getFullYear() - start.getFullYear();
     var totalmonths = finish.getMonth() - start.getMonth();
@@ -432,11 +405,4 @@ function relationshipVeredict (equality_difference) {
     }
     return relationshipVeredict;
 }
-
-
-
-
-
-
-
 
