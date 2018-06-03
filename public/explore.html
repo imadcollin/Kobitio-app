@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+
+     <!-- Favicon -->
+     <link rel="shortcut icon" href="img/favicon.png">
+
+     <!-- Bootstrap CSS -->
+     <link rel="stylesheet" href="../bootstrap/css/bootstrap.css">
+     <link rel="stylesheet" href="../bootstrap/css/bootstrap-grid.css">
+     <link rel="stylesheet" href="../bootstrap/css/bootstrap-reboot.css">
+ 
+     <!-- Font Awesome Icon Sheets CSS -->
+     <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
+ 
+  <link rel="stylesheet" href="css/explore.css">
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  
+  
+  <link rel="stylesheet" href="css/tabMenu.css">
+    <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Aclonica|Acme|Droid+Serif|Pattaya" rel="stylesheet">
+
+
+  <script src="js/tabMenuScript.js"></script>
+  <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+
+
+
+</head>
+
+<body>
+  <div id="root"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
+  <script type="text/babel">
+
+    class Greeting extends React.Component { 
+      constructor(props) { 
+        super(props); 
+        this.state = { 
+        value: 'Some data will be placed',
+        USER_TABLE : [
+    {
+        "username": "adam_1990",
+        "password": "godsavesevasdog",
+        "email": "first@email.com",
+        'photo':"./img/adam.jpg",
+
+    },
+    {
+        "username": "eve4ever",
+        "password": "iloveapples",
+        "email": "leaves@email.com",
+        'photo':"./img/eve.jpg",
+
+    },
+    {
+        "username": "tobias_hasbandu",
+        "password": "rubyrubyruby",
+        "email": "tobbie_johnsson@email.com",
+        'photo':"./img/adam.jpg",
+
+    },
+    {
+        "username": "rebecca_thebest",
+        "password": "thispasswordishighinentropy",
+        "email": "rebecca_tamashiro@gmail.com",
+        'photo':"./img/andrea.jpg",
+
+    }]
+
+
+        
+        };
+    } 
+
+    render() {
+
+var divStyle = {
+    width:'120px',
+    height:'220px'
+ 
+};
+
+let data=[];
+for (const item of this.state.USER_TABLE) {
+    console.log(item)
+    data.push(
+
+      <div className="hover08 column">
+        <div>
+          <figure>
+            <img src={item.photo} style={divStyle}/>
+          </figure>
+          <span>test</span>
+        </div>
+
+        <ul>        
+            <li>{item.username}</li>
+            <li>{item.password}</li>
+          </ul>
+        </div>
+
+        )
+}
+        
+       return (
+
+
+
+           <div >
+
+ <div id='cssmenu'>
+        <ul>
+            <li>
+                <h1>Kobitio
+                    <i className="fa fa-heart fa-1x red"></i> App</h1>
+            </li>
+            <li className='active'>
+                <a href="profile.html">My Profile</a>
+            </li>
+            <li>
+                <a href="relationship.html">Current Relation</a>
+            </li>
+            <li>
+                <a href="history.html">Relation History</a>
+            </li>
+            <li>
+                <a href="connectionRequest.html">Requests</a>
+            </li>
+            <li>
+                 <a href="explore.html">Explore</a>
+            </li>
+            <div className="languages_menu">
+                <a href="#" id="eng">
+                    <div className="languages">
+                        <img src="img/eng.png"/>
+                    </div>
+                </a>
+                <a href="#" id="sve">
+                    <div className="languages">
+                        <img src="img/sve.png"/>
+                    </div>
+                </a>
+                <a href="#" id="jap">
+                    <div className="languages">
+                        <img src="img/jap.svg"/>
+                    </div>
+                </a>
+            </div>
+        </ul>
+    </div>
+
+
+                
+               test {data}
+
+    </div>
+    ); 
+    } 
+    } 
+    
+    ReactDOM.render(
+    <Greeting />, document.getElementById('root') );
+
+  </script>
+</body>
+
+</html>
