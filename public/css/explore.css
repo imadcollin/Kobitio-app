@@ -44,8 +44,27 @@ body {
     margin: 20px 0 0 0;
 }
 
-.testing {
+.data {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-around;
+}
+
+@media screen and (max-width: 600px) {
+    h1 {
+        text-align: left;
+        padding: 0;
+        padding: 0;
+    }
+    .view-sixth img {
+        width: 325px;
+        height: 251px;
+    }
+    .main{
+        width:326px;
+    }
+    .view-sixth .mask{
+        width: 325px;
+
+    }
 }
