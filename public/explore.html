@@ -18,7 +18,8 @@
      <!-- Font Awesome Icon Sheets CSS -->
      <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
  
-  <link rel="stylesheet" href="css/explore.css">
+     <link rel="stylesheet" href="css/relationship.css">
+     <link rel="stylesheet" href="css/explore.css">
   
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   
@@ -70,6 +71,21 @@
 
     },
     {
+        "username": "eve4ever",
+        "password": "iloveapples",
+        "email": "leaves@email.com",
+        'photo':"./img/eve.jpg",
+
+    },
+    {
+        "username": "tobias_hasbandu",
+        "password": "rubyrubyruby",
+        "email": "tobbie_johnsson@email.com",
+        'photo':"./img/adam.jpg",
+
+    },
+ 
+    {
         "username": "rebecca_thebest",
         "password": "thispasswordishighinentropy",
         "email": "rebecca_tamashiro@gmail.com",
@@ -94,20 +110,20 @@ let data=[];
 for (const item of this.state.USER_TABLE) {
     console.log(item)
     data.push(
-
-      <div className="hover08 column">
-        <div>
-          <figure>
-            <img src={item.photo} style={divStyle}/>
-          </figure>
-          <span>test</span>
-        </div>
-
-        <ul>        
-            <li>{item.username}</li>
-            <li>{item.password}</li>
-          </ul>
-        </div>
+        <div className="main">
+            <div className="view view-sixth">
+                <img src={item.photo} alt="meow"/>
+                <div className="mask">
+                    <h2>Hover Style #6</h2>
+                    <p>A wonderful serenity has taken possession of my entire soul, like these sweet
+                        mornings of spring which I enjoy with my whole heart.</p>
+                        <a href="#" className="info">Read More</a>
+                        </div>
+                        <h3>
+                            <b> {item.username}</b>
+                        </h3>
+                  </div>
+         </div>
 
         )
 }
@@ -160,8 +176,11 @@ for (const item of this.state.USER_TABLE) {
     </div>
 
 
-                
-               test {data}
+           
+
+            < div className="testing">   
+                {data}
+               </div>
 
     </div>
     ); 

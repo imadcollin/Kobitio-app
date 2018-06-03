@@ -1,9 +1,51 @@
-h1{
+h1 {
     line-height: 1;
 }
-.fa{
+
+.fa {
     color: red;
 }
-body{
+
+body {
     margin-top: 6%;
+    display: flex;
+    background-color: #000;
+    color: #fff;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+    justify-content: first baseline;
+}
+
+.view-sixth img {
+    width: 237px;
+    height: 322px;
+}
+
+.view-sixth .mask {
+    width: 233px;
+    height: 644px;
+}
+
+.view p {
+    padding: 51px 1px 20px;
+}
+
+.view h2 {
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    font-size: 17px;
+    padding: 40px;
+    background: rgba(0, 0, 0, 0.8);
+    margin: 20px 0 0 0;
+}
+
+.testing {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
 }
