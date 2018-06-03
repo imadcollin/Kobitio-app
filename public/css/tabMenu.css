@@ -218,6 +218,172 @@ h1{
   padding: 1%;
 }
 
+
+
+.menu{
+  display: block;
+  /* position: relative; */
+  /* margin-right: 10px; */
+  /* top: 28px;
+
+  height: 500px;
+  width: 13%; */
+  width: 10%;
+  margin: 0;
+  overflow: hidden;
+}
+
+.menu ul{
+  display: block;
+  list-style:none;
+  text-align:center;
+  padding: 0;
+  margin: 0;
+}
+
+.menu ul li{
+  display: block;
+  background: #333;
+  border-bottom: 1px solid #222;
+  border-top: 1px solid #444;
+  font-family: sans-serif;
+  width: 100px;
+  height: 100px;
+}
+
+.menu ul li.tab-fill{
+  display: none;
+}
+
+.menu ul li a{
+  display: block;
+  color: #AAA;
+  text-decoration: none;
+  padding-top: 15px;
+  transition: 0.25s;
+}
+
+.menu ul li.selected a{
+  color: #EEE;
+}
+
+.menu ul li.selected a:hover{
+  color: #EEE;
+  font-size: 1em;
+}
+
+.menu ul li a:hover{
+  color: #FFF;
+  font-size: 1.05em;
+}
+
+.menu ul li .icon{
+  display: block;
+  line-height: 1.75em;
+  font-size: 2.5em;
+  font-weight: lighter;
+  text-shadow: -1px -1px 0px #222;
+}
+
+.menu ul li:after{
+  width: 0;
+    height: 0;
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    top: 40px;
+    right: 12px;
+    position: absolute;
+    content: "";
+    z-index: 999;
+}
+
+li.selected:after {
+    border-left: 8px solid #333;
+}
+
+.menu ul.to-change-arrows {
+  position: absolute;
+  bottom: 0;
+  height: 100px;
+  width: 100px;
+  overflow: hidden;
+  border-top: 1px solid #222;
+}
+
+.menu ul.to-change-arrows li{
+  position: relative;
+  height: 100px;
+  width: 100px;
+  background: #444; 
+}
+
+.menu ul.to-change-arrows li span.icon{
+  color: #EEE;
+  line-height: 2.15em;
+}
+
+.menu input[type=checkbox] {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+}
+
+ input#toggle[type=checkbox]{
+     display:none;
+ }
+
+
+label {
+    position: absolute;
+    height: 100px;
+    width: 100px;
+    display: block; 
+    bottom: 0;
+    z-index: 9999;
+    cursor: pointer;
+}
+
+label:hover {
+    background: #FFF;
+  opacity: 0.15;
+}
+
+/** Magic click trick css **/
+
+.to-change {
+        transition: top 0.5s;
+        -webkit-transition: top 0.5s;
+    }
+
+input[type=checkbox]:checked ~ label {
+  bottom: auto;
+  top: 0;
+}
+
+input[type=checkbox]:checked ~ .to-change {
+  position: absolute;
+  left: auto;
+  top: -310px;
+}
+
+input[type=checkbox]:checked ~ .to-change li.tab-fill {
+  display: block;
+}
+
+input[type=checkbox]:checked ~ .to-change-arrows {
+    bottom: auto;
+    top: 0;
+    border: none;
+    border-bottom: 1px solid #222;
+}
+
+input[type=checkbox]:checked ~ .to-change-arrows li.more{
+    display:none;
+}
+
+
+
+
 @media screen and (max-width: 670px) {
   .languages_menu {
       /* top: 85%;*/
