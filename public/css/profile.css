@@ -67,6 +67,9 @@ a:hover{
 .popup h1,.popup h3 {
     text-align: center;
 }
+h1 {
+    color: #dff2fa;
+}
 
 .points_list{
     height: 400px;
@@ -91,10 +94,24 @@ a:hover{
     {
         margin-top: 6%;
     }
+    .flex_1{
+        display: flex;
+        margin-left: 1%;
+    }
 @media screen and (max-width: 600px)
  {
     #first_row    
     {
         margin-top: 21%;
     }
+    .flex_1{
+        flex-direction: row-reverse;
+    }
 }
+
+
+/* .thumbnail img {
+    min-width: 170px;
+    width: 278px;
+    height: 130px;
+} */
