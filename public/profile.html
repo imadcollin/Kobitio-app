@@ -25,27 +25,27 @@
     <!-- Font Awesome Icon Sheets CSS -->
     <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
 
-    <!-- Css File for Tables -->
-    <link rel="stylesheet" href="css/table.css">
-
     <!-- External CSS sheets -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/profile.css">
+ <link rel="stylesheet" href="css/tabMenu.css">
+    <link rel="stylesheet" href="css/history.css">
 
+    <link rel="stylesheet" href="css/relationship.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Aclonica|Acme|Droid+Serif|Pattaya" rel="stylesheet">
 
-
     <!-- CSS Responsive Menu Tab -->
     <link rel="stylesheet" href="css/tabMenu.css">
+    <link rel="stylesheet" href="css/history.css">
+
+    <link rel="stylesheet" href="css/relationship.css">
+
     <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
     <script src="js/tabMenuScript.js"></script>
-
-
 </head>
 
 <body>
-    <!-- Your code starts here -->
     <!-- 3D-Menu Responsive Navigation header with langauges -->
     <div id='cssmenu'>
         <ul>
@@ -66,7 +66,7 @@
                 <a href="connectionRequest.html">Requests</a>
             </li>
             <li>
-                <a href="search.html">Search Partner</a>
+                 <a href="explore.html">Explore</a>
             </li>
             <!-- Langauge buttons -->
             <div class="languages_menu">
@@ -88,22 +88,55 @@
             </div>
         </ul>
     </div>
+
+
     <!-- END OF 3D-Menu -->
 
+    <!-- Your code starts here -->
 
-    <div id="first_row" class="row">
+    <!-- <div class="row">
+        <div class="col-lg-3">
+            <h1>Koibito
+                <i class="fa fa-heart fa-1x red"></i> App </h1>
+        </div>
+
+        <div class="tabs col-lg-9">
+            <ul>
+                <li>
+                    <a href="profile.html">Profile</a>
+                </li>
+                <li>
+                    <a href="relationship.html">Current Relationship</a>
+                </li>
+                <li>
+                    <a href="history.html">Relationship History</a>
+                </li>
+                <li>
+                    <a href="">More Stats</a>
+                </li>
+            </ul>
+        </div>
+    </div> -->
+
+    <!-- 
+    <div class="row">
 
         <div class="portrait col-lg-3 col-md-6  col-sm-12">
             <img src="img/adam.jpg">
         </div>
 
         <div class="hasbandu col-lg-8 col-md-5 col-sm-11">
-            <h1 id="name"></h1>
-            <a href="partner.html" id="partnerName">
+            <h1>
+                <b>Adam (hasbandu)</b>
+            </h1>
+            <a href="partner.html">
+                <b>Current Waifu:</b> Eve
                 <i class="fa fa-heart red"></i>
             </a>
-
-            <p id="userDescription"></p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+                magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
             <h3>
                 <b>Total Hasbandu Points: 700</b>
@@ -118,140 +151,292 @@
             <i class="fa fa-star fa-2x stars"></i>
             <i class="fa fa-star-half-empty fa-2x stars"></i>
 
-        </div>
+        </div> -->
 
-        <div class="buttons col-lg-1 col-md-1 col-sm-1">
-            <a onclick="Logout()" href="index.html" >
-                <i class="fa fa-user-times fa-3x"></i>
-                <br> Log Off
-                <br>
-            </a>
-            <i class="fa fa-edit fa-3x red"></i>
-            <br> Edit Profile
-            <br>
-            <i class="fa fa-cogs fa-3x dark-grey"></i>
-            <br> Settings
-            <br>
-        </div>
 
-    </div>
 
-    <div class="row">
-        <!-- <div class="light-green col-lg-11 col-md-11  col-sm-11"> -->
-        <div class="col-lg-11 col-md-11  col-sm-11">
+    <!-- ############################################## -->
+    <div class="flex_1">
 
-            <h2 class="center">
-                <b>Overview</b>
-            </h2>
+        <div class="centered">
+            <section class="cards">
+                <div class="wrapper">
+                    <h1 id="relationshipHistoryTitle"></h1>
+                    <h2 class="center" id="centerTitle"></h2>
 
-            <section class="tableContent">
-                <div class="col-md-12">
-                    <div class="panel panel-default ">
-                        <!-- Table Filter Panel -->
-                        <div class="panel-body">
-                            <div class="pull-right">
-                                <div class="btn-group">
-                                    <button type="button" class="btn btn-success btn-filter" data-target="pagado">Pagado</button>
-                                <button type="button" class="btn btn-warning btn-filter" data-target="pendiente">Pendiente</button>
-                                <button type="button" class="btn btn-danger btn-filter" data-target="cancelado">Cancelado</button>
-                            </div>
+                    <article class="card">
+                        <a href="#">
+                            <figure class="thumbnail">
+
+                                <div class="main">
+                                    <div class="view view-sixth">
+                                        <h3>
+                                            <b> Adam(hasbandu)</b>
+                                        </h3>
+                                        <img src="img/adam.jpg" alt="meow">
+                                        <div class="mask">
+                                            <h2>Hover Style #6</h2>
+                                            <p>A wonderful serenity has taken possession of my entire soul, like these sweet
+                                                mornings of spring which I enjoy with my whole heart.</p>
+                                            <a href="#" class="info">Read More</a>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="card-content">
+                                    <h2 id='userName'></h2>
+                                    <div class="center">
+                                        <i class="fa fa-star stars"></i>
+
+                                        <p>
+                                            <b id="namePicture">Adam is a
+                                                <u>lice-infested</u> hasbandu!</b>
+                                        </p>
+                                        <h4>
+                                            Total points
+                                            <b>100000</b>
+                                        </h4>
+                                    </div>
+                                </div>
+                        </a>
+                        </figure>
+
+                        <!-- ##############################################q -->
+
+
+                        <!-- ############################################## -->
+                        <div class="card-content">
+                            <br>
+                            <h2> Adam (hasbandu)</h2>
+
+                            <a href="partner.html">
+                                <b>Current Waifu:</b> Eve
+                                <i class="fa fa-heart red"></i>
+                            </a>
+
+                            <h6>Lorem ipsum dolor sit amet, consectetur adipiscing elit, quis nostrud exercitation ullamco</h6>
+                            <h6>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</h6>
+                            <br> 
+                            <div class="test">
+                           <h6> laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in 
+                            reprehenderit in voluptate
+                            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                            sunt in culpa qui officia deserunt mollit anim id est laborum.</h6> 
                         </div>
-                        <!-- Table Content Container -->
-                        <div class="table-container">
-                            <table class="table table-filter" id="contentTable">
-                                <tbody>
-                                    <!-- Elements are dynamicaly added to the table -->
-                                </tbody>
-                            </table>
+                            <h3>
+                                <b>Total Hasbandu Points: 700</b>
+                            </h3>
+                            <br>
+
+                            <p>
+                                <b>Adam is a
+                                    <u>lice-infested</u> hasbandu!</b>
+                            </p>
                         </div>
-                    </div>
-                </div>
+
+                        <!-- ############################################## -->
+
+                        </figure>
+
+                    </article>
+            </section>
             </div>
-        </section>
+            <nav class="menu">
 
-            <h2 class="center">
-                <b>Total hasbandu points: 700</b>
-            </h2>
+                <input type="checkbox" id="toggle">
+                <label for="toggle"></label>
+
+                <ul class="to-change">
+                    <li class="selected">
+                        <a href="index.html">
+                            <i class="fa fa-user-times fa-3x"></i>
+                            <br> Log Off
+                            <br>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-edit fa-3x red"></i> Edit Profile</a>
+                    </li>
+                    <li class="tab-fill"></li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-cogs fa-3x dark-grey"></i>
+                            <br> Settings</a>
+                    </li>
+                    <li>
+                        <a href="#" id="ask_points">
+                        <!-- <div id="ask_points"> -->
+                            <i class="fa fa-plus-circle fa-3x green"></i>
+                            <br> Request Points
+                        <!-- </div> -->
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-eye fa-3x blue"></i>
+                            <br> Review Points
+
+                        </a>
+                    </li>
+                </ul>
+                <!-- <ul class="to-change-arrows">
+                    <li class="tab-more more">
+                        <span class="icon icon-desktop">+</span>
+                    </li>
+                    <li class="tab-more less">
+                        <span class="icon icon-desktop">-</span>
+                    </li>
+                </ul> -->
+            </nav>
+
 
         </div>
 
-        <div class="buttons button col-lg-1 col-md-1 col-sm-1" id="ask_points">
-            <i class="fa fa-plus-circle fa-3x green"></i>
-            <br> Request Hasbandu Points
-            <br>
-
-            <i class="fa fa-eye fa-3x blue"></i>
-            <br> Review Requested Points
-            <br>
-        </div>
 
     </div>
+    <!-- ############################################## -->
 
-    <!-- Table --> 
-    <br><br>
+   <!-- Overview -->
 
-        
-    
 
+    <!-- Start Row  -->
+    <div class="row">
+
+        <div class="col">
+
+          
+
+                <h2>Today's Deeds History</h2>
+
+                <div class="deed waifu">
+                    <img src="img/deeds/D00001.png">
+                    <h3 class="title">Eve cooked a nice meal</h3>
+                    <h6 class="date">Endorsed by Adam
+                        <i class="fa fa-heart red"></i> on 15/04/2018</h6>
+                    <h4 class="points">
+                        <b>+150 points</b>
+                    </h4>
+                </div>
+
+                <div class="deed waifu">
+                    <img src="img/deeds/D00001.png">
+                    <h3 class="title">Eve took the garbage out</h3>
+                    <h6 class="date">Endorsed by Adam
+                        <i class="fa fa-heart red"></i> on 15/04/2018</h6>
+                    <h4 class="points">
+                        <b>+100 points</b>
+                    </h4>
+                </div>
+                 
+                 <div class="deed hasbandu">
+                    <img src="img/deeds/D00001.png">
+                    <h3 class="title">Adam cleaned the dishes</h3>
+                     <h6 class="date">Endorsed by Eve
+                         <i class="fa fa-heart red"></i> on 15/04/2018</h6>
+                     <h4 class="points">
+                         <b>+50 points</b>
+                     </h4>
+                 </div>
+     
+                 <div class="deed hasbandu">
+                    <img src="img/deeds/D00001.png">
+                    <h3 class="title">Adam walked the dog</h3>
+                     <h6 class="date">Endorsed by Eve
+                         <i class="fa fa-heart red"></i> on 15/04/2018</h6>
+                     <h4 class="points">
+                         <b>+100 points</b>
+                     </h4>
+                 </div>
+     
+                 <div class="deed hasbandu">
+                    <img src="img/deeds/D00001.png">
+                    <h3 class="title">Adam cooked a nice meal</h3>
+                     <h6 class="date">Endorsed by Eve
+                         <i class="fa fa-heart red"></i> on 15/04/2018</h6>
+                     <h4 class="points">
+                         <b>+150 points</b>
+                     </h4>
+                 </div>
+     
+                 <div class="deed waifu">
+                    <img src="img/deeds/D00001.png">
+                    <h3 class="title">Eve took the garbage out</h3>
+                     <h6 class="date">Endorsed by Adam
+                         <i class="fa fa-heart red"></i> on 15/04/2018</h6>
+                     <h4 class="points">
+                         <b>+100 points</b>
+                     </h4>
+                 </div> 
+
+            </div>
+            <!-- End of Row  -->
+
+    <div id="overlay" class="hidden"></div>
 
     <!-- request points window -->
     <div id="requestWindow" class="popup hasbandu hidden">
+
+        <a class="close" onclick="">
+            <i class="fa fa-times fa"></i>
+        </a>
+        <h1>Request Hasbandu points
+            <i class="fa fa-heart fa-1x red"></i> from Eve</h1>
+        <br>
 
         <h2>Select from the list:</h2>
 
         <div class="points_list">
 
-            <a onclick="addRequestPoints(this);" id="1">
-                <div class="deed wakashu">
-                    <img src="img/deeds/D00001.png">
-                    <h3 class="title">Cooked a nice meal</h3>
-                    <h4 class="points">
-                        <b>+150 points</b>
-                    </h4>
-                </div>
-            </a>
+            <div class="deed wakashu">
+                <img src="img/deeds/D00001.png">
+                <h3 class="title">Cooked a nice meal</h3>
+                <h4 class="points">
+                    <b>+150 points</b>
+                </h4>
+            </div>
 
-            <a onclick="addRequestPoints(this);" id="2">
-                <div class="deed wakashu">
-                    <img src="img/deeds/D00002.png">
-                    <h3 class="title">Cleaned the dishes</h3>
-                    <h4 class="points">
-                        <b>+50 points</b>
-                    </h4>
-                </div>
-            </a>
+            <div class="deed wakashu">
+                <img src="img/deeds/D00003.png">
+                <h3 class="title">Took the garbage out</h3>
+                <h4 class="points">
+                    <b>+100 points</b>
+                </h4>
+            </div>
 
-            <a onclick="addRequestPoints(this);" id="3">
-                <div class="deed wakashu" >
-                    <img src="img/deeds/D00003.png">
-                    <h3 class="title">Took the garbage out</h3>
-                    <h4 class="points">
-                        <b>+100 points</b>
-                    </h4>
-                </div>
-            </a>
+            <div class="deed wakashu">
+                <img src="img/deeds/D00002.png">
+                <h3 class="title">Cleaned the dishes</h3>
+                <h4 class="points">
+                    <b>+50 points</b>
+                </h4>
+            </div>
 
-            <a onclick="addRequestPoints(this);" id="4">
-                <div class="deed wakashu" id="4">
-                    <img src="img/deeds/D00004.png">
-                    <h3 class="title">Walked the dog</h3>
-                    <h4 class="points">
-                        <b>+100 points</b>
-                    </h4>
-                </div>
-            </a>
+            <div class="deed wakashu">
+                <img src="img/deeds/D00004.png">
+                <h3 class="title">Walked the dog</h3>
+                <h4 class="points">
+                    <b>+100 points</b>
+                </h4>
+            </div>
 
         </div>
 
         <br>
         <h3>Requesting
-            <span class="red" id="requestedPoints">0</span>
+            <span class="red">+100 Hasbandu points</span>
         </h3>
         <br>
 
-        <button  class="button" onclick="addPointsToDatabase()">Request Points</button>
+        <h5 class="button hasbandu"> Request Points </h5>
 
     </div>
+
+    <!-- Your code ends here -->
+
+    <!-- External Scripts -->
+
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
     <!-- Bootstrap Scripts -->
     <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -263,19 +448,6 @@
     <script src="js/translations/profile.js" type="text/javascript"></script>
     <script src="js/translations/common.js" type="text/javascript"></script>
     <script src="js/multilanguage.js" type="text/javascript"></script>
-
-
-
-    <script src="js/translations/profile.js" type="text/javascript"></script>
-    <script src="js/translations/common.js" type="text/javascript"></script>
-    <script src="js/multilanguage.js" type="text/javascript"></script>
-    <script src="js/db.js" type="text/javascript"></script>
-
-
-    <!-- Script for the Table -->
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-    <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-
 </body>
 
 </html>
