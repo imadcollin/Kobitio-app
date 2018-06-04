@@ -50,7 +50,7 @@ if (login_data == null){
             "<div class='history'>" +
             "<h3 class='center'>" + user_information.first_name + "<i class='fa fa-heart fa-1x red'></i> "+ so_information.first_name +"</h3>" +
 
-            "<div class='c1 "+ getGender(user_information.gender) +"'>" +
+            "<div class='c1 "+ getGender(user_information.gender) +" link_profile'>" +
             "<img src='img/users/"+ user_information.username +".jpg'>" +
 
             "<div class='center'>" + individual_stars(user_points, 0)  +
@@ -59,7 +59,7 @@ if (login_data == null){
             "<p><b>"+ user_points +"</b> "+ getGender(user_information.gender) + " points <b>in this relationship</b></p>" +
             "</div>" +
 
-            "<div class='c2 "+ getGender(so_information.gender) +"'>" +
+            "<div class='c2 "+ getGender(so_information.gender) +" link_so'>" +
 
             "<img src='img/users/"+ so_information.username +".jpg'>" +
             "<div class='center'>" + individual_stars(so_points, 0)  +
@@ -115,7 +115,7 @@ if (login_data == null){
             "<div class='history'>" +
             "<h3 class='center'>" + user_information.first_name + "<i class='fa fa-heart-o fa-1x red'></i> "+ so_information.first_name +"</h3>" +
 
-            "<div class='c1 "+ getGender(user_information.gender) +"'>" +
+            "<div class='c1 "+ getGender(user_information.gender) +" link_profile'>" +
             "<img src='img/users/"+ user_information.username +".jpg'>" +
 
             "<div class='center'>" + individual_stars(user_points, 0)  +
@@ -124,7 +124,7 @@ if (login_data == null){
             "<p><b>"+ user_points +"</b> "+ getGender(user_information.gender) + " points <b>in this relationship</b></p>" +
             "</div>" +
 
-            "<div class='c2 "+ getGender(so_information.gender) +"'>" +
+            "<div class='c2 "+ so_information.username + " " + getGender(so_information.gender) +" link_anon'>" +
 
             "<img src='img/users/"+ so_information.username +".jpg'>" +
             "<div class='center'>" + individual_stars(so_points, 0)  +

@@ -199,6 +199,14 @@
     padding: 2%;
 }
 
-.clickable, .link_profile, .link_so, .link_user, .close {
+.clickable, .link_profile, .link_so, .link_anon, .close {
     cursor: pointer;
+}
+
+.link_white{
+    color: white;
+}
+
+.link_white:hover {
+    color: red;
 }

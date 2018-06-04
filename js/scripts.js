@@ -7,15 +7,19 @@
 * All scripts shared among all pages that make the main functionalities of the webapp.
 */
 
-$(".link_profile").click(function(){
+$(document).on('click','.link_profile',function(){
     window.location.href = "profile.html";
 });
 
-$(".link_so").click(function(){
+$(document).on('click','.link_so',function(){
     window.location.href = "partner.html";
 });
 
-$(".link_anon").click(function(){
+$(document).on('click','.link_anon',function(){
+    var redirect = this.classList;
+    //alert(myClass[1]);
+
+    localStorage.setItem("anon_username",redirect[1]);
     window.location.href = "anon_user.html";
 });
 

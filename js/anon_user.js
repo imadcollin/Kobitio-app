@@ -44,11 +44,14 @@ if (anon_username == null){
        var so_information = getUserInfo(getSO(anon_username));
 
         $("#relationship_info").html("<b>Current "+ getGender(so_information.gender) +": </b>" + so_information.first_name + " <i class='fa fa-heart red'></i>");
-        localStorage.setItem("anon_information", JSON.stringify(so_information));
-        $("#relationship_info").attr("href", "anon_user.html");
+        $("#relationship_info").addClass("link_anon");
+        $("#relationship_info").addClass(so_information.username);
+        $("#relationship_info").addClass("link_white");
+        //localStorage.setItem("anon_information", JSON.stringify(so_information));
+        //$("#relationship_info").attr("href", "anon_user.html");
     } else {
         $("#relationship_info").html("<b><i>Looking for a new koibito! </i></b><i class='fa fa-heart-o red'></i>");
-        $("#relationship_info").attr("href", "");
+        $("#relationship_info").addClass("link_white");
     }
 
     /*Retrieve anon deeds from HISTORY_TABLE and calculate points, print to DOM*/
@@ -65,7 +68,7 @@ if (anon_username == null){
         "<div class='deed " + gender +"'>" +
         "<img src='img/deeds/"+ this.deed +".png'>" +
         "<h3 class='title'>" + anon_information.first_name + " " + deed_description(this.deed) + "</h3>" +
-        "<h6 class='date'>Endorsed by " + getFirstname(this.endorsed_by) + " <i class='fa fa-heart red'></i> on "+ formatDate(this.date) +"</h6>" +
+        "<h6 class='date'>Endorsed by <span class='link_anon "+ this.endorsed_by+" link_white'>" +getFirstname(this.endorsed_by)  + "</span> <i class='fa fa-heart red'></i> on "+ formatDate(this.date) +"</h6>" +
         "<h4 class='points'><b>" + deed_points(this.deed)+" points</b></h4>" +
         "</div>"
     )
@@ -100,10 +103,10 @@ $("#confirmBind").click(function(){
     }
 });
 
-$("#relationship_info").click(function(){
+/*$("#relationship_info").click(function(){
     localStorage.setItem("anon_username", getSO(anon_information.username));
     window.location.href = "anon_username.html";
-});
+});*/
 
 $("#cancelBind").click(function(){
     $("#overlay").addClass("hidden");

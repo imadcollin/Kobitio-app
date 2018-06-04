@@ -67,7 +67,7 @@ if (login_data == null){
             "<div class='deed " + user_gender +"'>" +
             "<img src='img/deeds/"+ this.deed +".png'>" +
             "<h3 class='title'>" + user_information.first_name + " " + deed_description(this.deed) + "</h3>" +
-            "<h6 class='date'>Endorsed by " + getFirstname(this.endorsed_by) + " <i class='fa fa-heart red'></i> on "+ formatDate(this.date) +"</h6>" +
+            "<h6 class='date'>Endorsed by <span class='link_anon "+ this.endorsed_by +" link_white'>" + getFirstname(this.endorsed_by) + "</span> <i class='fa fa-heart red'></i> on "+ formatDate(this.date) +"</h6>" +
             "<h4 class='points'><b>+"+ deed_points(this.deed)+" points</b></h4>" +
             "</div>"
         )
@@ -113,6 +113,10 @@ $("#submitRequest").click(function(){
         alert("SUCCESS! You have requested " + updatePoints(requested_deeds) + " " + getGender(user_information.gender) + " points!.\n(Points need to be approved by " + so_information.first_name + " " + so_information.last_name + " before they appear in your profile)");
         window.location.href = "profile.html";
     }
+});
+
+$(".link_profile").click(function(){
+    alert("this is happening!");
 });
 
 $("#resetPoints").click(function(){

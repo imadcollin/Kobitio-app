@@ -248,18 +248,22 @@ $("#alltimes").click(function(){
 
 function printDeed (input_deed){
     var a_gender = "";
+    var add_link = "";
 
     if (input_deed.username == user_information.username){
         a_gender = user_gender;
+        add_link = " <span class='link_white link_so'> "; // link to so profile
+
     } else {
         a_gender = so_gender;
+        add_link = " <span class='link_white link_profile'> "; // link to user profile
     }
 
     $("#filtered_deeds").prepend(
         "<div class='deed "  + a_gender +"'>" +
         "<img src='img/deeds/"+ input_deed.deed +".png'>" +
         "<h3 class='title'>" + getFirstname(input_deed.username) + " " + deed_description(input_deed.deed) + "</h3>" +
-        "<h6 class='date'>Endorsed by " + getFirstname(input_deed.endorsed_by) + " <i class='fa fa-heart red'></i> on "+ formatDate(input_deed.date) +"</h6>" +
+        "<h6 class='date'>Endorsed by" + add_link + getFirstname(input_deed.endorsed_by)+ "</span> <i class='fa fa-heart red'></i> on "+ formatDate(input_deed.date) +"</h6>" +
         "<h4 class='points'><b>+"+ deed_points(input_deed.deed)+" points</b></h4>" +
         "</div>"
     )
