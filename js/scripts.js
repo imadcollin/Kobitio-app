@@ -331,7 +331,7 @@ function getRelationshipDeeds(username_A, username_B,) {
     var relationshipDeeds = [];
     $.each(SESSION_HISTORY_TABLE, function(element){ // fill in deeds table
 
-        if ((this.username == username_A && this.endorsed_by == username_B) || (this.username == username_B && this.endorsed_by == username_A)  && this.date != -1){// find more elegant solution
+        if (((this.username == username_A && this.endorsed_by == username_B) || (this.username == username_B && this.endorsed_by == username_A)) && (this.date != -1 && this.date != null)){// find more elegant solution
             relationshipDeeds.push(this)
         }
     });

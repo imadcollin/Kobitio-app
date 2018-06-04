@@ -38,6 +38,7 @@ if (!hasSO(login_data.username)){
     var user_deed_history = getUserDeeds(user_information.username); // retrieve all user's deeds
     var so_deed_history = getUserDeeds(so_information.username); // retrieve all partner's deeds
     var relationship_deed_history = getRelationshipDeeds(user_information.username,so_information.username);// retrieve couple's deeds
+    //alert(JSON.stringify(relationship_deed_history));
 
     /*LOAD DATA USER*/
     var user_points = calculatePoints(user_deed_history);
