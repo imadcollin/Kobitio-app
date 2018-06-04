@@ -399,12 +399,6 @@ var HISTORY_TABLE = [
         "username": "adam_1990",
         "endorsed_by": "eve4ever",
         "deed": 1,
-        "date": null, // requested point, not yet accepted
-    },
-    {
-        "username": "adam_1990",
-        "endorsed_by": "eve4ever",
-        "deed": 1,
         "date": new Date(2016, 10, 10),
     },
     {
@@ -436,18 +430,6 @@ var HISTORY_TABLE = [
         "endorsed_by": "adam_1990",
         "deed": 1,
         "date": new Date(2015, 12, 20),
-    },
-    {
-        "username": "eve4ever",
-        "endorsed_by": "adam_1990",
-        "deed": 4,
-        "date": null,
-    },
-    {
-        "username": "eve4ever",
-        "endorsed_by": "adam_1990",
-        "deed": 1,
-        "date": null,
     },
     {
         "username": "adam_1990",
@@ -483,6 +465,24 @@ var HISTORY_TABLE = [
         "endorsed_by":"eve4ever",
         "deed":"12",
         "date":"2018-05-31T04:44:09.781Z"
+    },
+    {
+        "username": "eve4ever",
+        "endorsed_by": "adam_1990",
+        "deed": 4666666, // requested deeds have a concatenated 6 digit nonce
+        "date": null, // requested deeds have date set as null
+    },
+    {
+        "username": "eve4ever",
+        "endorsed_by": "adam_1990",
+        "deed": 1666666, // requested deeds have a concatenated 6 digit nonce
+        "date": null, // requested deeds have date set as null
+    },
+    {
+        "username": "adam_1990",
+        "endorsed_by": "eve4ever",
+        "deed": 1666666, // requested deeds have a concatenated 6 digit nonce
+        "date": null, // requested deeds have date set as null
     }
 ];
 

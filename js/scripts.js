@@ -199,6 +199,24 @@ function updatePoints (pointsArray){
     return total_points;
 }
 
+function updatePointsNonce (pointsArray){
+    var total_points = 0;
+
+    pointsArray.forEach(function(item) {
+
+        var deed_id = Math.floor(item / 1000000); // eliminate nonce, return real deed id, before calculating points
+        $.each(DEEDS_TABLE, function(element){
+
+            if (this.deed == deed_id){
+                total_points += this.points;
+                return 0;
+            }
+        });
+    });
+
+    return total_points;
+}
+
 function checkRepeated (deed, pointsArray){
 
     var multiplier = 1;

@@ -258,7 +258,7 @@ function printDeed (input_deed){
         "<div class='deed "  + a_gender +"'>" +
         "<img src='img/deeds/"+ input_deed.deed +".png'>" +
         "<h3 class='title'>" + getFirstname(input_deed.username) + " " + deed_description(input_deed.deed) + "</h3>" +
-        "<h6 class='date'>Endorsed by " + getFirstname(this.endorsed_by) + " <i class='fa fa-heart red'></i> on "+ formatDate(input_deed.date) +"</h6>" +
+        "<h6 class='date'>Endorsed by " + getFirstname(input_deed.endorsed_by) + " <i class='fa fa-heart red'></i> on "+ formatDate(input_deed.date) +"</h6>" +
         "<h4 class='points'><b>+"+ deed_points(input_deed.deed)+" points</b></h4>" +
         "</div>"
     )

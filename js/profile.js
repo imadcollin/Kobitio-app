@@ -96,10 +96,12 @@ $("#submitRequest").click(function(){
     } else {
         //alert(requested_deeds.toString());
         requested_deeds.forEach(function(item) {
+            // Duplication of requested deeds workaround
+            var nonce = Math.floor((Math.random() * 100000) + 100000); // generate 6 digit nonce
             var new_record = {
                 "username": user_information.username,
                 "endorsed_by": so_information.username,
-                "deed": item,
+                "deed": item * 1000000 + nonce, // concatenates deed id with nonce
                 "date": null
             };
             //alert(JSON.stringify(new_record));
@@ -146,12 +148,12 @@ function resetReviewPointsWindow() { // resets review points window
     $.each(SESSION_HISTORY_TABLE , function(element){ // fill in deeds table
         if (this.endorsed_by == user_information.username && this.date == null){
             //alert(JSON.stringify(this))
+            var deed_id = Math.floor(this.deed / 1000000);  // eliminate nonce, return real deed id
             $("#review_list").prepend(
                 "<div class='wakashu pending clickable' id='"+ this.deed +"'>" +
-                "<div hidden='true'> <span class='label'>" + this.deed + "</span></div>" +
-                "<img src='img/deeds/"+this.deed+".png'>" +
-                "<h3 class='title'>" + getFirstname(this.username) + " " + deed_description(this.deed) + "</h3>" +
-                "<h4 class='points'><b>"+ deed_points(this.deed) +" points</b></h4>" +
+                "<img src='img/deeds/"+ deed_id +".png'>" +
+                "<h3 class='title'>" + getFirstname(this.username) + " " + deed_description(deed_id) + "</h3>" +
+                "<h4 class='points'><b>"+ deed_points(deed_id) +" points</b></h4>" +
                 "</div>"
             )
         }
@@ -170,7 +172,7 @@ $(document).on('click','.pending',function(){
         selected_deeds.pop(this.id);
     }
     //alert(selected_deeds.toString());
-    $("#selected_points").text(updatePoints(selected_deeds));
+    $("#selected_points").text(updatePointsNonce(selected_deeds));
 
 });
 
@@ -184,6 +186,7 @@ $("#acceptPoints").click(function(){
             $.each(SESSION_HISTORY_TABLE , function(element){ // fill in deeds table
                 if (this.endorsed_by == user_information.username && this.date == null && this.deed == item){
                     //alert("found! " +  JSON.stringify(this));
+                    this.deed = Math.floor(item / 1000000);
                     this.date = new Date();
                     //alert(JSON.stringify(this));
                     return 0;
