@@ -1,3 +1,4 @@
+
 // var modal = document.getElementById('editProfileModal');
 
 // // Get the button that opens the modal
@@ -51,7 +52,12 @@ var numberOfUsers = users.length;
 var name = users[0].first_name + " " + users[0].last_name;
 var changeName = document.getElementById("userName");
 changeName.innerHTML = name;
+//Adding username to use it later for redirecting the page
+document.getElementById("hiddenText").innerHTML = users[0].username;
+
 var currentUser = 0;
+
+
 
 /*Send Request to the User*/
 function sendRequestToUser(){
@@ -68,29 +74,29 @@ function declineUser(){
 
 /*Load next user*/
 function loadNextUser(){
-	console.log("before enterin "+currentUser);
+
 	if (currentUser < numberOfUsers){
 		currentUser++;	
-		console.log(currentUser);
 	}
 	else{
-		console.log("Before " + currentUser);
 		currentUser = 0;	
-		console.log(currentUser);
 	}
-
 	name = users[currentUser].first_name + " " + users[currentUser].last_name;
 	changeName.innerHTML = name;
 
+	//Adding username to use it later for redirecting the page
+	document.getElementById("hiddenText").innerHTML = users[currentUser].username;
 	document.getElementById('searchFrame').classList.toggle('rotated');
 }
 
 
+//Redirect to Search Profile
+function redirectSearchProfile(){
+	
+	var userName = document.getElementById("hiddenText").innerHTML;
+	document.cookie = "searchProfileUsername="+userName+";";
 
-
-
-
-
+}
 
 
 

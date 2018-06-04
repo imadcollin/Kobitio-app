@@ -89,7 +89,7 @@ a:hover{
 
 #first_row
     {
-        margin-top: 6%;
+        margin-top: 6.5%;
     }
 @media screen and (max-width: 600px)
  {
@@ -98,3 +98,5 @@ a:hover{
         margin-top: 21%;
     }
 }
+
+

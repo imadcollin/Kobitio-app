@@ -201,45 +201,87 @@
 
         <div class="points_list">
 
-            <a onclick="addRequestPoints(this);" id="1">
-                <div class="deed wakashu">
-                    <img src="img/deeds/D00001.png">
-                    <h3 class="title">Cooked a nice meal</h3>
-                    <h4 class="points">
-                        <b>+150 points</b>
-                    </h4>
-                </div>
-            </a>
+            <section class="tableContent">
+                <div class="col-md-12">
+                    <div class="panel panel-default" style="margin-top: 10px; margin-bottom: 10px;">
+                    <!-- Table Content Container -->
+                        <div class="table-container" style="margin-top: 30px;">
+                            <table class="table table-filter" id="contentTable">
+                                <tbody>
+                                        <!-- Elements are dynamicaly added to the table -->
+                                <tr>                                        
+                                <td>        
+                                    <a onclick="addRequestPoints(this);" id="1">       
+                                        <div class="media" >
+                                                <img src="img/deeds/D00001.png" class="media-photo">
+                                                <div class="media-body">
+                                                <h4 class="title">Cooked a nice meal</h4>
+                                                <p class="pull-right" style="color: black">+150 points</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </td>
+                                </tr>
 
-            <a onclick="addRequestPoints(this);" id="2">
-                <div class="deed wakashu">
-                    <img src="img/deeds/D00002.png">
-                    <h3 class="title">Cleaned the dishes</h3>
-                    <h4 class="points">
-                        <b>+50 points</b>
-                    </h4>
-                </div>
-            </a>
+                                <tr>
+                                <td>               
+                                    <a onclick="addRequestPoints(this);" id="2">
+                                        <div class="media" >
+                                            <img src="img/deeds/D00002.png" class="media-photo">
+                                            <div class="media-body">
+                                                <h4 class="title">Cleaned the Dishes</h4>
+                                                <p class="pull-right" style="color: black">+50 points</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </td>
+                                </tr>
 
-            <a onclick="addRequestPoints(this);" id="3">
-                <div class="deed wakashu" >
-                    <img src="img/deeds/D00003.png">
-                    <h3 class="title">Took the garbage out</h3>
-                    <h4 class="points">
-                        <b>+100 points</b>
-                    </h4>
-                </div>
-            </a>
+                                <tr>
+                                <td>
+                                    <a onclick="addRequestPoints(this);" id="3">               
+                                        <div class="media" >
+                                            <img src="img/deeds/D00003.png" class="media-photo">
+                                            <div class="media-body">
+                                                <h4 class="title">Took the Garbage out</h4>
+                                                <p class="pull-right" style="color: black">+100 points</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </td>
+                                </tr>
 
-            <a onclick="addRequestPoints(this);" id="4">
-                <div class="deed wakashu" id="4">
-                    <img src="img/deeds/D00004.png">
-                    <h3 class="title">Walked the dog</h3>
-                    <h4 class="points">
-                        <b>+100 points</b>
-                    </h4>
+                                <tr>
+                                <td>
+                                    <a onclick="addRequestPoints(this);" id="4">               
+                                        <div class="media" >
+                                            <img src="img/deeds/D00001.png" class="media-photo">
+                                            </a>
+                                            <div class="media-body">
+                                                <h4 class="title">Walked the Dogs</h4>
+                                                <p class="pull-right" style="color: black">+100 points</p>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </td>
+                                </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
                 </div>
-            </a>
+            </section>
+
+
+
+
+
+
+
+            
+
+            
 
         </div>
 

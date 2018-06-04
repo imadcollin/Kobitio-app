@@ -3,10 +3,19 @@
 .container{
   width: 80%; 
   padding-top: 40px;
-
-  top
-
 }
+
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic);
+* {
+  margin: 0;
+  /* padding: 0; */
+  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+}
+
+
 
 #searchFrame{
   -webkit-transition: all 0.7s ease-in-out;
@@ -19,6 +28,7 @@
     -webkit-transform:rotate(360deg); 
     -moz-transform:rotate(360deg); 
     -o-transform:rotate(360deg); 
+    background-color: red;
 }
 
 /*Search Partner Frame*/
@@ -113,16 +123,6 @@
     color: #000;
     text-decoration: none;
     cursor: pointer;
-}
-
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,600,400italic);
-* {
-  margin: 0;
-  /* padding: 0; */
-  box-sizing: border-box;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  text-rendering: optimizeLegibility;
 }
 
 
