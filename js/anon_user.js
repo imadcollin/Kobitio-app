@@ -79,7 +79,6 @@ $("#confirmBind").click(function(){
         $("#overlay").addClass("hidden");
         $("#bindWindow").addClass("hidden")
     } else {
-
         if (hasSO(anon_information.username)){
             alert("You can't send a bind request to someone in a relationship! They must unbind from their current koibito first!")
             $("#overlay").addClass("hidden");

@@ -12,6 +12,7 @@
 var login_data = JSON.parse(localStorage.getItem("login_data"));
 var endorsed_deeds = []; // keep track of the endorsed deeds
 
+//alert (JSON.stringify(SESSION_RELATIONSHIPS_TABLE));
 if (!hasSO(login_data.username)){
     window.location.href = "profile.html";
 } else {
@@ -117,12 +118,11 @@ $("#resetPoints").click(function(){
 
 $("#confirmUnbind").click(function(){
     $.each(SESSION_RELATIONSHIPS_TABLE, function(element){
-        if ((user_information.username == this.A && so_information.username == this.B) || (so_information.username == this.A && user_information.username == this.B)){
-            if (this.date_ended != null){
-                this.date_ended = new Date();
-                alert("You have successfully unbind your profile from " + so_information.first_name);
-                alert (JSON.stringify(this));
-            }
+        if (((user_information.username == this.A && so_information.username == this.B) || (so_information.username == this.A && user_information.username == this.B)) && this.date_ended == null){
+            this.date_ended = new Date();
+            //alert (JSON.stringify(this));
+            alert("You have successfully unbind your profile from " + so_information.first_name);
+            return false;
         }
     });
 

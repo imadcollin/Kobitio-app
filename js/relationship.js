@@ -67,7 +67,7 @@ if (!hasSO(login_data.username)){
 
     $(".points_together").text(relationship_points);
 
-    var start = new Date(1978, 12, 1); //getRelationshipStartDate(user_information.username, so_information.username);
+    var start = new Date(2015, 12, 1); //getRelationshipStartDate(user_information.username, so_information.username);
     var finish = new Date();
 
     $(".time_together").text(timeTogether(start,finish));
