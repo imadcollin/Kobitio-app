@@ -244,26 +244,14 @@ var RELATIONSHIPS_TABLE = [
         "date_ended": new Date(2016, 6, 1),
     },
     {// change all these below!
-        "A": "tobias_hasbandu",
+        "A": "albert1978",
         "B": "carlottaMestre",
         "date_started": new Date(2000, 6, 1),
         "date_ended": null,
     },
     {
-        "A": "carlottaMestre",
-        "B": "tobias_hasbandu",
-        "date_started": new Date(2000, 6, 1),
-        "date_ended": null,
-    },
-    {
-        "A": "tobias_hasbandu",
-        "B": "rebecca_thebest",
-        "date_started": new Date(2000, 6, 1),
-        "date_ended": null,
-    },
-    {
-        "A": "tobias_hasbandu",
-        "B": "rebecca_thebest",
+        "A": "charlybrown1974",
+        "B": "angeles4you",
         "date_started": new Date(2000, 6, 1),
         "date_ended": null,
     }
