@@ -8,6 +8,7 @@ figure{
     width: auto;
     height: auto;
     overflow: unset;
+    height:492px
 }
 .center{
   color: #000;
@@ -242,6 +243,9 @@ height: auto;
     min-width: 270px;
     width: 278px;
     height: 230px;
+}
+.card a{
+    padding-right: 0px;
 }
 
 @media screen and (max-width: 600px) {
