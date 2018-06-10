@@ -96,7 +96,9 @@ h1 {
     }
     .flex_1{
         display: flex;
-        margin-left: 1%;
+        margin-left: 2%;
+        margin-top: 8%;
+
     }
 @media screen and (max-width: 600px)
  {

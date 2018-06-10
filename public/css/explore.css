@@ -13,12 +13,6 @@ body {
     color: #fff;
 }
 
-.main {
-    display: flex;
-    flex-direction: row;
-    justify-content: first baseline;
-}
-
 .view-sixth img {
     width: 237px;
     height: 322px;
@@ -51,6 +45,9 @@ body {
 }
 
 @media screen and (max-width: 600px) {
+    * {
+        /* margin-top: 8%; */
+    }
     h1 {
         text-align: left;
         padding: 0;
@@ -60,11 +57,13 @@ body {
         width: 325px;
         height: 251px;
     }
-    .main{
-        width:326px;
+    .main {
+        width: 326px;
     }
-    .view-sixth .mask{
+    .data {
+        margin-top: 18%;
+    }
+    .view-sixth .mask {
         width: 325px;
-
     }
 }

@@ -1,5 +1,5 @@
 body{
-    margin-top: 5%;
+    margin-top: 8%;
 	color: #333;
 	font-family: 'Oswald', Arial, sans-serif;
 	font-size: 13px;
@@ -240,8 +240,8 @@ height: auto;
  }
                  
 .thumbnail img {
-    min-width: 270px;
-    width: 278px;
+    /* min-width: 270px; */
+    width: 238px;
     height: 230px;
 }
 .card a{
