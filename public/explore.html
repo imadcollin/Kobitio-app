@@ -114,10 +114,14 @@ for (const item of this.state.USER_TABLE) {
             <div className="view view-sixth">
                 <img src={item.photo} alt="meow"/>
                 <div className="mask">
-                    <h2>Hover Style #6</h2>
-                    <p>A wonderful serenity has taken possession of my entire soul, like these sweet
-                        mornings of spring which I enjoy with my whole heart.</p>
-                        <a href="#" className="info">Read More</a>
+                    <h2>Member Overview </h2>
+            
+                    <p> Joined since 2015, from Germany,has been endorsed by 144 partners, easy going, 
+                    like to swim, wish to meet people from everywhere</p>
+
+                       
+                        <a href= { item.username=='adam_1990'?"profile.html":"eve.html"} className="info">Read More</a>
+                    
                         </div>
                         <h3>
                             <b> {item.username}</b>
