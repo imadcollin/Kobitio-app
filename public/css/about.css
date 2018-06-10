@@ -1,7 +1,7 @@
-body{
+body {
     top: 8%;
-
 }
+
 #video-background {
     width: 100% !important;
     /* height: auto   !important; */
@@ -15,15 +15,16 @@ video {
     margin-right: auto;
     display: block
 }
-h1{
+
+h1 {
     color: #000;
     font-size: 3rem;
 }
-@media screen and (max-width: 600px) {
-    video{
-       margin-top:50%;
-       max-height: 100%;
-       max-width: 100%;
-    }
 
+@media screen and (max-width: 600px) {
+    video {
+        margin-top: 50%;
+        max-height: 100%;
+        max-width: 100%;
+    }
 }

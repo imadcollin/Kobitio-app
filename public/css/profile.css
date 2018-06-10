@@ -4,7 +4,8 @@
 */
 
 /* Profile Section*/
-.portrait{
+
+.portrait {
     padding: 15px;
     background-color: #edff00;
 }
@@ -16,15 +17,15 @@
     width: 300px;
 }
 
-a{
-     color: #FFFFFF;
-     text-decoration: none;
- }
-
-a:hover{
-    color: #ff1c19;
+/* a {
+    color: #FFFFFF;
     text-decoration: none;
 }
+
+a:hover {
+    color: #ff1c19;
+    text-decoration: none;
+} */
 
 /*Pop up windows*/
 
@@ -38,50 +39,47 @@ a:hover{
     height: 100%;
     width: 100%;
     left: 0px;
-    top:0px ;
+    top: 0px;
     z-index: 5;
 }
 
 .popup {
     z-index: 10;
-
     color: white;
     text-align: left;
-
     border-radius: 5px;
     box-shadow: 2px 2px 15px black;
-
     position: absolute;
     padding: 25px;
     width: 70%;
     margin-left: 15%;
     margin-right: 20%;
     clear: both;
-
     height: 80%;
-
     top: 15%;
     position: fixed;
 }
 
-.popup h1,.popup h3 {
+.popup h1,
+.popup h3 {
     text-align: center;
 }
+
 h1 {
     color: #dff2fa;
 }
 
-.points_list{
+.points_list {
     height: 400px;
     background-color: white;
-
     overflow: auto;
 }
 
 /*Change Hover Color*/
-.points_list .deed:hover{
+
+.points_list .deed:hover {
     background-color: grey;
-    border-color: black; 
+    border-color: black;
 }
 
 .button {
@@ -90,30 +88,27 @@ h1 {
     cursor: pointer;
 }
 
-#first_row
-    {
-        margin-top: 6%;
-    }
-    .flex_1{
-        display: flex;
-        /* margin-left: 1%; */
-        margin-top: 8%;
+#first_row {
+    margin-top: 6%;
+}
 
-    }
-@media screen and (max-width: 600px)
- {
-    #first_row    
-    {
+.flex_1 {
+    display: flex;
+    /* margin-left: 1%; */
+    margin-top: 8%;
+}
+
+@media screen and (max-width: 600px) {
+    #first_row {
         margin-top: 21%;
     }
-    .flex_1{
+    .flex_1 {
         flex-direction: row-reverse;
     }
-    .menu{
+    .menu {
         display: none;
     }
 }
-
 
 /* .thumbnail img {
     min-width: 170px;
