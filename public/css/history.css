@@ -120,7 +120,8 @@ p {
 
 h2 {
     font-size: 3em;
-    color: #e74c3c;
+    color: red;
+    font-weight: bold;
 }
 
 .centered {

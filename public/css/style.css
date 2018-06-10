@@ -81,12 +81,27 @@
 
 .deed {
     /* border-style: dashed; */
-    margin: 25px;
+    /* margin: 15px; */
     padding: 15px;
     /* height: 100px; */
     display: block;
-    background:lightslategray;
+    /* background:lightslategray; */
+    transition: 0.3s ease;
+    /* background: #3fa46a; */
+    transition: 0.4s;
+    color: #000;
+    background: #fff;
+    font-size: 20px;
+    text-decoration: none;
+    /* padding: 0 10px;
+    margin: 0 10px; */
+    border: solid 10px ;
 }
+.deed:hover {
+    background-color: #ffffff;
+  color: #EEA200;
+  padding: 15px;
+  }
 
 .deed img {
     margin-top: 0px;
@@ -150,6 +165,7 @@
     display: block;
     margin-left: auto;
     margin-right: auto;
+    color: #000;
 }
 
 .red {
@@ -285,7 +301,7 @@
     padding: 0;
     /* height: 100px; */
     display: block;
-    background:lightslategray;
+    /* background:lightslategray; */
 }
 
 
