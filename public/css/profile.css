@@ -17,6 +17,15 @@
     width: 300px;
 }
 
+.request-point {
+    font-size: 34px;
+    font-weight: bold;
+}
+
+.partner-header {
+    font-size: 1.2rem;
+}
+
 /* a {
     color: #FFFFFF;
     text-decoration: none;
