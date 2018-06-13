@@ -33,6 +33,11 @@ $(".close").click(function() {
 
 function translate (index) {
     $("#page_title").text(page_title[index]);
+    $("#MyProfile").text(MyProfile[index]);
+    $("#CurrentRelation").text(CurrentRelation[index]);
+    $("#RelationHistory").text(RelationHistory[index]);
+    $("#About").text(About[index]);
+    $("#Explore").text(Explore[index]);
 }
 
 
