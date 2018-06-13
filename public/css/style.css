@@ -54,7 +54,8 @@
 }
 
 .hasbandu {
-    background-color: #8eaeff;
+    /* background-color: #8eaeff; */
+    background-color:#3f819b;
     border-color: #405bff;
     /* same as hasbandu points */
 }

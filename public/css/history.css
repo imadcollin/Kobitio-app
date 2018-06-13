@@ -115,12 +115,14 @@ body {
 }
 
 p {
-    color: #666;
+    /* color: #666; */
+    color: #ead2ac;
 }
 
 h2 {
     font-size: 3em;
-    color: red;
+    /* color: red; */
+    color:#111;
     font-weight: bold;
 }
 
