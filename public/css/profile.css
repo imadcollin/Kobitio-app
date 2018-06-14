@@ -112,10 +112,26 @@ h1 {
         margin-top: 21%;
     }
     .flex_1 {
-        flex-direction: row-reverse;
+        flex-direction: column;
     }
-    .menu {
-        display: none;
+    h1, h3, h5, h6, :not(h4){
+        text-align: justify;
+        font-family: -webkit-pictograph;
+    }
+    p{
+        text-align: center;
+        margin: 0;
+        padding: 0px;
+    }
+    .card-content{
+        text-align: left;
+    }
+    h2{
+        font-family: 'Playfair Display', serif;
+        line-height: 1;
+        margin-bottom: 0px;
+        letter-spacing: 0px;
+        color:#3f819b;
     }
 }
 

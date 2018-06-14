@@ -122,7 +122,7 @@ p {
 h2 {
     font-size: 3em;
     /* color: red; */
-    color:#111;
+    color: #111;
     font-weight: bold;
 }
 
@@ -455,6 +455,10 @@ figure:hover+span {
 /* mq 60em*/
 
 @media screen and (max-width: 600px) {
+    body {
+        max-width: 100%;
+        margin-left: 1%;
+    }
     .card {
         margin-bottom: 2em;
         display: flex;
@@ -471,8 +475,8 @@ figure:hover+span {
         font-size: 10px;
     }
     .thumbnail img {
-        width: 300px;
-        height: 250px;
+        /* width: 300px;
+        height: 250px; */
         position: center;
         margin-left: auto;
         margin-right: auto;
@@ -512,12 +516,17 @@ figure:hover+span {
     }
     body {
         background-color: white;
+        margin-top: 10%;
     }
     .view {
-        width: 300px;
+        width: 316px;
         border: none;
     }
     h1 {
         text-align: left;
+    }
+    figure {
+        width: auto;
+        height: auto;
     }
 }
