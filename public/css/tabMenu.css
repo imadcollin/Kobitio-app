@@ -11,18 +11,19 @@
   line-height: 2;
   display: block;
   position: relative;
-   -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
   font-weight: bold;
-
 }
-h1{
+
+h1 {
   color: #dff2fa;
 }
+
 #cssmenu:after,
-#cssmenu > ul:after {
+#cssmenu>ul:after {
   content: ".";
   display: block;
   clear: both;
@@ -30,43 +31,51 @@ h1{
   line-height: 0;
   height: 0;
 }
+
 #cssmenu #menu-button {
   display: none;
 }
+
 #cssmenu {
   width: 100%;
   font-family: Raleway, sans-serif;
   line-height: 1;
   position: fixed;
-    top: 0;
-    z-index: 9000;
-    width: 100%;
-    background-color: black;
-    border-bottom: 1px solid #ddd;
-    justify-content: space-between;
-    padding: 10px;
+  top: 0;
+  z-index: 9000;
+  width: 100%;
+  background-color: black;
+  border-bottom: 1px solid #ddd;
+  justify-content: space-between;
+  padding: 10px;
 }
-#cssmenu > ul {
-  background:black;
+
+#cssmenu>ul {
+  background: black;
 }
-#cssmenu > ul > li {
+
+#cssmenu>ul>li {
   float: left;
- -webkit-perspective: 1000px;
-  -moz-perspective: 1000px; 
+  -webkit-perspective: 1000px;
+  -moz-perspective: 1000px;
   perspective: 1000px;
 }
-#cssmenu.align-center > ul {
+
+#cssmenu.align-center>ul {
   font-size: 0;
   text-align: center;
 }
-#cssmenu.align-center > ul > li {
+
+#cssmenu.align-center>ul>li {
   display: inline-block;
   float: none;
 }
-#cssmenu.align-right > ul > li {
+
+#cssmenu.align-right>ul>li {
   float: right;
 }
-#cssmenu > ul > li > a {
+
+#cssmenu>ul>li>a {
   padding: 16px 20px;
   font-size: 14px;
   color: #ffffff;
@@ -86,26 +95,28 @@ h1{
   -webkit-transform-style: preserve-3d;
   -moz-transform-style: preserve-3d;
   transform-style: preserve-3d;
-  
 }
-#cssmenu > ul > li.active > a {
+
+#cssmenu>ul>li.active>a {
   color: #dff2fa;
 }
-#cssmenu > ul > li:hover > a,
-#cssmenu > ul > li > a:hover {
+
+#cssmenu>ul>li:hover>a,
+#cssmenu>ul>li>a:hover {
   color: #dff2fa;
   -webkit-transform: rotateX(90deg) translateY(-23px);
   -moz-transform: rotateX(90deg) translateY(-23px);
   transform: rotateX(90deg) translateY(-23px);
   -ms-transform: none;
 }
-#cssmenu > ul > li > a::before {
+
+#cssmenu>ul>li>a::before {
   position: absolute;
   top: 100%;
   left: 0;
   z-index: -1;
-   -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
   box-sizing: border-box;
   width: 100%;
   height: 100%;
@@ -124,44 +135,49 @@ h1{
   transform-origin: 50% 0;
   -ms-transform: translateY(-18px);
 }
-#cssmenu > ul > li:hover > a::before,
-#cssmenu > ul > li > a:hover::before {
+
+#cssmenu>ul>li:hover>a::before,
+#cssmenu>ul>li>a:hover::before {
   background: #3db2e1;
 }
-#cssmenu > ul>li:first-child{
+
+#cssmenu>ul>li:first-child {
   margin-right: 2%;
 }
+
 #cssmenu.small-screen {
   width: 100%;
   background: #3db2e1;
-
 }
-#cssmenu.small-screen > ul,
-#cssmenu.small-screen.align-center > ul {
+
+#cssmenu.small-screen>ul,
+#cssmenu.small-screen.align-center>ul {
   width: 100%;
   text-align: left;
 }
-#cssmenu.small-screen > ul > li,
+
+#cssmenu.small-screen>ul>li,
 #cssmenu.small-screen.align-center {
   float: none;
   display: block;
   border-top: 1px solid rgba(100, 100, 100, 0.1);
 }
-#cssmenu.small-screen > ul > li:hover > a,
-#cssmenu.small-screen > ul > li > a:hover {
+
+#cssmenu.small-screen>ul>li:hover>a,
+#cssmenu.small-screen>ul>li>a:hover {
   /* color: #dff2fa; */
   -webkit-transform: none;
   -moz-transform: none;
   transform: none;
   -ms-transform: none;
   color: #3db2e1;
-
 }
-#cssmenu.small-screen > ul > li > a::before {
+
+#cssmenu.small-screen>ul>li>a::before {
   display: none;
   background: #3db2e1;
-
 }
+
 #cssmenu.small-screen #menu-button {
   display: block;
   padding: 16px 20px;
@@ -173,6 +189,7 @@ h1{
   letter-spacing: 1px;
   background: #3db2e1;
 }
+
 #cssmenu.small-screen #menu-button:after {
   content: "";
   position: absolute;
@@ -180,18 +197,19 @@ h1{
   top: 17px;
   display: block;
   -webkit-box-sizing: content-box;
-  -moz-box-sizing: content-box; 
+  -moz-box-sizing: content-box;
   box-sizing: content-box;
   border-top: 2px solid #ffffff;
   border-bottom: 2px solid #ffffff;
   width: 22px;
   height: 3px;
-  
 }
+
 #cssmenu.small-screen #menu-button.menu-opened:after {
   border-top: 2px solid #dff2fa;
   border-bottom: 2px solid #dff2fa;
 }
+
 #cssmenu.small-screen #menu-button:before {
   content: "";
   position: absolute;
@@ -202,6 +220,7 @@ h1{
   height: 2px;
   background: #ffffff;
 }
+
 #cssmenu.small-screen #menu-button.menu-opened:before {
   background: #dff2fa;
 }
@@ -212,15 +231,14 @@ h1{
   width: 100%;
   margin-left: 80%;
 }
+
 .languages img {
   width: 5%;
   float: left;
   padding: 1%;
 }
 
-
-
-.menu{
+.menu {
   display: block;
   /* position: relative; */
   /* margin-right: 10px; */
@@ -233,15 +251,15 @@ h1{
   overflow: hidden;
 }
 
-.menu ul{
+.menu ul {
   display: block;
-  list-style:none;
-  text-align:center;
+  list-style: none;
+  text-align: center;
   padding: 0;
   margin: 0;
 }
 
-.menu ul li{
+.menu ul li {
   display: block;
   background: #333;
   border-bottom: 1px solid #222;
@@ -251,11 +269,11 @@ h1{
   height: 100px;
 }
 
-.menu ul li.tab-fill{
+.menu ul li.tab-fill {
   display: none;
 }
 
-.menu ul li a{
+.menu ul li a {
   display: block;
   color: #AAA;
   text-decoration: none;
@@ -263,21 +281,21 @@ h1{
   transition: 0.25s;
 }
 
-.menu ul li.selected a{
+.menu ul li.selected a {
   color: #EEE;
 }
 
-.menu ul li.selected a:hover{
+.menu ul li.selected a:hover {
   color: #EEE;
   font-size: 1em;
 }
 
-.menu ul li a:hover{
+.menu ul li a:hover {
   color: #FFF;
   font-size: 1.05em;
 }
 
-.menu ul li .icon{
+.menu ul li .icon {
   display: block;
   line-height: 1.75em;
   font-size: 2.5em;
@@ -285,20 +303,20 @@ h1{
   text-shadow: -1px -1px 0px #222;
 }
 
-.menu ul li:after{
+.menu ul li:after {
   width: 0;
-    height: 0;
-    border-top: 12px solid transparent;
-    border-bottom: 12px solid transparent;
-    top: 40px;
-    right: 12px;
-    position: absolute;
-    content: "";
-    z-index: 999;
+  height: 0;
+  border-top: 12px solid transparent;
+  border-bottom: 12px solid transparent;
+  top: 40px;
+  right: 12px;
+  position: absolute;
+  content: "";
+  z-index: 999;
 }
 
 li.selected:after {
-    border-left: 8px solid #333;
+  border-left: 8px solid #333;
 }
 
 .menu ul.to-change-arrows {
@@ -310,97 +328,95 @@ li.selected:after {
   border-top: 1px solid #222;
 }
 
-.menu ul.to-change-arrows li{
+.menu ul.to-change-arrows li {
   position: relative;
   height: 100px;
   width: 100px;
-  background: #444; 
+  background: #444;
 }
 
-.menu ul.to-change-arrows li span.icon{
+.menu ul.to-change-arrows li span.icon {
   color: #EEE;
   line-height: 2.15em;
 }
 
 .menu input[type=checkbox] {
-    position: absolute;
-    top: -9999px;
-    left: -9999px;
+  position: absolute;
+  top: -9999px;
+  left: -9999px;
 }
 
- input#toggle[type=checkbox]{
-     display:none;
- }
-
+input#toggle[type=checkbox] {
+  display: none;
+}
 
 label {
-    position: absolute;
-    height: 100px;
-    width: 100px;
-    display: block; 
-    bottom: 0;
-    z-index: 9999;
-    cursor: pointer;
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  display: block;
+  bottom: 0;
+  z-index: 9999;
+  cursor: pointer;
 }
 
 label:hover {
-    background: #FFF;
+  background: #FFF;
   opacity: 0.15;
 }
 
 /** Magic click trick css **/
 
 .to-change {
-        transition: top 0.5s;
-        -webkit-transition: top 0.5s;
-    }
+  transition: top 0.5s;
+  -webkit-transition: top 0.5s;
+}
 
-input[type=checkbox]:checked ~ label {
+input[type=checkbox]:checked~label {
   bottom: auto;
   top: 0;
 }
 
-input[type=checkbox]:checked ~ .to-change {
+input[type=checkbox]:checked~.to-change {
   position: absolute;
   left: auto;
   top: -310px;
 }
 
-input[type=checkbox]:checked ~ .to-change li.tab-fill {
+input[type=checkbox]:checked~.to-change li.tab-fill {
   display: block;
 }
 
-input[type=checkbox]:checked ~ .to-change-arrows {
-    bottom: auto;
-    top: 0;
-    border: none;
-    border-bottom: 1px solid #222;
+input[type=checkbox]:checked~.to-change-arrows {
+  bottom: auto;
+  top: 0;
+  border: none;
+  border-bottom: 1px solid #222;
 }
 
-input[type=checkbox]:checked ~ .to-change-arrows li.more{
-    display:none;
+input[type=checkbox]:checked~.to-change-arrows li.more {
+  display: none;
 }
-
-
-
 
 @media screen and (max-width: 670px) {
   .languages_menu {
-      /* top: 85%;*/
-      margin-left: 50%;    }
-
+    /* top: 85%;*/
+    margin-left: 50%;
+  }
   .languages {
-      margin-left: 1%;
+    margin-left: 1%;
   }
   .languages img {
-      width: 20px;
-      float: left;
-      padding: 0px;
-      margin-left: 15px;
-      border-radius: 20%;
+    width: 20px;
+    float: left;
+    padding: 0px;
+    margin-left: 15px;
+    border-radius: 20%;
   }
-  h1{
+  h1 {
     font-size: 25px;
   }
-
+  .menu {
+    display: none;
+  }
 }

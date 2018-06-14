@@ -55,13 +55,13 @@
 
 .hasbandu {
     /* background-color: #8eaeff; */
-    background-color:#3f819b;
+    background-color: #3f819b;
     border-color: #405bff;
     /* same as hasbandu points */
 }
-.profile
-{
-    color:#3f819b;
+
+.profile {
+    color: #3f819b;
 }
 
 .hasbandu .points {
@@ -100,13 +100,14 @@
     text-decoration: none;
     /* padding: 0 10px;
     margin: 0 10px; */
-    border: solid 10px ;
+    border: solid 10px;
 }
+
 .deed:hover {
     background-color: #ffffff;
-  color: #EEA200;
-  padding: 15px;
-  }
+    color: #EEA200;
+    padding: 15px;
+}
 
 .deed img {
     margin-top: 0px;
@@ -221,8 +222,8 @@
 @media screen and (max-width: 670px) {
     .languages_menu {
         top: 85%;
-        margin-left: 1%;    }
-
+        margin-left: 1%;
+    }
     .languages {
         margin-left: 1%;
     }
@@ -236,14 +237,15 @@
 }
 
 ;
-
-#topNavigationBar main{
+#topNavigationBar main {
     width: 100%;
 }
+
 #topNavigationBar ul {
-  padding: 0;
-  list-style: none;
+    padding: 0;
+    list-style: none;
 }
+
 #topNavigationBar button {
     cursor: pointer;
     margin-left: 3%;
@@ -252,8 +254,8 @@
 }
 
 #topNavigationBar button:hover {
-  background-color: rgba(85,172,238 ,1);
-  color: white;
+    background-color: rgba(85, 172, 238, 1);
+    color: white;
 }
 
 .twitter {
@@ -262,67 +264,93 @@
 }
 
 .twitter {
-  height: 46px;
-  align-items: center;
-  padding: 0 10px;
-  border: 1px solid rgba(238,238,238 ,1);
-  border-radius: 5px;
-  color: rgba(117,117,117 ,1);
-  box-shadow: 5px 10px 20px -20px rgba(85,172,238 ,1);
-}
-.twitter li {
-  cursor: pointer;
-  margin-left: 3%;
+    height: 46px;
+    align-items: center;
+    padding: 0 10px;
+    border: 1px solid rgba(238, 238, 238, 1);
+    border-radius: 5px;
+    color: rgba(117, 117, 117, 1);
+    box-shadow: 5px 10px 20px -20px rgba(85, 172, 238, 1);
 }
 
+.twitter li {
+    cursor: pointer;
+    margin-left: 3%;
+}
 
 /*.twitter li:hover{
   color: rgba(85,172,238 ,1);
 }*/
+
 .twitter__bird {
-  color: rgba(85,172,238 ,1);
-  font-size: 1.3em;
+    color: rgba(85, 172, 238, 1);
+    font-size: 1.3em;
 }
+
 .twitter li:not(:last-child):not(.twitter__bird) {
-  margin-right: 10px;
+    margin-right: 10px;
 }
-.twitter li  i:not(.fa-twitter):not(.fa-search):not(.fa-user-circle-o) {
+
+.twitter li i:not(.fa-twitter):not(.fa-search):not(.fa-user-circle-o) {
     margin-left: 5px;
     margin-right: 8px;
 }
-.twitter li > button {
-  font-size: 0.8em;
-  border: 0;
-  background: rgba(85,172,238 ,1);
-  color: #fff;
-  border-radius: 100px;
+
+.twitter li>button {
+    font-size: 0.8em;
+    border: 0;
+    background: rgba(85, 172, 238, 1);
+    color: #fff;
+    border-radius: 100px;
 }
 
 @media screen and (max-width: 600px) {
     .deed {
         height: auto;
-    /* border-style: dashed; */
-    margin: 2%;
-    padding: 0;
-    /* height: 100px; */
-    display: block;
-    /* background:lightslategray; */
+        /* border-style: dashed; */
+        margin: 2%;
+        padding: 0;
+        /* height: 100px; */
+        display: block;
+        /* background:lightslategray; */
+        border: solid 1px;
+    }
+    .deed:hover {
+        background-color: #EEA200;
+        color: #000;
+        padding: 8px;
+    }
+    h1,
+    h2,
+    h3,
+    h5,
+    h6,
+    :not(h4) {
+        font-size: 14px;
+    }
+    .deed img {
+        width: 90px;
+    }
 }
 
+.title {
+    color: red;
+    font-size: 20px;
+}
 
-    }
-    .title{
-        color: red;
-        font-size: 20px;
-      }
-      .deed img {
-        margin-top: 0px;
-        padding-top: 0px;
-        width: 100px;
-        float: left;
-        max-height: 170%;
-        object-fit: contain;
-    }
-    .deed .date{
-        padding-left: 0;
-    }
+.deed {
+    height: 100px;
+}
+
+.deed img {
+    margin-top: 0px;
+    padding-top: 0px;
+    /* width: 100px; */
+    float: left;
+    max-height: 70px;
+    object-fit: contain;
+}
+
+.deed .date {
+    padding-left: 0;
+}
