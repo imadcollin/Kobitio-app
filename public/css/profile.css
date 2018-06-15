@@ -37,7 +37,9 @@ a:hover {
 } */
 
 /*Pop up windows*/
-
+.list{
+    color: #fff;
+}
 .hidden {
     visibility: hidden;
 }
