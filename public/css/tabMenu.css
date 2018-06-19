@@ -265,8 +265,9 @@ h1 {
   border-bottom: 1px solid #222;
   border-top: 1px solid #444;
   font-family: sans-serif;
-  width: 100px;
+  /* width: 100px; */
   height: 100px;
+  left: 100%;
 }
 
 .menu ul li.tab-fill {
@@ -304,7 +305,7 @@ h1 {
 }
 
 .menu ul li:after {
-  width: 0;
+  /* width: 0;
   height: 0;
   border-top: 12px solid transparent;
   border-bottom: 12px solid transparent;
@@ -312,11 +313,11 @@ h1 {
   right: 12px;
   position: absolute;
   content: "";
-  z-index: 999;
+  z-index: 999; */
 }
 
 li.selected:after {
-  border-left: 8px solid #333;
+  /* border-left: 8px solid #333; */
 }
 
 .menu ul.to-change-arrows {
