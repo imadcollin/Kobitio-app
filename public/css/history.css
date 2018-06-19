@@ -448,6 +448,7 @@ figure:hover+span {
         margin-bottom: 2em;
         display: flex;
         flex-direction: row;
+        justify-content: space-between;
         flex: 0 1 calc(33% - 0.5em);
     }
 }

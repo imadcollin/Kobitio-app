@@ -351,21 +351,6 @@ input#toggle[type=checkbox] {
   display: none;
 }
 
-label {
-  position: absolute;
-  height: 100px;
-  width: 100px;
-  display: block;
-  bottom: 0;
-  z-index: 9999;
-  cursor: pointer;
-}
-
-label:hover {
-  background: #FFF;
-  opacity: 0.15;
-}
-
 /** Magic click trick css **/
 
 .to-change {
@@ -373,10 +358,10 @@ label:hover {
   -webkit-transition: top 0.5s;
 }
 
-input[type=checkbox]:checked~label {
+/* input[type=checkbox]:checked~label {
   bottom: auto;
   top: 0;
-}
+} */
 
 input[type=checkbox]:checked~.to-change {
   position: absolute;
