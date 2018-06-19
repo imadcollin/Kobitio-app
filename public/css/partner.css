@@ -1,0 +1,53 @@
+body{
+    margin-top: 80px;
+}
+.card{
+    flex-direction: column;
+}
+.card-content{
+    text-align: center;
+}
+.menu{
+    width: 100%;
+}
+.menu ul{
+    display: inline-flex;
+    width: 100%;
+}
+.menu ul li{
+    width: 100%;
+    background-color: #fff;
+}
+figure{
+    height: auto;
+}
+.menu ul li a:hover{
+    color: #3f819b;
+    font-size: 1rem;
+}
+.view{
+    margin: 0px;
+}
+.view{
+    border: none;
+}
+.thumbnail img{
+    width: 280px;
+    height: 200px;
+    border-radius: 0px;
+}
+@media screen and (max-width: 600px) {
+    h1, h3, h5, h6, :not(h4){
+    text-align: center;
+    }
+    .thumbnail img{
+        height: 186px;
+    }
+    .menu {
+        display: flex;
+      }
+      .menu ul li{
+          background-color: currentColor;
+      }
+
+    }
