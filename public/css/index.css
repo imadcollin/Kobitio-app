@@ -242,7 +242,7 @@ footer {
     top: 100px;
     font: italic bold 5em/1 Bodoni, serif;
     text-align: center;
-    animation: fadeIn 1s infinite alternate;
+    /* animation: fadeIn 1s infinite alternate; */
 }
 
 /* animation */
@@ -306,6 +306,16 @@ svg {
     stroke-linejoin: round;
 }
 
+#login_button,
+#signup_button {
+    background: #4E9CAF;
+    margin: 120px;
+    top: 320px;
+    margin-left: 25%;
+    border-radius: 1%;
+    width: 60%;
+}
+
 /* end of animation part  */
 
 @media screen and (max-width: 600px) {
@@ -334,6 +344,8 @@ svg {
         padding: 15%;
         width: 115%;
         height: 56%;
+        margin: 0px;
+        top: 153px;
         background: #4E9CAF;
         font-size: xx-large;
         animation: none;
@@ -367,8 +379,7 @@ svg {
     .popup h1 {
         /* margin-bottom: 0; */
     }
-    :not(.create-text){
+    :not(.create-text) {
         margin-bottom: 0;
     }
-
 }

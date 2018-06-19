@@ -1,6 +1,6 @@
 /** Koibito App
- *  history.js
- *  Created by Mauro J. Pappaterra on 24 of April 2018.
+ *  Index.js
+ * Created by Group 8, Uppsala University  April 2018. -->
  */
 
 /*INDEX PAGE SCRIPTS
@@ -42,17 +42,24 @@ function translate(index) {
 
 }
 
+
+/**Login:
+ * Login or sign up 
+ * User name and Password of login  
+ * Read the values and get access to the views using the hard coded user and password 
+ * The delay is for animation. 
+ */
 function login() {
     let user_name = document.getElementById("userName").value;
     let password = document.getElementById("Password").value;
 
-   if( user_name == "adam_1990" && password == "123456") {
+    if (user_name == "adam_1990" && password == "123456") {
 
-       window.location.href = "profile.html"
-   }else{
-       alert('Loaded but Something went wrong Please provide valid Password or UserName');
+        window.location.href = "profile.html"
+    } else {
+        alert('Loaded but Something went wrong Please provide valid Password or UserName');
         window.location.href = "index.html"
-   }
+    }
 }
 // var delay = 2000;
 
