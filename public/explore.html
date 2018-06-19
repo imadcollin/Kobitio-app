@@ -1,11 +1,11 @@
 <!-- Koibito App
-     
      Created by Group 8, Uppsala University  April 2018. -->
+
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    
+
     <!-- Metadata-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -24,18 +24,17 @@
     <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="css/relationship.css">
     <link rel="stylesheet" href="css/explore.css">
-    
     <link rel="stylesheet" href="css/tabMenu.css">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Aclonica|Acme|Droid+Serif|Pattaya" rel="stylesheet">
-   
+
     <!-- Js files -->
     <script src="js/tabMenuScript.js"></script>
-   
+
     <!-- Jquery -->
-<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 </head>
 
@@ -138,7 +137,7 @@ for (const item of this.state.USER_TABLE) {
        return (
 
            <div >
-
+<!-- 3D-Menu Responsive Navigation header with languages -->
  <div id='cssmenu'>
         <ul>
             <li>
@@ -160,6 +159,8 @@ for (const item of this.state.USER_TABLE) {
             <li>
                  <a id="Explore" href="explore.html">Explore</a>
             </li>
+
+            <!-- LANGUAGE MENU -->
             <div className="languages_menu">
                 <a href="#" id="eng">
                     <div className="languages">
@@ -177,8 +178,11 @@ for (const item of this.state.USER_TABLE) {
                     </div>
                 </a>
             </div>
+            <!-- End of LANGUAGE MENU -->
         </ul>
     </div>
+    <!-- End of 3D-Menu -->
+
             < div className="data">   
                 {data}
                </div>
