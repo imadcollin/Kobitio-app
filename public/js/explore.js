@@ -1,9 +1,9 @@
 /** Koibito App
- *  explore.js
- *  Created by Hassan Odimi on 13 of June 2018.
+ *  Index.js
+ * Created by Group 8, Uppsala University  April 2018. -->
  */
 
-/* explore PAGE SCRIPTS
+/* Explore PAGE SCRIPTS
 * All scripts related to the Explore page.
 * The methods translate() is unique for each individual page.
 */
