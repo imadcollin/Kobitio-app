@@ -1,7 +1,8 @@
-/* Koibito App
-   profile.css
-   Created by Mauro J. Pappaterra on 13 of April 2018.
+ /** Koibito App
+  * Profile CSS 
+  * Created by Group 8, Uppsala University  April 2018.
 */
+
 
 /* Profile Section*/
 
@@ -26,20 +27,12 @@
     font-size: 1.2rem;
 }
 
-/* a {
-    color: #FFFFFF;
-    text-decoration: none;
-}
-
-a:hover {
-    color: #ff1c19;
-    text-decoration: none;
-} */
-
 /*Pop up windows*/
-.list{
+
+.list {
     color: #fff;
 }
+
 .hidden {
     visibility: hidden;
 }
@@ -66,7 +59,7 @@ a:hover {
     margin-left: 15%;
     margin-right: 20%;
     clear: both;
-    height: 80%;
+    height: 82%;
     top: 15%;
     position: fixed;
 }
@@ -87,9 +80,8 @@ h1 {
 }
 
 /*Change Hover Color*/
-
 .points_list .deed:hover {
-    background-color: grey;
+    background-color: #EEA200;
     border-color: black;
 }
 
@@ -105,8 +97,17 @@ h1 {
 
 .flex_1 {
     display: flex;
-    /* margin-left: 1%; */
     margin-top: 8%;
+}
+
+.selected {
+    background-color: chartreuse;
+    pointer-events: none;
+}
+
+.greyed_out {
+    color: #5e5e5e;
+    pointer-events: none;
 }
 
 @media screen and (max-width: 600px) {
@@ -116,29 +117,31 @@ h1 {
     .flex_1 {
         flex-direction: column;
     }
-    h1, h3, h5, h6, :not(h4){
+    h1,
+    h3,
+    h5,
+    h6,
+    :not(h4) {
         text-align: justify;
         font-family: -webkit-pictograph;
     }
-    p{
+    p {
         text-align: center;
         margin: 0;
         padding: 0px;
     }
-    .card-content{
+    .card-content {
         text-align: left;
     }
-    h2{
+    h2 {
         font-family: 'Playfair Display', serif;
         line-height: 1;
         margin-bottom: 0px;
         letter-spacing: 0px;
-        color:#3f819b;
+        color: #3f819b;
+    }
+    .request-point {
+        font-size: 20px;
     }
 }
 
-/* .thumbnail img {
-    min-width: 170px;
-    width: 278px;
-    height: 130px;
-} */

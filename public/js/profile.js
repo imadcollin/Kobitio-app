@@ -1,7 +1,8 @@
+
 /** Koibito App
- *  profile.js
- *  Created by Mauro J. Pappaterra on 24 of April 2018.
- */
+*  Profile.js
+* Created by Group 8, Uppsala University  April 2018. -->
+*/
 
 /*PROFILE PAGE SCRIPTS
 * All scripts related to the profile page. Each page has their own scripts in a single js document.
@@ -13,6 +14,8 @@ let deeds;
 //Save total points
 var totalPoints = 0;
 var pointsIdArray = [];
+var redo = [];
+
 
 //On window load, fetching information and inserting it to the html document
 document.addEventListener('DOMContentLoaded', function() {
@@ -36,8 +39,195 @@ if (localStorage.getItem("index") == null){
 
 /*Pop up windows*/
 $("#ask_points").click(function() {
+    resetWindow();
     $("#overlay").removeClass("hidden");
     $("#requestWindow").removeClass("hidden");
+});
+
+$("#deed_1").click(function() {
+    $("#deed_1").addClass("selected");
+    totalPoints += 150;
+
+    $("#totalPoints").html(totalPoints);
+    pointsIdArray.push("deed_1");
+    redo = [];
+    $("#undo").removeClass("greyed_out");
+    $("#resetPoints").removeClass("greyed_out");
+    $("#submitRequest").removeClass("greyed_out");
+
+});
+
+$("#deed_2").click(function() {
+    $("#deed_2").addClass("selected");
+    totalPoints += 100;
+
+    $("#totalPoints").html(totalPoints);
+    pointsIdArray.push("deed_2");
+    redo = [];
+    $("#undo").removeClass("greyed_out");
+    $("#resetPoints").removeClass("greyed_out");
+    $("#submitRequest").removeClass("greyed_out");
+
+});
+
+$("#deed_3").click(function() {
+    $("#deed_3").addClass("selected");
+    totalPoints += 50;
+
+    $("#totalPoints").html(totalPoints);
+    pointsIdArray.push("deed_3");
+    redo = [];
+    $("#undo").removeClass("greyed_out");
+    $("#resetPoints").removeClass("greyed_out");
+    $("#submitRequest").removeClass("greyed_out");
+});
+
+$("#deed_4").click(function() {
+    $("#deed_4").addClass("selected");
+    totalPoints += 100;
+
+    $("#totalPoints").html(totalPoints);
+    pointsIdArray.push("deed_4");
+    redo = [];
+    $("#undo").removeClass("greyed_out");
+    $("#resetPoints").removeClass("greyed_out");
+    $("#submitRequest").removeClass("greyed_out");
+
+});
+
+$("#deed_5").click(function() {
+
+    $("#deed_5").addClass("selected");
+    totalPoints += 1000;
+    pointsIdArray.push("deed_5");
+
+    $("#totalPoints").html(totalPoints);
+    redo = [];
+    $("#undo").removeClass("greyed_out");
+    $("#resetPoints").removeClass("greyed_out");
+    $("#submitRequest").removeClass("greyed_out");
+
+});
+
+$("#undo").click(function() {
+    var undoThis = pointsIdArray.pop();
+
+    if (undoThis == "deed_1"){
+        $("#deed_1").removeClass("selected");
+        totalPoints -= 150;
+        redo.push("deed_1");
+    }
+
+    if (undoThis == "deed_2"){
+        $("#deed_2").removeClass("selected");
+        totalPoints -= 100;
+        redo.push("deed_2");
+    }
+
+    if (undoThis == "deed_3"){
+        $("#deed_3").removeClass("selected");
+        totalPoints -= 50;
+        redo.push("deed_3");
+    }
+
+    if (undoThis == "deed_4"){
+        $("#deed_4").removeClass("selected");
+        totalPoints -= 100;
+        redo.push("deed_4");
+    }
+
+    if (undoThis == "deed_5"){
+        $("#deed_5").removeClass("selected");
+        totalPoints -= 1000;
+        redo.push("deed_5");
+    }
+
+    $("#redo").removeClass("greyed_out");
+
+    if (pointsIdArray.length < 1){
+        $("#undo").addClass("greyed_out");
+        $("#resetPoints").addClass("greyed_out");
+        $("#submitRequest").addClass("greyed_out");
+    }
+
+    $("#totalPoints").html(totalPoints);
+});
+
+
+$("#redo").click(function() {
+
+    //alert(redo.toString());
+    var redoThis = redo.pop();
+
+    if (redoThis == "deed_1"){
+        $("#deed_1").addClass("selected");
+        totalPoints += 150;
+        pointsIdArray.push("deed_1");
+    }
+
+    if (redoThis == "deed_2"){
+        $("#deed_2").addClass("selected");
+        totalPoints += 100;
+        pointsIdArray.push("deed_2");
+    }
+
+    if (redoThis == "deed_3"){
+        $("#deed_3").addClass("selected");
+        totalPoints += 50;
+        pointsIdArray.push("deed_3");
+    }
+
+    if (redoThis == "deed_4"){
+        $("#deed_4").addClass("selected");
+        totalPoints += 100;
+        pointsIdArray.push("deed_4");
+    }
+
+    if (redoThis == "deed_5"){
+        $("#deed_5").addClass("selected");
+        totalPoints += 1000;
+        pointsIdArray.push("deed_5");
+    }
+
+    if (redo.length < 1){
+        $("#redo").addClass("greyed_out");
+    }
+
+    $("#resetPoints").removeClass("greyed_out");
+    $("#submitRequest").removeClass("greyed_out");
+    $("#undo").removeClass("greyed_out");
+    $("#totalPoints").html(totalPoints);
+});
+
+$("#resetPoints").click(function() {
+    resetWindow ();
+});
+
+function resetWindow (){
+    $("#deed_1").removeClass("selected");
+    $("#deed_2").removeClass("selected");
+    $("#deed_3").removeClass("selected");
+    $("#deed_4").removeClass("selected");
+    $("#deed_5").removeClass("selected");
+
+    $("#undo").addClass("greyed_out");
+    $("#redo").addClass("greyed_out");
+    $("#resetPoints").addClass("greyed_out");
+    $("#submitRequest").addClass("greyed_out");
+    $("#resetPoints").addClass("greyed_out");
+
+    totalPoints = 0;
+
+    $("#totalPoints").html(totalPoints);
+
+    pointsIdArray = [];
+    redo = [];
+}
+
+$("#submitRequest").click(function() {
+    alert("You have submitted a request for " + totalPoints + " hasbandu points!")
+    $("#requestWindow").addClass("hidden");
+    $("#overlay").addClass("hidden");
 });
 
 
