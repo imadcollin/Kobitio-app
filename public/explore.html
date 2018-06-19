@@ -1,7 +1,12 @@
+<!-- Koibito App
+     
+     Created by Group 8, Uppsala University  April 2018. -->
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
+    
+    <!-- Metadata-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -17,35 +22,37 @@
 
     <!-- Font Awesome Icon Sheets CSS -->
     <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
-
     <link rel="stylesheet" href="css/relationship.css">
     <link rel="stylesheet" href="css/explore.css">
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
+    
     <link rel="stylesheet" href="css/tabMenu.css">
+
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Aclonica|Acme|Droid+Serif|Pattaya" rel="stylesheet">
-
+   
+    <!-- Js files -->
     <script src="js/tabMenuScript.js"></script>
-    <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+   
+    <!-- Jquery -->
+<script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
 </head>
 
 <body>
     <div id="root"></div>
-
-
+    <!-- Babel for react  -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
     <script type="text/babel">
-
+    // react start
     class Greeting extends React.Component { 
       constructor(props) { 
         super(props); 
         this.state = { 
         value: 'Some data will be placed',
+        // Some dummy user data
         USER_TABLE : [
     {
         "username": "adam_1990",
@@ -106,8 +113,7 @@ var divStyle = {
 
 let data=[];
 for (const item of this.state.USER_TABLE) {
-    console.log(item)
-    data.push(
+    data.push( //Push items as new html elements 
         <div className="main">
             <div className="view view-sixth">
                 <img src={item.photo} alt="meow"/>
@@ -115,15 +121,14 @@ for (const item of this.state.USER_TABLE) {
                     <h2>Member Overview </h2>
             
                     <p> Joined since 2015, from Germany,has been endorsed by 144 partners, easy going, 
-                    like to swim, wish to meet people from everywhere</p>
-
-                       
+                         like to swim, wish to meet people from everywhere</p>
+   
                         <a href= { item.username=='adam_1990'?"profile.html":"eve.html"} className="info">Read More</a>
                     
                         </div>
-                        <h3>
-                            <b> {item.username}</b>
-                        </h3>
+                         <h3>
+                             <b> {item.username}</b>
+                         </h3>
                   </div>
          </div>
 
@@ -174,10 +179,6 @@ for (const item of this.state.USER_TABLE) {
             </div>
         </ul>
     </div>
-
-
-           
-
             < div className="data">   
                 {data}
                </div>
@@ -191,7 +192,7 @@ for (const item of this.state.USER_TABLE) {
     <Greeting />, document.getElementById('root') );
 
   </script>
-    <!-- Scripts -->
+    <!-- End of Scripts -->
 
     <!-- Scripts for translations-->
     <script src="js/explore.js" type="text/javascript"></script>
