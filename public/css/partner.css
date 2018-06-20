@@ -1,53 +1,61 @@
-body{
-    margin-top: 80px;
+body {
+    margin-top: 8%;
+    text-align: left;
 }
-.card{
+
+.card {
     flex-direction: column;
 }
-.card-content{
+
+.card-content {
     text-align: center;
 }
-.menu{
+
+.menu {
     width: 100%;
 }
-.menu ul{
+
+.menu ul {
     display: inline-flex;
     width: 100%;
 }
-.menu ul li{
+
+.menu ul li {
     width: 100%;
     background-color: #fff;
 }
-figure{
+
+figure {
     height: auto;
 }
-.menu ul li a:hover{
+
+.menu ul li a:hover {
     color: #3f819b;
     font-size: 1rem;
 }
-.view{
+
+.view {
     margin: 0px;
 }
-.view{
+
+.view {
     border: none;
 }
-.thumbnail img{
+
+.thumbnail img {
     width: 280px;
-    height: 200px;
+    height: 217px;
     border-radius: 0px;
 }
+
 @media screen and (max-width: 600px) {
-    h1, h3, h5, h6, :not(h4){
-    text-align: center;
-    }
-    .thumbnail img{
-        height: 186px;
+    .thumbnail img {
+        height: 180px;
     }
     .menu {
         display: flex;
-      }
-      .menu ul li{
-          background-color: #fff;
-      }
-
     }
+    .menu ul li {
+        background-color: #fff;
+    }
+}

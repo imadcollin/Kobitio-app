@@ -126,7 +126,7 @@ h1 span {
     display: inline-block;
     text-decoration: none;
     padding: 7px 14px;
-    background: #000;
+    background: red;
     color: #fff;
     text-transform: uppercase;
     -webkit-box-shadow: 0 0 1px #000;
@@ -166,7 +166,7 @@ h1 span {
     opacity: 0;
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
     background: transparent;
-    margin: 20px 40px 0px 40px;
+    margin: 30px 40px 0px 40px;
     -webkit-transform: scale(10);
     -moz-transform: scale(10);
     -o-transform: scale(10);
@@ -301,13 +301,27 @@ h2 {
         height: auto;
         /* margin-top: 10%; */
     }
+    .main {
+        width: auto;
+        height: auto;
+    }
     .thumbnail img {
         height: 180px;
+        width: 238px;
     }
     .text-animate {
         font-size: 1rem;
         color: #000;
         margin-left: 0px;
         /* width: auto; */
+    }
+    .view-sixth h2 {
+        margin: 0px 20px 0px 20px;
+    }
+    .cen {
+        background-color: #000;
+    }
+    .text-animate {
+        color: #fff;
     }
 }

@@ -112,7 +112,7 @@
 
  @media screen and (max-width: 600px) {
      #first_row {
-         margin-top: 21%;
+         margin-top: 20%;
      }
      .flex_1 {
          flex-direction: column;
@@ -127,8 +127,7 @@
      }
      p {
          text-align: center;
-         margin: 0;
-         padding: 0px;
+       
      }
      .card-content {
          text-align: left;
@@ -143,4 +142,5 @@
      .request-point {
          font-size: 20px;
      }
+  
  }

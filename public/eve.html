@@ -1,17 +1,13 @@
 <!-- Koibito App
-     profile.html
-     Created by Mauro J. Pappaterra on 13 of April 2018. -->
+     Created by Group 8, Uppsala University  April 2018. -->
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-
     <!-- Metadata-->
-    <title id="page_title">Koibito App | Adam</title>
-    <meta name="Description goes here" content="">
-    <meta name="Mauro José Pappaterra" content="tags go here">
+    <meta charset="UTF-8">
+    <title id="page_title">Koibito App | Eva</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Favicon -->
@@ -27,22 +23,22 @@
 
     <!-- External CSS sheets -->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/profile.css">
     <link rel="stylesheet" href="css/tabMenu.css">
     <link rel="stylesheet" href="css/history.css">
 
     <link rel="stylesheet" href="css/relationship.css">
+    <link rel="stylesheet" href="css/profile.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Aclonica|Acme|Droid+Serif|Pattaya" rel="stylesheet">
 
     <!-- CSS Responsive Menu Tab -->
     <link rel="stylesheet" href="css/tabMenu.css">
-    <link rel="stylesheet" href="css/history.css">
-
     <link rel="stylesheet" href="css/relationship.css">
 
     <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
     <script src="js/tabMenuScript.js"></script>
+    <script src="js/anime.min.js"></script>
+
 </head>
 
 <body>
@@ -54,19 +50,22 @@
                     <i class="fa fa-heart fa-1x red"></i> App</h1>
             </li>
             <li class='active'>
-                <a href="profile.html">My Profile</a>
+                <a id="MyProfile" href="profile.html">My Profile</a>
             </li>
             <li>
-                <a href="relationship.html">Current Relation</a>
+                <a id="CurrentRelation" href="relationship.html">Current Relation</a>
             </li>
             <li>
-                <a href="history.html">Relation History</a>
+                <a id="RelationHistory" href="history.html">Relation History</a>
             </li>
             <li>
-                <a href="about.html">About Us</a>
+                <a id="Partner" href="partner.html">Partner</a>
             </li>
             <li>
-                <a href="explore.html">Explore</a>
+                <a id="About" href="about.html">About Us</a>
+            </li>
+            <li>
+                <a id="Explore" href="explore.html">Explore</a>
             </li>
             <!-- Langauge buttons -->
             <div class="languages_menu">
@@ -89,15 +88,7 @@
         </ul>
     </div>
 
-
-    <!-- END OF 3D-Menu -->
-
-    <!-- Your code starts here -->
-
-
-
-
-    <!-- ############################################## -->
+    <!-- Flex main area  -->
     <div class="flex_1">
 
         <div class="centered">
@@ -105,7 +96,7 @@
                 <div class="wrapper">
                     <h1 id="relationshipHistoryTitle"></h1>
                     <h2 class="center" id="centerTitle"></h2>
-
+                    <!-- card -->
                     <article class="card">
                         <a href="#">
                             <figure class="thumbnail">
@@ -113,24 +104,27 @@
                                 <div class="main">
                                     <div class="view view-sixth">
                                         <h3>
-                                            <b> Eva(Waifu)</b>
+                                            <b> Eva </b>(Waifu)
                                         </h3>
                                         <img src="img/eve.jpg" alt="meow">
                                         <div class="mask">
-                                            <h2>Hover Style #6</h2>
-                                            <p>A wonderful serenity has taken possession of my entire soul, like these sweet
-                                                mornings of spring which I enjoy with my whole heart.</p>
+                                            <h2>Profile Overview</h2>
+                                            <p> Joined since 2015, from Germany,has been endorsed by 144 partners, easy going,
+                                                like to swim, wish to meet people from everywhere</p>
+
+
                                             <a href="#" class="info">Read More</a>
                                         </div>
                                     </div>
                                 </div>
+                                <!-- Card contents  -->
                                 <div class="card-content">
                                     <h2 id='userName'></h2>
                                     <div class="center">
                                         <i class="fa fa-star stars"></i>
 
                                         <p>
-                                            <b id="namePicture">Eva is a
+                                            <b id="namePicture">Eva
                                                 <u>lice-infested</u> Waifu!</b>
                                         </p>
                                         <h4>
@@ -141,97 +135,87 @@
                                 </div>
                         </a>
                         </figure>
-
-                        <!-- ##############################################q -->
-
-
-                        <!-- ############################################## -->
+                        <!-- Another Card -->
                         <div class="card-content">
                             <br>
-                            <h2> Eva (Waifu)</h2>
+                            <h2> Eve
+                                <span style="font-size: 14px;">Waifu</span>
+                            </h2>
 
                             <a href="partner.html">
-                                <b>Current Waifu:</b> Eve
-                                <i class="fa fa-heart red"></i>
+                                <b class="partner-header">Current Waifu
+                                    <i class="fa fa-heart red"></i> Eve</b>
                             </a>
 
                             <h6>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque ratione dignissimos enim.
                                 Magni perspiciatis quasi vel aperiam saepe? Necessitatibus, esse provident fugiat similique
                                 quo blanditiis iusto ullam alias culpa sed.</h6>
-                            <h3>some details</h3>
-                            <h6>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut repellendus, quisquam commodi blanditiis
-                                nesciunt sequi laboriosam molestias veniam repellat inventore, doloribus perferendis illo.
-                                Quam officiis culpa ea perferendis consequuntur nisi.</h6>
+                            <b class="partner-header">First Relation </b>
+                            <h6>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque ratione dignissimos enim.
+                                Magni perspiciatis quasi vel aperiam saepe? Necessitatibus, esse provident fugiat similique
+                                quo blanditiis iusto ullam alias culpa sed.</h6>
 
-                            <h3>some details</h3>
-                            <h6>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut repellendus, quisquam commodi blanditiis
-                                nesciunt sequi laboriosam molestias veniam repellat inventore, doloribus perferendis illo.
-                                Quam officiis culpa ea perferendis consequuntur nisi.</h6>
+                            <b class="partner-header">Last Relation </b>
+                            <h6>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Doloremque ratione dignissimos enim.
+                                Magni perspiciatis quasi vel aperiam saepe? Necessitatibus, esse provident fugiat similique
+                                quo blanditiis iusto ullam alias culpa sed.</h6>
 
                             <h3>
-                                <b>Total waifu Points: 700</b>
+                                <b>Total Hasbandu Points: 700</b>
                             </h3>
                             <br>
 
-                            <p>
-                                <b>Adam is a
-                                    <u>lice-infested</u> hasbandu!</b>
-                            </p>
                         </div>
-
-                        <!-- ############################################## -->
-
                         </figure>
 
                     </article>
             </section>
             </div>
+            <!-- Side nav menu -->
             <nav class="menu">
 
                 <input type="checkbox" id="toggle">
                 <ul class="to-change">
-                    <li class="selected">
+                    <li>
                         <a href="index.html">
                             <i class="fa fa-user-times fa-3x"></i>
-                            <br> Log Off
+                            <br>
+                            <i id="logOff">Log Off</i>
                             <br>
                         </a>
                     </li>
                     <li>
                         <a href="#">
-                            <i class="fa fa-edit fa-3x red"></i> Edit Profile</a>
+                            <i class="fa fa-edit fa-3x red"></i>
+                            <i id="EditProfile">Edit Profile</i>
+                        </a>
                     </li>
                     <li class="tab-fill"></li>
-                    <li>
-                        <a href="#">
-                            <i class="fa fa-cogs fa-3x dark-grey"></i>
-                            <br> Settings</a>
-                    </li>
+
                     <li>
                         <a href="#" id="ask_points">
-                            <!-- <div id="ask_points"> -->
                             <i class="fa fa-plus-circle fa-3x green"></i>
-                            <br> Request Points
-                            <!-- </div> -->
+                            <br>
+                            <i id="ReqPoints">Request Points</i>
                         </a>
                     </li>
                     <li>
                         <a href="#">
                             <i class="fa fa-eye fa-3x blue"></i>
-                            <br> Review Points
+                            <br>
+                            <i id="ReviewPoints">Review Points</i>
 
                         </a>
                     </li>
                 </ul>
-               
+
             </nav>
-
-
+            <!-- End of nav menu -->
         </div>
 
 
     </div>
-    <!-- ############################################## -->
+    <!-- End of flex main area -->
 
     <!-- Overview -->
 
@@ -243,7 +227,7 @@
 
 
 
-            <h2>Today's Deeds History</h2>
+            <h2 class="profile" id="DeedsHistory">Today's Deeds History</h2>
 
             <div class="deed waifu">
                 <img src="img/deeds/D00001.png">
@@ -296,7 +280,7 @@
             </div>
 
             <div class="deed waifu">
-                <img src="img/deeds/D00003.png">
+                <img src="img/deeds/D00002.png">
                 <h3 class="title">Eve took the garbage out</h3>
                 <h6 class="date">Endorsed by Adam
                     <i class="fa fa-heart red"></i> on 15/04/2018</h6>
@@ -316,15 +300,15 @@
             <a class="close" onclick="">
                 <i class="fa fa-times fa"></i>
             </a>
-            <h1>Request Hasbandu points
-                <i class="fa fa-heart fa-1x red"></i> from Eve</h1>
-            <br>
+            <p class="request-point">Request Hasbandu points
+                <i class="fa fa-heart fa-1x red"></i> from Eve</p>
 
-            <h2>Select from the list:</h2>
+
+            <h2 class="list">Select from the list:</h2>
 
             <div class="points_list">
 
-                <div class="deed wakashu">
+                <div class="deed wakashu" id="deed_1">
                     <img src="img/deeds/D00001.png">
                     <h3 class="title">Cooked a nice meal</h3>
                     <h4 class="points">
@@ -332,7 +316,7 @@
                     </h4>
                 </div>
 
-                <div class="deed wakashu">
+                <div class="deed wakashu" id="deed_2">
                     <img src="img/deeds/D00003.png">
                     <h3 class="title">Took the garbage out</h3>
                     <h4 class="points">
@@ -340,7 +324,7 @@
                     </h4>
                 </div>
 
-                <div class="deed wakashu">
+                <div class="deed wakashu" id="deed_3">
                     <img src="img/deeds/D00002.png">
                     <h3 class="title">Cleaned the dishes</h3>
                     <h4 class="points">
@@ -348,7 +332,7 @@
                     </h4>
                 </div>
 
-                <div class="deed wakashu">
+                <div class="deed wakashu" id="deed_4">
                     <img src="img/deeds/D00004.png">
                     <h3 class="title">Walked the dog</h3>
                     <h4 class="points">
@@ -356,19 +340,30 @@
                     </h4>
                 </div>
 
+                <div class="deed wakashu" id="deed_5">
+                    <img src="img/deeds/D00005.png">
+                    <h3 class="title">Cleaned the house</h3>
+                    <h4 class="points">
+                        <b>+1000 points</b>
+                    </h4>
+                </div>
+
             </div>
 
-            <br>
+
             <h3>Requesting
-                <span class="red">+100 Hasbandu points</span>
+                <span class="red">
+                    <span id="totalPoints"></span> Hasbandu points</span>
+                <h5 class="button user_css greyed_out" id="submitRequest">
+                    <i class="fa fa-check-circle fa"></i> Submit Request </h5>
+                <h5 class="button user_css greyed_out" id="resetPoints">
+                    <i class="fa fa-fire fa"></i> Start Over </h5>
+                <h5 class="button user_css greyed_out" id="redo">
+                    <i class="fa fa-arrow-circle-right fa"></i> Redo </h5>
+                <h5 class="button user_css greyed_out" id="undo">
+                    <i class="fa fa-arrow-circle-left fa"></i> Undo </h5>
             </h3>
-            <br>
-
-            <h5 class="button hasbandu"> Request Points </h5>
-
         </div>
-
-        <!-- Your code ends here -->
 
         <!-- External Scripts -->
 
@@ -386,5 +381,17 @@
         <script src="js/translations/common.js" type="text/javascript"></script>
         <script src="js/multilanguage.js" type="text/javascript"></script>
 </body>
+<script>
+    anime({
+        targets: '.deed',
+        translateX: 1860,
+        easing: 'easeInOutQuart',
+        delay: function (el, index) {
+            return index * 800;
+        },
+        direction: 'alternate',
+        loop: false
+    });
+</script>
 
 </html>
