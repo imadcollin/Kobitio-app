@@ -37,6 +37,8 @@
 
     <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
     <script src="js/tabMenuScript.js"></script>
+    <script src="js/anime.min.js"></script>
+
 </head>
 
 <body>
@@ -389,5 +391,17 @@
         <script src="js/translations/common.js" type="text/javascript"></script>
         <script src="js/multilanguage.js" type="text/javascript"></script>
 </body>
+<script>
+    anime({
+        targets: '.deed',
+        translateX: 1860,
+        easing: 'easeInOutQuart',
+        delay: function (el, index) {
+            return index * 800;
+        },
+        direction: 'alternate',
+        loop: false
+    });
+</script>
 
 </html>

@@ -85,21 +85,17 @@
 /* Deeds Section*/
 
 .deed {
-    /* border-style: dashed; */
-    /* margin: 15px; */
+
     padding: 15px;
-    /* height: 100px; */
+    position: relative;
+    left: -1860px;
     display: block;
-    /* background:lightslategray; */
     transition: 0.3s ease;
-    /* background: #3fa46a; */
     transition: 0.4s;
     color: #000;
     background: #fff;
     font-size: 20px;
     text-decoration: none;
-    /* padding: 0 10px;
-    margin: 0 10px; */
     border: solid 10px;
 }
 
@@ -204,14 +200,10 @@
     position: fixed;
     top: -0%;
     width: 100%;
-    /* padding: 20px; */
     margin-left: 75%;
     padding-left: 15px;
 }
 
-.languages {
-    /* margin-left: 50%; */
-}
 
 .languages img {
     width: 5%;
@@ -278,10 +270,6 @@
     margin-left: 3%;
 }
 
-/*.twitter li:hover{
-  color: rgba(85,172,238 ,1);
-}*/
-
 .twitter__bird {
     color: rgba(85, 172, 238, 1);
     font-size: 1.3em;
@@ -307,12 +295,9 @@
 @media screen and (max-width: 600px) {
     .deed {
         height: auto;
-        /* border-style: dashed; */
         margin: 2%;
         padding: 0;
-        /* height: 100px; */
         display: block;
-        /* background:lightslategray; */
         border: solid 1px;
     }
     .deed:hover {

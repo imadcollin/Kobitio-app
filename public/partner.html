@@ -44,6 +44,8 @@
     <link rel="stylesheet" href="css/partner.css">
     <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
     <script src="js/tabMenuScript.js"></script>
+    <script src="js/anime.min.js"></script>
+
 
 </head>
 
@@ -253,27 +255,7 @@
                     <b>+50 points</b>
                 </h4>
             </div>
-
-            <div class="deed hasbandu">
-                <img src="img/deeds/D00004.png">
-                <h3 class="title">Adam walked the dog</h3>
-                <h6 class="date">Endorsed by Eve
-                    <i class="fa fa-heart red"></i> on 15/04/2018</h6>
-                <h4 class="points">
-                    <b>+100 points</b>
-                </h4>
-            </div>
-
-            <div class="deed hasbandu">
-                <img src="img/deeds/D00001.png">
-                <h3 class="title">Adam cooked a nice meal</h3>
-                <h6 class="date">Endorsed by Eve
-                    <i class="fa fa-heart red"></i> on 15/04/2018</h6>
-                <h4 class="points">
-                    <b>+150 points</b>
-                </h4>
-            </div>
-
+            
             <div class="deed waifu">
                 <img src="img/deeds/D00002.png">
                 <h3 class="title">Eve took the garbage out</h3>
@@ -286,12 +268,9 @@
 
         </div>
         <!-- End of Row  -->
-
-
         <div id="overlay" class="hidden"></div>
 
-        <!-- request points window: 
-            show the points list and allow the user to select from them  -->
+        <!-- request points window -->
         <div id="requestWindow" class="popup hasbandu hidden">
 
             <a class="close" onclick="">
@@ -304,7 +283,8 @@
             <h2 class="list">Select from the list:</h2>
 
             <div class="points_list">
-                <div class="deed wakashu">
+
+                <div class="deed wakashu" id="deed_1">
                     <img src="img/deeds/D00001.png">
                     <h3 class="title">Cooked a nice meal</h3>
                     <h4 class="points">
@@ -312,7 +292,7 @@
                     </h4>
                 </div>
 
-                <div class="deed wakashu">
+                <div class="deed wakashu" id="deed_2">
                     <img src="img/deeds/D00003.png">
                     <h3 class="title">Took the garbage out</h3>
                     <h4 class="points">
@@ -320,7 +300,7 @@
                     </h4>
                 </div>
 
-                <div class="deed wakashu">
+                <div class="deed wakashu" id="deed_3">
                     <img src="img/deeds/D00002.png">
                     <h3 class="title">Cleaned the dishes</h3>
                     <h4 class="points">
@@ -328,7 +308,7 @@
                     </h4>
                 </div>
 
-                <div class="deed wakashu">
+                <div class="deed wakashu" id="deed_4">
                     <img src="img/deeds/D00004.png">
                     <h3 class="title">Walked the dog</h3>
                     <h4 class="points">
@@ -336,25 +316,31 @@
                     </h4>
                 </div>
 
+                <div class="deed wakashu" id="deed_5">
+                    <img src="img/deeds/D00005.png">
+                    <h3 class="title">Cleaned the house</h3>
+                    <h4 class="points">
+                        <b>+1000 points</b>
+                    </h4>
+                </div>
+
             </div>
 
-            <!-- Requesting: all the requested points comes from the point list and been shown to the user  -->
+
             <h3>Requesting
-                <span class="red">+100 Hasbandu points</span>
-                <h5 class="button user_css" id="submitRequest">
+                <span class="red">
+                    <span id="totalPoints"></span> Hasbandu points</span>
+                <h5 class="button user_css greyed_out" id="submitRequest">
                     <i class="fa fa-check-circle fa"></i> Submit Request </h5>
-                <h5 class="button user_css" id="resetPoints">
+                <h5 class="button user_css greyed_out" id="resetPoints">
                     <i class="fa fa-fire fa"></i> Start Over </h5>
-                <h5 class="button user_css" id="redo">
+                <h5 class="button user_css greyed_out" id="redo">
                     <i class="fa fa-arrow-circle-right fa"></i> Redo </h5>
-                <h5 class="button user_css" id="undo">
+                <h5 class="button user_css greyed_out" id="undo">
                     <i class="fa fa-arrow-circle-left fa"></i> Undo </h5>
             </h3>
-
-
-            <!-- <h5 class="button hasbandu"> Request Points </h5> -->
-
         </div>
+
 
         <!-- Your code ends here -->
 
@@ -374,5 +360,17 @@
         <script src="js/translations/common.js" type="text/javascript"></script>
         <script src="js/multilanguage.js" type="text/javascript"></script>
 </body>
+<script>
+    anime({
+        targets: '.deed',
+        translateX: 1860,
+        easing: 'easeInOutQuart',
+        delay: function (el, index) {
+            return index * 800;
+        },
+        direction: 'alternate',
+        loop: false
+    });
+</script>
 
 </html>

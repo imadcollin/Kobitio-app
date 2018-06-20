@@ -3,146 +3,144 @@
   * Created by Group 8, Uppsala University  April 2018.
 */
 
+ /* Profile Section*/
 
-/* Profile Section*/
+ .portrait {
+     padding: 15px;
+     background-color: #edff00;
+ }
 
-.portrait {
-    padding: 15px;
-    background-color: #edff00;
-}
+ .portrait img {
+     display: block;
+     margin-left: auto;
+     margin-right: auto;
+     width: 300px;
+ }
 
-.portrait img {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 300px;
-}
+ .request-point {
+     font-size: 34px;
+     font-weight: bold;
+ }
 
-.request-point {
-    font-size: 34px;
-    font-weight: bold;
-}
+ .partner-header {
+     font-size: 1.2rem;
+ }
 
-.partner-header {
-    font-size: 1.2rem;
-}
+ /*Pop up windows*/
 
-/*Pop up windows*/
+ .list {
+     color: #fff;
+ }
 
-.list {
-    color: #fff;
-}
+ .hidden {
+     visibility: hidden;
+ }
 
-.hidden {
-    visibility: hidden;
-}
+ #overlay {
+     background-color: rgba(0, 0, 0, 0.3);
+     position: fixed;
+     height: 100%;
+     width: 100%;
+     left: 0px;
+     top: 0px;
+     z-index: 5;
+ }
 
-#overlay {
-    background-color: rgba(0, 0, 0, 0.3);
-    position: fixed;
-    height: 100%;
-    width: 100%;
-    left: 0px;
-    top: 0px;
-    z-index: 5;
-}
+ .popup {
+     z-index: 10;
+     color: white;
+     text-align: left;
+     border-radius: 5px;
+     box-shadow: 2px 2px 15px black;
+     position: absolute;
+     padding: 25px;
+     width: 70%;
+     margin-left: 15%;
+     margin-right: 20%;
+     clear: both;
+     height: 82%;
+     top: 15%;
+     position: fixed;
+ }
 
-.popup {
-    z-index: 10;
-    color: white;
-    text-align: left;
-    border-radius: 5px;
-    box-shadow: 2px 2px 15px black;
-    position: absolute;
-    padding: 25px;
-    width: 70%;
-    margin-left: 15%;
-    margin-right: 20%;
-    clear: both;
-    height: 82%;
-    top: 15%;
-    position: fixed;
-}
+ .popup h1,
+ .popup h3 {
+     text-align: center;
+ }
 
-.popup h1,
-.popup h3 {
-    text-align: center;
-}
+ h1 {
+     color: #dff2fa;
+ }
 
-h1 {
-    color: #dff2fa;
-}
+ .points_list {
+     height: 400px;
+     background-color: white;
+     overflow: auto;
+ }
 
-.points_list {
-    height: 400px;
-    background-color: white;
-    overflow: auto;
-}
+ /*Change Hover Color*/
 
-/*Change Hover Color*/
-.points_list .deed:hover {
-    background-color: #EEA200;
-    border-color: black;
-}
+ .points_list .deed:hover {
+     background-color: #EEA200;
+     border-color: black;
+ }
 
-.button {
-    padding: 5px;
-    float: right;
-    cursor: pointer;
-}
+ .button {
+     padding: 5px;
+     float: right;
+     cursor: pointer;
+ }
 
-#first_row {
-    margin-top: 6%;
-}
+ #first_row {
+     margin-top: 6%;
+ }
 
-.flex_1 {
-    display: flex;
-    margin-top: 8%;
-}
+ .flex_1 {
+     display: flex;
+     margin-top: 8%;
+ }
 
-.selected {
-    background-color: chartreuse;
-    pointer-events: none;
-}
+ .selected {
+     background-color: chartreuse;
+     pointer-events: none;
+ }
 
-.greyed_out {
-    color: #5e5e5e;
-    pointer-events: none;
-}
+ .greyed_out {
+     color: #5e5e5e;
+     pointer-events: none;
+ }
 
-@media screen and (max-width: 600px) {
-    #first_row {
-        margin-top: 21%;
-    }
-    .flex_1 {
-        flex-direction: column;
-    }
-    h1,
-    h3,
-    h5,
-    h6,
-    :not(h4) {
-        text-align: justify;
-        font-family: -webkit-pictograph;
-    }
-    p {
-        text-align: center;
-        margin: 0;
-        padding: 0px;
-    }
-    .card-content {
-        text-align: left;
-    }
-    h2 {
-        font-family: 'Playfair Display', serif;
-        line-height: 1;
-        margin-bottom: 0px;
-        letter-spacing: 0px;
-        color: #3f819b;
-    }
-    .request-point {
-        font-size: 20px;
-    }
-    
-}
-
+ @media screen and (max-width: 600px) {
+     #first_row {
+         margin-top: 21%;
+     }
+     .flex_1 {
+         flex-direction: column;
+     }
+     h1,
+     h3,
+     h5,
+     h6,
+     :not(h4) {
+         text-align: justify;
+         font-family: -webkit-pictograph;
+     }
+     p {
+         text-align: center;
+         margin: 0;
+         padding: 0px;
+     }
+     .card-content {
+         text-align: left;
+     }
+     h2 {
+         font-family: 'Playfair Display', serif;
+         line-height: 1;
+         margin-bottom: 0px;
+         letter-spacing: 0px;
+         color: #3f819b;
+     }
+     .request-point {
+         font-size: 20px;
+     }
+ }
