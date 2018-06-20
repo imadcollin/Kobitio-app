@@ -47,7 +47,7 @@ figure{
         display: flex;
       }
       .menu ul li{
-          background-color: currentColor;
+          background-color: #fff;
       }
 
     }

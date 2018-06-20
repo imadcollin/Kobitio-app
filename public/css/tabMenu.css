@@ -266,7 +266,7 @@ h1 {
   border-top: 1px solid #444;
   font-family: sans-serif;
   /* width: 100px; */
-  height: 100px;
+  height: 92px;
   left: 100%;
 }
 
@@ -402,7 +402,28 @@ input[type=checkbox]:checked~.to-change-arrows li.more {
   h1 {
     font-size: 25px;
   }
-  .menu {
-    display: none;
-  }
+  .menu{
+    width: 100%;
+}
+.menu ul{
+    display: inline-flex;
+    width: 100%;
+}
+.menu ul li{
+    width: 100%;
+    background-color: #fff;
+}
+figure{
+    height: auto;
+}
+.menu ul li a:hover{
+    color: #3f819b;
+    font-size: 1rem;
+}
+.view{
+    margin: 0px;
+}
+.view{
+    border: none;
+}
 }
