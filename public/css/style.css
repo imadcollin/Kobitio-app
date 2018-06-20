@@ -311,7 +311,7 @@
     h5,
     h6,
     :not(h4) {
-        font-size: 14px;
+        font-size: 13px;
     }
     .deed img {
         width: 90px;
