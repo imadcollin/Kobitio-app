@@ -39,6 +39,7 @@ function translate(index) {
     $("#mission").text(mission[index]);
     $("#login_button").text(login_button[index]);
     $("#signup_button").text(signup_button[index]);
+    $("#about").text(about[index]);
 
 }
 
