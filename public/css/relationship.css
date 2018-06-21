@@ -19,7 +19,7 @@ figure {
 }
 
 .text-animate {
-    font: bold 200% Consolas, Monaco, monospace;
+    font: bold 200% ;
     border-right: .1em solid black;
     width: 16.5em;
     /* width: 21ch; */
@@ -280,6 +280,7 @@ h1 span {
 
 h2 {
     color: #3f819b;
+    margin-left: 15px;
 }
 
 .thumbnail img {
@@ -291,8 +292,14 @@ h2 {
 .card a {
     padding-right: 0px;
 }
+.hide-text{
+    color:white;
+}
 
 @media screen and (max-width: 600px) {
+    .flex_1{
+      margin-top:19%;
+  }
     h1 {
         text-align: left;
         padding: 0;
@@ -324,5 +331,6 @@ h2 {
     }
     .text-animate {
         color: #fff;
+        margin-left: 15px;
     }
 }

@@ -293,6 +293,7 @@
 }
 
 @media screen and (max-width: 600px) {
+    
     .deed {
         height: auto;
         margin: 2%;
@@ -311,7 +312,7 @@
     h5,
     h6,
     :not(h4) {
-        font-size: 13px;
+        font-size: 12px;
     }
     .deed img {
         width: 90px;
@@ -324,7 +325,11 @@
 }
 
 .deed {
-    height: 100px;
+    height: 77px;
+    color: #000;
+}
+.deed p{
+    color:#000;
 }
 
 .deed img {

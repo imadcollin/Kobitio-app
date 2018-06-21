@@ -49,6 +49,9 @@ figure {
 }
 
 @media screen and (max-width: 600px) {
+    body{
+        margin-top: 19%;
+    }
     .thumbnail img {
         height: 180px;
     }

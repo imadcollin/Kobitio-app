@@ -79,6 +79,7 @@ ul li {
     top: 8%;
     position: fixed;
     clear: both;
+    /* height: 90%; */
 }
 
 .popup h1 {
@@ -96,6 +97,7 @@ ul li {
     float: none;
     margin-left: 1%;
     margin-top: 10%;
+    height:600px;
 }
 
 .close,
@@ -250,7 +252,7 @@ main {
     width: 200px;
     text-align: center;
     position: absolute;
-    top: 50%;
+    top: 86%;
     transform: translateY(-50%);
     left: 0;
     right: 0;
@@ -274,7 +276,7 @@ main {
     height: 60px;
     width: 0;
     right: 0;
-    top: 50%;
+    top: 86%;
     left: 50%;
     border-radius: 200px;
     transform: translateY(-50%) translateX(-50%);
@@ -284,7 +286,7 @@ main {
 svg {
     width: 30px;
     position: absolute;
-    top: 50%;
+    top: 86%;
     transform: translateY(-50%) translateX(-50%);
     left: 50%;
     right: 0;
@@ -313,7 +315,9 @@ svg {
 }
 
 .href-about {
-    margin-left: 28%;
+    position: fixed;
+    margin-top: 1%;
+margin-left: 92%
     /* text-decoration: underline; */
 }
 
@@ -363,13 +367,13 @@ svg {
         padding: 0;
     }
     .button {
-        margin-top: 30%;
+        margin-top: -50%;
     }
     .progress-bar {
-        margin-top: 30%;
+        margin-top: -50%;
     }
     svg {
-        margin-top: 30%;
+        margin-top: -50%;
     }
     input[type=text],
     input[type=password],
@@ -384,9 +388,9 @@ svg {
         margin-top: 10%;
     }
     .href-about {
-        font-size: 13px;
-        margin-left: 58px;
+        font-size: 19px;
+        margin-left: 38%;
         padding: 5px;
-        background-color: red;
+        bottom: 16%;
     }
 }

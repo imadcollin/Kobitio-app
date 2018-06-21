@@ -101,7 +101,8 @@
  }
 
  .selected {
-     background-color: chartreuse;
+     /* background-color: chartreuse; */
+     background-color:darkgrey;
      pointer-events: none;
  }
 
@@ -109,13 +110,18 @@
      color: #5e5e5e;
      pointer-events: none;
  }
+ .deed{
+     height: 100px;
+ }
 
  @media screen and (max-width: 600px) {
+    
      #first_row {
          margin-top: 20%;
      }
      .flex_1 {
          flex-direction: column;
+         margin-top: 15%
      }
      h1,
      h3,
@@ -141,6 +147,16 @@
      }
      .request-point {
          font-size: 20px;
+     }
+     .deed{
+         height: 80px;
+     } 
+     .popup{
+         height: 100%;
+         width: 100%;
+        margin:0;
+        margin-left: 10px;
+        top:12%;
      }
   
  }
