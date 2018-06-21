@@ -197,7 +197,7 @@ video {
 #login_button,
 #signup_button {
     display: block;
-    padding: 60px;
+    padding: 25px;
     text-align: center;
     border-radius: 5px;
     color: white;
@@ -300,16 +300,21 @@ svg {
 
 #login_button,
 #signup_button {
-    background: #4E9CAF;
-    margin: 75px;
+    background: #006AA7;
+    margin: 180px;
     margin-left: 22%;
     border-radius: 1%;
     width: 60%;
 }
 
+#login_button:hover,
+#signup_button:hover {
+    background: darkgrey;
+}
+
 .href-about {
-    margin-left: 23%;
-    text-decoration: underline;
+    margin-left: 28%;
+    /* text-decoration: underline; */
 }
 
 /* end of animation part  */

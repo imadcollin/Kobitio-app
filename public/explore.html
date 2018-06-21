@@ -5,12 +5,10 @@
 <html lang="en">
 
 <head>
-
     <!-- Metadata-->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title id="PageTitle">Explore</title>
+    <title id="page_title">Koibito App | Adam</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="img/favicon.png">
@@ -22,129 +20,35 @@
 
     <!-- Font Awesome Icon Sheets CSS -->
     <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css">
+
+    <!-- External CSS sheets -->
+    <!-- <link rel="stylesheet" href="css/style.css"> -->
+    <!-- <link rel="stylesheet" href="css/tabMenu.css"> -->
+    <!-- <link rel="stylesheet" href="css/history.css"> -->
+
     <link rel="stylesheet" href="css/relationship.css">
     <link rel="stylesheet" href="css/explore.css">
-    <link rel="stylesheet" href="css/tabMenu.css">
-
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Aclonica|Acme|Droid+Serif|Pattaya" rel="stylesheet">
 
-    <!-- Js files -->
-    <script src="js/tabMenuScript.js"></script>
+    <!-- CSS Responsive Menu Tab -->
+    <link rel="stylesheet" href="css/tabMenu.css">
+    <!-- <link rel="stylesheet" href="css/relationship.css"> -->
 
-    <!-- Jquery -->
     <script src="http://code.jquery.com/jquery-latest.min.js" type="text/javascript"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="js/tabMenuScript.js"></script>
 
 </head>
 
 <body>
-    <div id="root"></div>
-    <!-- Babel for react  -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/react/15.4.2/react-dom.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.21.1/babel.min.js"></script>
-    <script type="text/babel">
-    // react start
-    class Greeting extends React.Component { 
-      constructor(props) { 
-        super(props); 
-        this.state = { 
-        value: 'Some data will be placed',
-        // Some dummy user data
-        USER_TABLE : [
-    {
-        "username": "adam_1990",
-        "password": "godsavesevasdog",
-        "email": "first@email.com",
-        'photo':"./img/adam.jpg",
-
-    },
-    {
-        "username": "eve4ever",
-        "password": "iloveapples",
-        "email": "leaves@email.com",
-        'photo':"./img/eve.jpg",
-
-    },
-    {
-        "username": "tobias_hasbandu",
-        "password": "rubyrubyruby",
-        "email": "tobbie_johnsson@email.com",
-        'photo':"./img/adam.jpg",
-
-    },
-    {
-        "username": "eve4ever",
-        "password": "iloveapples",
-        "email": "leaves@email.com",
-        'photo':"./img/eve.jpg",
-
-    },
-    {
-        "username": "tobias_hasbandu",
-        "password": "rubyrubyruby",
-        "email": "tobbie_johnsson@email.com",
-        'photo':"./img/adam.jpg",
-
-    },
- 
-    {
-        "username": "rebecca_thebest",
-        "password": "thispasswordishighinentropy",
-        "email": "rebecca_tamashiro@gmail.com",
-        'photo':"./img/andrea.jpg",
-
-    }]
-
-
-        
-        };
-    } 
-
-    render() {
-
-var divStyle = {
-    width:'120px',
-    height:'220px'
- 
-};
-
-let data=[];
-for (const item of this.state.USER_TABLE) {
-    data.push( //Push items as new html elements 
-        <div className="main">
-            <div className="view view-sixth">
-                <img src={item.photo} alt="meow"/>
-                <div className="mask">
-                    <h2>Member Overview </h2>
-            
-                    <p> Joined since 2015, from Germany,has been endorsed by 144 partners, easy going, 
-                         like to swim, wish to meet people from everywhere</p>
-   
-                        <a href= { item.username=='adam_1990'?"profile.html":"eve.html"} className="info">Read More</a>
-                    
-                        </div>
-                         <h3>
-                             <b> {item.username}</b>
-                         </h3>
-                  </div>
-         </div>
-
-        )
-}
-        
-       return (
-
-           <div >
-{/*3D-Menu Responsive Navigation header with languages */}
- <div id='cssmenu'>
+    <!-- 3D-Menu Responsive Navigation header with langauges -->
+    <div id='cssmenu'>
         <ul>
             <li>
                 <h1>Kobitio
-                    <i className="fa fa-heart fa-1x red"></i> App</h1>
+                    <i class="fa fa-heart fa-1x red"></i> App</h1>
             </li>
-            <li className='active'>
+            <li class='active'>
                 <a id="MyProfile" href="profile.html">My Profile</a>
             </li>
             <li>
@@ -157,55 +61,239 @@ for (const item of this.state.USER_TABLE) {
                 <a id="Partner" href="partner.html">Partner</a>
             </li>
             <li>
-               <a id="About" href="about.html">About Us</a>
+                <a id="About" href="about.html">About Us</a>
             </li>
             <li>
-                 <a id="Explore" href="explore.html">Explore</a>
+                <a id="Explore" href="explore.html">Explore</a>
             </li>
-
-            {/*LANGUAGE MENU*/}
-            <div className="languages_menu">
+            <!-- Langauge buttons -->
+            <div class="languages_menu">
                 <a href="#" id="eng">
-                    <div className="languages">
-                        <img src="img/eng.png"/>
+                    <div class="languages">
+                        <img src="img/eng.png">
                     </div>
                 </a>
                 <a href="#" id="sve">
-                    <div className="languages">
-                        <img src="img/sve.png"/>
+                    <div class="languages">
+                        <img src="img/sve.png">
                     </div>
                 </a>
                 <a href="#" id="jap">
-                    <div className="languages">
-                        <img src="img/jap.svg"/>
+                    <div class="languages">
+                        <img src="img/jap.svg">
                     </div>
                 </a>
             </div>
-            {/*End of LANGUAGE MENU*/}
         </ul>
     </div>
-{    /*End of 3D-Menu */}
-            < div className="data">   
-                {data}
-               </div>
-
-    </div>
-    ); 
-    } 
-    } 
     
-    ReactDOM.render(
-    <Greeting />, document.getElementById('root') );
+<div class="data">
+    <div class="main">
+        <div class="view view-sixth">
+            <img src='img/more/rebbeca.jpg' alt="meow" />
+            <div class="mask">
+                <h2>Member Overview </h2>
 
-  </script>
-    <!-- End of Scripts -->
+                <p> Joined since 2015, from Germany,has been endorsed by 144 partners, easy going, like to swim, wish to meet
+                    people from everywhere</p>
 
-    <!-- Scripts for translations-->
-    <script src="js/explore.js" type="text/javascript"></script>
-    <script src="js/translations/explore.js" type="text/javascript"></script>
+                <a href='profile.html' class="info">Read More</a>
+
+            </div>
+            <h3>
+                <b> Rebbeca </b>
+            </h3>
+        </div>
+    </div>
+    <div class="main">
+        <div class="view view-sixth">
+            <img src='img/adam.jpg' alt="meow" />
+            <div class="mask">
+                <h2>Member Overview </h2>
+
+                <p> Joined since 2015, from Germany,has been endorsed by 144 partners, easy going, like to swim, wish to meet
+                    people from everywhere</p>
+
+                <a href='profile.html' class="info">Read More</a>
+
+            </div>
+            <h3>
+                <b> Adam </b>
+            </h3>
+        </div>
+    </div>
+    <div class="main">
+        <div class="view view-sixth">
+            <img src='img/more/johnny.jpg' alt="meow" />
+            <div class="mask">
+                <h2>Member Overview </h2>
+
+                <p> Joined since 2015, from Germany,has been endorsed by 144 partners, easy going, like to swim, wish to meet
+                    people from everywhere</p>
+
+                <a href='profile.html' class="info">Read More</a>
+
+            </div>
+            <h3>
+                <b> Johnny </b>
+            </h3>
+        </div>
+    </div>
+    <div class="main">
+        <div class="view view-sixth">
+            <img src='img/eve.jpg' alt="meow" />
+            <div class="mask">
+                <h2>Member Overview </h2>
+
+                <p> Joined since 2015, from Germany,has been endorsed by 144 partners, easy going, like to swim, wish to meet
+                    people from everywhere</p>
+
+                <a href='profile.html' class="info">Read More</a>
+
+            </div>
+            <h3>
+                <b> Eve </b>
+            </h3>
+        </div>
+    </div>
+    <div class="main">
+        <div class="view view-sixth">
+            <img src='img/andrea.jpg' alt="meow" />
+            <div class="mask">
+                <h2>Member Overview </h2>
+
+                <p> Joined since 2015, from Germany,has been endorsed by 144 partners, easy going, like to swim, wish to meet
+                    people from everywhere</p>
+
+                <a href='profile.html' class="info">Read More</a>
+
+            </div>
+            <h3>
+                <b> Andrea </b>
+            </h3>
+        </div>
+    </div>
+    <div class="main">
+        <div class="view view-sixth">
+            <img src='img/more/johnny.jpg' alt="meow" />
+            <div class="mask">
+                <h2>Member Overview </h2>
+
+                <p> Joined since 2015, from Germany,has been endorsed by 144 partners, easy going, like to swim, wish to meet
+                    people from everywhere</p>
+
+                <a href='profile.html' class="info">Read More</a>
+
+            </div>
+            <h3>
+                <b> Johnny </b>
+            </h3>
+        </div>
+    </div>
+    <div class="main">
+        <div class="view view-sixth">
+            <img src='img/eve.jpg' alt="meow" />
+            <div class="mask">
+                <h2>Member Overview </h2>
+
+                <p> Joined since 2015, from Germany,has been endorsed by 144 partners, easy going, like to swim, wish to meet
+                    people from everywhere</p>
+
+                <a href='profile.html' class="info">Read More</a>
+
+            </div>
+            <h3>
+                <b> Eve </b>
+            </h3>
+        </div>
+    </div>
+    <div class="main">
+        <div class="view view-sixth">
+            <img src='img/andrea.jpg' alt="meow" />
+            <div class="mask">
+                <h2>Member Overview </h2>
+
+                <p> Joined since 2015, from Germany,has been endorsed by 144 partners, easy going, like to swim, wish to meet
+                    people from everywhere</p>
+
+                <a href='profile.html' class="info">Read More</a>
+
+            </div>
+            <h3>
+                <b> Andrea </b>
+            </h3>
+        </div>
+    </div>
+    <div class="main">
+        <div class="view view-sixth">
+            <img src='img/more/johnny.jpg' alt="meow" />
+            <div class="mask">
+                <h2>Member Overview </h2>
+
+                <p> Joined since 2015, from Germany,has been endorsed by 144 partners, easy going, like to swim, wish to meet
+                    people from everywhere</p>
+
+                <a href='profile.html' class="info">Read More</a>
+
+            </div>
+            <h3>
+                <b> Johnny </b>
+            </h3>
+        </div>
+    </div>
+    <div class="main">
+        <div class="view view-sixth">
+            <img src='img/eve.jpg' alt="meow" />
+            <div class="mask">
+                <h2>Member Overview </h2>
+
+                <p> Joined since 2015, from Germany,has been endorsed by 144 partners, easy going, like to swim, wish to meet
+                    people from everywhere</p>
+
+                <a href='profile.html' class="info">Read More</a>
+
+            </div>
+            <h3>
+                <b> Eve </b>
+            </h3>
+        </div>
+    </div>
+    <div class="main">
+        <div class="view view-sixth">
+            <img src='img/andrea.jpg' alt="meow" />
+            <div class="mask">
+                <h2>Member Overview </h2>
+
+                <p> Joined since 2015, from Germany,has been endorsed by 144 partners, easy going, like to swim, wish to meet
+                    people from everywhere</p>
+
+                <a href='profile.html' class="info">Read More</a>
+
+            </div>
+            <h3>
+                <b> Andrea </b>
+            </h3>
+        </div>
+    </div>
+</div>
+
+
+    <!-- External Scripts -->
+
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+    <!-- Bootstrap Scripts -->
+    <script src="../bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../bootstrap/js/bootstrap.min.js"></script>
+
+    <!-- Scripts-->
+    <script src="js/profile.js" type="text/javascript"></script>
+
+    <script src="js/translations/profile.js" type="text/javascript"></script>
     <script src="js/translations/common.js" type="text/javascript"></script>
     <script src="js/multilanguage.js" type="text/javascript"></script>
-
 </body>
+
 
 </html>
