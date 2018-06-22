@@ -21,9 +21,53 @@ h1 {
     font-size: 3rem;
 }
 
+h2 {
+    color: #3f819b;
+}
+
+iframe {
+    width: 1000px;
+    height: 552px;
+}
+
+.intr-text {
+    font-family: cursive;
+    margin: 2%;
+    margin-top: 8%;
+}
+
+.intr-text p {
+    font-size: 26px;
+    line-height: 2rem;
+    margin-left: 14%;
+    margin-top: 2%;
+}
+
+u {
+    font-weight: bolder;
+    text-underline-position: below;
+    color: cadetblue;
+}
+
 @media screen and (max-width: 600px) {
+    body {
+        margin-top: 100px;
+    }
+    h2 {
+        font-size: 2rem;
+    }
+    .intr-text p {
+        margin-left: 0;
+        font-size: 16px;
+        font-family: Georgia, Times, 'Times New Roman', serif;
+        text-align: justify;
+        text-justify: inter-word;
+    }
     video {
-        margin-top: 50%;
+        max-height: 100%;
+        max-width: 100%;
+    }
+    iframe {
         max-height: 100%;
         max-width: 100%;
     }

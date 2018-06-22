@@ -17,7 +17,7 @@
 *  3. Then update translate() method on the corresponding js script page!
 */
 
-var title = ["english",
-    "swedish",
-    "japanese"
+var page_title = ["Patner",
+    "Partner",
+    "パートナー"
 ];
