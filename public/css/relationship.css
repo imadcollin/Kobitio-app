@@ -296,6 +296,10 @@ h2 {
     color:white;
 }
 
+.deed{
+    height: 100px;
+}
+
 @media screen and (max-width: 600px) {
     .flex_1{
       margin-top:19%;
